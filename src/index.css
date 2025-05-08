@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased overflow-x-hidden;
+}
+
+/* Improve background image handling */
+.fixed.inset-0.z-0 {
+  @apply bg-cover bg-center bg-no-repeat;
+}
+
+/* Optimize background image handling on mobile */
+@media (max-width: 768px) {
+  .fixed.inset-0.z-0 {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  /* Ensure proper content spacing on mobile */
+  .content-wrapper {
+    @apply relative z-10 min-h-screen;
+  }
+}
+
+/* Prevent horizontal overflow */
+#root {
+  @apply overflow-x-hidden;
+}
+
+/* Improve text readability over images */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhance backdrop blur consistency */
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Fix dropdown styling */
+select {
+  @apply text-white bg-white/10;
+}
+
+select option {
+  @apply bg-gray-800 text-white;
+}
+
+/* Ensure dropdown text is visible when open */
+select:focus {
+  @apply text-white;
+}
