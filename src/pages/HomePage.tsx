@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -67,7 +67,7 @@ function HomePage() {
                 </blockquote>
 
                 <p>
-                  At Kōkūn, we see you. Starting with migraine – one of the most common yet misunderstood invisible conditions – we're shining a light on what has been in the shadows for too long.
+                  At Kōkūn, we see you. Starting with <Link to="/migraine" className="text-terracotta hover:text-terracotta-light">migraine</Link> – one of the most common yet misunderstood invisible conditions – we're shining a light on what has been in the shadows for too long.
                 </p>
 
                 <p>
