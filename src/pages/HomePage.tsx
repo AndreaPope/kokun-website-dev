@@ -49,7 +49,7 @@ function HomePage() {
             </div>
           </div>
 
-          <section className="w-full bg-black/60 backdrop-blur-sm py-20">
+          <section className="w-full bg-black/60 backdrop-blur-sm py-20 mt-24">
             <div className="max-w-4xl mx-auto px-4">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-terracotta">We see what is unseen</h2>
               
