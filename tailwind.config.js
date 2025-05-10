@@ -10,7 +10,7 @@ export default {
         },
       },
       fontFamily: {
-        'archivo-black': ['"Archivo Black"', 'sans-serif'],
+        'league-spartan': ['"League Spartan"', 'sans-serif'],
       },
       screens: {
         'xs': '375px',
