@@ -9,6 +9,9 @@ export default {
           light: '#F2B5A7',
         },
       },
+      fontFamily: {
+        'archivo-black': ['"Archivo Black"', 'sans-serif'],
+      },
       screens: {
         'xs': '375px',
         'sm': '640px',
