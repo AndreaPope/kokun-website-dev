@@ -86,7 +86,7 @@ function PledgePage() {
 
                   <div>
                     <label htmlFor="amount" className="block text-base font-medium mb-2">
-                      Pledge Amount**
+                      Pledge Amount <i>(Note, our 501c3 status is in progress.)</i>
                     </label>
                     <input
                       type="number"
@@ -127,9 +127,8 @@ function PledgePage() {
                   </div>
 
                   <p className="text-sm text-gray-300 italic">
-                    *We respect your privacy and will never share your information without your consent.
-                    <br />
-                    **Our 501c3 status is in progress.
+                    *By submitting this form, you consent to Kōkūn using your information for the purposes you’ve selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
+
                   </p>
 
                   <div className="text-center pt-4">
