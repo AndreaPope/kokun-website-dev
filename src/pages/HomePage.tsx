@@ -49,8 +49,8 @@ function HomePage() {
             </div>
           </div>
 
-          <section className="w-full bg-black/60 backdrop-blur-sm py-20 mt-24">
-            <div className="max-w-4xl mx-auto px-4">
+          <section className="w-full flex justify-center bg-black/60 backdrop-blur-sm py-20 mt-24">
+            <div className="w-[1050px] px-4">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-terracotta">We see what is unseen</h2>
               
               <div className="space-y-8 text-xl">
@@ -88,8 +88,8 @@ function HomePage() {
             </div>
           </section>
 
-          <section className="w-full bg-black/60 backdrop-blur-sm py-20 mt-12">
-            <div className="max-w-4xl mx-auto px-4">
+          <section className="w-full flex justify-center bg-black/60 backdrop-blur-sm py-20 mt-12">
+            <div className="w-[1050px] px-4">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-terracotta">We transform lived experiences into breakthroughs</h2>
               
               <div className="space-y-8 text-xl">
