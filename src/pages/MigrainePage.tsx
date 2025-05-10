@@ -62,7 +62,7 @@ function MigrainePage() {
                 </div>
                 
                 <div className="font-inter">
-                  <h2 className="font-bold text-2xl mt-12 mb-6">You'll find:</h2>
+                  <h2 className="text-2xl font-bold mt-12 mb-6">You'll find:</h2>
                   <ul className="list-disc pl-6 space-y-4">
                     <li>Evidence-based insights tailored to you</li>
                     <li>A supportive community that sees and hears you</li>
