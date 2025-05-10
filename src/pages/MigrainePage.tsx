@@ -22,11 +22,11 @@ function MigrainePage() {
         <Navigation />
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
-          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-archivo-black">
+          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-league-spartan">
             <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>MIGRAINE</div>
           </div>
           
-          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-archivo-black" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-league-spartan" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
             <p className="flex items-center justify-center">
               <span>The <span className="text-terracotta">Invisible</span> Epidemic</span>
             </p>
@@ -62,7 +62,7 @@ function MigrainePage() {
                 </div>
                 
                 <div>
-                  <h2 className="font-bold text-2xl mt-12 mb-6 font-archivo-black">You'll find:</h2>
+                  <h2 className="font-bold text-2xl mt-12 mb-6 font-league-spartan">You'll find:</h2>
                   <ul className="space-y-6">
                     <li><span className="font-bold">Evidence-based insights</span> tailored to you</li>
                     <li>A <span className="font-bold">supportive community</span> that sees and hears you</li>
@@ -86,7 +86,7 @@ function MigrainePage() {
           <section className="py-20 flex justify-center w-full">
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="text-center">
-                <h2 className="text-3xl font-bold mb-4 font-archivo-black">We are Kōkūn</h2>
+                <h2 className="text-3xl font-bold mb-4 font-league-spartan">We are Kōkūn</h2>
                 <p className="text-xl mb-12">
                   We're transforming how invisible health conditions are seen, understood, and healed.<br className="hidden md:block" />
                   Be among the first to join our movement.
