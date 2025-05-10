@@ -106,7 +106,7 @@ function HomePage() {
                   Each of us is on a complex, deeply personal journey that defies standard narratives and one-size-fits-all solutions.
                 </p>
                 <p>
-                  At Kokun, we're building a digital sanctuary that empowers you to take control of your health. Through personalized tools, trusted resources, and a community that truly sees you, we help you make sense of your experience and uncover what works for you.
+                  At Kōkūn, we're building a digital sanctuary that empowers you to take control of your health. Through personalized tools, trusted resources, and a community that truly sees you, we help you make sense of your experience and uncover what works for you.
                 </p>
 
                 <h3 className="text-2xl font-bold mb-4">Breakthrough Insights</h3>
