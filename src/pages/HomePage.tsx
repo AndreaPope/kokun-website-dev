@@ -35,15 +35,15 @@ function HomePage() {
           <div className="flex flex-col md:flex-row gap-6 mb-24">
             <button 
               onClick={() => navigate('/early-access')}
-              className="bg-terracotta text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+              className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
               GET EARLY ACCESS
             </button>
             <button 
               onClick={() => navigate('/newsletter')}
-              className="bg-terracotta text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+              className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
-              SIGN UP FOR INSIGHTS
+              GET OUR NEWSLETTER
             </button>
           </div>
 
@@ -77,7 +77,7 @@ function HomePage() {
                 <div className="text-center pt-8">
                   <button 
                     onClick={() => navigate('/early-access')}
-                    className="bg-terracotta text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+                    className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                   >
                     START YOUR JOURNEY
                   </button>
@@ -120,7 +120,7 @@ function HomePage() {
                 <div className="text-center pt-8">
                   <button 
                     onClick={() => navigate('/early-access')}
-                    className="bg-terracotta text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+                    className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                   >
                     GET EARLY ACCESS
                   </button>
@@ -142,7 +142,7 @@ function HomePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/early-access')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       EARLY ACCESS
                     </button>
@@ -152,7 +152,7 @@ function HomePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/pledge')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       PLEDGE
                     </button>
@@ -162,7 +162,7 @@ function HomePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/newsletter')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       NEWSLETTER
                     </button>

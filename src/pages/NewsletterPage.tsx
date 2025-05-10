@@ -65,7 +65,7 @@ function NewsletterPage() {
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="space-y-8 text-xl">
                 <p>
-                  Our monthly newsletter delivers curated insights, community stories, and updates on Kōkūn's progress directly to your inbox. Join our growing community of advocates and changemakers and stay informed about breakthroughs,  developments, and much much more.
+                  Our monthly newsletter delivers curated insights, community stories, and updates on Kōkūn's progress directly to your inbox. Join our growing community of advocates and changemakers and stay informed about breakthroughs, developments, and much much more.
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-12 space-y-8">
@@ -118,7 +118,7 @@ function NewsletterPage() {
                   <div className="text-center pt-4">
                     <button
                       type="submit"
-                      className="bg-terracotta text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                     >
                       SUBSCRIBE NOW
                     </button>
@@ -142,7 +142,7 @@ function NewsletterPage() {
             </p>
             <button
               onClick={handleModalClose}
-              className="w-full bg-terracotta text-white px-6 py-2 rounded-full font-semibold hover:bg-terracotta-light transition-colors"
+              className="w-full bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
               Close
             </button>

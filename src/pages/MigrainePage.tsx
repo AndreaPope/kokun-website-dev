@@ -96,9 +96,9 @@ function MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/early-access')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      GET EARLY ACCESS
+                      EARLY ACCESS
                     </button>
                     <p className="text-sm max-w-[200px]">Join our migraine community and shape the Kōkūn Collective</p>
                   </div>
@@ -106,9 +106,9 @@ function MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/pledge')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      MAKE A PLEDGE
+                      PLEDGE
                     </button>
                     <p className="text-sm max-w-[200px]">Make a gift to ignite change for the unseen millions</p>
                   </div>
@@ -116,9 +116,9 @@ function MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/newsletter')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      GET OUR NEWSLETTER
+                      NEWSLETTER
                     </button>
                     <p className="text-sm max-w-[200px]">Discover what's new in the world of Invisible Conditions</p>
                   </div>
