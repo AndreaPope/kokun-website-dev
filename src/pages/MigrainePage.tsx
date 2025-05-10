@@ -50,7 +50,7 @@ function MigrainePage() {
 
                   <p>It's not just about health. It's about your time, your energy, your ability to live your life fully.</p>
                   
-                  <blockquote className="my-12 text-center">
+                  <blockquote className="my-24 text-center">
                     <p className="text-terracotta font-merriweather italic text-lg md:text-xl">
                       "It impacts every day and it impacts many of my choices and decisions... it's constantly figuring out how to not get a migraine."
                     </p>

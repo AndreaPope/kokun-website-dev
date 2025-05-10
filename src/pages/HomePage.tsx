@@ -60,7 +60,7 @@ function HomePage() {
                   Invisible conditions have been overlooked by medical research for generations, leaving profound gaps in our understanding. From migraine and anxiety to endometriosis and autoimmune disorders, invisible conditions take many forms. Without foundational research, healthcare professionals don't have the tools to effectively diagnose or treat these conditions. That leaves too many of us on our own.
                 </p>
 
-                <blockquote className="my-12 text-center">
+                <blockquote className="my-24 text-center">
                   <p className="text-terracotta font-merriweather italic text-lg md:text-xl">
                     "Sometimes it feels like people don't understand what I'm going through because they can't see it. It's invisible, but it's so real."
                   </p>
@@ -95,7 +95,7 @@ function HomePage() {
                   Your story matters. Your condition deserves respect and your future deserves real answers. We're here to truly see you, understand you, and help you reclaim your healing journey.
                 </p>
 
-                <blockquote className="my-12 text-center">
+                <blockquote className="my-24 text-center">
                   <p className="text-terracotta font-merriweather italic text-lg md:text-xl">
                     "I hope for a world where managing my condition isn't so hard—where solutions are accessible, and people understand the impact they have on our lives."
                   </p>
