@@ -22,29 +22,31 @@ function HomePage() {
         <Navigation />
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-32">
-          <div className="text-6xl md:text-8xl font-bold text-center leading-none mb-12">
-            <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>
-              MAKING THE INVISIBLE VISIBLE
+          <div className="flex flex-col items-center justify-between h-[calc(100vh-256px)] min-h-[480px]">
+            <div className="text-6xl md:text-8xl font-bold text-center leading-none">
+              <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>
+                MAKING THE INVISIBLE VISIBLE
+              </div>
             </div>
-          </div>
-          
-          <div className="text-2xl md:text-3xl text-center font-bold mb-12" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
-            <p>Together we can transform how invisible health conditions<br />are seen, understood, and healed</p>
-          </div>
+            
+            <div className="text-2xl md:text-3xl text-center font-bold" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+              <p>Together we can transform how invisible health conditions<br />are seen, understood, and healed</p>
+            </div>
 
-          <div className="flex flex-col md:flex-row gap-6 mb-24">
-            <button 
-              onClick={() => navigate('/early-access')}
-              className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
-            >
-              GET EARLY ACCESS
-            </button>
-            <button 
-              onClick={() => navigate('/newsletter')}
-              className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
-            >
-              GET OUR NEWSLETTER
-            </button>
+            <div className="flex flex-col md:flex-row gap-6">
+              <button 
+                onClick={() => navigate('/early-access')}
+                className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+              >
+                GET EARLY ACCESS
+              </button>
+              <button 
+                onClick={() => navigate('/newsletter')}
+                className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+              >
+                GET OUR NEWSLETTER
+              </button>
+            </div>
           </div>
 
           <section className="w-full bg-black/60 backdrop-blur-sm py-20">
