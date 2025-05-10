@@ -61,13 +61,13 @@ function MigrainePage() {
                   </p>
                 </div>
                 
-                <div>
-                  <h2 className="font-bold text-2xl mt-12 mb-6 font-league-spartan">You'll find:</h2>
-                  <ul className="space-y-6">
-                    <li><span className="font-bold">Evidence-based insights</span> tailored to you</li>
-                    <li>A <span className="font-bold">supportive community</span> that sees and hears you</li>
-                    <li><span className="font-bold">Personalized resources</span> you can trust</li>
-                    <li>A <span className="font-bold">collective movement</span> pushing for the research and recognition migraine truly deserves</li>
+                <div className="font-inter">
+                  <h2 className="font-bold text-2xl mt-12 mb-6">You'll find:</h2>
+                  <ul className="list-disc pl-6 space-y-4">
+                    <li>Evidence-based insights tailored to you</li>
+                    <li>A supportive community that sees and hears you</li>
+                    <li>Personalized resources you can trust</li>
+                    <li>A collective movement pushing for the research and recognition migraine truly deserves</li>
                   </ul>
                 </div>
 
