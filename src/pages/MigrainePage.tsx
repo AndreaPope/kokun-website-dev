@@ -22,11 +22,11 @@ function MigrainePage() {
         <Navigation />
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
-          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-archivo-black">
+          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-league-spartan">
             <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>MIGRAINE</div>
           </div>
           
-          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-archivo-black" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-league-spartan" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
             <p className="flex items-center justify-center">
               <span>The <span className="text-terracotta">Invisible</span> Epidemic</span>
             </p>
@@ -50,7 +50,7 @@ function MigrainePage() {
 
                   <p>It's not just about health. It's about your time, your energy, your ability to live your life fully.</p>
                   
-                  <blockquote className="my-12 text-center">
+                  <blockquote className="my-24 mx-12 md:mx-24 text-center">
                     <p className="text-terracotta font-merriweather italic text-lg md:text-xl">
                       "It impacts every day and it impacts many of my choices and decisions... it's constantly figuring out how to not get a migraine."
                     </p>
@@ -61,13 +61,13 @@ function MigrainePage() {
                   </p>
                 </div>
                 
-                <div>
-                  <h2 className="font-bold text-2xl mt-12 mb-6 font-archivo-black">You'll find:</h2>
-                  <ul className="space-y-6">
-                    <li><span className="font-bold">Evidence-based insights</span> tailored to you</li>
-                    <li>A <span className="font-bold">supportive community</span> that sees and hears you</li>
-                    <li><span className="font-bold">Personalized resources</span> you can trust</li>
-                    <li>A <span className="font-bold">collective movement</span> pushing for the research and recognition migraine truly deserves</li>
+                <div className="font-inter">
+                  <h2 className="text-2xl font-bold mt-12 mb-6">You'll find:</h2>
+                  <ul className="list-disc pl-6 space-y-4">
+                    <li>Evidence-based insights tailored to you</li>
+                    <li>A supportive community that sees and hears you</li>
+                    <li>Personalized resources you can trust</li>
+                    <li>A collective movement pushing for the research and recognition migraine truly deserves</li>
                   </ul>
                 </div>
 
@@ -86,19 +86,19 @@ function MigrainePage() {
           <section className="py-20 flex justify-center w-full">
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="text-center">
-                <h2 className="text-3xl font-bold mb-4 font-archivo-black">We are Kōkūn</h2>
+                <h2 className="text-3xl font-bold mb-4 font-league-spartan">We are Kōkūn</h2>
                 <p className="text-xl mb-12">
                   We're transforming how invisible health conditions are seen, understood, and healed.<br className="hidden md:block" />
-                  Be among the first to join our movement.
+                  <span className="text-terracotta font-league-spartan">Be among the first to join our movement.</span>
                 </p>
                 
                 <div className="flex flex-col md:flex-row justify-center md:space-x-16 space-y-8 md:space-y-0">
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/early-access')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      GET EARLY ACCESS
+                      EARLY ACCESS
                     </button>
                     <p className="text-sm max-w-[200px]">Join our migraine community and shape the Kōkūn Collective</p>
                   </div>
@@ -106,9 +106,9 @@ function MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/pledge')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      MAKE A PLEDGE
+                      PLEDGE
                     </button>
                     <p className="text-sm max-w-[200px]">Make a gift to ignite change for the unseen millions</p>
                   </div>
@@ -116,9 +116,9 @@ function MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/newsletter')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
-                      GET OUR NEWSLETTER
+                      NEWSLETTER
                     </button>
                     <p className="text-sm max-w-[200px]">Discover what's new in the world of Invisible Conditions</p>
                   </div>

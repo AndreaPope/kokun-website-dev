@@ -9,6 +9,10 @@ export default {
           light: '#F2B5A7',
         },
       },
+      fontFamily: {
+        'league-spartan': ['"League Spartan"', 'sans-serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
       screens: {
         'xs': '375px',
         'sm': '640px',

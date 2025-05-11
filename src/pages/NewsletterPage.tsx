@@ -51,11 +51,11 @@ function NewsletterPage() {
         <Navigation />
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
-          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-archivo-black">
+          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-league-spartan">
             <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>NEWSLETTER</div>
           </div>
           
-          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-archivo-black" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-league-spartan" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
             <p className="flex items-center justify-center">
               <span>Be in the <span className="text-terracotta">Know</span></span>
             </p>
@@ -65,12 +65,8 @@ function NewsletterPage() {
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="space-y-8 text-xl">
                 <p>
-                  Our monthly newsletter delivers curated insights, community stories, and updates on Kōkūn's progress directly to your inbox. Join our growing community of advocates and changemakers and stay informed about breakthroughs,  developments, and much much more.
+                  Our monthly newsletter delivers curated insights, community stories, and updates on Kōkūn's progress directly to your inbox. Join our growing community of advocates and changemakers and stay informed about breakthroughs, developments, and much much more.
                 </p>
-                
-                {/* <p>
-                  Our monthly newsletter delivers curated insights, community stories, and updates on Kōkūn's progress directly to your inbox. Join our growing community of advocates and changemakers.
-                </p> */}
 
                 <form onSubmit={handleSubmit} className="mt-12 space-y-8">
                   <div>
@@ -108,21 +104,20 @@ function NewsletterPage() {
                         onChange={(e) => setFormData({...formData, pledge: e.target.checked})}
                       />
                       <span className="text-base">
-                        Pledge to Kōkūn. Ignite change for the unseen millions.**
+                        Pledge to Kōkūn. Ignite change for the unseen millions.<i>(Note, our 501c3 status is in progress.)</i>
                       </span>
                     </label>
                   </div>
 
                   <p className="text-sm text-gray-300 italic">
-                    *We respect your privacy and will never share your information without your consent.
-                    <br />
-                    **Our 501c3 status is in progress.
+                    *By submitting this form, you consent to Kōkūn using your information for the purposes you’ve selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
+
                   </p>
 
                   <div className="text-center pt-4">
                     <button
                       type="submit"
-                      className="bg-terracotta text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-terracotta-light transition-colors"
+                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                     >
                       SUBSCRIBE NOW
                     </button>
@@ -140,13 +135,13 @@ function NewsletterPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
           <div className="absolute inset-0 bg-black/70" onClick={handleModalClose} />
           <div className="relative bg-white text-black p-8 rounded-lg max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4 font-archivo-black">Thank you for subscribing!</h3>
+            <h3 className="text-2xl font-bold mb-4 font-league-spartan">Thank you for subscribing!</h3>
             <p className="mb-6">
               Welcome to the Kōkūn family! We will send you an email confirming your subscription. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
             </p>
             <button
               onClick={handleModalClose}
-              className="w-full bg-terracotta text-white px-6 py-2 rounded-full font-semibold hover:bg-terracotta-light transition-colors"
+              className="w-full bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
               Close
             </button>
