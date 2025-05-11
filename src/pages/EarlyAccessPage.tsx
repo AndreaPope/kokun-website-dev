@@ -7,6 +7,7 @@ import { submitWebsiteInput } from '../lib/supabase';
 export default function EarlyAccessPage() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: '',
     newsletter: false,
@@ -15,6 +16,8 @@ export default function EarlyAccessPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    
     try {
       await submitWebsiteInput({
         email: formData.email,
@@ -24,9 +27,13 @@ export default function EarlyAccessPage() {
         pledge_amt: 0
       });
       setShowModal(true);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your form. Please try again.');
+      if (error.message === 'This email has already been registered') {
+        setError('This email has already been registered. Please use a different email address.');
+      } else {
+        setError('There was an error submitting your form. Please try again.');
+      }
     }
   };
 
@@ -65,7 +72,7 @@ export default function EarlyAccessPage() {
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="space-y-8 text-xl">
                 <p>
-                  We're getting ready to launch the beta of our migraine offering  and we're looking for founding members who want to shape Kōkūn and the future of care for invisible conditions. Your experiences and insights will be key to building a platform that truly meets the needs of our community and shines a light on what medicine has overlooked for too long.
+                  We're getting ready to launch the beta of our migraine offering and we're looking for founding members who want to shape Kōkūn and the future of care for invisible conditions. Your experiences and insights will be key to building a platform that truly meets the needs of our community and shines a light on what medicine has overlooked for too long.
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-12 space-y-8">
@@ -82,6 +89,12 @@ export default function EarlyAccessPage() {
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                     />
                   </div>
+
+                  {error && (
+                    <div className="text-red-500 text-sm bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+                      {error}
+                    </div>
+                  )}
 
                   <div className="space-y-4">
                     <p className="text-base font-medium mb-4">Check the boxes below if you would also like to:</p>
@@ -110,8 +123,7 @@ export default function EarlyAccessPage() {
                   </div>
 
                   <p className="text-sm text-gray-300 italic">
-                    *By submitting this form, you consent to Kōkūn using your information for the purposes you’ve selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
-
+                    *By submitting this form, you consent to Kōkūn using your information for the purposes you've selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
                   </p>
 
                   <div className="text-center pt-4">

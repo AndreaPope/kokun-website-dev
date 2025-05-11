@@ -4,7 +4,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+  console.error('Missing Supabase environment variables. Please check your .env file.');
 }
 
 export type Database = {
@@ -103,7 +103,18 @@ export type Database = {
   };
 };
 
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
+// Initialize Supabase client with better error handling
+export const supabase = createClient<Database>(
+  supabaseUrl || '',
+  supabaseAnonKey || '',
+  {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+      detectSessionInUrl: false
+    }
+  }
+);
 
 export interface WebsiteInput {
   id?: number;
@@ -116,48 +127,82 @@ export interface WebsiteInput {
 }
 
 export async function submitWebsiteInput(input: WebsiteInput) {
-  const { data, error } = await supabase
-    .from('website_input')
-    .insert([{
-      email: input.email,
-      join_us: input.join_us,
-      pledge: input.pledge,
-      receive_newsletter: input.receive_newsletter,
-      pledge_amt: input.pledge_amt,
-    }])
-    .select();
+  try {
+    console.log('Submitting website input:', input);
 
-  if (error) {
-    console.error('Error submitting to Supabase:', error);
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase configuration is missing');
+    }
+
+    const { data, error } = await supabase
+      .from('website_input')
+      .insert([{
+        email: input.email,
+        join_us: input.join_us,
+        pledge: input.pledge,
+        receive_newsletter: input.receive_newsletter,
+        pledge_amt: input.pledge_amt || null,
+      }])
+      .select();
+
+    if (error) {
+      console.error('Supabase error:', error);
+      if (error.code === '23505') {
+        throw new Error('This email has already been registered');
+      }
+      throw error;
+    }
+
+    console.log('Submission successful:', data);
+    return data;
+  } catch (error) {
+    console.error('Error in submitWebsiteInput:', error);
     throw error;
   }
-
-  return data;
 }
 
 export async function submitInnerCircleSurvey(input: Database['public']['Tables']['inner_circle_survey']['Insert']) {
-  const { data, error } = await supabase
-    .from('inner_circle_survey')
-    .insert([input])
-    .select();
+  try {
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase configuration is missing');
+    }
 
-  if (error) {
-    console.error('Error submitting survey to Supabase:', error);
+    const { data, error } = await supabase
+      .from('inner_circle_survey')
+      .insert([input])
+      .select();
+
+    if (error) {
+      console.error('Error submitting survey to Supabase:', error);
+      if (error.code === '23505') {
+        throw new Error('This email has already been registered');
+      }
+      throw error;
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error in submitInnerCircleSurvey:', error);
     throw error;
   }
-
-  return data;
 }
 
-// Test connection function
 export async function testConnection() {
   try {
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error('Missing Supabase configuration');
+      return false;
+    }
+
     const { data, error } = await supabase
       .from('inner_circle_survey')
       .select('id')
       .limit(1);
     
-    if (error) throw error;
+    if (error) {
+      console.error('Connection test error:', error);
+      throw error;
+    }
     return true;
   } catch (error) {
     console.error('Supabase connection test failed:', error);
