@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 function HomePage() {
   const navigate = useNavigate();
 
+  
   return (
     <div className="relative min-h-screen font-sans text-white">
       <div 
