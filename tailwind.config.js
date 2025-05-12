@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         'league-spartan': ['"League Spartan"', 'sans-serif'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'merriweather': ['Merriweather', 'serif'],
       },
       screens: {
         'xs': '375px',

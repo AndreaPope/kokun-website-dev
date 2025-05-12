@@ -127,14 +127,14 @@ function PledgePage() {
                   </div>
 
                   <p className="text-sm text-gray-300 italic">
-                    *By submitting this form, you consent to Kōkūn using your information for the purposes you’ve selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
+                    *By submitting this form, you consent to Kōkūn using your information for the purposes you've selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
 
                   </p>
 
                   <div className="text-center pt-4">
                     <button
                       type="submit"
-                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                     >
                       MAKE YOUR IMPACT
                     </button>
@@ -157,8 +157,9 @@ function PledgePage() {
                We will send you an email confirming your pledge. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
             </p>
             <button
+              
               onClick={handleModalClose}
-              className="w-full bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+              className="w-full bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
               Close
             </button>

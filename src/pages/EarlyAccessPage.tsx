@@ -129,7 +129,7 @@ export default function EarlyAccessPage() {
                   <div className="text-center pt-4">
                     <button
                       type="submit"
-                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                     >
                       JOIN THE MOVEMENT
                     </button>
@@ -153,7 +153,7 @@ export default function EarlyAccessPage() {
             </p>
             <button
               onClick={handleModalClose}
-              className="w-full bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+              className="w-full bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
             >
               Close
             </button>

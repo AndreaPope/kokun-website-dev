@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 function HomePage() {
   const navigate = useNavigate();
 
-  
   return (
     <div className="relative min-h-screen font-sans text-white">
       <div 
@@ -24,9 +23,11 @@ function HomePage() {
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-32">
           <div className="flex flex-col items-center justify-between h-[calc(100vh-256px)] min-h-[480px]">
-            <div className="text-6xl md:text-8xl font-bold text-center leading-none">
+            <div className="text-6xl md:text-8xl font-bold text-center leading-tight">
               <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>
-                MAKING THE INVISIBLE VISIBLE
+                MAKING<br />
+                THE INVISIBLE<br />
+                VISIBLE
               </div>
             </div>
             
@@ -37,13 +38,13 @@ function HomePage() {
             <div className="flex flex-col md:flex-row gap-6">
               <button 
                 onClick={() => navigate('/early-access')}
-                className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
               >
                 GET EARLY ACCESS
               </button>
               <button 
                 onClick={() => navigate('/newsletter')}
-                className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
               >
                 GET OUR NEWSLETTER
               </button>
@@ -80,7 +81,7 @@ function HomePage() {
                 <div className="text-center pt-8">
                   <button 
                     onClick={() => navigate('/early-access')}
-                    className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                    className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                   >
                     START YOUR JOURNEY
                   </button>
@@ -123,7 +124,7 @@ function HomePage() {
                 <div className="text-center pt-8">
                   <button 
                     onClick={() => navigate('/early-access')}
-                    className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
+                    className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
                   >
                     GET EARLY ACCESS
                   </button>
@@ -136,16 +137,16 @@ function HomePage() {
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">We are Kōkūn</h2>
-                <p className="text-xl mb-12">
+                <p className="text-lg mb-12">
                   We're transforming how invisible health conditions are seen, understood, and healed.<br className="hidden md:block" />
-                  <span className="text-terracotta font-league-spartan">Be among the first to join our movement.</span>
+                  <span className="text-terracotta font-league-spartan text-xl">Be among the first to join our movement.</span>
                 </p>
                 
                 <div className="flex flex-col md:flex-row justify-center md:space-x-16 space-y-8 md:space-y-0">
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/early-access')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       EARLY ACCESS
                     </button>
@@ -155,7 +156,7 @@ function HomePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/pledge')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       PLEDGE
                     </button>
@@ -165,7 +166,7 @@ function HomePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/newsletter')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors mb-3"
                     >
                       NEWSLETTER
                     </button>
