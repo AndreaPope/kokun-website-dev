@@ -111,7 +111,8 @@ function InnerCirclePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/e_improve:outdoor/sunflower_uqts2i")',
+          //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/e_improve:outdoor/sunflower_uqts2i")',
+          backgroundImage: 'url("/images/treebranches.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
