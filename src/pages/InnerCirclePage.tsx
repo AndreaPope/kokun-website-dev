@@ -113,7 +113,7 @@ function InnerCirclePage() {
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1748017899/vpodwasybigynnrfrkiv.jpg")',
           //height: '100vh', // full screen height
-          backgroundImage: 'url("/images/whispydandelions.jpg")',
+          backgroundImage: 'url("/images/whispy-dandelion2.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
