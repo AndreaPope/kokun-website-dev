@@ -52,7 +52,9 @@ export default function EarlyAccessPage() {
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104329/cxsfa0mlahnbdvfhln4x.jpg")',
           height: '100vh', // full screen height
           backgroundImage: 'url("/images/lonelybeach.jpg")',
-          backgroundSize: 'cover',
+          //backgroundSize: 'cover',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
         }}
