@@ -113,7 +113,7 @@ function InnerCirclePage() {
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/e_improve:outdoor/sunflower_uqts2i")',
           height: '100vh', // full screen height
-          backgroundImage: 'url("/images/smallerwoodcircle.jpg")',
+          backgroundImage: 'url("/images/lonelyforrest.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
