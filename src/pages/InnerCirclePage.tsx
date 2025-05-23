@@ -118,19 +118,36 @@ function InnerCirclePage() {
         }}
       />
 
-      <div className="relative z-10">
+  <div className="relative z-10">
         <Navigation />
 
-        <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
-          <div className="text-5xl md:text-7xl font-bold text-center leading-none mb-12">
-            <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>INNER CIRCLE SURVEY</div>
+        <main className="min-h-screen px-4 pb-24 pt-64 md:pt-72">
+          <div className="max-w-4xl mx-auto w-full mb-32 md:mb-64">
+            <div className="font-display text-5xl sm:text-6xl md:text-8xl font-bold text-center leading-tight">
+              <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>
+                INNER CIRCLE
+              </div>
+            </div>
+            
+            <div className="text-xl sm:text-4xl md:text-5xl text-center font-bold mb-24 md:mb-32" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+              <p className="flex items-center justify-center">
+                <span>Help us <span className="text-terracotta">Build What's Next</span></span>
+              </p>
+            </div>
           </div>
 
+
+
+          
           <div className="flex justify-center w-full mt-24">
             <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
               <div className="space-y-8 text-xl">
                 <p>
-                  Thank you for your interest in joining the Kōkūn Inner Circle! This short survey will help us get to know you better and ensure we're bringing together a diverse, representative group. Your voice and experiences are invaluable, and we're truly grateful you're considering being part of this journey.
+                  We’re bringing together a small group of people living with migraine—the Kōkūn Inner Circle—to help ground us in what really matters: thoughtful, effective care that serves real needs. 
+                </p><p>
+                  As a member of this group, you’ll have the opportunity to use our migraine offering prior to public release and influence how it evolves from first impression to final detail. </p>
+                <p>
+                Interested? This short survey will help us get to know you and ensure the group reflects a range of voices and experiences. Just fill out the survey and we’ll take it from there. Have questions about the program? Email us at <a href="mailto:info@kokun.space" className="text-text-primary hover:text-text-secondary">info@kokun.space</a> 
                 </p>
 
                 <form onSubmit={handleSubmit} className="mt-12 space-y-12">

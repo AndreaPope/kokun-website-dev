@@ -36,16 +36,19 @@ export default function Navigation({ className = '' }: NavigationProps) {
         </div>
 
         {/* Center Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <Link to="/" className="absolute left-1/2 -translate-x-1/2">
           <img 
             src="https://res.cloudinary.com/dknulbme8/image/upload/v1745332502/Ko%CC%84ku%CC%84n_-_white_vector_version-large_sfqzzu.png" 
             alt="Kōkūn"
             className="h-8 md:h-10"
           />
-        </div>
+        </Link>
 
         {/* Right Navigation */}
         <div className="hidden md:flex items-center space-x-8">
+          <Link to="/inner-circle" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Inner Circle
+          </Link>
           <Link to="/early-access" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Join Us
           </Link>
@@ -66,6 +69,13 @@ export default function Navigation({ className = '' }: NavigationProps) {
             onClick={() => setIsOpen(false)}
           >
             Migraine
+          </Link>
+          <Link 
+            to="/inner-circle" 
+            className="px-4 py-3 text-terracotta hover:bg-black/40"
+            onClick={() => setIsOpen(false)}
+          >
+            Inner Circle
           </Link>
           <Link 
             to="/early-access" 

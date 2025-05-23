@@ -4,13 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
+        'text-primary': 'var(--color-primary)',
+        'text-secondary': 'var(--color-secondary)',
         terracotta: {
-          DEFAULT: '#E07A5F',
-          light: '#F2B5A7',
+          DEFAULT: 'var(--color-primary)',
+          light: 'var(--color-secondary)',
         },
       },
       fontFamily: {
-        'archivo-black': ['"Archivo Black"', 'sans-serif'],
+        'league-spartan': ['var(--font-display)'],
+        'sans': ['var(--font-sans)'],
+        'merriweather': ['var(--font-serif)'],
       },
       screens: {
         'xs': '375px',

@@ -2,17 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Colors */
+    --color-primary: #E07A5F /*#F2B44E #E2A850*/; 
+    --color-secondary: #F2B5A7;
+    --color-background: rgba(0, 0, 0, 0.6);
+    --color-text: #FFFFFF;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    height: 100%;
+    color: var(--color-text);
+  }
+
+  /* Font families */
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-merriweather {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Font variables */
+:root {
+  --font-sans: "Open Sans", system-ui, sans-serif;
+  --font-display: "League Spartan", sans-serif;
+  --font-serif: Merriweather, serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply antialiased overflow-x-hidden;
+  @apply antialiased overflow-x-hidden min-h-screen;
+  height: 100%;
 }
 
 /* Improve background image handling */
 .fixed.inset-0.z-0 {
-  @apply bg-cover bg-center bg-no-repeat;
+  @apply bg-cover bg-center bg-no-repeat min-h-screen;
+  height: 100vh; /* Fallback for browsers that do not support vh */
+  height: 100dvh; /* Use dynamic viewport height for mobile */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* Optimize background image handling on mobile */
@@ -20,8 +64,8 @@ body {
   .fixed.inset-0.z-0 {
     background-attachment: scroll !important;
     background-position: center center !important;
-    height: 100vh;
-    position: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   
   /* Ensure proper content spacing on mobile */
@@ -32,7 +76,7 @@ body {
 
 /* Prevent horizontal overflow */
 #root {
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden min-h-screen;
 }
 
 /* Improve text readability over images */
@@ -58,4 +102,31 @@ select option {
 /* Ensure dropdown text is visible when open */
 select:focus {
   @apply text-white;
+}
+
+/* Quote styling */
+blockquote {
+  @apply relative py-4 px-4 md:px-12 border-l-4;
+  border-color: var(--color-primary);
+  border-opacity: 0.3;
+}
+
+blockquote p {
+  @apply relative z-10;
+  color: var(--color-primary);
+}
+
+blockquote p::before {
+  content: '';
+  @apply absolute -left-2 -top-4 text-4xl;
+  color: var(--color-primary);
+  opacity: 0.3;
+  font-family: var(--font-serif);
+}
+
+blockquote p::after {
+  content: attr(data-attribution);
+  @apply block mt-4 text-sm not-italic font-sans;
+  color: var(--color-text);
+  opacity: 0.8;
 }

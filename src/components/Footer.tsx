@@ -1,6 +1,7 @@
 import React from 'react';
-import { Mail, Linkedin, Instagram, FileText } from 'lucide-react';
+import { Mail, Linkedin, Instagram } from 'lucide-react';
 import { RiBlueskyLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -8,13 +9,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-sm mb-4 md:mb-0">
           <a 
-            href="/docs/kokun-privacy.pdf" 
-            target="_blank" 
+            href="/privacy"
+            className="hover:text-gray-300"
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center hover:text-gray-300"
           >
-            <FileText size={16} className="mr-1" />
-            <span>Privacy Policy</span>
+            Privacy Policy
           </a>
         </div>
         <div className="text-sm mb-4 md:mb-0">Kōkūn © 2025</div>
