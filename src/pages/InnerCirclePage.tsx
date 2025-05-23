@@ -113,7 +113,7 @@ function InnerCirclePage() {
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/e_improve:outdoor/sunflower_uqts2i")',
           backgroundImage: 'url("/images/treebranches.jpg")',
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
         }}
