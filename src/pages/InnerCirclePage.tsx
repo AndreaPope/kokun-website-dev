@@ -111,9 +111,9 @@ function InnerCirclePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1748017899/vpodwasybigynnrfrkiv.jpg")',
+          //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1748017899/vpodwasybigynnrfrkiv.jpg")',
           //height: '100vh', // full screen height
-          //backgroundImage: 'url("/images/lonelyforrest.jpg")',
+          backgroundImage: 'url("/images/dandelion.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
