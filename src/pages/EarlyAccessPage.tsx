@@ -50,6 +50,7 @@ export default function EarlyAccessPage() {
         className="fixed inset-0 z-0"
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104329/cxsfa0mlahnbdvfhln4x.jpg")',
+          height: '100vh', // full screen height
           backgroundImage: 'url("/images/lonelybeach.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
