@@ -52,7 +52,7 @@ export default function EarlyAccessPage() {
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104329/cxsfa0mlahnbdvfhln4x.jpg")',
           //height: '100vh', // full screen height
           //backgroundImage: 'url("/images/bridgewmtn.jpg")',
-          backgroundImage: 'url("/images/crop-stone-bridge.jpg")',
+          backgroundImage: 'url("/images/bridgewstones-purchased.jpg")',
           backgroundSize: 'cover',
           //backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
