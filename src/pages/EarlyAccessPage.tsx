@@ -51,7 +51,7 @@ export default function EarlyAccessPage() {
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104329/cxsfa0mlahnbdvfhln4x.jpg")',
           //height: '100vh', // full screen height
-          backgroundImage: 'url("/images/bridgewstones.jpg")',
+          backgroundImage: 'url("/images/tbridge.jpg")',
           backgroundSize: 'cover',
           //backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
