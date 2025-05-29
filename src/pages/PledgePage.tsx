@@ -43,8 +43,7 @@ function PledgePage() {
         className="fixed inset-0 z-0"
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104717/xyopxkjk6dob5iodjy9n.jpg")',
-          //backgroundImage: 'url("/images/dandelion-flying.jpg")',
-          backgroundImage: 'url("/images/fireworkdandelion.jpg")',
+          backgroundImage: 'url("/images/rhdandelion.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
