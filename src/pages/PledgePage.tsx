@@ -44,7 +44,7 @@ function PledgePage() {
         style={{
           //backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104717/xyopxkjk6dob5iodjy9n.jpg")',
           //backgroundImage: 'url("/images/rhdandelion.jpg")',
-          backgroundImage: 'url("/images/dandelion-flying.jpg")',
+          backgroundImage: 'url("/images/dandelion.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
