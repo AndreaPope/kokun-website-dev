@@ -8,7 +8,7 @@ export default function CookieNotice() {
     <>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-black/70" onClick={() => setIsOpen(false)} />
+          <div className="absolute inset-0 bg-background" onClick={() => setIsOpen(false)} />
           <div className="relative bg-white text-black p-8 rounded-lg max-w-2xl w-full">
             <h2 className="text-2xl font-bold mb-4 font-display">Cookie Notice</h2>
             
@@ -28,7 +28,7 @@ export default function CookieNotice() {
 
               <h3 className="text-xl font-bold">3. Third-Party Tools</h3>
               <p>
-                We use tools like Google Analytics to understand site usage. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-terracotta hover:text-terracotta-light">Google Analytics Opt-out Browser Add-on</a>.
+                We use tools like Google Analytics to understand site usage. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Google Analytics Opt-out Browser Add-on</a>.
               </p>
 
               <h3 className="text-xl font-bold">4. Your Choices</h3>
@@ -38,7 +38,7 @@ export default function CookieNotice() {
 
               <h3 className="text-xl font-bold">5. Contact Us</h3>
               <p>
-                If you have questions about our cookie practices, please contact us at <a href="mailto:info@kokun.space" className="text-terracotta hover:text-terracotta-light">info@kokun.space</a>.
+                If you have questions about our cookie practices, please contact us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>.
               </p>
             </div>
 

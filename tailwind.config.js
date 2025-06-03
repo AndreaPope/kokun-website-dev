@@ -4,12 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'text-primary': 'var(--color-primary)',
-        'text-secondary': 'var(--color-secondary)',
-        terracotta: {
-          DEFAULT: 'var(--color-primary)',
-          light: 'var(--color-secondary)',
-        },
+        'primary': 'var(--color-primary)',
+        'secondary': 'var(--color-secondary)',
+        'background': 'var(--color-background)',
+        'hover': 'var(--color-hover)',
+        'text': 'var(--color-text)'
       },
       fontFamily: {
         'league-spartan': ['var(--font-display)'],

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import PageContentWrapper from '../components/PageContentWrapper';
 
 function PrivacyPage() {
   return (
@@ -19,8 +20,8 @@ function PrivacyPage() {
         <Navigation />
 
         <main className="min-h-screen px-4 pb-24 pt-32">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-black/60 backdrop-blur-sm p-8 rounded-lg">
+          <PageContentWrapper>
+            <div className="bg-background backdrop-blur-sm p-8 rounded-lg">
               <h1 className="text-4xl font-bold mb-8 font-display">Privacy Policy</h1>
               
               <div className="space-y-6 text-lg">
@@ -119,7 +120,7 @@ function PrivacyPage() {
                     <li>Appeal a denied data request</li>
                   </ul>             
                   <br></br>
-                  <p>To exercise any of these rights, email us at <a href="mailto:info@kokun.space" className="text-text-primary hover:text-text-secondary">info@kokun.space</a>. If your request is denied, you may appeal the decision through the same contact.
+                  <p>To exercise any of these rights, email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. If your request is denied, you may appeal the decision through the same contact.
 </p><br></br><p>We honor Global Privacy Control (GPC) and Do Not Track (DNT) browser signals where required.</p>
                 </section>
 
@@ -129,8 +130,8 @@ function PrivacyPage() {
                     You have control over how your data is used. You can:
                   </p>
                   <ul className="list-disc pl-6 mt-2 space-y-2">
-                    <li>Unsubscribe from communications at any time by clicking unsubscribe or contacting <a href="mailto:info@kokun.space" className="text-text-primary hover:text-text-secondary">info@kokun.space</a></li>
-                    <li>Opt out of programs (such as Early Access, Inner Circle, etc.) by contacting <a href="mailto:info@kokun.space" className="text-text-primary hover:text-text-secondary">info@kokun.space</a></li>
+                    <li>Unsubscribe from communications at any time by clicking unsubscribe or contacting <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a></li>
+                    <li>Opt out of programs (such as Early Access, Inner Circle, etc.) by contacting <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a></li>
                     <li>Opt out of cookie tracking via browser settings
 </li>
                     <li>Request deletion or restriction of your data</li>
@@ -153,7 +154,7 @@ function PrivacyPage() {
                       href="/cookie-notice"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-terracotta hover:text-terracotta-light"
+                      className="text-primary hover:text-hover"
                     >
                       Cookie Notice
                     </a>.
@@ -227,7 +228,7 @@ function PrivacyPage() {
                   <h2 className="text-2xl font-bold mb-4">15. Contact Us</h2>
                   <p>
                     If you have questions, feedback, or requests related to your data or this policy, reach out:{' '}
-                    <a href="mailto:info@kokun.space" className="text-terracotta hover:text-terracotta-light">
+                    <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">
                       info@kokun.space
                     </a>
                   </p>
@@ -238,7 +239,7 @@ function PrivacyPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </PageContentWrapper>
         </main>
 
         <Footer />

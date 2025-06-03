@@ -5,10 +5,11 @@
 @layer base {
   :root {
     /* Colors */
-    --color-primary: #E07A5F /*#F2B44E #E2A850*/; 
-    --color-secondary: #F2B5A7;
-    --color-background: rgba(0, 0, 0, 0.6);
+    --color-primary: #E2A850; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
+    --color-secondary: #E07A5F; /*link mouseover*/
+    --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
     --color-text: #FFFFFF;
+    --color-hover: #E07A5F; 
   }
 
   html {
@@ -87,7 +88,7 @@ body {
 /* Enhance backdrop blur consistency */
 .backdrop-blur {
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); 
 }
 
 /* Fix dropdown styling */
@@ -107,7 +108,7 @@ select:focus {
 /* Quote styling */
 blockquote {
   @apply relative py-4 px-4 md:px-12 border-l-4;
-  border-color: var(--color-primary);
+  border-color: var(--color-text);
   border-opacity: 0.3;
 }
 

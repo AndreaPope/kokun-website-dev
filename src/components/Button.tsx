@@ -7,6 +7,7 @@ interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   type?: 'button' | 'submit';
+  variant?: 'default' | 'small' | 'xsmall';
 }
 
 export default function Button({ 
@@ -14,7 +15,8 @@ export default function Button({
   onClick, 
   children, 
   className = '',
-  type = 'button'
+  type = 'button',
+  variant = 'default'
 }: ButtonProps) {
   const navigate = useNavigate();
   
@@ -26,15 +28,20 @@ export default function Button({
     }
   };
 
-  const baseStyles = "font-sans bg-terracotta text-white w-full md:w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors";
+  const baseStyles = "font-sans text-center transition-colors";
+  const variantStyles = {
+    default: "w-52 md:w-56 h-12 rounded-full text-base font-semibold hover:bg-hover bg-primary text-white",
+    small: "px-4 py-2 rounded-full text-xs font-bold hover:bg-hover bg-primary text-white hidden md:inline-flex",
+    xsmall: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover bg-primary text-white md:hidden"
+  };
 
   return (
     <button
       type={type}
       onClick={handleClick}
-      className={`${baseStyles} ${className}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
     >
       {children}
     </button>
-  );
+  ); 
 }

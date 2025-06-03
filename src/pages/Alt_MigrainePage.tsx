@@ -23,17 +23,17 @@ function Alt_MigrainePage() {
 
         <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
           <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 text-white">
-            <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>MIGRAINE</div>
+            <div>MIGRAINE</div>
           </div>
           
-          <div className="text-4xl md:text-5xl text-center font-bold mb-48 text-white" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
+          <div className="text-4xl md:text-5xl text-center font-bold mb-48 text-white">
             <p className="flex items-center justify-center">
-              <span>The <span className="text-terracotta">Invisible</span> Epidemic</span>
+              <span>The <span className="text-primary">Invisible</span> Epidemic</span>
             </p>
           </div>
               
           <div className="flex justify-center w-full mt-24">
-            <div className="w-[1050px] bg-white shadow-lg p-12 rounded-lg">
+            <div className="w-[1050px] bg-[var(--color-background)] shadow-lg p-12 rounded-lg">
               <div className="space-y-8 text-xl">
                 <p>
                   Migraine is more than just a headache—it's the #1 cause of disability in people under 50, affecting over a billion people worldwide. Despite its massive impact, migraine remains profoundly misunderstood, with fundamental questions about its mechanisms still unanswered due to significant research deficits.
@@ -62,7 +62,7 @@ function Alt_MigrainePage() {
           </div>
 
           <section className="py-20 flex justify-center w-full">
-            <div className="w-[1050px] bg-white shadow-lg p-12 rounded-lg">
+            <div className="w-[1050px] bg-[var(--color-background)] shadow-lg p-12 rounded-lg">
               <div className="text-center">
                 <h2 className="text-3xl font-bold mb-4">We are Kōkūn</h2>
                 <p className="text-xl mb-12">
@@ -74,7 +74,7 @@ function Alt_MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/early-access')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-[var(--color-primary)] text-white w-48 h-12 rounded-full font-semibold hover:bg-[var(--color-hover)] transition-colors mb-3"
                     >
                       EARLY ACCESS
                     </button>
@@ -84,7 +84,7 @@ function Alt_MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/pledge')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-[var(--color-primary)] text-white w-48 h-12 rounded-full font-semibold hover:bg-[var(--color-hover)] transition-colors mb-3"
                     >
                       PLEDGE
                     </button>
@@ -94,7 +94,7 @@ function Alt_MigrainePage() {
                   <div className="flex flex-col items-center">
                     <button 
                       onClick={() => navigate('/newsletter')}
-                      className="bg-terracotta text-white w-48 h-12 rounded-full font-semibold hover:bg-terracotta-light transition-colors mb-3"
+                      className="bg-[var(--color-primary)] text-white w-48 h-12 rounded-full font-semibold hover:bg-[var(--color-hover)] transition-colors mb-3"
                     >
                       NEWSLETTER
                     </button>

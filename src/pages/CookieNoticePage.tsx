@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import PageContentWrapper from '../components/PageContentWrapper';
 
 export default function CookieNoticePage() {
   return (
@@ -19,8 +20,8 @@ export default function CookieNoticePage() {
         <Navigation />
 
         <main className="min-h-screen px-4 pb-24 pt-32">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-black/60 backdrop-blur-sm p-8 rounded-lg">
+          <PageContentWrapper>
+            <div className="bg-background backdrop-blur-sm p-8 rounded-lg">
               <h1 className="text-4xl font-bold mb-8 font-display">Cookie Notice</h1>
               
               <div className="space-y-6 text-lg">
@@ -44,7 +45,7 @@ export default function CookieNoticePage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">3. Third-Party Tools</h2>
                   <p>
-                    We use tools like Google Analytics to understand site usage. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-terracotta hover:text-terracotta-light">Google Analytics Opt-out Browser Add-on</a>.
+                    We use tools like Google Analytics to understand site usage. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Google Analytics Opt-out Browser Add-on</a>.
                   </p>
                 </section>
 
@@ -58,7 +59,7 @@ export default function CookieNoticePage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">5. Contact Us</h2>
                   <p>
-                    If you have questions about our cookie practices, please contact us at <a href="mailto:info@kokun.space" className="text-terracotta hover:text-terracotta-light">info@kokun.space</a>.
+                    If you have questions about our cookie practices, please contact us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>.
                   </p>
                 </section>
 
@@ -67,7 +68,7 @@ export default function CookieNoticePage() {
                 </p>
               </div>
             </div>
-          </div>
+          </PageContentWrapper>
         </main>
 
         <Footer />

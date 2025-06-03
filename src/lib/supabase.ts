@@ -136,20 +136,19 @@ export async function submitWebsiteInput(input: WebsiteInput) {
 
     const { data, error } = await supabase
       .from('website_input')
-      .insert([{
+      .upsert([{
         email: input.email,
         join_us: input.join_us,
         pledge: input.pledge,
         receive_newsletter: input.receive_newsletter,
         pledge_amt: input.pledge_amt || null,
-      }])
+      }], {
+        onConflict: 'email',
+      })
       .select();
 
     if (error) {
       console.error('Supabase error:', error);
-      if (error.code === '23505') {
-        throw new Error('This email has already been registered');
-      }
       throw error;
     }
 
