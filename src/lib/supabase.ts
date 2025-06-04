@@ -144,8 +144,9 @@ export async function submitWebsiteInput(input: WebsiteInput) {
         pledge_amt: input.pledge_amt || null,
       }], {
         onConflict: 'email',
+        returning: 'minimal',
       })
-      .select();
+
 
     if (error) {
       console.error('Supabase error:', error);
