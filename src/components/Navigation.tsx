@@ -50,8 +50,11 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Link to="/inner-circle" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Inner Circle
           </Link>
-          <Button to="/early-access" variant="small">SIGN UP NOW</Button>
-          <Button to="/early-access" variant="xsmall" className ="text-black">SIGN UP</Button>
+          <Button to="/early-access" variant="small" className="bg-white text-black hover:bg-gray-100">SIGN UP NOW</Button>
+
+
+          //<Button to="/early-access" variant="small">SIGN UP NOW</Button>
+          //<Button to="/early-access" variant="xsmall" className ="text-black">SIGN UP</Button>
         </div>
  
         {/* Mobile Navigation */}
