@@ -53,8 +53,11 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Button to="/early-access" variant="small" className="bg-white text-black hover:bg-gray-100">SIGN UP NOW</Button>
 
 
-          //<Button to="/early-access" variant="small">SIGN UP NOW</Button>
-          //<Button to="/early-access" variant="xsmall" className ="text-black">SIGN UP</Button>
+          /*
+          <Button to="/early-access" variant="small">SIGN UP NOW</Button>
+          <Button to="/early-access" variant="xsmall" className ="text-black">SIGN UP</Button>
+          */
+          
         </div>
  
         {/* Mobile Navigation */}
