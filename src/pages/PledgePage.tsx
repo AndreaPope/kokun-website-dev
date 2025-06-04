@@ -43,8 +43,9 @@ function PledgePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("/public/images/dandelion.jpg")',
+          backgroundImage: 'url("/images/dandelion.jpg")',
           //backgroundImage: 'url("/images/bridgewstones-purchased.jpg")',
+          //adding comments to get a new commit
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
