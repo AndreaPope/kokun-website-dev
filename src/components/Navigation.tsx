@@ -51,6 +51,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
             Inner Circle
           </Link>
           <Button to="/early-access" variant="white">SIGN UP NOW</Button>
+          <Button to="/early-access" variant="xsmall" className ="text-black">SIGN UP</Button>
 
         </div>
  
