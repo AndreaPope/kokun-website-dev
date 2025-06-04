@@ -34,6 +34,7 @@ export default function Button({
     small: "px-4 py-2 rounded-full text-xs font-bold hover:bg-hover bg-primary text-white hidden md:inline-flex",
     xsmall: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover bg-primary text-white md:hidden",
     white: "px-4 py-2 rounded-full text-xs  font-bold hover:bg-hover bg-white text-black hidden md:inline-flex"
+    xsmallwhite: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover bg-white text-black md:hidden",
   };
 
   return (
