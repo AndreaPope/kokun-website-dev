@@ -43,7 +43,7 @@ function PledgePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("/images/dandelion.jpg")',
+          backgroundImage: 'url("/public/images/dandelion.jpg")',
           //backgroundImage: 'url("/images/bridgewstones-purchased.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
