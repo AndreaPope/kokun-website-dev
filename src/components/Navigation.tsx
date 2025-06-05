@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import Button from './Button';
 
 interface NavigationProps {
   className?: string;
@@ -14,11 +15,11 @@ export default function Navigation({ className = '' }: NavigationProps) {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-sm ${className}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm ${className}`}>
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between relative">
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-terracotta"
+          className="md:hidden text-primary"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -27,10 +28,10 @@ export default function Navigation({ className = '' }: NavigationProps) {
 
         {/* Left Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+          <Link to="/" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Home
           </Link>
-          <Link to="/migraine" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+          <Link to="/migraine" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Migraine
           </Link>
         </div>
@@ -45,34 +46,37 @@ export default function Navigation({ className = '' }: NavigationProps) {
         </Link>
 
         {/* Right Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link to="/early-access" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
-            Join Us
+        <div className="flex items-center space-x-4">
+          <Link to="/inner-circle" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Inner Circle
           </Link>
-        </div>
+          <Button to="/early-access" variant="white">SIGN UP NOW</Button>
+          <Button to="/early-access" variant="xsmallwhite">SIGN UP</Button>
 
+        </div>
+ 
         {/* Mobile Navigation */}
-        <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 right-0 flex-col bg-black/60 backdrop-blur-sm`}>
+        <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 right-0 flex-col bg-background backdrop-blur-sm`}>
           <Link 
             to="/" 
-            className="px-4 py-3 text-terracotta hover:bg-black/40"
+            className="px-4 py-3 text-primary hover:bg-black/40"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link 
             to="/migraine" 
-            className="px-4 py-3 text-terracotta hover:bg-black/40"
+            className="px-4 py-3 text-primary hover:bg-black/40"
             onClick={() => setIsOpen(false)}
           >
             Migraine
           </Link>
           <Link 
-            to="/early-access" 
-            className="px-4 py-3 text-terracotta hover:bg-black/40"
+            to="/inner-circle" 
+            className="px-4 py-3 text-primary hover:bg-black/40"
             onClick={() => setIsOpen(false)}
           >
-            Join Us
+            Inner Circle
           </Link>
         </div>
       </nav>

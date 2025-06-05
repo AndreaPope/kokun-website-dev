@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        terracotta: {
-          DEFAULT: '#E07A5F',
-          light: '#F2B5A7',
-        },
+        'primary': 'var(--color-primary)',
+        'secondary': 'var(--color-secondary)',
+        'background': 'var(--color-background)',
+        'hover': 'var(--color-hover)',
+        'text': 'var(--color-text)'
       },
       fontFamily: {
-        'league-spartan': ['"League Spartan"', 'sans-serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'merriweather': ['Merriweather', 'serif'],
+        'league-spartan': ['var(--font-display)'],
+        'sans': ['var(--font-sans)'],
+        'merriweather': ['var(--font-serif)'],
       },
       screens: {
         'xs': '375px',

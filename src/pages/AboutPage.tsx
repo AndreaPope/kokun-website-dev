@@ -16,29 +16,29 @@ function AboutPage() {
           backgroundAttachment: 'fixed',
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-background" />
       </div>
 
       <div className="relative z-10">
-        <header className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-sm">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-sm">
           <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link to="/" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Home</Link>
-              <Link to="/migraine" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Migraine</Link>
+              <Link to="/" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Home</Link>
+              <Link to="/migraine" className="text-primary font-bold hover:text-secondary transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Migraine</Link>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold absolute left-1/2 -translate-x-1/2">
               Kōkūn
             </h1>
             <div className="flex items-center space-x-8">
-              <Link to="/about" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">About Us</Link>
-              <Link to="/early-access" className="text-terracotta font-bold hover:text-terracotta-light transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Join Us</Link>
+              <Link to="/about" className="text-primary font-bold hover:text-secondary transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">About Us</Link>
+              <Link to="/early-access" className="text-primary font-bold hover:text-secondary transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Join Us</Link>
             </div>
           </nav>
         </header>
 
         <div className="pt-16">
           <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
-            <div className="max-w-4xl w-full bg-black/30 p-8 rounded-lg backdrop-blur-sm">
+            <div className="max-w-4xl w-full bg-background p-8 rounded-lg backdrop-blur-sm">
               <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">About Us</h1>
               
               <div className="space-y-8">
@@ -70,7 +70,7 @@ function AboutPage() {
             </div>
           </section>
 
-          <section className="min-h-screen flex flex-col justify-center px-4 py-20 bg-black/30">
+          <section className="min-h-screen flex flex-col justify-center px-4 py-20 bg-background">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8">Who We Are</h2>
               <p className="text-xl mb-12">
@@ -78,7 +78,7 @@ function AboutPage() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-12">
-                <div className="bg-black/30 p-8 rounded-lg backdrop-blur-sm">
+                <div className="bg-background p-8 rounded-lg backdrop-blur-sm">
                   <h3 className="text-2xl font-bold mb-2">SANGITA JAYARAMAN</h3>
                   <p className="text-xl mb-4">Chief Executive Officer</p>
                   <p className="mb-6">
@@ -88,14 +88,14 @@ function AboutPage() {
                     href="https://www.linkedin.com/in/sangitajayaraman/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-terracotta hover:text-terracotta-light transition-colors"
+                    className="inline-flex items-center space-x-2 text-primary hover:text-hover transition-colors"
                   >
                     <Linkedin size={24} />
                     <span>Connect on LinkedIn</span>
                   </a>
                 </div>
 
-                <div className="bg-black/30 p-8 rounded-lg backdrop-blur-sm">
+                <div className="bg-background p-8 rounded-lg backdrop-blur-sm">
                   <h3 className="text-2xl font-bold mb-2">ANDREA POPE</h3>
                   <p className="text-xl mb-4">Chief Technical Officer</p>
                   <p className="mb-6">
@@ -105,7 +105,7 @@ function AboutPage() {
                     href="https://www.linkedin.com/in/andreapope/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-terracotta hover:text-terracotta-light transition-colors"
+                    className="inline-flex items-center space-x-2 text-primary hover:text-secondary transition-colors"
                   >
                     <Linkedin size={24} />
                     <span>Connect on LinkedIn</span>
@@ -123,17 +123,17 @@ function AboutPage() {
             </div>
           </section>
 
-          <footer className="bg-black/60 backdrop-blur-sm py-6 px-4">
+          <footer className="bg-background backdrop-blur-sm py-6 px-4">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
               <div className="text-sm mb-4 md:mb-0">Kōkūn © 2025</div>
               <div className="flex gap-6">
-                <a href="mailto:contact@kokun.com" className="hover:text-gray-300">
+                <a href="mailto:contact@kokun.com" className="hover:text-hover">
                   <Mail size={24} />
                 </a>
-                <a href="https://linkedin.com/company/kokun" className="hover:text-gray-300">
+                <a href="https://linkedin.com/company/kokun" className="hover:text-hover">
                   <Linkedin size={24} />
                 </a>
-                <a href="https://instagram.com/kokun" className="hover:text-gray-300">
+                <a href="https://instagram.com/kokun" className="hover:text-hover">
                   <Instagram size={24} />
                 </a>
               </div>

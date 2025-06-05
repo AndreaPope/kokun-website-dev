@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = "https://bttygghvkqgnxbrhitrf.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0dHlnZ2h2a3FnbnhicmhpdHJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI4MTkyMTQsImV4cCI6MjA1ODM5NTIxNH0.tuM2-IG1I80-YXbiIO78XAi-KvT7uU73kFqjsSYKvPA";
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.error('Missing Supabase environment variables. Please check your .env file.');
@@ -136,20 +136,20 @@ export async function submitWebsiteInput(input: WebsiteInput) {
 
     const { data, error } = await supabase
       .from('website_input')
-      .insert([{
+      .upsert([{
         email: input.email,
         join_us: input.join_us,
         pledge: input.pledge,
         receive_newsletter: input.receive_newsletter,
         pledge_amt: input.pledge_amt || null,
-      }])
-      .select();
+      }], {
+        onConflict: 'email',
+        returning: 'minimal',
+      })
+
 
     if (error) {
       console.error('Supabase error:', error);
-      if (error.code === '23505') {
-        throw new Error('This email has already been registered');
-      }
       throw error;
     }
 

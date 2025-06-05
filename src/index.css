@@ -3,9 +3,40 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: Inter, system-ui, sans-serif;
+  :root {
+    /* Colors */
+    --color-primary: #E2A850; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
+    --color-secondary: #E07A5F; /*link mouseover*/
+    --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
+    --color-text: #FFFFFF;
+    --color-hover: #E07A5F; 
   }
+
+  html {
+    font-family: var(--font-sans);
+    height: 100%;
+    color: var(--color-text);
+  }
+
+  /* Font families */
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-merriweather {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Font variables */
+:root {
+  --font-sans: "Open Sans", system-ui, sans-serif;
+  --font-display: "League Spartan", sans-serif;
+  --font-serif: Merriweather, serif;
 }
 
 html {
@@ -13,12 +44,20 @@ html {
 }
 
 body {
-  @apply antialiased overflow-x-hidden;
+  @apply antialiased overflow-x-hidden min-h-screen;
+  height: 100%;
 }
 
 /* Improve background image handling */
 .fixed.inset-0.z-0 {
-  @apply bg-cover bg-center bg-no-repeat;
+  @apply bg-cover bg-center bg-no-repeat min-h-screen;
+  height: 100vh; /* Fallback for browsers that do not support vh */
+  height: 100dvh; /* Use dynamic viewport height for mobile */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* Optimize background image handling on mobile */
@@ -26,8 +65,8 @@ body {
   .fixed.inset-0.z-0 {
     background-attachment: scroll !important;
     background-position: center center !important;
-    height: 100vh;
-    position: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   
   /* Ensure proper content spacing on mobile */
@@ -38,7 +77,7 @@ body {
 
 /* Prevent horizontal overflow */
 #root {
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden min-h-screen;
 }
 
 /* Improve text readability over images */
@@ -49,7 +88,7 @@ body {
 /* Enhance backdrop blur consistency */
 .backdrop-blur {
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); 
 }
 
 /* Fix dropdown styling */
@@ -64,4 +103,31 @@ select option {
 /* Ensure dropdown text is visible when open */
 select:focus {
   @apply text-white;
+}
+
+/* Quote styling */
+blockquote {
+  @apply relative py-4 px-4 md:px-12 border-l-4;
+  border-color: var(--color-text);
+  border-opacity: 0.3;
+}
+
+blockquote p {
+  @apply relative z-10;
+  color: var(--color-primary);
+}
+
+blockquote p::before {
+  content: '';
+  @apply absolute -left-2 -top-4 text-4xl;
+  color: var(--color-primary);
+  opacity: 0.3;
+  font-family: var(--font-serif);
+}
+
+blockquote p::after {
+  content: attr(data-attribution);
+  @apply block mt-4 text-sm not-italic font-sans;
+  color: var(--color-text);
+  opacity: 0.8;
 }

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import Button from '../components/Button';
+import PageContentWrapper from '../components/PageContentWrapper';
 import { submitWebsiteInput } from '../lib/supabase';
 
 function PledgePage() {
@@ -41,7 +43,8 @@ function PledgePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104717/xyopxkjk6dob5iodjy9n.jpg")',
+          //backgroundImage: 'url("/images/bridgewstones-purchased.jpg")',
+          backgroundImage: 'url("/images/dandelion.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -51,98 +54,100 @@ function PledgePage() {
       <div className="relative z-10">
         <Navigation />
 
-        <main className="flex flex-col items-center justify-center min-h-screen px-4 pb-24 pt-48">
-          <div className="text-6xl md:text-9xl font-bold text-center leading-none mb-12 font-league-spartan">
-            <div style={{ textShadow: '2px 2px 1px rgba(170, 170, 170, 0.2), -2px -2px 1px rgba(170, 170, 170, 0.2), 2px -2px 1px rgba(170, 170, 170, 0.2), -2px 2px 1px rgba(170, 170, 170, 0.2)' }}>PLEDGE</div>
-          </div>
-          
-          <div className="text-4xl md:text-5xl text-center font-bold mb-48 font-league-spartan" style={{ textShadow: '1px 1px 1px rgba(155, 155, 155, 0.4)' }}>
-            <p className="flex items-center justify-center">
-              <span>Be a <span className="text-terracotta">Catalyst</span> for Change</span>
-            </p>
-          </div>
-              
-          <div className="flex justify-center w-full mt-24">
-            <div className="w-[1050px] bg-black/60 backdrop-blur-sm p-12 rounded-lg">
-              <div className="space-y-8 text-xl">
-                <p>
-                  Are you ready to ignite change for the unseen millions? We're launching our beta soon and every dollar counts. By contributing today, your donation will directly fuel our mission to help people with invisible conditions thrive, not just survive.
-                </p>
-
-                <form onSubmit={handleSubmit} className="mt-12 space-y-8">
-                  <div>
-                    <label htmlFor="email" className="block text-base font-medium mb-2">
-                      Email Address*
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-terracotta focus:border-transparent"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="amount" className="block text-base font-medium mb-2">
-                      Pledge Amount <i>(Note, our 501c3 status is in progress.)</i>
-                    </label>
-                    <input
-                      type="number"
-                      id="amount"
-                      required
-                      min="1"
-                      step="1"
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-terracotta focus:border-transparent"
-                      value={formData.amount}
-                      onChange={(e) => setFormData({...formData, amount: e.target.value})}
-                    />
-                  </div>
-
-                  <div className="space-y-4">
-                    <p className="text-base font-medium mb-4">Check the boxes below if you would also like to:</p>
-                    <label className="flex items-start space-x-3">
-                      <input
-                        type="checkbox"
-                        className="mt-1"
-                        checked={formData.newsletter}
-                        onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
-                      />
-                      <span className="text-base">
-                        Sign up for our Newsletter. Stay updated on invisible conditions and Kōkūn's progress.
-                      </span>
-                    </label>
-                    <label className="flex items-start space-x-3">
-                      <input
-                        type="checkbox"
-                        className="mt-1"
-                        checked={formData.earlyAccess}
-                        onChange={(e) => setFormData({...formData, earlyAccess: e.target.checked})}
-                      />
-                      <span className="text-base">
-                        Be a founding member of Kōkūn by signing up for Early Access to our migraine offering.
-                      </span>
-                    </label>
-                  </div>
-
-                  <p className="text-sm text-gray-300 italic">
-                    *By submitting this form, you consent to Kōkūn using your information for the purposes you've selected (early access, pledge, newsletter). Your personal and payment information will be securely processed. You can unsubscribe from communications or opt out of programs at any time by contacting info@kokun.space. Read our full Privacy Policy.
-
-                  </p>
-
-                  <div className="text-center pt-4">
-                    <button
-                      type="submit"
-                      className="bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
-                    >
-                      MAKE YOUR IMPACT
-                    </button>
-                  </div>
-                </form>
+        <main className="min-h-screen px-4 pb-24 pt-64 md:pt-72">
+          <PageContentWrapper className="mb-48 md:mb-64">
+            <div className="font-display text-5xl sm:text-6xl md:text-8xl font-bold text-center leading-tight">
+              <div>
+                PLEDGE
               </div>
             </div>
-          </div>
+            
+            <div className="text-3xl sm:text-4xl md:text-6xl text-center font-bold mb-24 md:mb-32">
+              <p className="flex items-center justify-center">
+                <span>Be a <span className="text-primary">Catalyst for Change</span></span>
+              </p>
+            </div>
+          </PageContentWrapper>
+              
+          <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
+            <div className="space-y-8 text-lg md:text-xl">
+              <p>
+                We're getting ready to launch Kōkūn and every dollar matters. By pledging today, you will directly fuel our mission to help people with invisible conditions thrive.
+              </p>
+              <p>
+                Kōkūn is in the process of establishing itself as a nonprofit—because we believe care should be driven by the needs of those who are suffering, not by profit margins. We're here for those who've been overlooked for too long.
+              </p>
+              <p>
+                Your support isn't just a gift—it's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Pledge now!
+              </p>
+
+              <form onSubmit={handleSubmit} className="mt-12 space-y-8">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-base font-medium mb-2 text-primary">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  />
+                  <p className="text-xs text-gray-300">
+                    We take your privacy seriously and will always handle your information with care. If you ever change your mind and want to opt out, just email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. You can find our full <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Privacy Policy here</a>.
+                  </p>
+                </div>
+
+                <div>
+                  <label htmlFor="amount" className="block text-base font-medium mb-2 text-primary">
+                    Pledge Amount
+                  </label>
+                  <input
+                    type="number"
+                    id="amount"
+                    required
+                    min="1"
+                    step="1"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    value={formData.amount}
+                    onChange={(e) => setFormData({...formData, amount: e.target.value})}
+                  />
+                  <p className="text-xs text-gray-400 mt-2">NOTE: We are in the process of establishing our 501(c)(3) status and will follow up with donation details</p>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-base font-medium mb-4">Check the boxes below if you would also like to</p>
+                  <label className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      className="mt-1"
+                      checked={formData.newsletter}
+                      onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
+                    />
+                    <span className="text-base">
+                      Sign up for our Newsletter. Follow what we're uncovering—from research to real life.
+                    </span>
+                  </label>
+                  <label className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      className="mt-1"
+                      checked={formData.earlyAccess}
+                      onChange={(e) => setFormData({...formData, earlyAccess: e.target.checked})}
+                    />
+                    <span className="text-base">
+                      Sign up for Early Access to Kōkūn. Be among the first to experience what's next in migraine care.
+                    </span>
+                  </label>
+                </div>
+
+                <div className="text-center pt-4">
+                  <Button type="submit">MAKE YOUR IMPACT</Button>
+                </div>
+              </form>
+            </div>
+          </PageContentWrapper>
         </main>
 
         <Footer />
@@ -150,19 +155,13 @@ function PledgePage() {
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-black/70" onClick={handleModalClose} />
-          <div className="relative bg-white text-black p-8 rounded-lg max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4 font-league-spartan">Welcome to the Kōkūn family!</h3>
+          <div className="absolute inset-0 bg-background" onClick={handleModalClose} />
+          <div className="relative bg-white text-black p-8 rounded-lg max-w-md w-full text-center">
+            <h3 className="text-2xl font-bold mb-4 font-display">Welcome to the Kōkūn family!</h3>
             <p className="mb-6">
                We will send you an email confirming your pledge. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
             </p>
-            <button
-              
-              onClick={handleModalClose}
-              className="w-full bg-terracotta text-white w-64 h-12 rounded-full text-base font-semibold hover:bg-terracotta-light transition-colors"
-            >
-              Close
-            </button>
+            <Button onClick={handleModalClose}>CLOSE</Button>
           </div>
         </div>
       )}
