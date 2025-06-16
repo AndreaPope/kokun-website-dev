@@ -31,9 +31,6 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Link to="/" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Home
           </Link>
-          <Link to="/migraine" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
-            Migraine
-          </Link>
         </div>
 
         {/* Center Logo */}
@@ -47,12 +44,11 @@ export default function Navigation({ className = '' }: NavigationProps) {
 
         {/* Right Navigation */}
         <div className="flex items-center space-x-4">
-          <Link to="/inner-circle" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
-            Inner Circle
+          <Link to="/migraine" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Migraine
           </Link>
           <Button to="/early-access" variant="white">SIGN UP NOW</Button>
           <Button to="/early-access" variant="xsmallwhite">SIGN UP</Button>
-
         </div>
  
         {/* Mobile Navigation */}
@@ -70,13 +66,6 @@ export default function Navigation({ className = '' }: NavigationProps) {
             onClick={() => setIsOpen(false)}
           >
             Migraine
-          </Link>
-          <Link 
-            to="/inner-circle" 
-            className="px-4 py-3 text-primary hover:bg-black/40"
-            onClick={() => setIsOpen(false)}
-          >
-            Inner Circle
           </Link>
         </div>
       </nav>
