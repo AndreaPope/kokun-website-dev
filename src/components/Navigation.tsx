@@ -32,7 +32,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
             Home
           </Link>
           <Link to="/migraine" className="text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
-            Migraine
+            Migraine-Test
           </Link>
         </div>
 
