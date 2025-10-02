@@ -75,10 +75,10 @@ function PledgePage() {
                 We're getting ready to launch Kōkūn and every dollar matters. By pledging today, you will directly fuel our mission to help people with invisible conditions thrive.
               </p>
               <p>
-                Kōkūn is in the process of establishing itself as a nonprofit—because we believe care should be driven by the needs of those who are suffering, not by profit margins. We're here for those who've been overlooked for too long.
+                Kōkūn is a nonprofit because we believe care should be driven by the needs of those who are suffering, not by profit margins. We're here for those who've been overlooked for too long.
               </p>
               <p>
-                Your support isn't just a gift—it's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Pledge now!
+                Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Pledge now!
               </p>
 
               <form onSubmit={handleSubmit} className="mt-12 space-y-8">
@@ -113,7 +113,6 @@ function PledgePage() {
                     value={formData.amount}
                     onChange={(e) => setFormData({...formData, amount: e.target.value})}
                   />
-                  <p className="text-xs text-gray-400 mt-2">NOTE: We are in the process of establishing our 501(c)(3) status and will follow up with donation details</p>
                 </div>
 
                 <div className="space-y-4">
