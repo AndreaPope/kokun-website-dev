@@ -9,6 +9,7 @@ import Alt_MigrainePage from './pages/Alt_MigrainePage';
 import InnerCirclePage from './pages/InnerCirclePage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookieNoticePage from './pages/CookieNoticePage';
+import BlogPage from './pages/BlogPage';
 import ScrollToTop from './components/ScrollToTop';
 import { testConnection } from './lib/supabase';
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/inner-circle" element={<InnerCirclePage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/cookie-notice" element={<CookieNoticePage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
     </>
   );

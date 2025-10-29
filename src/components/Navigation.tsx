@@ -47,25 +47,35 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Link to="/migraine" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Migraine
           </Link>
+          <Link to="/blog" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Blog
+          </Link>
           <Button to="/early-access" variant="white">SIGN UP NOW</Button>
           <Button to="/early-access" variant="xsmallwhite">SIGN UP</Button>
         </div>
  
         {/* Mobile Navigation */}
         <div className={`${isOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 right-0 flex-col bg-background backdrop-blur-sm`}>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="px-4 py-3 text-primary hover:bg-black/40"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
-          <Link 
-            to="/migraine" 
+          <Link
+            to="/migraine"
             className="px-4 py-3 text-primary hover:bg-black/40"
             onClick={() => setIsOpen(false)}
           >
             Migraine
+          </Link>
+          <Link
+            to="/blog"
+            className="px-4 py-3 text-primary hover:bg-black/40"
+            onClick={() => setIsOpen(false)}
+          >
+            Blog
           </Link>
         </div>
       </nav>
