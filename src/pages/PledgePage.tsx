@@ -72,7 +72,7 @@ function PledgePage() {
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <div className="space-y-8 text-lg md:text-xl">
               <p>
-                We're getting ready to launch Kōkūn and every dollar matters. By pledging today, you will directly fuel our mission to help people with invisible conditions thrive.
+                We're getting ready to launch Kōkūn and every dollar matters. By donating today, you will directly fuel our mission to help people with invisible conditions thrive.
               </p>
               <p>
                 Kōkūn is a nonprofit because we believe care should be driven by the needs of those who are suffering, not by profit margins. We're here for those who've been overlooked for too long.
