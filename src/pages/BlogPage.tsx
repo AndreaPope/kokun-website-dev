@@ -141,7 +141,6 @@ function BlogPage() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
                   Ready to take action? Start here
                 </h2>
-                {/* <ul className="list-disc list-inside space-y-3 ml-4"> */}
                 <ul className="list-disc list-outside pl-6 space-y-4"></ul>
                   <li>
                     <strong>Track what matters.</strong> Keep a simple record of your triggers, symptoms, and which tasks are most affected.
