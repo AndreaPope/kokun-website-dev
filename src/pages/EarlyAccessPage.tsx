@@ -130,13 +130,13 @@ export default function EarlyAccessPage() {
                         onChange={(e) => setFormData({...formData, pledge: e.target.checked, pledgeAmount: e.target.checked ? formData.pledgeAmount : ''})}
                       />
                       <span className="text-base">
-                        Pledge to Kōkūn. Help ignite change for the unseen millions.
+                        Donate to Kōkūn. Help ignite change for the unseen millions.
                       </span>
                     </label>
                     {formData.pledge && (
                       <div className="pl-6">
                         <label htmlFor="pledgeAmount" className="block text-sm font-medium mb-1">
-                          Pledge Amount
+                          Donation Amount
                         </label>
                         <input
                           type="number"

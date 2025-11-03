@@ -58,7 +58,7 @@ function PledgePage() {
           <PageContentWrapper className="mb-48 md:mb-64">
             <div className="font-display text-5xl sm:text-6xl md:text-8xl font-bold text-center leading-tight">
               <div>
-                PLEDGE
+                DONATE
               </div>
             </div>
             
@@ -78,7 +78,7 @@ function PledgePage() {
                 Kōkūn is a nonprofit because we believe care should be driven by the needs of those who are suffering, not by profit margins. We're here for those who've been overlooked for too long.
               </p>
               <p>
-                Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Pledge now!
+                Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Donate now!
               </p>
 
               <form onSubmit={handleSubmit} className="mt-12 space-y-8">
@@ -101,7 +101,7 @@ function PledgePage() {
 
                 <div>
                   <label htmlFor="amount" className="block text-base font-medium mb-2 text-primary">
-                    Pledge Amount
+                    Donation Amount
                   </label>
                   <input
                     type="number"
@@ -158,7 +158,7 @@ function PledgePage() {
           <div className="relative bg-white text-black p-8 rounded-lg max-w-md w-full text-center">
             <h3 className="text-2xl font-bold mb-4 font-display">Welcome to the Kōkūn family!</h3>
             <p className="mb-6">
-               We will send you an email confirming your pledge. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
+               We will send you an email confirming your donation. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
             </p>
             <Button onClick={handleModalClose}>CLOSE</Button>
           </div>
