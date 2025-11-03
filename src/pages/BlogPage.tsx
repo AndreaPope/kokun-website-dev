@@ -160,7 +160,7 @@ function BlogPage() {
                       href="https://askjan.org/disabilities/Migraines.cfm"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:text-hover underline"
+                      className="text-primary hover"
                     >
                       ADA
                     </a>
