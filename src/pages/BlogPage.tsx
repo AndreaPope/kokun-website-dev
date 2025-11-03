@@ -24,7 +24,7 @@ function BlogPage() {
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white font-display">
-              From Stigma to Support: What You Can Do About Migraine at Work
+              Rethinking Migraine at Work: From Stigma to Support
             </h1>
 
             <div className="space-y-8 text-lg md:text-xl">
@@ -60,7 +60,7 @@ function BlogPage() {
                   >
                     often peaks
                   </a>{' '}
-                  during prime career years. Because women are{' '}
+                  during prime career years, disproportionately impacting women, who are,{' '}
                   <a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7642465/"
                     target="_blank"
@@ -69,7 +69,7 @@ function BlogPage() {
                   >
                     three to four times more likely
                   </a>{' '}
-                  to experience migraine than men, treating it as "just a health issue" misses important equity implications. When a condition is invisible, misunderstanding fills the gap. That misunderstanding can quietly shape how people are treated, creating small daily barriers that make it harder to do their best work.
+                  to experience migraine than men. When a condition is invisible, misunderstanding fills the gap. That misunderstanding can quietly shape how people are treated, creating everyday barriers that make it harder to do their best work.
                 </p>
               </div>
 
@@ -96,54 +96,46 @@ function BlogPage() {
                   >
                     only about 22%
                   </a>{' '}
-                  of employers believe migraine is a valid reason to stay home. This shows us that the issue is a lack of awareness and support, not a lack of commitment.
+                  of employers believe migraine is a valid reason to stay home. Change starts with understanding what migraine really is, and comes to life when we put it into practice.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
-                  How did we get here?
+                  So, when bias shows up in everyday ways, here's how we respond
                 </h2>
                 <p>
-                  Skepticism about migraine has deep roots.{' '}
-                  <a
-                    href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11396411/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
-                  >
-                    For centuries
-                  </a>
-                  , women's symptoms were labeled as signs of fragility or emotional instability, while men with similar experiences were described as simply overworked. Early research often reflected those same biases, and traces of that thinking remain today. Migraine is still too often minimized or dismissed, especially since most people living with migraine are women.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
-                  When bias shows up in everyday ways, here's how to respond
-                </h2>
-                <p>
-                  Stigma rarely looks like open criticism. More often, it hides in everyday routines and policies that quietly make work harder than it needs to be. That is why advocating for yourself matters. The encouraging news is that most changes that support people with migraine are simple and low cost. Many cost nothing, and the{' '}
+                  Stigma rarely looks like open criticism. More often, it hides in everyday routines and 
+                  policies that quietly make work harder than it needs to be. That is why advocating for 
+                  yourself matters. The encouraging news is that most changes which support people with 
+                  migraine are simple and low cost. Many cost nothing, and the{' '}
                   <a
                     href="https://www.dol.gov/agencies/odep/ada/MythsandFacts"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-hover underline"
                   >
-                    rest average around $500
+                    rest average around $500.
                   </a>
-                  .
                 </p>
+                <p>
+                  Small adjustments can make a big difference. Softer or filtered lighting, an anti-glare screen, 
+                  a quiet space to step away, fragrance-smart practices, or the option to work remotely all help reduce 
+                  triggers and make work more manageable. These are not special favors; they’re practical ways to create a 
+                  healthier workplace for everyone. It’s the “{' '}
+                  <a
+                    href="https://ssir.org/articles/entry/the_curb_cut_effect"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-hover underline"
+                  >
+                    curb-cut effect.
+                  </a>
+                  " in action, where removing barriers for one group improves the environment for all.
+                </p>
+
               </div>
 
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
-                  Small adjustments can make a big difference
-                </h2>
-                <p>
-                  Softer or filtered lighting, an anti-glare screen, a quiet space to step away, fragrance-smart practices, or the option to work remotely all help reduce triggers and make work more manageable. These are not special favors. They are practical ways to create a healthier workplace for everyone, harnessing the "curb-cut effect," where removing barriers for one group ends up improving the environment for all.
-                </p>
-              </div>
 
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
@@ -157,7 +149,7 @@ function BlogPage() {
                     <strong>Prepare one clear ask.</strong> Try framing it this way: "Here's what helps me do my best work when symptoms flare: [lighting change, quiet space, short break, flexible start time]."
                   </li>
                   <li>
-                    <strong>Optimize your setup.</strong> Make small changes now: adjust lighting and screen settings, use an anti-glare filter, reduce noise, and avoid fragrance.
+                    <strong>Start with what’s within your control.</strong> Make small changes: Make small adjustments: change screen settings, use an anti-glare filter, try noise-cancelling headphones—whatever works best for you.
                   </li>
                   <li>
                     <strong>Request support early.</strong> Reach out to your manager or HR with the tasks impacted and the specific adjustments that would help.
@@ -178,7 +170,7 @@ function BlogPage() {
                     <strong>Use your benefits.</strong> Look into health plan resources like specialty care, virtual visits, or migraine screening tools.
                   </li>
                   <li>
-                    <strong>Promote awareness.</strong> Suggest adding migraine-smart practices to team trainings or Employee Resource Group events.
+                    <strong>Engage in conversation.</strong>  In the right environments, self-advocacy and open dialogue can help spark meaningful change.
                   </li>
                 </ul>
               </div>
