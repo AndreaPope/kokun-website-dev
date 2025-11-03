@@ -136,7 +136,7 @@ function HomePage() {
                 </div>
                 
                 <div className="flex flex-col items-center">
-                  <Button to="/pledge" className="mb-3">PLEDGE</Button>
+                  <Button to="/pledge" className="mb-3">DONATE</Button>
                   <p className="text-sm max-w-[200px]">Make a gift to ignite change for the unseen millions</p>
                 </div>
                 
