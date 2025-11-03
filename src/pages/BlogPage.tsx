@@ -38,7 +38,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/33882816/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     most common
                   </a>{' '}
@@ -47,7 +47,7 @@ function BlogPage() {
                     href="https://www.ajmc.com/view/estimating-the-economic-burden-of-migraine-on-us-employers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     one in five
                   </a>{' '}
@@ -56,7 +56,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/12085478/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     often peaks
                   </a>{' '}
@@ -65,7 +65,7 @@ function BlogPage() {
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7642465/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     three to four times more likely
                   </a>{' '}
@@ -83,7 +83,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/30739216/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     More than half
                   </a>{' '}
@@ -92,7 +92,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/18617829/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     only about 22%
                   </a>{' '}
@@ -113,7 +113,7 @@ function BlogPage() {
                     href="https://www.dol.gov/agencies/odep/ada/MythsandFacts"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     rest average around $500.
                   </a>
@@ -127,7 +127,7 @@ function BlogPage() {
                     href="https://ssir.org/articles/entry/the_curb_cut_effect"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:text-hover underline"
+                    className="text-primary hover"
                   >
                     curb-cut effect.
                   </a>
