@@ -23,7 +23,7 @@ function BlogPage() {
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white font-display">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-white font-display">
               Rethinking Migraine at Work: From Stigma to Support
             </h1>
 
@@ -141,7 +141,8 @@ function BlogPage() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
                   Ready to take action? Start here
                 </h2>
-                <ul className="list-disc list-inside space-y-3 ml-4">
+                {/* <ul className="list-disc list-inside space-y-3 ml-4"> */}
+                <ul className="list-disc list-outside pl-6 space-y-4"></ul>
                   <li>
                     <strong>Track what matters.</strong> Keep a simple record of your triggers, symptoms, and which tasks are most affected.
                   </li>
