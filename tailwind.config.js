@@ -10,6 +10,7 @@ export default {
         'background': 'var(--color-background)',
         'hover': 'var(--color-hover)',
         'hover-text': 'var(--color-hover-text)',
+        'button-hover': 'var(--color-button-hover)',
         'text': 'var(--color-text)',
         'link': 'var(--color-link)',
       },
