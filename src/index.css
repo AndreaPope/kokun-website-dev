@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Colors */
-    --color-primary: #BFE998; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
+    --color-primary: #Ead7b2; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
     --color-secondary: #557630; /*link mouseover*/
     --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
     --color-background-mobile: rgba(0, 0, 0, 0.8);  /* Even darker for mobile */
