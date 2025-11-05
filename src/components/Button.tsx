@@ -30,9 +30,9 @@ export default function Button({
 
   const baseStyles = "font-sans text-center transition-colors";
   const variantStyles = {
-    default: "w-52 md:w-56 h-12 rounded-full text-base font-semibold hover:bg-hover hover:bg-hover-text transition-colors duration-200 bg-button text-white",
-    small: "px-4 py-2 rounded-full text-xs font-bold hover:bg-hover bg-button hover:bg-hover-text transition-colors duration-200 text-white hidden md:inline-flex",
-    xsmall: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover hover:bg-hover-text transition-colors duration-200 bg-button text-white md:hidden",
+    default: "w-52 md:w-56 h-12 rounded-full text-base font-semibold bg-button text-white hover:bg-hover hover:text-hover-text transition-colors duration-200"
+    small: "px-4 py-2 rounded-full text-xs font-bold hover:bg-hover bg-button hover:text-hover-text transition-colors duration-200 text-white hidden md:inline-flex",
+    xsmall: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover hover:text-hover-text transition-colors duration-200 bg-button text-white md:hidden",
     white: "px-4 py-2 rounded-full text-xs  font-bold hover:bg-hover hover:text-white bg-white text-black hidden md:inline-flex",
     xsmallwhite: "px-3 py-1 rounded-full text-[10px] font-bold hover:bg-hover hover:text-white bg-white text-black md:hidden",
   };
