@@ -65,7 +65,7 @@ function HomePage() {
               </blockquote>
 
               <p>
-                At Kōkūn, we see you. Starting with <Link to="/migraine" className="text-link hover:text-hover">migraine</Link>—one of the most common yet misunderstood invisible conditions—we're shining a light on what has been in the shadows for too long. Join us on this journey to make the invisible visible.
+                At Kōkūn, we see you. Starting with <Link to="/migraine" className="text-link hover:text-hover-text">migraine</Link>—one of the most common yet misunderstood invisible conditions—we're shining a light on what has been in the shadows for too long. Join us on this journey to make the invisible visible.
               </p>
 
               <div className="text-center pt-8">
