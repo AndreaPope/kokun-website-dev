@@ -23,13 +23,13 @@ function BlogPage() {
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-white font-display">
+            <h1 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
               Rethinking Migraine at Work: From Stigma to Support
             </h1>
 
             <div className="space-y-8 text-lg md:text-xl">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   Migraine at work. It's more than just a health issue
                 </h2>
                 <p>
@@ -119,6 +119,7 @@ function BlogPage() {
                     rest average around $500.
                   </a>
                 </p>
+                <br></br>
                 <p>
                   Small adjustments can make a big difference. Softer or filtered lighting, an anti-glare screen, 
                   a quiet space to step away, fragrance-smart practices, or the option to work remotely all help reduce 
@@ -130,7 +131,7 @@ function BlogPage() {
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >
-                    curb-cut effect.
+                  curb-cut effect
                   </a>
                   " in action, where removing barriers for one group improves the environment for all.
                 </p>
