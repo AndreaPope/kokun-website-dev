@@ -6,10 +6,6 @@ import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
 import { submitWebsiteInput } from '../lib/supabase';
 
-<script>(function() { var d = document, fr = d.createElement('script'); fr.type = 'text/javascript'; 
-fr.async = true; fr.src = 'https://static.fundrazr.com/widgets/loader.js'; 
-var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();
-</script>
 
 function PledgePage() {
   const navigate = useNavigate();
