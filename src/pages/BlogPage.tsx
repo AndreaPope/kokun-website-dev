@@ -124,14 +124,13 @@ function BlogPage() {
                   Small adjustments can make a big difference. Softer or filtered lighting, an anti-glare screen, 
                   a quiet space to step away, fragrance-smart practices, or the option to work remotely all help reduce 
                   triggers and make work more manageable. These are not special favors; they’re practical ways to create a 
-                  healthier workplace for everyone. It’s the“{' '}
+                  healthier workplace for everyone. It’s the “{' '}
                   <a
                     href="https://ssir.org/articles/entry/the_curb_cut_effect"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >
-                  curb-cut effect
+                  >curb-cut effect
                   </a>
                   " in action, where removing barriers for one group improves the environment for all.
                 </p>
