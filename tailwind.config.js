@@ -9,7 +9,7 @@ export default {
         'secondary': 'var(--color-secondary)',
         'background': 'var(--color-background)',
         'hover': 'var(--color-hover)',
-        'hover-text': 'var(--color-hover-text)', // ✅ matches index.css
+        'hover-text': 'var(--color-hover-text)',
         'text': 'var(--color-text)'
       },
       fontFamily: {
