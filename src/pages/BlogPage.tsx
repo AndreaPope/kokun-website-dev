@@ -39,7 +39,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/33882816/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     most common
                   </a>{' '}
@@ -48,7 +48,7 @@ function BlogPage() {
                     href="https://www.ajmc.com/view/estimating-the-economic-burden-of-migraine-on-us-employers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     one in five
                   </a>{' '}
@@ -57,7 +57,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/12085478/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     often peaks
                   </a>{' '}
@@ -66,7 +66,7 @@ function BlogPage() {
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7642465/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     three to four times more likely
                   </a>{' '}
@@ -93,7 +93,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/18617829/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     only about 22%
                   </a>{' '}
@@ -114,7 +114,7 @@ function BlogPage() {
                     href="https://www.dol.gov/agencies/odep/ada/MythsandFacts"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     rest average around $500.
                   </a>
@@ -128,7 +128,7 @@ function BlogPage() {
                     href="https://ssir.org/articles/entry/the_curb_cut_effect"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     curb-cut effect.
                   </a>
@@ -161,7 +161,7 @@ function BlogPage() {
                       href="https://askjan.org/disabilities/Migraines.cfm"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-link hover:text-hover-text transition-colors duration-200"
+                      className="text-link hover:text-hover transition-colors duration-200"
                     >
                       ADA
                     </a>

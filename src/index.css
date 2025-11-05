@@ -11,9 +11,9 @@
     --color-background-mobile: rgba(0, 0, 0, 0.8);  /* Even darker for mobile */
     --color-link: #Ead7b2;
     --color-text: #FFFFFF;
-    --color-hover: #Ead7b2;
+    --color-hover: #C46A3D;
     --color-button: #557630;
-    --color-hover-text: #C46A3D;
+    --color-hover-text: #0F130B;
   }
 
   html {
