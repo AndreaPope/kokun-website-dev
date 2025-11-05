@@ -34,16 +34,15 @@ function BlogPage() {
                 </h2>
                 <p>
                   Did you know migraine is one of the
-                  <Link to=https://pubmed.ncbi.nlm.nih.gov/33882816/ className="text-link hover:text-hover">most common</Link>
-                  {/* Did you know migraine is one of the{' '}
+                  Did you know migraine is one of the{' '}
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/33882816/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover"
+                    className="text-link"
                   >
                     most common
-                  </a>{' '} */}
+                  </a>{' '}
                   neurological conditions? But despite how common it is, it remains poorly understood, especially in the workplace. Roughly{' '}
                   <a
                     href="https://www.ajmc.com/view/estimating-the-economic-burden-of-migraine-on-us-employers"
