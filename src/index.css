@@ -10,7 +10,8 @@
     --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
     --color-background-mobile: rgba(0, 0, 0, 0.8);  /* Even darker for mobile */
     --color-text: #FFFFFF;
-    --color-hover: #E2A850; 
+    --color-hover: #F2D275;
+    --color-button: #557630;
   }
 
   html {
