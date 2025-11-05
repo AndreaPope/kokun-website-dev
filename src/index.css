@@ -9,11 +9,11 @@
     --color-secondary: #557630; /*link mouseover*/
     --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
     --color-background-mobile: rgba(0, 0, 0, 0.8);  /* Even darker for mobile */
-    --color-link: #Ead7b2;
+    --color-link: #BC9C97;
     --color-text: #FFFFFF;
     --color-hover: #C46A3D;
     --color-button: #557630;
-    --color-button-hover: #F2D275;
+    --color-button-hover: #Ead7b2;
     --color-hover-text: #0F130B;
   }
 
