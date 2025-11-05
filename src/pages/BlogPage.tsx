@@ -75,7 +75,7 @@ function BlogPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   Stigma costs us all
                 </h2>
                 <p>
@@ -102,7 +102,7 @@ function BlogPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   So, when bias shows up in everyday ways, here's how we respond
                 </h2>
                 <p>
@@ -124,7 +124,7 @@ function BlogPage() {
                   Small adjustments can make a big difference. Softer or filtered lighting, an anti-glare screen, 
                   a quiet space to step away, fragrance-smart practices, or the option to work remotely all help reduce 
                   triggers and make work more manageable. These are not special favors; they’re practical ways to create a 
-                  healthier workplace for everyone. It’s the “{' '}
+                  healthier workplace for everyone. It’s the“{' '}
                   <a
                     href="https://ssir.org/articles/entry/the_curb_cut_effect"
                     target="_blank"
@@ -140,7 +140,7 @@ function BlogPage() {
 
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   Ready to take action? Start here
                 </h2>
                 <ul className="list-disc list-outside pl-6 space-y-4">
@@ -178,7 +178,7 @@ function BlogPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-primary">
+                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   The larger lesson
                 </h2>
                 <p>
