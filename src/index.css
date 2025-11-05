@@ -5,12 +5,12 @@
 @layer base {
   :root {
     /* Colors */
-    --color-primary: #E2A850; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
-    --color-secondary: #E07A5F; /*link mouseover*/
+    --color-primary: #BFE998; /*#F2B44E:Marigold #E2A850: Wheat gold #E07A5F:Terracotta #F2B5A7: Light Terracotta*/
+    --color-secondary: #557630; /*link mouseover*/
     --color-background: rgba(0, 0, 0, 0.6);  /* Increased opacity for darker overlay */
     --color-background-mobile: rgba(0, 0, 0, 0.8);  /* Even darker for mobile */
     --color-text: #FFFFFF;
-    --color-hover: #E07A5F; 
+    --color-hover: #E2A850; 
   }
 
   html {

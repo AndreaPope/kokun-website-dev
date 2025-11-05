@@ -118,9 +118,6 @@ function PledgePage() {
                   />
                 </div>
 
-                <div className="fr-widget" data-key="kokunwide_widget_2025" data-organization="fItA6">
-                <img src="//static.fundrazr.com/widgets/loader.gif" /></div>
-
                 <div className="space-y-4">
                   <p className="text-base font-medium mb-4">Check the boxes below if you would also like to</p>
                   <label className="flex items-start space-x-3">
