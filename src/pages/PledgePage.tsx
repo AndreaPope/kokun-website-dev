@@ -169,8 +169,8 @@ function PledgePage() {
       )}
     </div>
 
-    <div class="fr-widget" data-key="kokunwide_widget_2025" data-organization="fItA6" >
-      <img src="//static.fundrazr.com/widgets/loader.gif"/>
+    <div className="fr-widget" data-key="kokunwide_widget_2025" data-organization="fItA6">
+      <img src="//static.fundrazr.com/widgets/loader.gif" />
     </div>
   );
 }
