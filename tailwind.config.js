@@ -10,7 +10,8 @@ export default {
         'background': 'var(--color-background)',
         'hover': 'var(--color-hover)',
         'hover-text': 'var(--color-hover-text)',
-        'text': 'var(--color-text)'
+        'text': 'var(--color-text)',
+        'link': 'var(--color-link)',
       },
       fontFamily: {
         'league-spartan': ['var(--font-display)'],
