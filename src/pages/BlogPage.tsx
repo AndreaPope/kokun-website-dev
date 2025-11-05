@@ -33,15 +33,8 @@ function BlogPage() {
                   Migraine at work. It's more than just a health issue
                 </h2>
                 <p>
-                  Did you know migraine is one of the{' '}
-                  <a
-                    href="https://pubmed.ncbi.nlm.nih.gov/33882816/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover"
-                  >
-                    most common
-                  </a>{' '}
+                  Did you know migraine is one of the 
+                  <Link to="https://pubmed.ncbi.nlm.nih.gov/33882816/" className="text-link hover:text-hover">most common</Link>
                   neurological conditions? But despite how common it is, it remains poorly understood, especially in the workplace. Roughly{' '}
                   <a
                     href="https://www.ajmc.com/view/estimating-the-economic-burden-of-migraine-on-us-employers"
