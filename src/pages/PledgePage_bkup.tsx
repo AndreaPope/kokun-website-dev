@@ -1,30 +1,43 @@
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
-// submitWebsiteInput removed because the inline form is inactive
-
+import { submitWebsiteInput } from '../lib/supabase';
 
 
 function PledgePage() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+    amount: '',
+    newsletter: false,
+    earlyAccess: false
+  });
 
-  // Form submission is disabled — form UI is kept commented out for later use.
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await submitWebsiteInput({
+        email: formData.email,
+        join_us: formData.earlyAccess,
+        pledge: true,
+        pledge_amt: parseFloat(formData.amount),
+        receive_newsletter: formData.newsletter
+      });
+      setShowModal(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your form. Please try again.');
+    }
+  };
 
   const handleModalClose = () => {
     setShowModal(false);
     navigate('/');
   };
-
-  // Load/refresh FundRazr widget when the component mounts.
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).FundRazr && typeof (window as any).FundRazr.widgetLoader === 'function') {
-      (window as any).FundRazr.widgetLoader();
-    }
-  }, []);
 
   
 
@@ -71,7 +84,7 @@ function PledgePage() {
                 Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Donate now!
               </p>
 
-              {/* <form onSubmit={handleSubmit} className="mt-12 space-y-8">
+              <form onSubmit={handleSubmit} className="mt-12 space-y-8">
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-base font-medium mb-2 text-primary">
                     Email Address
@@ -129,12 +142,12 @@ function PledgePage() {
                       Sign up for Early Access to Kōkūn. Be among the first to experience what's next in migraine care.
                     </span>
                   </label>
-                </div> */}
-
+                </div>
 
                 <div className="text-center pt-4">
-                  <Button onClick={() => window.open('https://fnd.us/kokun-2025/pay', '_blank', 'noopener')}>MAKE YOUR IMPACT</Button>
+                  <Button type="submit">MAKE YOUR IMPACT</Button>
                 </div>
+              </form>
             </div>
           </PageContentWrapper>
         </main>
