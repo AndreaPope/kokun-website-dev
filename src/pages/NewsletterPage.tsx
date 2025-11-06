@@ -1,42 +1,23 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { /* useNavigate */ } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
-import { submitWebsiteInput } from '../lib/supabase';
+// Replace this URL with your Mailchimp (or other) subscribe URL
+const MAILCHIMP_SUBSCRIBE_URL = 'https://space.us2.list-manage.com/subscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0';
 
 function NewsletterPage() {
-  const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
+  // navigation removed (no internal navigation needed for external subscribe)
   const [formData, setFormData] = useState({
     email: '',
     earlyAccess: false,
     pledge: false,
     pledgeAmount: ''
   });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await submitWebsiteInput({
-        email: formData.email,
-        join_us: formData.earlyAccess,
-        pledge: formData.pledge,
-        receive_newsletter: true,
-        pledge_amt: formData.pledge ? parseFloat(formData.pledgeAmount) : 0
-      });
-      setShowModal(true);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting your form. Please try again.');
-    }
-  };
-
-  const handleModalClose = () => {
-    setShowModal(false);
-    navigate('/');
-  };
+  // Note: We keep local form state in case you want to prefill the Mailchimp
+  // form or keep these checkboxes locally. The CTA below now sends the user
+  // to an external subscribe page in a new tab instead of submitting to
+  // Supabase.
 
   return (
     <div className="relative min-h-screen font-sans text-white">
@@ -77,74 +58,71 @@ function NewsletterPage() {
                 Join a growing movement of advocates, patients, and changemakers who want to stay connected to the breakthroughs, questions, and quiet revolutions shaping care from the inside out.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-12 space-y-8">
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-base font-medium mb-2 text-primary">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                  <p className="text-xs text-gray-400">
-                    We take your privacy seriously and will always handle your information with care. If you ever change your mind and want to opt out, just email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. You can find our full <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Privacy Policy here</a>.
-                  </p>
-                </div>
+              {/*
+                Inactive form (kept in source but commented out).
+                To re-enable later, remove the surrounding comment markers.
 
-                <div className="space-y-4">
-                  <p className="text-base font-medium mb-4 text-primary">Check the boxes below if you would also like to</p>
-                  <label className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      className="mt-1"
-                      checked={formData.earlyAccess}
-                      onChange={(e) => setFormData({...formData, earlyAccess: e.target.checked})}
-                    />
-                    <span className="text-base">
-                      Sign up for Early Access to Kōkūn. Be among the first to experience what's next in migraine care.
-                    </span>
-                  </label>
+                <form className="mt-6 space-y-6" onSubmit={(e) => e.preventDefault()} aria-hidden>
                   <div className="space-y-2">
-                    <label className="flex items-start space-x-3">
-                      <input
-                        type="checkbox"
-                        className="mt-1"
-                        checked={formData.pledge}
-                        onChange={(e) => setFormData({...formData, pledge: e.target.checked, pledgeAmount: e.target.checked ? formData.pledgeAmount : ''})}
-                      />
-                      <span className="text-base">
-                        Pledge to Kōkūn. Ignite change for the unseen millions.
-                      </span>
-                    </label>
-                    {formData.pledge && (
-                      <div className="pl-6">
-                        <label htmlFor="pledgeAmount" className="block text-sm font-medium mb-1">
-                          Pledge Amount
-                        </label>
-                        <input
-                          type="number"
-                          id="pledgeAmount"
-                          required
-                          min="1"
-                          step="1"
-                          className="w-full md:w-48 px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={formData.pledgeAmount}
-                          onChange={(e) => setFormData({...formData, pledgeAmount: e.target.value})}
-                        />
-                        <p className="text-xs text-gray-400 mt-1">NOTE: We are in the process of establishing our 501(c)(3) status and will follow up with donation details</p>
-                      </div>
-                    )}
+                    <label htmlFor="email" className="block text-base font-medium mb-2 text-primary">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      disabled
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 cursor-not-allowed"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
+                    <p className="text-xs text-gray-400">This form is currently inactive. Use the Subscribe button below to open the external subscribe page.</p>
                   </div>
-                </div>
 
-                <div className="text-center pt-4">
-                  <Button type="submit">SUBSCRIBE NOW</Button>
-                </div>
-              </form>
+                  <div className="space-y-4">
+                    <p className="text-base font-medium mb-4 text-primary">Optional preferences</p>
+                    <label className="flex items-start space-x-3 opacity-60">
+                      <input type="checkbox" className="mt-1" disabled checked={formData.earlyAccess} />
+                      <span className="text-base">Sign up for Early Access</span>
+                    </label>
+
+                    <label className="flex items-start space-x-3 opacity-60">
+                      <input type="checkbox" className="mt-1" disabled checked={formData.pledge} />
+                      <span className="text-base">Pledge to Kōkūn</span>
+                    </label>
+
+                    <div>
+                      <label htmlFor="pledgeAmount" className="block text-sm font-medium mb-1">Pledge Amount</label>
+                      <input
+                        id="pledgeAmount"
+                        type="number"
+                        disabled
+                        className="w-full md:w-48 px-4 py-2 rounded-lg bg-white/5 border border-white/10 cursor-not-allowed"
+                        value={formData.pledgeAmount}
+                        onChange={(e) => setFormData({...formData, pledgeAmount: e.target.value})}
+                      />
+                    </div>
+
+                    <div className="pt-4 text-center">
+                      <button type="button" disabled className="w-52 md:w-56 h-12 rounded-full bg-white/10 text-white cursor-not-allowed">SUBSCRIBE (disabled)</button>
+                    </div>
+                  </div>
+                </form>
+              */}
+
+              <div className="text-center pt-4">
+                <a
+                  href={MAILCHIMP_SUBSCRIBE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-center transition-colors w-52 md:w-56 h-12 rounded-full text-base font-semibold hover:bg-hover bg-primary text-white inline-flex items-center justify-center"
+                >
+                  SUBSCRIBE NOW
+                </a>
+              </div>
+
+              <div className="text-center pt-4" />
+
+              <p className="text-xs text-gray-400">
+                We take your privacy seriously and will always handle your information with care. If you ever change your mind and want to opt out, just email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. You can find our full <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Privacy Policy here</a>.
+              </p>
             </div>
           </PageContentWrapper>
         </main>
@@ -152,18 +130,7 @@ function NewsletterPage() {
         <Footer />
       </div>
 
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          <div className="absolute inset-0 bg-background" onClick={handleModalClose} />
-          <div className="relative bg-white text-black p-8 rounded-lg max-w-md w-full text-center">
-            <h3 className="text-2xl font-bold mb-4 font-display">Thank you for subscribing!</h3>
-            <p className="mb-6">
-              Welcome to the Kōkūn family! We will send you an email confirming your subscription. Please check your inbox for our confirmation email and mark it as 'not spam' or add us to your contacts to ensure you receive all future updates.
-            </p>
-            <Button onClick={handleModalClose}>CLOSE</Button>
-          </div>
-        </div>
-      )}
+      {/* Modal removed — external Mailchimp flow opens in a new tab */}
     </div>
   );
 }
