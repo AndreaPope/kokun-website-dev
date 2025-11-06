@@ -108,6 +108,7 @@ export default function EarlyAccessPage() {
                   </div>
                 )}
 
+                {/*
                 <div className="space-y-4">
                   <p className="text-base font-medium mb-4 text-primary">Check the boxes below if you would also like to</p>
                   <label className="flex items-start space-x-3">
@@ -153,6 +154,7 @@ export default function EarlyAccessPage() {
                     )}
                   </div>
                 </div>
+                */}
 
                 <div className="text-center pt-4">
                   <Button type="submit">JOIN THE MOVEMENT</Button>
