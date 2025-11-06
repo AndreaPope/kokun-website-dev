@@ -114,6 +114,7 @@ function NewsletterPage() {
                 </Button>
               
                 <br></br>
+                <br></br>
                 <p className="text-xs text-center text-gray-400">
                 We take your privacy seriously and will always handle your information with care. 
                 </p>
