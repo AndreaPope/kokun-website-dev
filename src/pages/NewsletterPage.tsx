@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { /* useNavigate */ } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
 // Replace this URL with your Mailchimp (or other) subscribe URL
 const MAILCHIMP_SUBSCRIBE_URL = 'https://space.us2.list-manage.com/subscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0';
@@ -108,20 +109,15 @@ function NewsletterPage() {
               */}
 
               <div className="text-center pt-4">
-                <a
-                  href={MAILCHIMP_SUBSCRIBE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-center transition-colors w-52 md:w-56 h-12 rounded-full text-base font-semibold hover:bg-hover bg-primary text-white inline-flex items-center justify-center"
-                >
+                <Button onClick={() => window.open(MAILCHIMP_SUBSCRIBE_URL, '_blank', 'noopener')}>
                   SUBSCRIBE NOW
-                </a>
+                </Button>
               </div>
 
               <div className="text-center pt-4" />
 
-              <p className="text-xs text-gray-400">
-                We take your privacy seriously and will always handle your information with care. If you ever change your mind and want to opt out, just email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. You can find our full <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Privacy Policy here</a>.
+              <p className="text-xs text-center text-gray-400">
+                We take your privacy seriously and will always handle your information with care. 
               </p>
             </div>
           </PageContentWrapper>
