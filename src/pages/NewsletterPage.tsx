@@ -112,10 +112,12 @@ function NewsletterPage() {
                 <Button onClick={() => window.open(MAILCHIMP_SUBSCRIBE_URL, '_blank', 'noopener')}>
                   SUBSCRIBE NOW
                 </Button>
+              
                 <br></br>
                 <p className="text-xs text-center text-gray-400">
                 We take your privacy seriously and will always handle your information with care. 
                 </p>
+               </div> 
             </div>
           </PageContentWrapper>
         </main>
