@@ -33,7 +33,6 @@ function BlogPage() {
                   Migraine at work. It's more than just a health issue
                 </h2>
                 <p>
-                  Did you know migraine is one of the
                   Did you know migraine is one of the{' '}
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/33882816/"
@@ -84,7 +83,7 @@ function BlogPage() {
                     href="https://pubmed.ncbi.nlm.nih.gov/30739216/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link hover:text-hover-text transition-colors duration-200"
+                    className="text-link hover:text-hover transition-colors duration-200"
                   >
                     More than half
                   </a>{' '}
@@ -142,7 +141,7 @@ function BlogPage() {
                 <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
                   Ready to take action? Start here
                 </h2>
-                <ul className="list-disc list-outside pl-6 space-y-4">
+                <ul className="list-disc list-outside pl-6 space-y-2">
                   <li>
                     <strong>Track what matters.</strong> Keep a simple record of your triggers, symptoms, and which tasks are most affected.
                   </li>
