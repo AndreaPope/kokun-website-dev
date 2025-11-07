@@ -133,7 +133,7 @@ function PledgePage() {
 
 
                 <div className="text-center pt-4">
-                  <Button onClick={() => window.open('https://fnd.us/kokun-2025/pay', '_blank', 'noopener')}>MAKE YOUR IMPACT</Button>
+                  <Button onClick={() => window.open('https://give.socialgoodfund.org/campaigns/kokun-2025/pay', '_blank', 'noopener')}>MAKE YOUR IMPACT</Button>
                 </div>
             </div>
           </PageContentWrapper>
