@@ -6,8 +6,6 @@ import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
 // submitWebsiteInput removed because the inline form is inactive
 
-
-
 function PledgePage() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -20,13 +18,44 @@ function PledgePage() {
   };
 
   // Load/refresh FundRazr widget when the component mounts.
+// Load FundRazr script and initialize widget
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).FundRazr && typeof (window as any).FundRazr.widgetLoader === 'function') {
-      (window as any).FundRazr.widgetLoader();
+    if (typeof window === 'undefined') return;
+
+    const anyWindow = window as any;
+
+    const initWidget = () => {
+      if (anyWindow.FundRazr && typeof anyWindow.FundRazr.widgetLoader === 'function') {
+        anyWindow.FundRazr.widgetLoader();
+      }
+    };
+
+    // If script already loaded, just init
+    if (anyWindow.FundRazr) {
+      initWidget();
+      return;
+    }
+
+    // Otherwise, inject the script
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[data-fundrazr-loader="true"]'
+    );
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://static.fundrazr.com/widgets/loader.js';
+      script.async = true;
+      script.dataset.fundrazrLoader = 'true';
+      script.onload = initWidget;
+      document.body.appendChild(script);
+    } else {
+      existingScript.addEventListener('load', initWidget);
+      // Cleanup handler when component unmounts
+      return () => {
+        existingScript.removeEventListener('load', initWidget);
+      };
     }
   }, []);
 
-  
 
   return (
       <div className="relative min-h-screen font-sans text-white">
@@ -71,70 +100,22 @@ function PledgePage() {
                 Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Donate now!
               </p>
 
-              {/* <form onSubmit={handleSubmit} className="mt-12 space-y-8">
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-base font-medium mb-2 text-primary">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                  <p className="text-xs text-gray-300">
-                    We take your privacy seriously and will always handle your information with care. If you ever change your mind and want to opt out, just email us at <a href="mailto:info@kokun.space" className="text-primary hover:text-hover">info@kokun.space</a>. You can find our full <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-hover">Privacy Policy here</a>.
-                  </p>
+                <div className="flex justify-center pt-4">
+                  <div 
+                  className="fr-widget"
+                  data-type="simple-checkout"
+                  data-url="https://fnd.us/kokun-2025"
+                      style={{
+                        width: "100%",
+                        maxWidth: "600px",
+                        margin: "0 auto",
+                      }}
+                  >
+                    <img src="//static.fundrazr.com/widgets/loader.gif" />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="amount" className="block text-base font-medium mb-2 text-primary">
-                    Donation Amount
-                  </label>
-                  <input
-                    type="number"
-                    id="amount"
-                    required
-                    min="1"
-                    step="1"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    value={formData.amount}
-                    onChange={(e) => setFormData({...formData, amount: e.target.value})}
-                  />
-                </div>
 
-                <div className="space-y-4">
-                  <p className="text-base font-medium mb-4">Check the boxes below if you would also like to</p>
-                  <label className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      className="mt-1"
-                      checked={formData.newsletter}
-                      onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
-                    />
-                    <span className="text-base">
-                      Sign up for our Newsletter. Follow what we're uncovering—from research to real life.
-                    </span>
-                  </label>
-                  <label className="flex items-start space-x-3">
-                    <input
-                      type="checkbox"
-                      className="mt-1"
-                      checked={formData.earlyAccess}
-                      onChange={(e) => setFormData({...formData, earlyAccess: e.target.checked})}
-                    />
-                    <span className="text-base">
-                      Sign up for Early Access to Kōkūn. Be among the first to experience what's next in migraine care.
-                    </span>
-                  </label>
-                </div> */}
-
-
-                <div className="text-center pt-4">
-                  <Button onClick={() => window.open('https://give.socialgoodfund.org/campaigns/kokun-2025/pay', '_blank', 'noopener')}>MAKE YOUR IMPACT</Button>
-                </div>
             </div>
           </PageContentWrapper>
         </main>

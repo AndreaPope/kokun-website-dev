@@ -11,6 +11,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script async src="https://static.fundrazr.com/widgets/loader.js"></script>
+    <!-- <script async src="https://static.fundrazr.com/widgets/loader.js"></script> -->
+     <script>
+     (function() { var d = document, fr = d.createElement('script'); 
+     fr.type = 'text/javascript'; fr.async = true; 
+     fr.src = 'https://static.fundrazr.com/widgets/loader.js'; 
+     var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fr, s);})();
+     </script>
   </body>
 </html>
