@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const handler = async (event, context) => {
-    const listId = '8f96df324b';
-    const apiKey = 'd476adb51c4f1693593ba7a6a084a171-us8';
+    const listId = process.env.MAILCHIMP_LIST_ID;
+    const apiKey = process.env.MAILCHIMP_API_KEY;
 
     const body = JSON.parse(event.body);
     const {email_address, merge_fields} = body;
