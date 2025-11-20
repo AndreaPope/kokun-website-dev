@@ -129,11 +129,11 @@ function NewsletterPage() {
               */}
               
               <div className="text-center pt-4">
-                <Formik
+                {/* <Formik
                 initialValues={{firstName: '', lastName: '', email: ''}}
                 onSubmit={submitForm}
-                >
-                  {(formik) => {
+                > */}
+                  {/* {(formik) => {
                     <Form className="mt-12 space-y-8">
                       <div className="grid grid-cols-2 space-x-2">
                       <div className="mr-4">
@@ -169,8 +169,8 @@ function NewsletterPage() {
                     </div>
                     </Form>
                   }}
-                </Formik>
-                  <Form className="mt-12 space-y-8">
+                </Formik> */}
+                  <form className="mt-12 space-y-8">
                     <div className="grid grid-cols-2 space-x-2">
                       <div className="mr-4">
                         <label
@@ -184,8 +184,6 @@ function NewsletterPage() {
                           id="fname"
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={formData.firstName}
-                          onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                         />
                       </div>
                       <div className="mr-4">
@@ -200,29 +198,11 @@ function NewsletterPage() {
                           id="lname"
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={formData.lastName}
-                          onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                         />
                       </div>
                     </div>
-                    <div className="mb-">
-                      <label
-                        htmlFor="email"
-                        className="block text-base font-medium mb-2 text-primary text-left"
-                      >
-                        Last Name
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-">
+                    
+                  <div className="mb-2">
                     <label
                       htmlFor="email"
                       className="block text-base font-medium mb-2 text-primary text-left"
