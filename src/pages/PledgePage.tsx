@@ -25,8 +25,9 @@ function PledgePage() {
     const anyWindow = window as any;
 
     const initWidget = () => {
-      if (anyWindow.FundRazr && typeof anyWindow.FundRazr.widgetLoader === 'function') {
-        anyWindow.FundRazr.widgetLoader();
+      const manager = anyWindow.FundRazr?.WidgetManager;
+      if (manager && typeof manager.parse === 'function') {
+        manager.parse(document);
       }
     };
 
