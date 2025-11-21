@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import EarlyAccessPage from './pages/EarlyAccessPage';
-import PledgePage from './pages/PledgePage';
-import NewsletterPage from './pages/NewsletterPage';
-import MigrainePage from './pages/MigrainePage';
-import Alt_MigrainePage from './pages/Alt_MigrainePage';
-import InnerCirclePage from './pages/InnerCirclePage';
-import PrivacyPage from './pages/PrivacyPage';
-import CookieNoticePage from './pages/CookieNoticePage';
-import BlogPage from './pages/BlogPage';
-import ScrollToTop from './components/ScrollToTop';
-import { testConnection } from './lib/supabase';
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import EarlyAccessPage from "./pages/EarlyAccessPage";
+import PledgePage from "./pages/PledgePage";
+import NewsletterPage from "./pages/NewsletterPage";
+import MigrainePage from "./pages/MigrainePage";
+import Alt_MigrainePage from "./pages/Alt_MigrainePage";
+import InnerCirclePage from "./pages/InnerCirclePage";
+import PrivacyPage from "./pages/PrivacyPage";
+import CookieNoticePage from "./pages/CookieNoticePage";
+import BlogPage from "./pages/BlogPage";
+import Nov25Blog from "./pages/blogs/nov25blog";
+import ScrollToTop from "./components/ScrollToTop";
+import { testConnection } from "./lib/supabase";
+import AllBlogs from "../src/pages/blogs/allBlogs";
 
 function App() {
   const [isConnected, setIsConnected] = useState<boolean | null>(null);
@@ -20,7 +22,10 @@ function App() {
     async function checkConnection() {
       const connected = await testConnection();
       setIsConnected(connected);
-      console.log('Supabase connection status:', connected ? 'Connected' : 'Not connected');
+      console.log(
+        "Supabase connection status:",
+        connected ? "Connected" : "Not connected"
+      );
     }
     checkConnection();
   }, []);
@@ -39,6 +44,8 @@ function App() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/cookie-notice" element={<CookieNoticePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blogs/nov-25" element={<Nov25Blog />} />
+        <Route path="/all-blogs" element={<AllBlogs />} />
       </Routes>
     </>
   );
