@@ -106,7 +106,7 @@ function PledgePage() {
                     className="fr-widget w-full"
                     data-type="full-campaign"
                     data-url="https://fnd.us/makeyourimpact"
-                    data-width="100%"
+                    data-width="1000"
                     data-height="760"
                     style={{
                       width: '100%',
