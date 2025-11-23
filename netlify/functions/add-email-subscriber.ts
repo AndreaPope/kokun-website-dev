@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const handler = async (event, context) => {
+export const handler = async (event, context) => {
     const listId = process.env.MAILCHIMP_LIST_ID;
     const apiKey = process.env.MAILCHIMP_API_KEY;
 
@@ -14,6 +14,7 @@ const handler = async (event, context) => {
         };
     }
     try {
+
         const payload = {
             email_address,
             merge_fields,
@@ -32,8 +33,7 @@ const handler = async (event, context) => {
     } catch (error) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to subscribe user' }),
+            body: JSON.stringify({ error: error.message  || 'Failed to subscribe user' }),
         }
     }
 }
-export { handler };

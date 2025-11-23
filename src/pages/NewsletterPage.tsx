@@ -5,6 +5,10 @@ import Footer from '../components/Footer'
 import Button from '../components/Button'
 import PageContentWrapper from '../components/PageContentWrapper'
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import axios from 'axios'
+import { z } from 'zod';
+import { toFormikValidationSchema } from 'zod-formik-adapter';
+
 // Replace this URL with your Mailchimp (or other) subscribe URL
 const MAILCHIMP_SUBSCRIBE_URL =
   'https://space.us2.list-manage.com/subscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0'
@@ -15,6 +19,12 @@ const MAILCHIMP_SUBSCRIBE_URL =
     lastName:string;
   }
 
+  const validationSchema = z.object({
+    firstName: z.string().min(3, "First name is required"),
+    lastName: z.string().min(3, "Last name is required"),
+    email: z.string().email("Invalid email address"),
+  })
+
 function NewsletterPage() {
   // navigation removed (no internal navigation needed for external subscribe)
   const [formData, setFormData] = useState({
@@ -24,9 +34,27 @@ function NewsletterPage() {
     pledgeAmount: '',
   })
 
-  const submitForm = async (e: React.FormEvent<HTMLFormElement>, values:FormValues) => {
-    e.preventDefault();
-  }
+  const submitForm = async (values:FormValues, formik: FormikHelpers<FormValues>) => {
+    console.log(values);
+    const { firstName, lastName, email } = values;
+    try {
+      const payload = {
+        merge_fields: {
+          FNAME: firstName,
+          LNAME: lastName,
+        },
+        email_address: email,
+      };
+
+      await axios.post('/.netlify/functions/add-email-subscriber', payload);
+      alert('Contact details added successfully.');
+      formik.resetForm();
+    } catch (error: any) {
+      alert(error.message);
+    }
+  };
+
+  
 
   
 
@@ -129,102 +157,69 @@ function NewsletterPage() {
               */}
               
               <div className="text-center pt-4">
-                {/* <Formik
-                initialValues={{firstName: '', lastName: '', email: ''}}
+                <Formik
+                initialValues={{firstName: "", lastName: "", email: ""}}
+                validationSchema={toFormikValidationSchema(validationSchema)}
                 onSubmit={submitForm}
-                > */}
-                  {/* {(formik) => {
+                
+                >
+                  {(formik) => {
+                    return (
                     <Form className="mt-12 space-y-8">
                       <div className="grid grid-cols-2 space-x-2">
                       <div className="mr-4">
                         <label
-                          htmlFor="fname"
+                          htmlFor="firstName"
                           className="block text-base font-medium mb-2 text-primary text-left"
                         >
                           First Name
                         </label>
                         <Field
-                          id="firstname"
-                          name="firstname"
+                          id="firstName"
+                          name="firstName"
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                         ></Field>
+                        <ErrorMessage name='firstName' component="div" className="text-red-700" />
                       </div>
                       <div className="mr-4">
                         <label
-                          htmlFor="lname"
+                          htmlFor="lastName"
                           className="block text-base font-medium mb-2 text-primary text-left"
                         >
                           Last Name
                         </label>
                         <Field
-                          id="lastname"
-                          name="lastname"
+                          id="lastName"
+                          name="lastName"
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          value={formData.lastName}
-                          onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                         />
+                          <ErrorMessage name='lastName' component="div" className="text-red-700" />
                       </div>
                     </div>
-                    </Form>
-                  }}
-                </Formik> */}
-                  <form className="mt-12 space-y-8">
-                    <div className="grid grid-cols-2 space-x-2">
-                      <div className="mr-4">
-                        <label
-                          htmlFor="fname"
-                          className="block text-base font-medium mb-2 text-primary text-left"
-                        >
-                          First Name
-                        </label>
-                        <input
-                          type="text"
-                          id="fname"
-                          required
-                          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        />
-                      </div>
-                      <div className="mr-4">
-                        <label
-                          htmlFor="lname"
-                          className="block text-base font-medium mb-2 text-primary text-left"
-                        >
-                          Last Name
-                        </label>
-                        <input
-                          type="text"
-                          id="lname"
-                          required
-                          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        />
-                      </div>
-                    </div>
-                    
-                  <div className="mb-2">
+                    <div className="mb-2">
                     <label
                       htmlFor="email"
                       className="block text-base font-medium mb-2 text-primary text-left"
                     >
                       Email Address
                     </label>
-                    <input
-                      type="email"
+                    <Field
                       id="email"
+                      name="email"
                       required
                       className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
+                    <ErrorMessage name='email' component="div" className="text-red-700" />
                   </div>
-
-                  <Button
-                    onClick={() => window.open(MAILCHIMP_SUBSCRIBE_URL, '_blank', 'noopener')}
-                  >
+                  <Button type="submit">
                     SUBSCRIBE NOW
                   </Button>
-                </form>
+                    </Form>
+                    )
+                  }}
+                </Formik>
 
                 <br></br>
                 <br></br>

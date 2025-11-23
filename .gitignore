@@ -7,3 +7,6 @@ dist/
 *.zip
 *.mp4
 *.psd
+
+# Local Netlify folder
+.netlify
