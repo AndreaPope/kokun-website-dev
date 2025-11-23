@@ -102,13 +102,16 @@ function PledgePage() {
               </p> */}
 
                 <div className="flex justify-center pt-4">
-                  <div 
-                  className="fr-widget"
-                  data-type="simple-checkout"
-                  data-url="https://fnd.us/makeyourimpact"
-                      style={{
-                        width: '100%',
-                      }}
+                  <div
+                    className="fr-widget w-full"
+                    data-type="full-campaign"
+                    data-url="https://fnd.us/makeyourimpact"
+                    data-width="100%"
+                    data-height="760"
+                    style={{
+                      width: '100%',
+                      maxWidth: '1024px',
+                    }}
                   >
                     <img src="//static.fundrazr.com/widgets/loader.gif" />
                   </div>
