@@ -1,10 +1,10 @@
 import React from "react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import PageContentWrapper from "../components/PageContentWrapper";
+import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
+import PageContentWrapper from "../../components/PageContentWrapper";
 import { Link } from "react-router-dom";
 
-function BlogPage() {
+function allBlogs() {
   const blogs = [
     {
       title: "Rethinking Migraine at Work: From Stigma to Support",
@@ -35,24 +35,8 @@ function BlogPage() {
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white font-display text-center">
-              Our Blogs
+              All Blogs
             </h1>
-
-            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed text-left">
-              Born from our lived experiences, Kōkūn exists to hold space for
-              yours. By connecting personal insights and science, we're
-              transforming how invisible health conditions are seen, understood,
-              and healed.
-              <br />
-              <br />
-              The Kōkūn Effect brings our mission to life each month with
-              trusted research, practical tools, and community stories to help
-              you navigate invisible conditions with clarity and confidence.
-            </p>
-
-            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white font-display text-left">
-              Latest Blogs
-            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {blogs.map((blog, index) => (
@@ -79,15 +63,6 @@ function BlogPage() {
                 </div>
               ))}
             </div>
-            <div className="flex justify-end mt-6">
-              <Link
-                to="/all-blogs"
-                className="text-link hover:text-hover font-medium flex items-center gap-2"
-              >
-                View all blogs
-                <span className="text-2xl leading-none">→</span>
-              </Link>
-            </div>
           </PageContentWrapper>
         </main>
 
@@ -97,4 +72,4 @@ function BlogPage() {
   );
 }
 
-export default BlogPage;
+export default allBlogs;
