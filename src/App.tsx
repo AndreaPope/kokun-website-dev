@@ -10,7 +10,7 @@ import InnerCirclePage from "./pages/InnerCirclePage";
 import PrivacyPage from "./pages/PrivacyPage";
 import CookieNoticePage from "./pages/CookieNoticePage";
 import BlogPage from "./pages/BlogPage";
-import Nov25Blog from "./pages/blogs/nov25blog";
+import Nov25Blog from "./pages/blogs/Nov25Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import { testConnection } from "./lib/supabase";
 import AllBlogs from "../src/pages/blogs/allBlogs";
