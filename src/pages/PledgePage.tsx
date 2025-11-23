@@ -91,7 +91,7 @@ function PledgePage() {
               
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <div className="space-y-8 text-lg md:text-xl">
-              <p>
+              {/* <p>
                 We're getting ready to launch Kōkūn and every dollar matters. By donating today, you will directly fuel our mission to help people with invisible conditions thrive.
               </p>
               <p>
@@ -99,17 +99,15 @@ function PledgePage() {
               </p>
               <p>
                 Your support isn't just a gift. It's an investment in a more compassionate, inclusive future of care. Ready to ignite change for the unseen millions? Donate now!
-              </p>
+              </p> */}
 
                 <div className="flex justify-center pt-4">
                   <div 
                   className="fr-widget"
                   data-type="simple-checkout"
-                  data-url="https://fnd.us/kokun-2025"
+                  data-url="https://fnd.us/makeyourimpact"
                       style={{
-                        width: "100%",
-                        maxWidth: "600px",
-                        margin: "0 auto",
+                        width: '100%',
                       }}
                   >
                     <img src="//static.fundrazr.com/widgets/loader.gif" />
