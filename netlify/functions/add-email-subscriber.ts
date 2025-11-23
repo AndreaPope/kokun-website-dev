@@ -13,6 +13,12 @@ export const handler = async (event, context) => {
             body: JSON.stringify({ error: 'Email address is required' }),
         };
     }
+    if (!listId || !apiKey) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Missing Mailchimp configuration' }),
+        };
+    }
     try {
 
         const payload = {
@@ -20,10 +26,11 @@ export const handler = async (event, context) => {
             merge_fields,
             status: 'subscribed',
         }
-        const {data} = await axios.post(`https://us8.api.mailchimp.com/3.0/lists/${listId}/members`, payload, {
+        const authHeader = Buffer.from(`anystring:${apiKey}`).toString('base64');
+        const {data} = await axios.post(`https://${apiKey?.split('-')[1]}.api.mailchimp.com/3.0/lists/${listId}/members`, payload, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Basic ${apiKey}`
+                'Authorization': `Basic ${authHeader}`
             }
         });
         return {
