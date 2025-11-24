@@ -11,6 +11,7 @@ import PrivacyPage from "./pages/PrivacyPage";
 import CookieNoticePage from "./pages/CookieNoticePage";
 import BlogPage from "./pages/BlogPage";
 import Nov25Blog from "./pages/blogs/Nov25Blog";
+import Nov23Blog from "./pages/blogs/Nov23Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import { testConnection } from "./lib/supabase";
 import AllBlogs from "../src/pages/blogs/allBlogs";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/cookie-notice" element={<CookieNoticePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blogs/nov-25" element={<Nov25Blog />} />
+        <Route path="/blogs/nov-23" element={<Nov23Blog />} />
         <Route path="/all-blogs" element={<AllBlogs />} />
       </Routes>
     </>

@@ -9,8 +9,14 @@ function BlogPage() {
     {
       title: "Rethinking Migraine at Work: From Stigma to Support",
       image:
-        "https://res.cloudinary.com/dknulbme8/image/upload/v1710844861/qcxon3z2kqbpeego4cap.jpg",
+        "/images/migraineatwork.png",
       link: "/blogs/nov-25",
+    },
+    {
+    title: "5 Tips to Help You Navigate Thanksgiving",
+    image:
+      "/images/thanksgiving.png",
+    link: "/blogs/nov-23",
     },
   ];
 
