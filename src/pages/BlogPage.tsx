@@ -39,25 +39,42 @@ function BlogPage() {
         <Navigation />
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
+           <PageContentWrapper className="mb-48 md:mb-64">
+             <div className="font-display text-5xl sm:text-7xl md:text-8xl font-bold text-center leading-tight mb-0 sm:mb-0">
+               <div>
+                 KŌKŪN BLOG
+               </div>
+             </div>
+             
+             <div className="text-3xl sm:text-4xl md:text-6xl text-center font-bold">
+               <p className="flex items-center justify-center">
+                 <span>Seeing<span className="text-primary"> the Invisible </span></span>
+               </p>
+             </div>
+           </PageContentWrapper>
+ 
+ 
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white font-display text-center">
-              Our Blogs
-            </h1>
 
-            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed text-left">
-              Born from our lived experiences, Kōkūn exists to hold space for
-              yours. By connecting personal insights and science, we're
-              transforming how invisible health conditions are seen, understood,
-              and healed.
-              <br />
-              <br />
-              The Kōkūn Effect brings our mission to life each month with
-              trusted research, practical tools, and community stories to help
-              you navigate invisible conditions with clarity and confidence.
-            </p>
+
+            {/* <div className="space-y-6 text-lg md:text-xl mb-10">
+              <p>
+                Born from our lived experiences, Kōkūn exists to hold space for
+                yours. By connecting personal insights and science, we're
+                transforming how invisible health conditions are seen, understood,
+                and healed.
+              </p>
+
+              <p>
+                The Kōkūn Effect brings our mission to life each month with trusted
+                research, practical tools, and community stories to help you navigate
+                invisible conditions with clarity and confidence.
+              </p>
+            </div> */}
+
 
             <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white font-display text-left">
-              Latest Blogs
+              Latest Posts
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -77,7 +94,7 @@ function BlogPage() {
 
                     <Link
                       to={blog.link}
-                      className="text-link hover:text-hover underline font-medium"
+                      className="text-link hover:text-hover font-medium"
                     >
                       Read the full blog post
                     </Link>
@@ -85,7 +102,7 @@ function BlogPage() {
                 </div>
               ))}
             </div>
-            <div className="flex justify-end mt-6">
+            {/* <div className="flex justify-end mt-6">
               <Link
                 to="/all-blogs"
                 className="text-link hover:text-hover font-medium flex items-center gap-2"
@@ -93,7 +110,7 @@ function BlogPage() {
                 View all blogs
                 <span className="text-2xl leading-none">→</span>
               </Link>
-            </div>
+            </div> */}
           </PageContentWrapper>
         </main>
 

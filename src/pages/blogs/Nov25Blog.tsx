@@ -11,7 +11,7 @@ function Nov25Blog() {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage:
-            'url("https://res.cloudinary.com/dknulbme8/image/upload/t_Grayscale/qcxon3z2kqbpeego4cap")',
+            'url("/images/MigraineAtWorkFull.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -229,14 +229,14 @@ function Nov25Blog() {
                 to="/blog"
                 className="text-link hover:text-hover transition-colors duration-200 font-bold"
               >
-                ← View All Feed
+                ← View All Posts
               </Link>
-              <Link
+              {/* <Link
                 to="/all-blogs"
                 className="text-link hover:text-hover transition-colors duration-200 font-bold"
               >
                 View All Blogs →
-              </Link>
+              </Link> */}
             </div>
           </PageContentWrapper>
         </main>
