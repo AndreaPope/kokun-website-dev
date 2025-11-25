@@ -42,7 +42,7 @@ function BlogPage() {
            <PageContentWrapper className="mb-48 md:mb-64">
              <div className="font-display text-5xl sm:text-7xl md:text-8xl font-bold text-center leading-tight mb-0 sm:mb-0">
                <div>
-                 KŌKŪN BLOG
+                 BLOG
                </div>
              </div>
              
