@@ -207,7 +207,7 @@ function AboutPage() {
   ];
 
   const renderPeopleGrid = (people: Person[]) => (
-    <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
       {people.map((person) => (
         <div
           key={person.name}
@@ -231,7 +231,7 @@ function AboutPage() {
             href={person.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-white transition-colors"
+            className="text-[var(--color-link)] hover:text-white transition-colors"
             aria-label={`LinkedIn profile for ${person.name}`}
           >
             <Linkedin className="w-6 h-6" />
