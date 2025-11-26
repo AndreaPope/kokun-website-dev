@@ -7,6 +7,7 @@ import NewsletterPage from "./pages/NewsletterPage";
 import MigrainePage from "./pages/MigrainePage";
 import Alt_MigrainePage from "./pages/Alt_MigrainePage";
 import InnerCirclePage from "./pages/InnerCirclePage";
+import TeamPage from "./pages/Team";
 import PrivacyPage from "./pages/PrivacyPage";
 import CookieNoticePage from "./pages/CookieNoticePage";
 import BlogPage from "./pages/BlogPage";
@@ -48,6 +49,7 @@ function App() {
         <Route path="/blogs/nov-25" element={<Nov25Blog />} />
         <Route path="/blogs/nov-23" element={<Nov23Blog />} />
         <Route path="/all-blogs" element={<AllBlogs />} />
+        <Route path="/team" element={<TeamPage/>} />
       </Routes>
     </>
   );

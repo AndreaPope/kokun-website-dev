@@ -119,6 +119,14 @@ function PledgePage() {
 
 
             </div>
+
+            <div className="space-y-8 text-lg md:text-xl">
+              <i>If you are considering a gift through a donor advised fund, stock, or an amount above $1,000, please reach
+                out to Sangita at sangita@kokun.space and she will be happy to assit you. Thank you for your support!
+              </i>
+            </div>
+
+            
           </PageContentWrapper>
         </main>
 

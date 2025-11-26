@@ -34,6 +34,9 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Link to="/migraine" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Migraine
           </Link>
+          <Link to="/blog" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Blog
+          </Link>
         </div>
 
         {/* Center Logo */}
@@ -48,8 +51,8 @@ export default function Navigation({ className = '' }: NavigationProps) {
         {/* Right Navigation */}
         <div className="flex items-center space-x-4">
 
-          <Link to="/blog" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
-            Blog
+          <Link to="/team" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            About Us
           </Link>
           <Link to="/early-access" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Sign Up
