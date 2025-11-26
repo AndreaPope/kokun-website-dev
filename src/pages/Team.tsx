@@ -7,10 +7,45 @@ import Footer from '../components/Footer';
 import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
 
+type Person = {
+  name: string;
+  image: string;
+  linkedin: string;
+};
+
 function AboutPage() {
   const navigate = useNavigate();
 
-  const councilMembers = [
+  const founders: Person[] = [
+    {
+      name: 'SANGITA JAYARAMAN',
+      image:
+        'https://media.licdn.com/dms/image/v2/D5603AQGzMJx6fmDZDQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718226509703?e=1765411200&v=beta&t=hSv8fykizIK3NPmvU0AM2W1t7LDRQIZ5AAis-JeNX4w',
+      linkedin: 'https://www.linkedin.com/in/sangitajayaraman/',
+    },
+    {
+      name: 'ANDREA POPE',
+      image:
+        'https://media.licdn.com/dms/image/v2/D4E03AQH6xxgXf__GMg/profile-displayphoto-scale_200_200/B4EZiEpw3VGUAY-/0/1754572198462?e=1765411200&v=beta&t=rK2SEofvjeuA6qm_cq26NsDPMKLrvdyt3TahfQHVTec',
+      linkedin: 'https://www.linkedin.com/in/andreapope/',
+    },
+  ];
+
+  const advisoryBoard: Person[] = [
+    {
+      name: 'SEAN NOLAN',
+      image: '/images/SEANNOLAN.jpeg',
+      linkedin: 'https://www.linkedin.com/in/familyhealthguy/',
+    },
+    {
+      name: 'DIVYA YERRAGUNTLA',
+      image:
+        'https://media.licdn.com/dms/image/v2/C4D03AQHXoHThZH-O_g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516251526310?e=1765411200&v=beta&t=tUv3DKqxkdWeaVQYksERdniWzrPC5U6WvMTBsT2tlc0',
+      linkedin: 'https://www.linkedin.com/in/divyayerraguntla/',
+    },
+  ];
+
+  const councilMembers: Person[] = [
     {
       name: 'ALIX ALDERMAN',
       image:
@@ -55,10 +90,7 @@ function AboutPage() {
     },
   ];
 
-  const councilRowOne = councilMembers.slice(0, 5);
-  const councilRowTwo = councilMembers.slice(5, 9);
-
-  const expertContributors = [
+  const expertContributors: Person[] = [
     {
       name: 'FIONA AKHTAR',
       image:
@@ -90,7 +122,7 @@ function AboutPage() {
     },
   ];
 
-  const volunteerMembers = [
+  const volunteerMembers: Person[] = [
     {
       name: 'MOMINA DIN',
       image:
@@ -147,10 +179,7 @@ function AboutPage() {
     },
   ];
 
-  const volunteersRowOne = volunteerMembers.slice(0, 5);
-  const volunteersRowTwo = volunteerMembers.slice(5, 10);
-
-  const volunteerPastMembers = [
+  const volunteerPastMembers: Person[] = [
     {
       name: 'NILA KATHIRAVAN',
       image:
@@ -176,6 +205,41 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/bisharat-minhas/',
     },
   ];
+
+  const renderPeopleGrid = (people: Person[]) => (
+    <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+      {people.map((person) => (
+        <div
+          key={person.name}
+          className="bg-background/70 p-4 sm:p-5 md:p-6 rounded-lg flex flex-col items-center text-center"
+        >
+          <a
+            href={person.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-4 block"
+            aria-label={`LinkedIn profile for ${person.name}`}
+          >
+            <img
+              src={person.image}
+              alt={person.name}
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover"
+            />
+          </a>
+          <h3 className="text-lg font-bold mb-2 text-center">{person.name}</h3>
+          <a
+            href={person.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-white transition-colors"
+            aria-label={`LinkedIn profile for ${person.name}`}
+          >
+            <Linkedin className="w-6 h-6" />
+          </a>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="relative min-h-screen font-sans text-white">
@@ -223,344 +287,32 @@ function AboutPage() {
             <div className="mt-12 space-y-16">
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">FOUNDERS</p>
-
-                <div className="mt-6 flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                  <div className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]">
-                    <a
-                      href="https://www.linkedin.com/in/sangitajayaraman/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 block"
-                      aria-label="LinkedIn profile for Sangita Jayaraman"
-                    >
-                      <img
-                        src="https://media.licdn.com/dms/image/v2/D5603AQGzMJx6fmDZDQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718226509703?e=1765411200&v=beta&t=hSv8fykizIK3NPmvU0AM2W1t7LDRQIZ5AAis-JeNX4w"
-                        alt="Sangita"
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </a>
-                    <h3 className="text-1xl font-bold mb-2">SANGITA JAYARAMAN</h3>
-                    <a
-                      href="https://www.linkedin.com/in/sangitajayaraman/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-white transition-colors"
-                      aria-label="LinkedIn profile for Sangita Jayaraman"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                  </div>
-
-                  <div className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]">
-                    <a
-                      href="https://www.linkedin.com/in/andreapope/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 block"
-                      aria-label="LinkedIn profile for Andrea Pope"
-                    >
-                      <img
-                        src="https://media.licdn.com/dms/image/v2/D4E03AQH6xxgXf__GMg/profile-displayphoto-scale_200_200/B4EZiEpw3VGUAY-/0/1754572198462?e=1765411200&v=beta&t=rK2SEofvjeuA6qm_cq26NsDPMKLrvdyt3TahfQHVTec "
-                        alt="Andrea"
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </a>
-                    <h3 className="text-1xl font-bold mb-2">ANDREA POPE</h3>
-                    <a
-                      href="https://www.linkedin.com/in/andreapope/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-white transition-colors"
-                      aria-label="LinkedIn profile for Andrea Pope"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                  </div>
-                </div>
-                <br></br><br></br>
+                {renderPeopleGrid(founders)}
               </div>
+
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">ADVISORY BOARD</p>
-
-                <div className="mt-6 flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                  <div className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]">
-                    <a
-                      href="https://www.linkedin.com/in/familyhealthguy/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 block"
-                      aria-label="LinkedIn profile for Sean Nolan"
-                    >
-                      <img
-                        src="/images/SEANNOLAN.jpeg"
-                        alt="Sean Nolan"
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </a>
-                    <h3 className="text-1xl font-bold mb-2">SEAN NOLAN</h3>
-                    <a
-                      href="https://www.linkedin.com/in/familyhealthguy/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-white transition-colors"
-                      aria-label="LinkedIn profile for Sean Nolan"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                  </div>
-
-                  <div className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]">
-                    <a
-                      href="https://www.linkedin.com/in/divyayerraguntla/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 block"
-                      aria-label="LinkedIn profile for Divya Yerraguntla"
-                    >
-                      <img
-                        src="https://media.licdn.com/dms/image/v2/C4D03AQHXoHThZH-O_g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516251526310?e=1765411200&v=beta&t=tUv3DKqxkdWeaVQYksERdniWzrPC5U6WvMTBsT2tlc0"
-                        alt="Divya Yerraguntla"
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </a>
-                    <h3 className="text-1xl font-bold mb-2">DIVYA YERRAGUNTLA</h3>
-                    <a
-                      href="https://www.linkedin.com/in/divyayerraguntla/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-white transition-colors"
-                      aria-label="LinkedIn profile for Divya Yerraguntla"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                  </div>
-                </div>
-                <br></br><br></br><br></br>
+                {renderPeopleGrid(advisoryBoard)}
               </div>
 
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">COUNCIL OF ADVISORS</p>
-
-                <div className="mt-6 space-y-8">
-                  <div className="flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                    {councilRowOne.map((member) => (
-                      <div
-                        key={member.name}
-                        className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                      >
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mb-4 block"
-                          aria-label={`LinkedIn profile for ${member.name}`}
-                        >
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-32 h-32 rounded-full object-cover"
-                          />
-                        </a>
-                        <h3 className="text-1xl font-bold mb-2">{member.name}</h3>
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-white transition-colors"
-                          aria-label={`LinkedIn profile for ${member.name}`}
-                        >
-                          <Linkedin className="w-6 h-6" />
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-
-                  {councilRowTwo.length > 0 && (
-                    <div className="flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                      {councilRowTwo.map((member) => (
-                        <div
-                          key={member.name}
-                          className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                        >
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mb-4 block"
-                            aria-label={`LinkedIn profile for ${member.name}`}
-                          >
-                            <img
-                              src={member.image}
-                              alt={member.name}
-                              className="w-32 h-32 rounded-full object-cover"
-                            />
-                          </a>
-                          <h3 className="text-1xl font-bold mb-2">{member.name}</h3>
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:text-white transition-colors"
-                            aria-label={`LinkedIn profile for ${member.name}`}
-                          >
-                            <Linkedin className="w-6 h-6" />
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <br></br><br></br>
+                {renderPeopleGrid(councilMembers)}
               </div>
 
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">EXPERT CONTRIBUTORS</p>
-
-                <div className="mt-6 flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                  {expertContributors.map((contributor) => (
-                    <div
-                      key={contributor.name}
-                      className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                    >
-                      <a
-                        href={contributor.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mb-4 block"
-                        aria-label={`LinkedIn profile for ${contributor.name}`}
-                      >
-                        <img
-                          src={contributor.image}
-                          alt={contributor.name}
-                          className="w-32 h-32 rounded-full object-cover"
-                        />
-                      </a>
-                      <h3 className="text-1xl font-bold mb-2">{contributor.name}</h3>
-                      <a
-                        href={contributor.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-white transition-colors"
-                        aria-label={`LinkedIn profile for ${contributor.name}`}
-                      >
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                    </div>
-                  ))}
-                </div>
-                <br></br><br></br><br></br>
+                {renderPeopleGrid(expertContributors)}
               </div>
 
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">VOLUNTEERS (CURRENT)</p>
-
-                <div className="mt-6 space-y-8">
-                  <div className="flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                    {volunteersRowOne.map((member) => (
-                      <div
-                        key={member.name}
-                        className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                      >
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mb-4 block"
-                          aria-label={`LinkedIn profile for ${member.name}`}
-                        >
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-32 h-32 rounded-full object-cover"
-                          />
-                        </a>
-                        <h3 className="text-1xl font-bold mb-2">{member.name}</h3>
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-white transition-colors"
-                          aria-label={`LinkedIn profile for ${member.name}`}
-                        >
-                          <Linkedin className="w-6 h-6" />
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-
-                  {volunteersRowTwo.length > 0 && (
-                    <div className="flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                      {volunteersRowTwo.map((member) => (
-                        <div
-                          key={member.name}
-                          className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                        >
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mb-4 block"
-                            aria-label={`LinkedIn profile for ${member.name}`}
-                          >
-                            <img
-                              src={member.image}
-                              alt={member.name}
-                              className="w-32 h-32 rounded-full object-cover"
-                            />
-                          </a>
-                          <h3 className="text-1xl font-bold mb-2">{member.name}</h3>
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:text-white transition-colors"
-                            aria-label={`LinkedIn profile for ${member.name}`}
-                          >
-                            <Linkedin className="w-6 h-6" />
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <br></br><br></br>
+                {renderPeopleGrid(volunteerMembers)}
               </div>
 
               <div>
                 <p className="font-bold text-primary text-lg tracking-wide">VOLUNTEERS (PAST)</p>
-
-                <div className="mt-6 flex gap-8 justify-start flex-nowrap overflow-x-auto">
-                {volunteerPastMembers.map((member) => (
-                  <div
-                    key={member.name}
-                    className="bg-background/70 p-6 rounded-lg flex flex-col items-center text-center min-w-[220px]"
-                  >
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mb-4 block"
-                      aria-label={`LinkedIn profile for ${member.name}`}
-                    >
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </a>
-                    <h3 className="text-1xl font-bold mb-2">{member.name}</h3>
-                    <a
-                      href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-white transition-colors"
-                        aria-label={`LinkedIn profile for ${member.name}`}
-                      >
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                    </div>
-                  ))}
-                </div>
+                {renderPeopleGrid(volunteerPastMembers)}
               </div>
             </div>
 

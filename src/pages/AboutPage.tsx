@@ -77,11 +77,11 @@ function AboutPage() {
                 We are a passionate founding team with extensive experience, backed by industry leaders in various capacities
               </p>
 
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="bg-background p-8 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-2xl font-bold mb-2">SANGITA JAYARAMAN</h3>
-                  <p className="text-xl mb-4">Chief Executive Officer</p>
-                  <p className="mb-6">
+              <div className="grid grid-cols-2 gap-4 sm:gap-8 md:gap-12">
+                <div className="bg-background p-4 sm:p-6 md:p-8 rounded-lg backdrop-blur-sm">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">SANGITA JAYARAMAN</h3>
+                  <p className="text-base sm:text-lg md:text-xl mb-4">Chief Executive Officer</p>
+                  <p className="mb-6 text-sm sm:text-base">
                     Seasoned technology leader and intrapreneur with 20+ years of global experience in business management, product and marketing
                   </p>
                   <a 
@@ -95,10 +95,10 @@ function AboutPage() {
                   </a>
                 </div>
 
-                <div className="bg-background p-8 rounded-lg backdrop-blur-sm">
-                  <h3 className="text-2xl font-bold mb-2">ANDREA POPE</h3>
-                  <p className="text-xl mb-4">Chief Technical Officer</p>
-                  <p className="mb-6">
+                <div className="bg-background p-4 sm:p-6 md:p-8 rounded-lg backdrop-blur-sm">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">ANDREA POPE</h3>
+                  <p className="text-base sm:text-lg md:text-xl mb-4">Chief Technical Officer</p>
+                  <p className="mb-6 text-sm sm:text-base">
                     Accomplished start-up leader with 20+ years of experience across industries with a focus on innovation, data science and product
                   </p>
                   <a 
@@ -111,10 +111,10 @@ function AboutPage() {
                     <span>Connect on LinkedIn</span>
                   </a>
                   <div className="mt-6 space-y-4">
-                    <p>
+                    <p className="text-sm sm:text-base">
                       I come from a family where invisible conditions like migraines have deeply affected our lives. Witnessing the struggle to secure the right care in a siloed and complicated system ignited my determination to change that narrative. My personal and professional background has uniquely set the stage for this mission—I have seen both how systems can fall short for those truly in need and how technology can positively transform outcomes. This insight, coupled with my family's journey, fuels my passion to empower everyday users with the knowledge they need to secure the best care possible.
                     </p>
-                    <p>
+                    <p className="text-sm sm:text-base">
                       This personal journey inspired the creation of Kōkūn. Our mission—to make invisible conditions visible—stems from a deep-rooted desire to transform challenges into opportunities for healing and understanding. By putting patients first and leveraging breakthrough insights, we aim to unlock a more compassionate, informed, and hopeful healthcare system. Every decision I make is driven by the commitment to convert lived experiences into actionable insights that empower you to receive the care you deserve. Together, we can create a future where invisible conditions are seen, understood, and healed.
                     </p>
                   </div>
