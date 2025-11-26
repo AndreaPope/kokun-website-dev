@@ -123,12 +123,12 @@ function AboutPage() {
   ];
 
   const volunteerMembers: Person[] = [
-    {
-      name: 'MOMINA DIN',
-      image:
-        'https://media.licdn.com/dms/image/v2/D4D35AQHe5cmltq8QiA/profile-framedphoto-shrink_400_400/B4DZZBqzbCHwAg-/0/1744858462282?e=1764738000&v=beta&t=bhB_OJlql07Ek7tm2guhAYOiaXZqcgILeB_tPtU-Sek',
-      linkedin: 'https://www.linkedin.com/in/momina-din/',
-    },
+    // {
+    //   name: 'MOMINA DIN',
+    //   image:
+    //     'https://media.licdn.com/dms/image/v2/D4D35AQHe5cmltq8QiA/profile-framedphoto-shrink_400_400/B4DZZBqzbCHwAg-/0/1744858462282?e=1764738000&v=beta&t=bhB_OJlql07Ek7tm2guhAYOiaXZqcgILeB_tPtU-Sek',
+    //   linkedin: 'https://www.linkedin.com/in/momina-din/',
+    // },
     {
       name: 'ABHIVYAKTI DUBEY',
       image:
@@ -153,12 +153,12 @@ function AboutPage() {
         'https://media.licdn.com/dms/image/v2/D4E03AQGMCXmJr4j2iQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1707718189082?e=1765411200&v=beta&t=DfDGMJpwxmFQEXxC3Zz9SKTRwl74hUzitckWtl4j2Z0',
       linkedin: 'https://www.linkedin.com/in/keethanshan-markandu-a79877248/',
     },
-    {
-      name: 'ZARANA NAKRANI',
-      image:
-        'https://media.licdn.com/dms/image/v2/D5635AQFONyCc26O20Q/profile-framedphoto-shrink_400_400/B56ZbM_._tH4Ac-/0/1747196047712?e=1764738000&v=beta&t=g8f-CcCXPmC6cKwe77nyCjq4SdRYfXwpV4rtqsz8tD8',
-      linkedin: 'https://www.linkedin.com/in/zarana-nakrani/',
-    },
+    // {
+    //   name: 'ZARANA NAKRANI',
+    //   image:
+    //     'https://media.licdn.com/dms/image/v2/D5635AQFONyCc26O20Q/profile-framedphoto-shrink_400_400/B56ZbM_._tH4Ac-/0/1747196047712?e=1764738000&v=beta&t=g8f-CcCXPmC6cKwe77nyCjq4SdRYfXwpV4rtqsz8tD8',
+    //   linkedin: 'https://www.linkedin.com/in/zarana-nakrani/',
+    // },
     {
       name: 'ROBERT ROJO',
       image:
@@ -226,7 +226,13 @@ function AboutPage() {
               className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover"
             />
           </a>
-          <h3 className="text-lg font-bold mb-2 text-center">{person.name}</h3>
+          <h3
+            className={`text-lg font-bold mb-2 text-center ${
+              person.name.length <= 17 ? 'whitespace-nowrap' : 'leading-tight'
+            }`}
+          >
+            {person.name}
+          </h3>
           <a
             href={person.linkedin}
             target="_blank"
