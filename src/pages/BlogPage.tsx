@@ -112,6 +112,33 @@ function BlogPage() {
               </Link>
             </div> */}
           </PageContentWrapper>
+
+          <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg py-20 mt-12">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">We are Kōkūn</h2>
+              <p className="text-lg md:text-xl mb-12">
+                We're transforming how invisible health conditions are seen, understood, and healed.<br className="hidden md:block" />
+                <span>Be among the first to join our movement.</span>
+              </p>
+                                  
+               <div className="flex flex-col md:flex-row justify-center md:space-x-16 space-y-8 md:space-y-0">
+                <div className="flex flex-col items-center">
+                  <Button to="/early-access" className="mb-3">EARLY ACCESS</Button>
+                  <p className="text-sm max-w-[200px]">Join Kōkūn and experience what's next for migraine care</p>
+                </div>
+                                    
+                <div className="flex flex-col items-center">
+                  <Button to="/pledge" className="mb-3">DONATE</Button>
+                  <p className="text-sm max-w-[200px]">Make a gift to ignite change for the unseen millions</p>
+                </div>
+                                    
+                <div className="flex flex-col items-center">
+                  <Button to="/newsletter" className="mb-3">NEWSLETTER</Button>
+                  <p className="text-sm max-w-[210px]">Follow what we're uncovering, from research to real life</p>
+                </div>
+              </div>
+            </div>
+          </PageContentWrapper>
         </main>
 
         <Footer />
