@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PageContentWrapper from "../components/PageContentWrapper";
+import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 function BlogPage() {
