@@ -84,6 +84,20 @@ export default function Navigation({ className = '' }: NavigationProps) {
           >
             Blog
           </Link>
+                    <Link
+            to="/team"
+            className="px-4 py-3 text-primary hover:bg-black/40"
+            onClick={() => setIsOpen(false)}
+          >
+            About Us
+          </Link>
+                    <Link
+            to="/early-access"
+            className="px-4 py-3 text-primary hover:bg-black/40"
+            onClick={() => setIsOpen(false)}
+          >
+            Sign Up
+          </Link>
         </div>
       </nav>
     </header>
