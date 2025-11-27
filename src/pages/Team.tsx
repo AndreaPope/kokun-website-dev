@@ -34,7 +34,7 @@ function AboutPage() {
   const advisoryBoard: Person[] = [
     {
       name: 'SEAN NOLAN',
-      image: '/images/SEANNOLAN.jpeg',
+      image: '/images/SNolan.jpg',
       linkedin: 'https://www.linkedin.com/in/familyhealthguy/',
     },
     {

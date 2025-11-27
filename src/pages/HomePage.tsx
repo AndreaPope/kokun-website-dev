@@ -36,7 +36,7 @@ function HomePage() {
             </div>
             
             <div className="text-xl sm:text-2xl md:text-3xl text-center font-bold mb-12 md:mb-16">
-              <p>Together we can transform how invisible health conditions<br className="hidden md:block" />are seen, understood, and healed</p>
+              <p>Together we can transform how invisible health conditions<br className="hidden md:block" /> are seen, understood, and healed</p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center mb-48 md:mb-64 items-center">
