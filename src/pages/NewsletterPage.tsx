@@ -9,7 +9,7 @@ import PageContentWrapper from '../components/PageContentWrapper'
 // const MAILCHIMP_SUBSCRIBE_URL =
 //   'https://space.us2.list-manage.com/subscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0'
 
-
+//'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743181038/rpythhmvkqgig7lmiyd8.jpg")'
 function NewsletterPage() {
   // navigation removed (no internal navigation needed for external subscribe)
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ function NewsletterPage() {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage:
-            'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743181038/rpythhmvkqgig7lmiyd8.jpg")',
+            'url("/images/banyantree.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

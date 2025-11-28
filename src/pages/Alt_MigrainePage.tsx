@@ -11,7 +11,7 @@ function Alt_MigrainePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/v1743104321/hezg7mcejnues0txjldc.jpg")',
+          backgroundImage: 'url("/images/lonelytree.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

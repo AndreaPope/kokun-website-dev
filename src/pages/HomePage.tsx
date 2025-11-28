@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import PageContentWrapper from '../components/PageContentWrapper';
-
+//'url("https://res.cloudinary.com/dknulbme8/image/upload/t_Grayscale/qcxon3z2kqbpeego4cap")'
 function HomePage() {
   return (
     <div className="relative min-h-screen font-sans text-white">
