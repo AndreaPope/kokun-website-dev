@@ -104,9 +104,6 @@ const WhoWeArePage = () => {
                     We’re connecting the dots for people with invisible conditions like migraine by finding breakthrough insights. We’re building what we wish had existed for us, something needed by so many others living with invisible conditions.
                   </p>
                 </blockquote>
-                    <div >
-                        
-                    </div>
                     <div className='text-lg md:text-xl'>
                         Our first offering is an AI-powered, evidence-based platform built to help people understand their bodies, navigate their conditions, and thrive. We combine research, peer insights, and real-world data to bring clarity where there’s confusion, and healing where there’s been dismissal.
                     <br/><br/>
