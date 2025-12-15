@@ -15,7 +15,7 @@ const WhoWeArePage = () => {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage:
-            'url("/images/backlit_side_dandelion.jpg")',
+            'url(/images/backlit_side_dandelion.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
