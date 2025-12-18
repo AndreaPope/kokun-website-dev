@@ -10,7 +10,7 @@ function BlogPage() {
     {
     title: "The Invisible Effort of Showing Up",
     image:
-      "/images/MetallicBurst.png",
+      "/images/Gemini_Metallic_Bursts.png",
     link: "/blogs/dec-25",
     },
     {

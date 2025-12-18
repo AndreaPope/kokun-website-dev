@@ -11,7 +11,7 @@ function Dec25Blog() {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage:
-            'url("/images/MetallicBurst.png")',
+            'url("/images/Gemini_Metallic_Bursts.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
