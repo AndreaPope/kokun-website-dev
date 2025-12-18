@@ -117,7 +117,7 @@ function AboutPage() {
     {
       name: 'KANIKA BANSAL',
       image:'/images/people/Kanika.jpeg',
-      linkedin: 'https://www.linkedin.com/in/kanikabansal/',
+      linkedin: 'https://www.linkedin.com/company/106445611',
     },
     {
       name: 'DISHITA BAJAJ',
