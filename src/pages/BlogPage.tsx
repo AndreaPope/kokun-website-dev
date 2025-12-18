@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 function BlogPage() {
   const blogs = [
     {
+    title: "The Invisible Effort of Showing Up",
+    image:
+      "/images/MetallicBurst.png",
+    link: "/blogs/dec-25",
+    },
+    {
       title: "Rethinking Migraine at Work: From Stigma to Support",
       image:
         "/images/migraineatwork.png",
@@ -19,6 +25,7 @@ function BlogPage() {
       "/images/thanksgiving.png",
     link: "/blogs/nov-23",
     },
+
   ];
 
   return (
