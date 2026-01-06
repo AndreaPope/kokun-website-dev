@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navigation from '../components/Navigation'
 import PageContentWrapper from '../components/PageContentWrapper'
+import Footer from '../components/Footer'
 
 const WhoWeArePage = () => {
   const [mounted, setMounted] = useState(false)
@@ -43,7 +44,7 @@ const WhoWeArePage = () => {
             {/* <Whoweare /> */}
 
             <div className="absolute top-0 my-20 h-[20rem] w-[85%] md:w-[30%] bg-primary">
-              <div className="my-[10rem] font-display text-white font-bold text-5xl ml-8 leading-tight ">
+              <div className="my-[10rem] font-display text-white font-bold text-3xl lg:text-5xl ml-8 leading-tight ">
                 Who We Are
               </div>
             </div>
@@ -113,6 +114,8 @@ const WhoWeArePage = () => {
               </div>
             </PageContentWrapper>
           </main>
+
+          <Footer />
         </div>
       </div>
   )
