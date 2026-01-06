@@ -11,6 +11,7 @@ import TeamPage from "./pages/Team";
 import PrivacyPage from "./pages/PrivacyPage";
 import CookieNoticePage from "./pages/CookieNoticePage";
 import BlogPage from "./pages/BlogPage";
+import Dec25Blog from "./pages/blogs/Dec25Blog";
 import Nov25Blog from "./pages/blogs/Nov25Blog";
 import Nov23Blog from "./pages/blogs/Nov23Blog";
 import ScrollToTop from "./components/ScrollToTop";
@@ -48,6 +49,7 @@ function App() {
         <Route path="/cookie-notice" element={<CookieNoticePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blogs/nov-25" element={<Nov25Blog />} />
+        <Route path="/blogs/dec-25" element={<Dec25Blog />} />
         <Route path="/blogs/nov-23" element={<Nov23Blog />} />
         <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/team" element={<TeamPage/>} />
