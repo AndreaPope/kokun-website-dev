@@ -10,12 +10,12 @@ const WhoWeArePage = () => {
   }, [])
 
   return (
-    <div className="relative min-h-screen font-sans text-white">
+    <div className="relative h-screen font-sans text-white">
       <div
         className="fixed inset-0 z-0"
         style={{
           backgroundImage:
-            'url(/images/backlit_side_dandelion.jpg)',
+            'url(/images/mtnroad.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -50,8 +50,8 @@ const WhoWeArePage = () => {
           </div>
 
           <main className="min-h-screen pb-24 pt-40 md:pt-48">
-            <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg min-h-screen max-h-auto">
-              <div className="text-lg md:text-xl space-y-8 mb-48">
+            <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg min-h-auto">
+              <div className="text-lg md:text-xl space-y-8">
                 <div className='space-y-8 text-lg md:text-xl'>
                     <div className='text-left space-y-4'>
                         <p className='mb-14'>
@@ -108,7 +108,6 @@ const WhoWeArePage = () => {
                         Our first offering is an AI-powered, evidence-based platform built to help people understand their bodies, navigate their conditions, and thrive. We combine research, peer insights, and real-world data to bring clarity where there’s confusion, and healing where there’s been dismissal.
                     <br/><br/>
                         <span className='text-primary text-3xl'>Join us on our journey!</span>
-
                     </div>
                 </div>
               </div>

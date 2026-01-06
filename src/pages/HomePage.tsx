@@ -12,7 +12,7 @@ function HomePage() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://res.cloudinary.com/dknulbme8/image/upload/t_Grayscale/qcxon3z2kqbpeego4cap")',
+          backgroundImage: 'url(/images/forest-bw.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
