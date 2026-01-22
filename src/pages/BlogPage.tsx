@@ -9,7 +9,7 @@ function BlogPage() {
   const blogs = [
     {
       title: "Connection, Reimagined",
-      image: "/images/Gemini_Metallic_Bursts.png",
+      image: "/images/heartleaf.png",
       link: "/blogs/jan-26",
     },
     {

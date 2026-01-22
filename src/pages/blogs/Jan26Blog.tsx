@@ -10,7 +10,7 @@ function Jan26Blog() {
       <div
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("/images/Gemini_Metallic_Bursts.png")',
+          backgroundImage: 'url("/images/heartleaf.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
