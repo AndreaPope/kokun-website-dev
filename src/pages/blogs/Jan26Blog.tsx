@@ -39,12 +39,14 @@ function Jan26Blog() {
                   next room. It means wondering, sometimes quietly, if you&apos;re
                   worth the extra effort.
                 </p>
+                <br />
                 <p>
                   If you&apos;ve been there, you&apos;re not alone. And if
                   you&apos;ve ever felt like migraine is slowly eroding a
                   relationship you care about, it&apos;s worth knowing that the
                   research tells a more hopeful story than you might expect.
                 </p>
+                <br />
                 <p>
                   Before every plan, there&apos;s a calculation. Will I have
                   enough energy? Will the restaurant be too loud? If I push
@@ -54,6 +56,7 @@ function Jan26Blog() {
                   can I cancel before it becomes a problem? How much can I ask
                   for before it becomes a burden?
                 </p>
+                <br />
                 <p>
                   These questions don&apos;t have answers, but they take up space
                   in every relationship migraine touches.
@@ -69,6 +72,7 @@ function Jan26Blog() {
                   the pain itself. It&apos;s the fear that the person you love
                   doesn&apos;t fully understand.
                 </p>
+                <br />
                 <p>
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/27132088/"
@@ -95,6 +99,7 @@ function Jan26Blog() {
                   pressure. It&apos;s being believed without needing proof.
                   It&apos;s flexibility without resentment.
                 </p>
+                <br />
                 <p>
                   The couples who navigate migraine well tend to approach it as a
                   shared reality rather than one person&apos;s problem. This might
@@ -103,6 +108,7 @@ function Jan26Blog() {
                   asks &quot;How can I support you?&quot; instead of
                   &quot;Why can&apos;t you…?&quot;
                 </p>
+                <br />
                 <p>
                   Some couples develop shorthand for hard days: a word or signal
                   that means &quot;I&apos;m not okay but I don&apos;t need to
