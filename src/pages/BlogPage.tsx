@@ -10,7 +10,7 @@ function BlogPage() {
     {
       title: "Connection, Reimagined",
       image: "/images/Gemini_Metallic_Bursts.png",
-      link: "/blogs/Jan26Blog.tsx",
+      link: "/blogs/jan-26",
     },
     {
     title: "The Invisible Effort of Showing Up",
