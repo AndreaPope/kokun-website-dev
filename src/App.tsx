@@ -50,7 +50,7 @@ function App() {
         <Route path="/blogs/nov-25" element={<Nov25Blog />} />
         <Route path="/blogs/dec-25" element={<Dec25Blog />} />
         <Route path="/blogs/nov-23" element={<Nov23Blog />} />
-        <Route path="/blogs/jan-26" element={<Jan26Blog />} />
+        {/* <Route path="/blogs/jan-26" element={<Jan26Blog />} /> */}
         <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/team" element={<TeamPage/>} />
       </Routes>
