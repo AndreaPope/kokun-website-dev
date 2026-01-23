@@ -123,7 +123,7 @@ function Jan26Blog() {
                 </h2>
                 <p>
                   Migraine doesn&apos;t pause for love, and you shouldn&apos;t
-                  have to earn it by pretending you&apos;re fine.
+                  have to earn it by pretending you&apos;re fine.{" "}
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/31407321/"
                     target="_blank"
