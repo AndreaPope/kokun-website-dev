@@ -17,7 +17,7 @@ export default function Footer() {
             Privacy Policy
           </a>
         </div>
-        <div className="text-sm mb-4 md:mb-0">© 2025 Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization.
+        <div className="text-sm mb-4 md:mb-0">© 2025 Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization
 </div>
         <div className="flex gap-6">
           <a href="mailto:info@kokun.space" className="hover:text-hover">
