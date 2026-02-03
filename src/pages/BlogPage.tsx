@@ -96,14 +96,18 @@ function BlogPage() {
                   key={index}
                   className="bg-white/10 p-4 rounded-lg hover:scale-105 transform transition-transform duration-200"
                 >
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  <Link to={blog.link} className="block">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  </Link>
 
                   <div className="p-4">
-                    <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
+                    <Link to={blog.link} className="inline-block">
+                      <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
+                    </Link>
 
                     <Link
                       to={blog.link}
