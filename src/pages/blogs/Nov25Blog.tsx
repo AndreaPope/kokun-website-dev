@@ -25,13 +25,13 @@ function Nov25Blog() {
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
+            <h1 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
               Rethinking Migraine at Work: From Stigma to Support
             </h1>
 
             <div className="space-y-8 text-lg md:text-xl">
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   Migraine at work. It's more than just a health issue
                 </h2>
                 <p>
@@ -84,7 +84,7 @@ function Nov25Blog() {
               </div>
 
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   Stigma costs us all
                 </h2>
                 <p>
@@ -116,7 +116,7 @@ function Nov25Blog() {
               </div>
 
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   So, when bias shows up in everyday ways, here's how we respond
                 </h2>
                 <p>
@@ -158,7 +158,7 @@ function Nov25Blog() {
               </div>
 
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   Ready to take action? Start here
                 </h2>
                 <ul className="list-disc list-outside pl-6 space-y-2">
@@ -210,7 +210,7 @@ function Nov25Blog() {
               </div>
 
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   The larger lesson
                 </h2>
                 <p>

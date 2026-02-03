@@ -25,13 +25,13 @@ function Nov23Blog() {
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
+            <h1 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
               5 Tips to Help You Navigate Thanksgiving
             </h1>
 
             <div className="space-y-8 text-lg md:text-xl">
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   Migraine at work. It's more than just a health issue
                 </h2>
                 <p>

@@ -25,7 +25,7 @@ function Dec25Blog() {
 
         <main className="min-h-screen px-4 pb-24 pt-40 md:pt-48">
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
-            <h1 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
+            <h1 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
               The Invisible Effort of Showing Up
             </h1>
 
@@ -48,7 +48,7 @@ function Dec25Blog() {
               </div>
 
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   The pressure to conform
                 </h2>
                   <p>
@@ -90,7 +90,7 @@ function Dec25Blog() {
                     </p>
               </div>
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   Reimagining what it means to show up
                 </h2>
                 <p>
@@ -123,7 +123,7 @@ function Dec25Blog() {
                 </p>
               </div>
               <div>
-                <h2 className="text-1xl md:text-2xl font-bold mb-4 text-primary">
+                <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
                   The larger lesson
                 </h2>
                 <p>
