@@ -111,7 +111,7 @@ function BlogPage() {
 
                     <Link
                       to={blog.link}
-                      className="text-link hover:text-hover font-medium"
+                      className="text-link hover:text-hover font-medium block"
                     >
                       Read the full blog post
                     </Link>
