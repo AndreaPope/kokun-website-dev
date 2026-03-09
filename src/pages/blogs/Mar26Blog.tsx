@@ -46,7 +46,7 @@ function Jan26Blog() {
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >
-                    [1]
+                    <sup>[1]</sup>
                   </a>{" "}
                    Women were labeled “nervous” or hysterical, their attacks dismissed as psychological fragility. 
                    Men, meanwhile, were more often given physical explanations such as stress and overexertion 
@@ -57,7 +57,7 @@ function Jan26Blog() {
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >
-                    [2]
+                    <sup>[2]</sup>
                   </a>{" "}
                    The science was incomplete, but the bias was clear. 
                 </p>
@@ -96,7 +96,7 @@ function Jan26Blog() {
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >
-                    [3]
+                    <sup>[3]</sup>
                   </a>{" "}
                 </p>
                 <br />
