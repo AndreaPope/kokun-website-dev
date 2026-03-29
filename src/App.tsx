@@ -19,6 +19,7 @@ import Mar26Blog from "./pages/blogs/Mar26Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import { testConnection } from "./lib/supabase";
 import AllBlogs from "../src/pages/blogs/allBlogs";
+import WhoWeArePage from "./pages/WhoWeArePage";
 
 function App() {
   const [isConnected, setIsConnected] = useState<boolean | null>(null);
@@ -56,6 +57,7 @@ function App() {
         <Route path="/blogs/mar-26" element={<Mar26Blog />} />
         <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/team" element={<TeamPage/>} />
+        <Route path="/who-we-are" element={<WhoWeArePage/>} />
       </Routes>
     </>
   );
