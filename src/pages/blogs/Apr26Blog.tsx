@@ -34,6 +34,7 @@ function Jan26Blog() {
                   Migraine often exists alongside other conditions — what clinicians call “comorbidities.” 
                   But those connections aren’t always recognized in care, which can leave us piecing things together 
                   on our own. So how do we begin to see the full picture?
+                <br />
                 </p>
               </div>
             </div>
