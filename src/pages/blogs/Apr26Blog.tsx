@@ -36,6 +36,7 @@ function Jan26Blog() {
                   on our own. So how do we begin to see the full picture?
                 <br />
                 </p>
+                <br />
               </div>
             </div>
 
