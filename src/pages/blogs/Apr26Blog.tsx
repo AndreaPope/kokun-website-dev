@@ -27,9 +27,6 @@ function Jan26Blog() {
             <h1 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-8 text-white font-display">
               Migraine: The Whole Picture
             </h1>
-            <h2 className="text-2xl md:text-2xl font-bold mb-4 text-primary">
-                  The Roots of Inequity
-            </h2>
 
             <div className="space-y-8 text-lg md:text-xl">
               <div>
