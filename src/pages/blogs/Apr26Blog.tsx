@@ -175,7 +175,7 @@ function Jan26Blog() {
                 </h2>
                 <p>
                   Systematic review and meta-analysis of calculating degree of comorbidity of irritable bowel syndrome with migraine. 
-                  <a
+                  {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10251688/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -187,7 +187,7 @@ function Jan26Blog() {
                 <p>
                   Migraine epidemiology, comorbidities and therapeutic landscape: a national 
                   population-based study. 
-                  <a
+                  {" "}<a
                     href="https://pubmed.ncbi.nlm.nih.gov/41668695/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -200,7 +200,7 @@ function Jan26Blog() {
                 <p>
                   The association between endometriosis and migraine: a systematic review and 
                   meta-analysis of observational studies.  
-                  <a
+                  {" "}<a
                     href="https://pubmed.ncbi.nlm.nih.gov/40247158/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -211,7 +211,7 @@ function Jan26Blog() {
                 <br />
                 <p>
                   Comorbidities of Migraine.  
-                  <a
+                  {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3008936/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -223,7 +223,7 @@ function Jan26Blog() {
                 <p>
                   The Correlation Between Migraine Frequency and Sleep Disturbances in Adults: 
                   A Cross-Sectional Study.  
-                  <a
+                  {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12318483/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -234,7 +234,7 @@ function Jan26Blog() {
                 <br />
                 <p>
                   Headache disorders in patients with Ehlers-Danlos syndromes and hypermobility spectrum disorders.
-                  <a
+                  {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11581963/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -245,7 +245,7 @@ function Jan26Blog() {
                 <br />                
                 <p>
                   Central Sensitization in Migraine: A Narrative Review.  
-                  <a
+                  {" "}<a
                     href="https://pubmed.ncbi.nlm.nih.gov/36101891/"
                     target="_blank"
                     rel="noopener noreferrer"
