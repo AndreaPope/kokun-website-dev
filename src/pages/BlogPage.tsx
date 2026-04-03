@@ -9,6 +9,11 @@ function BlogPage() {
   const blogs = [
     {
       title: "From Misunderstanding to Insight",
+      image: "/images/whole_picture.png",
+      link: "/blogs/apr-26",
+    },
+    {
+      title: "From Misunderstanding to Insight",
       image: "/images/hands.png",
       link: "/blogs/mar-26",
     },
