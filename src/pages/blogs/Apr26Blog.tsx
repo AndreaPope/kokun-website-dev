@@ -186,7 +186,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >Systematic review and meta-analysis of calculating degree of comorbidity of irritable bowel syndrome with migraine. 
+                  >[1] Systematic review and meta-analysis of calculating degree of comorbidity of irritable bowel syndrome with migraine. 
                   {" "}
                   </a>{" "}
                 </p>
@@ -197,7 +197,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >Migraine epidemiology, comorbidities and therapeutic landscape: a national 
+                  >[2] Migraine epidemiology, comorbidities and therapeutic landscape: a national 
                   population-based study.
                   </a>{" "}
                 </p>
@@ -209,7 +209,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >The association between endometriosis and migraine: a systematic review and 
+                  >[3] The association between endometriosis and migraine: a systematic review and 
                   meta-analysis of observational studies.  
                   </a>{" "}
                 </p>
@@ -220,7 +220,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >Comorbidities of Migraine. 
+                  >[4] Comorbidities of Migraine. 
                   </a>{" "}
                 </p>
                 <br />
@@ -230,7 +230,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >The Correlation Between Migraine Frequency and Sleep Disturbances in Adults: 
+                  >[5]The Correlation Between Migraine Frequency and Sleep Disturbances in Adults: 
                   A Cross-Sectional Study.
                   </a>{" "}
                 </p>
@@ -241,7 +241,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >Headache disorders in patients with Ehlers-Danlos syndromes and hypermobility spectrum disorders.
+                  >[6]Headache disorders in patients with Ehlers-Danlos syndromes and hypermobility spectrum disorders.
                   </a>{" "}
                 </p>
                 <br />                
@@ -251,7 +251,7 @@ function Jan26Blog() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >Central Sensitization in Migraine: A Narrative Review.
+                  >[7]Central Sensitization in Migraine: A Narrative Review.
                   </a>{" "}
                 </p>
                 <br />
