@@ -54,38 +54,45 @@ function Jan26Blog() {
                     className="text-link hover:text-hover transition-colors duration-200"
                   >Migraine rarely exists in isolation.
                   </a>{" "}
-                  Many people notice patterns that extend beyond head pain, sometimes affecting mood, digestion, 
+                  Many people notice patterns that extend beyond head pain, sometimes affecting mood, 
+                  digestion, 
                   sleep, and other parts of the body.
 
                 </p>
                 <br />
                 <p>
-                  For some, the pattern includes conditions like endometriosis. Research suggests that people 
-                  with endometriosis face a higher likelihood of experiencing migraine as well.
+                  Depression and anxiety are among the most common. People with migraine are significantly more 
+                  likely to experience both,<sup>[2]</sup> which can shape how symptoms show up day to day.
+                </p>
+                <br />
+                <p>
+                  For some, the pattern includes conditions like endometriosis. Research suggests that p
+                  eople 
+                  with endometriosis face a higher likelihood of experiencing migraine as well.<sup>[3]</sup>
                 </p>
                 <br />
                 <p>
                   If your migraine seems to show up along with digestive issues, there may be a connection. 
                   Conditions like IBS often overlap with migraine, and people with migraine are more than 
                   twice as likely to experience IBS. One possible explanation is the gut-brain connection — the 
-                  close link between the digestive system and the brain.
+                  close link between the digestive system and the brain.<sup>[4]</sup>
                 </p>
                 <br />
                 <p>
                   You may also notice widespread pain or sensitivity. Conditions like fibromyalgia frequently 
-                  overlap with migraine, and in many cases, each can make the other feel more intense.
+                  overlap with migraine, and in many cases, each can make the other feel more intense.<sup>[5]</sup>
                 </p>
                 <br />
                 <p>
                   Sleep is another important piece of the picture. Sleep disorders and migraine are closely linked, 
                   and the relationship goes both ways: poor sleep can trigger migraine attacks, and migraine can 
-                  make it harder to get restful sleep.
+                  make it harder to get restful sleep.<sup>[6]</sup>
                 </p>
                 <br />                
                 <p>
                   You may also notice patterns related to stress or body mechanics. For some, factors like chronic 
                   stress or hypermobility can play a role in how symptoms show up and interact, sometimes alongside 
-                  nervous system issues like dysautonomia.
+                  nervous system issues like dysautonomia.<sup>[7]</sup>
                 </p>
                 <br />
 
@@ -98,7 +105,7 @@ function Jan26Blog() {
                 <p>
                   One possible reason for these overlaps is something called central sensitization. 
                   In simple terms, it means the nervous system becomes more sensitive over time, making it easier 
-                  for pain and other symptoms to show up across different parts of the body. 
+                  for pain and other symptoms to show up across different parts of the body.<sup>[8]</sup>
                 </p>
                 <br />
                 <p>
@@ -174,83 +181,77 @@ function Jan26Blog() {
                   Sources
                 </h2>
                 <p>
-                  Systematic review and meta-analysis of calculating degree of comorbidity of irritable bowel syndrome with migraine. 
-                  {" "}<a
+                  <a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10251688/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pmc.ncbi.nlm.nih.gov/articles/PMC10251688/
+                  >Systematic review and meta-analysis of calculating degree of comorbidity of irritable bowel syndrome with migraine. 
+                  {" "}
                   </a>{" "}
                 </p>
                 <br />
                 <p>
-                  Migraine epidemiology, comorbidities and therapeutic landscape: a national 
-                  population-based study. 
-                  {" "}<a
+                  <a
                     href="https://pubmed.ncbi.nlm.nih.gov/41668695/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pubmed.ncbi.nlm.nih.gov/41668695/
+                  >Migraine epidemiology, comorbidities and therapeutic landscape: a national 
+                  population-based study.
                   </a>{" "}
                 </p>
                 <br />
 
                 <p>
-                  The association between endometriosis and migraine: a systematic review and 
-                  meta-analysis of observational studies.  
-                  {" "}<a
+                  <a
                     href="https://pubmed.ncbi.nlm.nih.gov/40247158/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pubmed.ncbi.nlm.nih.gov/40247158/
+                  >The association between endometriosis and migraine: a systematic review and 
+                  meta-analysis of observational studies.  
                   </a>{" "}
                 </p>
                 <br />
                 <p>
-                  Comorbidities of Migraine.  
-                  {" "}<a
+                   <a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3008936/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pmc.ncbi.nlm.nih.gov/articles/PMC3008936/
+                  >Comorbidities of Migraine. 
                   </a>{" "}
                 </p>
                 <br />
                 <p>
-                  The Correlation Between Migraine Frequency and Sleep Disturbances in Adults: 
-                  A Cross-Sectional Study.  
-                  {" "}<a
+                   <a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12318483/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pmc.ncbi.nlm.nih.gov/articles/PMC12318483/
+                  >The Correlation Between Migraine Frequency and Sleep Disturbances in Adults: 
+                  A Cross-Sectional Study.
                   </a>{" "}
                 </p>
                 <br />
                 <p>
-                  Headache disorders in patients with Ehlers-Danlos syndromes and hypermobility spectrum disorders.
-                  {" "}<a
+                  <a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11581963/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pmc.ncbi.nlm.nih.gov/articles/PMC11581963/
+                  >Headache disorders in patients with Ehlers-Danlos syndromes and hypermobility spectrum disorders.
                   </a>{" "}
                 </p>
                 <br />                
                 <p>
-                  Central Sensitization in Migraine: A Narrative Review.  
-                  {" "}<a
+                  <a
                     href="https://pubmed.ncbi.nlm.nih.gov/36101891/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
-                  >https://pubmed.ncbi.nlm.nih.gov/36101891/
+                  >Central Sensitization in Migraine: A Narrative Review.
                   </a>{" "}
                 </p>
                 <br />
