@@ -37,6 +37,9 @@ export default function Navigation({ className = '' }: NavigationProps) {
           <Link to="/blog" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
             Blog
           </Link>
+          <Link to="/who-we-are" className="hidden md:block text-primary font-bold hover:text-hover transition-colors drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">
+            Who We Are
+          </Link>
         </div>
 
         {/* Center Logo */}
