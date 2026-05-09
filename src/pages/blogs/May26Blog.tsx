@@ -54,19 +54,19 @@ function May26Blog() {
                     className="text-link hover:text-hover transition-colors duration-200"
                   >Migraine affects almost one in five women of reproductive age
                   </a>
-                  ,and {" "}
+                  , and {" "}
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/21631471/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >recent research shows the numbers may be even higher
-                  </a>{" "}
-                  
+                  </a>
                   . Hormones play a significant role here. Migraine often worsens 
                   around your period, improves for many during pregnancy as estrogen
                    rises and stabilizes, and then returns postpartum as levels drop 
                    again.
+                  {" "}
                   <a
                     href="https://pubmed.ncbi.nlm.nih.gov/12662187/"
                     target="_blank"
@@ -181,6 +181,7 @@ function May26Blog() {
                 <br />
                 <p>
                   Some of these migraine-mom-friendly suggestions come from Sarah Rathsack’s article 
+                  {" "}
                   <a
                     href="https://americanmigrainefoundation.org/resource-library/chronic-migraine-motherhood/"
                     target="_blank"
