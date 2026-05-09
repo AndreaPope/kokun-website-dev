@@ -179,7 +179,7 @@ function May26Blog() {
                   Migraine and motherhood have intersected in silence for generations. Let’s come together to change that. In the way families talk about it, plan for it, and support each other through it. You’re part of that shift.
                 </p>
                 <br />
-                <p>
+                <p><i>
                   Some of these migraine-mom-friendly suggestions come from Sarah Rathsack’s article 
                   {" "}
                   <a
@@ -189,7 +189,7 @@ function May26Blog() {
                     className="text-link hover:text-hover transition-colors duration-200"
                   >Balancing Chronic Migraine & Motherhood
                   </a>.
-                </p>
+                </i></p>
                 <br />
               </div>
             </div>
