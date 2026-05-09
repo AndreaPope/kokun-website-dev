@@ -181,8 +181,8 @@ function May26Blog() {
                   Migraine and motherhood have intersected in silence for generations. Let’s come together to change that. In the way families talk about it, plan for it, and support each other through it. You’re part of that shift.
                 </p>
                 <br />
-                <p><i>
-                  Some of these migraine-mom-friendly suggestions come from Sarah Rathsack’s article 
+                <p className="text-sm"><i>
+                  Note: Some of these migraine-mom-friendly suggestions come from Sarah Rathsack’s article
                   {" "}
                   <a
                     href="https://americanmigrainefoundation.org/resource-library/chronic-migraine-motherhood/"
