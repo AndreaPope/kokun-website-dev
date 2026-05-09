@@ -9,8 +9,8 @@ function BlogPage() {
   const blogs = [
     {
       title: "Migraine and Motherhood",
-      image: "/images/momNChild.png",
-      link: "/blogs/apr-26",
+      image: "/images/momNchild.png",
+      link: "/blogs/may-26",
     },
     {
       title: "Migraine: The Whole Picture",

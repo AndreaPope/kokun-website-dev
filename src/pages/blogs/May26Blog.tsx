@@ -4,13 +4,13 @@ import Footer from "../../components/Footer";
 import PageContentWrapper from "../../components/PageContentWrapper";
 import { Link } from "react-router-dom";
 
-function Jan26Blog() {
+function May26Blog() {
   return (
     <div className="relative min-h-screen font-sans text-white">
       <div
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("/images/monNchild.png")',
+          backgroundImage: 'url("/images/momNchild.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
