@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 function BlogPage() {
   const blogs = [
     {
+      title: "Migraine and Motherhood",
+      image: "/images/momNChild.png",
+      link: "/blogs/apr-26",
+    },
+    {
       title: "Migraine: The Whole Picture",
       image: "/images/whole_picture.png",
       link: "/blogs/apr-26",

@@ -17,6 +17,7 @@ import Nov23Blog from "./pages/blogs/Nov23Blog";
 import Jan26Blog from "./pages/blogs/Jan26Blog";
 import Mar26Blog from "./pages/blogs/Mar26Blog";
 import Apr26Blog from "./pages/blogs/Apr26Blog";
+import May26Blog from "./pages/blogs/May26Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import { testConnection } from "./lib/supabase";
 import AllBlogs from "../src/pages/blogs/allBlogs";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/blogs/jan-26" element={<Jan26Blog />} />
         <Route path="/blogs/mar-26" element={<Mar26Blog />} />
         <Route path="/blogs/apr-26" element={<Apr26Blog />} />
+        <Route path="/blogs/may-26" element={<May26Blog />} />
         <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/team" element={<TeamPage/>} />
       </Routes>
