@@ -32,6 +32,7 @@ function May26Blog() {
               <div>
                 <p>
                   If you’re a mom with migraine, here’s a truth you’ve probably discovered: living with migraine means your family lives with it too. It shapes how you show up as a parent, and how your family adapts because of it. 
+                <br />  
                   Motherhood asks us to hold a lot at once. When migraine is part of the equation, there’s even more to balance. It’s hard not to feel the weight of how your kids have to adapt when you have to step back.  It can raise questions you don’t always have answers for, like how it affects them, and how to handle it in a way that works for your family. We’re here to help you make sense of that, with concrete, actionable ways you can care for both yourself and your kids.
 
                 <br />
