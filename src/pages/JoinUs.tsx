@@ -39,17 +39,24 @@ export default function JoinUs() {
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <div className="space-y-8 text-lg md:text-xl">
               <p>
-                Kōkūn brings you closer to the world of invisible conditions. Together we can
-                transform how invisible health conditions are seen, understood, and healed.
+                Invisible conditions have been overlooked by medical research for generations, 
+                leaving profound gaps in understanding and care. At Kōkūn, we're changing that.
               </p>
               <p>
                 Join a growing movement of advocates, patients, and changemakers who want to stay
                 connected to the breakthroughs, questions, and quiet revolutions shaping care from
                 the inside out.
+                Starting with migraine, one of the most common yet most misunderstood invisible conditions, 
+                we're shining a light on what has been in the shadows for too long. We're building a platform to 
+                help you understand your condition better, connect with a community that truly sees you, and 
+                reclaim your healing journey.
               </p>
               <p>
-                If you've ever felt invisible, this is your moment to be seen and heard—and help
-                change the story. Sign up now to secure your spot.
+                Join us and a growing movement of advocates, patients, and changemakers who want to make the invisible visible. 
+                Be among the first to experience what's next for migraine care and help shape the future with your insights.
+              </p>
+              <p>
+                Sign up now to secure your spot.
               </p>
 
               <form
