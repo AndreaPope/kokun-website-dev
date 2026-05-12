@@ -43,9 +43,6 @@ export default function JoinUs() {
                 leaving profound gaps in understanding and care. At Kōkūn, we're changing that.
               </p>
               <p>
-                Join a growing movement of advocates, patients, and changemakers who want to stay
-                connected to the breakthroughs, questions, and quiet revolutions shaping care from
-                the inside out.
                 Starting with migraine, one of the most common yet most misunderstood invisible conditions, 
                 we're shining a light on what has been in the shadows for too long. We're building a platform to 
                 help you understand your condition better, connect with a community that truly sees you, and 
