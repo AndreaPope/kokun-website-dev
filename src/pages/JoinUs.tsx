@@ -30,7 +30,7 @@ export default function JoinUs() {
             <div className="text-3xl sm:text-4xl md:text-6xl text-center font-bold mb-24 md:mb-32">
               <p className="flex items-center justify-center">
                 <span>
-                  Be <span className="text-primary">Among the First</span>
+                  Be <span className="text-primary">Part of the Movement</span>
                 </span>
               </p>
             </div>
