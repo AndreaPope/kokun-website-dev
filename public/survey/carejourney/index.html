@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kōkūn Care Journey Survey</title>
+  <meta name="description" content="Help make headache and migraine experiences visible by sharing your care journey. Participate in the Kōkūn Care Journey survey.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative Background Glow Blobs -->
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Header Logo -->
+  <header id="header-nav">
+    <div class="brand-logo">
+      <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+      <svg class="brand-logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.363 72.562" aria-label="Kōkūn"><path d="M145.489,46.604l-.093-.194,10.476-9.429c6.475-5.715,1.807-13.143,1.807-13.616v-.473h20.571v.473l-17.811,15.617,18.098,32.001v.473h-20.664l-12.383-24.852Z" fill="#81a487"/><path d="M183.329,56.599v-17.423c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v31.14c0,5.521,2.954,7.234,6.575,7.234,1.9,0,4.001-.473,5.901-1.14-.093-.768-.093-1.621-.093-2.481v-18.47c0-7.242-2.954-15.524-2.954-15.903v-.38h20.858v32.28c0,7.234,2.954,15.524,2.954,15.903v.38h-16.291c-1.326-2.187-3.047-4.761-3.9-8.382-2.76,4.862-7.234,9.336-15.144,9.336-8.948,0-15.803-5.715-15.803-15.81Z" fill="#81a487"/><path d="M263.443,71.456h-23.805v-.38c0-.38,2.954-8.669,2.954-15.903v-15.997c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v8.087c2.481-4.28,7.529-8.661,15.237-8.661,8.863,0,15.81,5.715,15.81,15.81v17.043c0,7.234,2.954,15.524,2.954,15.903v.38h-23.813v-.38c0-.38,2.954-8.669,2.954-15.903v-14.477c0-5.614-3.334-7.428-6.855-7.521-2.194-.093-4.381.574-6.288,1.427v20.571c0,7.234,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><path d="M24.949,71.422H0v-.38c0-.38,2.95-8.665,2.95-15.903V19.141C2.95,11.902,0,3.621,0,3.237v-.38h24.949v.38c0,.384-2.95,8.665-2.95,15.903v35.998c0,7.238,2.95,15.524,2.95,15.903v.38ZM35.905,57.329l-12.767-19.618c-.283-.477-.38-.667.194-1.144l8.192-7.521,8.948-8.285c8.002-7.335,4.575-16.76,4.575-17.334v-.57h22.564v.477c-4.001,2.667-8.281,6.572-13.616,11.426l-15.144,14.097,20.098,28.756c4.094,5.905,10.662,13.05,10.662,13.43v.38h-29.326c0-.38-.481-7.998-4.381-14.093Z" fill="#81a487"/><path d="M67.177,47.044c0-17.524,12.468-24.759,26.371-24.759,13.81,0,26.48,7.331,26.48,24.759,0,17.524-12.67,25.518-26.48,25.518-13.903,0-26.371-7.994-26.371-25.518ZM100.031,47.044c0-9.429-.861-20.474-6.482-20.474-5.707,0-6.374,11.143-6.374,20.474,0,9.429.667,21.137,6.374,21.137,5.622,0,6.482-11.709,6.482-21.137Z" fill="#81a487"/><path d="M147.865,71.422h-23.805v-.38c0-.38,2.947-8.665,2.947-15.903V18.191c0-7.238-3.14-15.144-3.14-15.524l-.093-.38,2.954-.384,18.183-1.904v55.139c0,7.238,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><rect x="192.499" y="9.244" width="28.953" height="4.761" fill="#81a487"/><rect x="78.921" y="9.214" width="28.946" height="4.761" fill="#81a487"/><path d="M291.839,27.633v-4.284h-1.6v-.573h3.85v.573h-1.607v4.284h-.643Z" fill="#81a487"/><path d="M294.728,27.633v-4.857h.967l1.15,3.439c.106.32.183.56.232.719.055-.177.141-.436.258-.779l1.163-3.379h.865v4.857h-.62v-4.065l-1.411,4.065h-.58l-1.405-4.135v4.135h-.62Z" fill="#81a487"/></svg>
+      </a>
+    </div>
+    <div id="dev-jump" style="display:none; align-items:center; gap:8px; margin-left:auto;">
+      <label for="dev-jump-select" style="font-size:12px; color:#888;">Jump to:</label>
+      <select id="dev-jump-select" style="font-size:12px; padding:2px 6px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer;">
+        <option value="">-- slide --</option>
+        <option value="slide-intro">slide-intro</option>
+        <option value="slide-q1-1">slide-q1-1</option>
+        <option value="slide-q1-2">slide-q1-2</option>
+        <option value="slide-ineligible">slide-ineligible</option>
+        <option value="slide-section-profile">slide-section-profile</option>
+        <option value="slide-q2-1">slide-q2-1</option>
+        <option value="slide-q2-2">slide-q2-2</option>
+        <option value="slide-q2-3a">slide-q2-3a</option>
+        <option value="slide-q2-3b">slide-q2-3b</option>
+        <option value="slide-q2-4">slide-q2-4</option>
+        <option value="slide-q2-5">slide-q2-5</option>
+        <option value="slide-q2-6a">slide-q2-6a</option>
+        <option value="slide-q2-6b">slide-q2-6b</option>
+        <option value="slide-q3-1">slide-q3-1</option>
+        <option value="slide-q3-2">slide-q3-2</option>
+        <option value="slide-q3-3">slide-q3-3</option>
+        <option value="slide-q3-4">slide-q3-4</option>
+        <option value="slide-q3-5">slide-q3-5</option>
+        <option value="slide-q3-6">slide-q3-6</option>
+        <option value="slide-q3-7">slide-q3-7</option>
+        <option value="slide-q4-1">slide-q4-1</option>
+        <option value="slide-q4-2a">slide-q4-2a</option>
+        <option value="slide-q4-2b">slide-q4-2b</option>
+        <option value="slide-q4-2c">slide-q4-2c</option>
+        <option value="slide-q4-2d">slide-q4-2d</option>
+        <option value="slide-q4-2e">slide-q4-2e</option>
+        <option value="slide-q4-3a">slide-q4-3a</option>
+        <option value="slide-q4-3b">slide-q4-3b</option>
+        <option value="slide-q5">slide-q5</option>
+        <option value="slide-q6-1">slide-q6-1</option>
+        <option value="slide-q6-2">slide-q6-2</option>
+        <option value="slide-q6-3">slide-q6-3</option>
+        <option value="slide-q6-4">slide-q6-4</option>
+        <option value="slide-q6-5">slide-q6-5</option>
+        <option value="slide-q7">slide-q7</option>
+        <option value="slide-end">slide-end</option>
+      </select>
+    </div>
+    <a href="mailto:info@kokun.space" class="contact-link">Contact us</a>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <div class="survey-wrapper">
+
+      <!-- ==================== INTRO SLIDE ==================== -->
+      <div id="slide-intro" class="survey-slide active">
+        <div class="intro-text-center">
+          <div class="intro-logo-container">
+            <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+            <svg class="intro-logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.363 72.562" aria-label="Kōkūn"><path d="M145.489,46.604l-.093-.194,10.476-9.429c6.475-5.715,1.807-13.143,1.807-13.616v-.473h20.571v.473l-17.811,15.617,18.098,32.001v.473h-20.664l-12.383-24.852Z" fill="#81a487"/><path d="M183.329,56.599v-17.423c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v31.14c0,5.521,2.954,7.234,6.575,7.234,1.9,0,4.001-.473,5.901-1.14-.093-.768-.093-1.621-.093-2.481v-18.47c0-7.242-2.954-15.524-2.954-15.903v-.38h20.858v32.28c0,7.234,2.954,15.524,2.954,15.903v.38h-16.291c-1.326-2.187-3.047-4.761-3.9-8.382-2.76,4.862-7.234,9.336-15.144,9.336-8.948,0-15.803-5.715-15.803-15.81Z" fill="#81a487"/><path d="M263.443,71.456h-23.805v-.38c0-.38,2.954-8.669,2.954-15.903v-15.997c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v8.087c2.481-4.28,7.529-8.661,15.237-8.661,8.863,0,15.81,5.715,15.81,15.81v17.043c0,7.234,2.954,15.524,2.954,15.903v.38h-23.813v-.38c0-.38,2.954-8.669,2.954-15.903v-14.477c0-5.614-3.334-7.428-6.855-7.521-2.194-.093-4.381.574-6.288,1.427v20.571c0,7.234,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><path d="M24.949,71.422H0v-.38c0-.38,2.95-8.665,2.95-15.903V19.141C2.95,11.902,0,3.621,0,3.237v-.38h24.949v.38c0,.384-2.95,8.665-2.95,15.903v35.998c0,7.238,2.95,15.524,2.95,15.903v.38ZM35.905,57.329l-12.767-19.618c-.283-.477-.38-.667.194-1.144l8.192-7.521,8.948-8.285c8.002-7.335,4.575-16.76,4.575-17.334v-.57h22.564v.477c-4.001,2.667-8.281,6.572-13.616,11.426l-15.144,14.097,20.098,28.756c4.094,5.905,10.662,13.05,10.662,13.43v.38h-29.326c0-.38-.481-7.998-4.381-14.093Z" fill="#81a487"/><path d="M67.177,47.044c0-17.524,12.468-24.759,26.371-24.759,13.81,0,26.48,7.331,26.48,24.759,0,17.524-12.67,25.518-26.48,25.518-13.903,0-26.371-7.994-26.371-25.518ZM100.031,47.044c0-9.429-.861-20.474-6.482-20.474-5.707,0-6.374,11.143-6.374,20.474,0,9.429.667,21.137,6.374,21.137,5.622,0,6.482-11.709,6.482-21.137Z" fill="#81a487"/><path d="M147.865,71.422h-23.805v-.38c0-.38,2.947-8.665,2.947-15.903V18.191c0-7.238-3.14-15.144-3.14-15.524l-.093-.38,2.954-.384,18.183-1.904v55.139c0,7.238,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><rect x="192.499" y="9.244" width="28.953" height="4.761" fill="#81a487"/><rect x="78.921" y="9.214" width="28.946" height="4.761" fill="#81a487"/><path d="M291.839,27.633v-4.284h-1.6v-.573h3.85v.573h-1.607v4.284h-.643Z" fill="#81a487"/><path d="M294.728,27.633v-4.857h.967l1.15,3.439c.106.32.183.56.232.719.055-.177.141-.436.258-.779l1.163-3.379h.865v4.857h-.62v-4.065l-1.411,4.065h-.58l-1.405-4.135v4.135h-.62Z" fill="#81a487"/></svg>
+            </a>
+          </div>
+          <h1 class="large-title intro-title">Headache and Migraine Survey</h1>
+          <p class="body-text intro-desc">
+            Headaches disorders like migraine affect billions of people globally, yet the daily reality of living with them often remains invisible.
+          </p>
+          <p class="body-text intro-desc">
+            <strong>Your experiences hold the key to better care. </strong>Take this <strong class="" style="color: var(--color-sage-60);">anonymous</strong> survey and help make the invisible visible.
+          </p>
+          <div class="estimate-inline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            5–10 minutes
+          </div>
+          <button class="btn btn-primary" onclick="handleNext()">
+            Start Survey
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== ELIGIBILITY SECTION ==================== -->
+      <!-- Q1.1 Age -->
+      <div id="slide-q1-1" class="survey-slide">
+        <!-- <span class="question-number">Section 1: Eligibility</span> -->
+        <h2 class="title-1 question-text">How old are you?</h2>
+        <div class="options-grid" data-type="single" data-field="age_bracket">
+          <button class="option-btn" data-val="Under 18">Under 18 <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="18-24">18-24 <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="25-34">25-34 <span class="option-badge">C</span></button>
+          <button class="option-btn" data-val="35-44">35-44 <span class="option-badge">D</span></button>
+          <button class="option-btn" data-val="45-54">45-54 <span class="option-badge">E</span></button>
+          <button class="option-btn" data-val="55-64">55-64 <span class="option-badge">F</span></button>
+          <button class="option-btn" data-val="over 64">over 64 <span class="option-badge">G</span></button>
+        </div>
+        <div id="q1-1-err" class="validation-error">Please select an option to continue.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q1.2 Headache Experience -->
+      <div id="slide-q1-2" class="survey-slide">
+        <!-- <span class="question-number">Section 1: Eligibility</span> -->
+        <h2 class="title-1 question-text">Do you experience recurring headaches* or migraine?</h2>
+        <p class="subheadline-text question-desc">*specifically a headache disorder or diagnosed condition that causes headaches</p>
+        <div class="options-grid" data-type="single" data-field="headache_eligible">
+          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="I used to">I used to <span class="option-badge">C</span></button>
+        </div>
+        <div id="q1-2-err" class="validation-error">Please select an option to continue.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- INELIGIBLE SCREEN -->
+      <div id="slide-ineligible" class="survey-slide">
+        <div class="end-screen">
+<!--          <h2 class="title-1" style="margin-bottom: var(--space-sm); color: var(--color-sage-70);">Thank you for your interest!</h2>-->
+          <p class="body-text" style="color: var(--color-sage-80);">
+            Thank you for your interest! <br>
+            This survey is only for adults over 18 living with recurring headaches or migraine.<br><br>
+          </p>
+          <p class="body-text" style="color: var(--color-sage-80);">
+          <strong>You can still help.</strong> <br>Make migraine and other headache disorders more visible by sharing this survey with your friends and family around the world.<br>
+            
+          
+          </p>
+          <div class="ineligible-actions" style="margin-top: var(--space-lg);">
+            <button class="btn btn-secondary" onclick="resetSurvey()">Restart</button>
+            <button class="btn btn-primary" onclick="shareSurvey('copy')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share Survey
+            </button>
+          </div>
+
+          <div class="share-options-container">
+            <div class="social-icons">
+              <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Website">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="mailto:info@kokun.space" class="social-icon-link" title="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SECTION INTRO: PROFILE ==================== -->
+      <div id="slide-section-profile" class="survey-slide section-intro-slide">
+        <div class="section-intro-content">
+          <div class="section-intro-text">
+            <span class="section-intro-label">Profile</span>
+            <p class="section-intro-desc">Your background can shape your care journey. Help us see the full picture.</p>
+          </div>
+          <div class="action-controls">
+            <button class="btn btn-secondary btn-back">Back</button>
+            <button class="btn btn-primary btn-next">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== DEMOGRAPHICS SECTION ==================== -->
+      <!-- Q2.1 Sex and Gender -->
+      <div id="slide-q2-1" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 2: Demographics</span> -->
+        <h2 class="title-1 question-text">Which of the following best describes you?</h2>
+        <div class="options-grid" data-type="single" data-field="gender">
+          <button class="option-btn" data-val="Woman">Woman <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="Man">Man <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="Non-binary">Non-binary <span class="option-badge">C</span></button>
+          <button class="option-btn" data-val="Prefer to self-describe">Prefer to self-describe <span class="option-badge">D</span></button>
+          <button class="option-btn" data-val="Prefer not to say">Prefer not to say <span class="option-badge">E</span></button>
+        </div>
+        
+        <!-- Conditional Input -->
+        <div id="gender-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q2-1-self">Please describe your gender identity:</label>
+          <input type="text" id="q2-1-self" placeholder="e.g. Non-binary, genderqueer...">
+          <div id="q2-1-self-err" class="validation-error">Please fill in this description field.</div>
+        </div>
+
+        <div id="q2-1-err" class="validation-error">Please select an option to continue.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.2 Assigned Sex -->
+      <div id="slide-q2-2" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 2: Demographics</span> -->
+        <h2 class="title-1 question-text">Were you assigned female at birth?</h2>
+        <div class="options-grid" data-type="single" data-field="assigned_female_at_birth">
+          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="Prefer not to say">Prefer not to say <span class="option-badge">C</span></button>
+        </div>
+        
+        <!-- Why this matters accordion -->
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+              Headaches and migraine disproportionately affect people assigned female at birth, and hormonal factors may influence the pathway to diagnosis and treatment.
+            </p>
+          </div>
+        </div>
+
+        <div id="q2-2-err" class="validation-error">Please select an option to continue.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.3a Ethnic Background (structured) -->
+      <div id="slide-q2-3a" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text">Which of the following best describes your racial, ethnic, ancestral, or cultural background?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" id="q2-3a-options" data-type="multi" data-field="ethnic_background_categories">
+          <div class="multi-option" data-val="African, African American, Black, or Afro-Caribbean">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">African, African American, Black, or Afro-Caribbean</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="East Asian">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">East Asian</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="South Asian">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">South Asian</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Southeast Asian">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Southeast Asian</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Middle Eastern or North African">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Middle Eastern or North African</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Hispanic, Latino/a/e, or Latin American">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Hispanic, Latino/a/e, or Latin American</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Indigenous, First Nations, Native American, Alaska Native, Aboriginal, or Torres Strait Islander">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Indigenous, First Nations, Native American, Alaska Native, Aboriginal, or Torres Strait Islander</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Native Hawaiian or Pacific Islander">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Native Hawaiian or Pacific Islander</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="White or European">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">White or European</span>
+            </div>
+          </div>
+          <div class="multi-option multi-option--has-input" data-val="Another background or identity" id="q2-3a-another-opt">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Another background or identity</span>
+            </div>
+            <div class="multi-option-input-row" id="q2-3a-another-row" style="display:none">
+              <input type="text" id="q2-3a-another-text" class="multi-option-text-input" placeholder="Please describe...">
+            </div>
+          </div>
+          <div class="multi-option multi-option--has-input" data-val="Prefer to self-describe" id="q2-3a-selfdesc-opt">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Prefer to self-describe</span>
+            </div>
+            <div class="multi-option-input-row" id="q2-3a-selfdesc-row" style="display:none">
+              <input type="text" id="q2-3a-selfdesc-text" class="multi-option-text-input" placeholder="Please describe...">
+            </div>
+          </div>
+          <div class="multi-option" data-val="Prefer not to answer" id="q2-3a-pnta">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Prefer not to answer</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="q2-3a-err" class="validation-error">Please select at least one option.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+              Research has not always reflected the full diversity of people living with headaches and/or migraine. This data helps us identify participation gaps and understand how experiences may differ across communities.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.3b Ethnic Background (free text) -->
+      <div id="slide-q2-3b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 2: Demographics</span> -->
+        <h2 class="title-1 question-text">Is there anything more specific you'd like to share about your background, ancestry, or cultural identity?</h2>
+        <!--<p class="subheadline-text question-desc">Examples: British-Indian, Kurdish, Māori, Ashkenazi Jewish, etc.</p>-->
+
+        <div class="input-text-wrapper">
+          <input type="text" id="q2-3-eth" placeholder="e.g. British-Indian, Yoruba, Ashkenazi...">
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+               Research has not always reflected the full diversity of people living with headaches and/or migraine. This data helps us identify participation gaps and understand how experiences may differ across communities. 
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.4 Location -->
+      <div id="slide-q2-4" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 2: Demographics</span> -->
+        <h2 class="title-1 question-text">Where are you located?</h2>
+        
+        <div class="fields-stack">
+          <div>
+            <label class="field-label" for="q2-4-country">Country</label>
+            <select id="q2-4-country">
+              <option value="" disabled selected>Select country...</option>
+            </select>
+            <div id="q2-4-country-err" class="validation-error">Required.</div>
+          </div>
+          <div id="q2-4-postal-wrapper">
+            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">Postal / Zip Code</label>
+            <input type="text" id="q2-4-postal" placeholder="e.g. 90210">
+            <div id="q2-4-postal-err" class="validation-error">Required.</div>
+          </div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+              Your location (urban vs. rural, climate patterns, geographical region, etc.) can impact incidence and access to care.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.5 Education -->
+      <div id="slide-q2-5" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 2: Demographics</span> -->
+        <h2 class="title-1 question-text">What is your highest level of education?</h2>
+        <div class="options-grid" data-type="single" data-field="education_level">
+          <button class="option-btn" data-val="Less than high school">Less than high school</button>
+          <button class="option-btn" data-val="High school diploma or GED equivalent">High school diploma or GED equivalent</button>
+          <button class="option-btn" data-val="Occupational Certificate/Vocational Training/Apprenticeship">Vocational / Apprenticeship</button>
+          <button class="option-btn" data-val="Associate degree">Associate degree</button>
+          <button class="option-btn" data-val="Bachelor's degree">Bachelor's degree</button>
+          <button class="option-btn" data-val="Master's degree">Master's degree</button>
+          <button class="option-btn" data-val="Doctorate">Doctorate</button>
+          <button class="option-btn" data-val="Other">Other</button>
+        </div>
+
+        <div id="education_level-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q2-5-other">Please specify:</label>
+          <input type="text" id="q2-5-other" placeholder="e.g. Trade certification, some college...">
+          <div id="q2-5-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="q2-5-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.6a Employment Situation -->
+      <div id="slide-q2-6a" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text">What is your current work or employment situation?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="work_situation">
+          <div class="multi-option" data-val="Working full-time">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Working full-time</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Working part-time">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Working part-time</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Self-employed, freelance, or consulting">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Self-employed, freelance, or consulting</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Student">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Student</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Homemaker or unpaid caregiver">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Homemaker or unpaid caregiver</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Retired">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Retired</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Not currently working and looking for work">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Not currently working and looking for work</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Not currently working due to disability or health reasons">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Not currently working due to disability or health reasons</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Not currently working for another reason">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Not currently working for another reason</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Prefer not to answer" onclick="
+            if(!this.classList.contains('selected')) {
+              document.querySelectorAll('#slide-q2-6a .multi-option').forEach(el => {
+                if(el !== this) { el.classList.remove('selected'); }
+              });
+              surveyData.work_situation = ['Prefer not to answer'];
+            }
+          ">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Prefer not to answer</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="q2-6a-err" class="validation-error">Please select at least one option.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+              Type of work help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access) affect your path to diagnosis and care.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q2.6b Type of Work -->
+      <div id="slide-q2-6b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text">Which of the following best describes your main work or occupation?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="work_type_multi">
+          <div class="multi-option" data-val="Management, business, finance, or administration">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Management, business, finance, or administration</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Healthcare or social care">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Healthcare or social care</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Education, research, or library services">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Education, research, or library services</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Science, technology, engineering, data, or product">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Science, technology, engineering, data, or product</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Legal, government, policy, or public service">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Legal, government, policy, or public service</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Arts, media, design, writing, entertainment, or sports">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Arts, media, design, writing, entertainment, or sports</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Sales, marketing, customer service, retail, or hospitality">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Sales, marketing, customer service, retail, or hospitality</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Personal care, caregiving, wellness, or community services">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Personal care, caregiving, wellness, or community services</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Skilled trades, construction, maintenance, or repair">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Skilled trades, construction, maintenance, or repair</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Manufacturing, production, transportation, logistics, or warehouse work">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Manufacturing, production, transportation, logistics, or warehouse work</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Agriculture, forestry, fishing, or environmental field work">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Agriculture, forestry, fishing, or environmental field work</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Military, protective services, or emergency response">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Military, protective services, or emergency response</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text">
+               Type of work help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access) affect your path to diagnosis and care. 
+            </p>
+          </div>
+        </div>
+
+        <div id="q2-6b-err" class="validation-error">Please select at least one option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== SYMPTOMS SECTION ==================== -->
+      <!-- Q3.1 Headache Types -->
+      <div id="slide-q3-1" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text">Do you know what type of headache you experience?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+        
+        <div class="multiselect-container" data-type="multi" data-field="headache_types">
+          <div class="multi-option" data-val="Migraine">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Migraine</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Tension-type headache">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Tension-type headache</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Cluster headache">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Cluster headache</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Medication-overuse headache">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Medication-overuse headache</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Sinus headache">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Sinus headache</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="I do not know" onclick="
+            // Toggle mutually exclusive option
+            if(!this.classList.contains('selected')) {
+              document.querySelectorAll('#slide-q3-1 .multi-option').forEach(el => {
+                if(el !== this) { el.classList.remove('selected'); }
+              });
+              surveyData.headache_types = ['I do not know'];
+              document.getElementById('headache_types_other-other-wrapper').style.display = 'none';
+            }
+          ">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">I do not know</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Other (specify)</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="headache_types_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q3-1-other">Specify headache type:</label>
+          <input type="text" id="q3-1-other" placeholder="e.g. Cluster headache, sinus headache...">
+          <div id="q3-1-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="q3-1-err" class="validation-error">Please select at least one option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.2 Migraine Subtype (CONDITIONAL) -->
+      <div id="slide-q3-2" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text">What type of migraine do you experience?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="migraine_subtypes">
+          <div class="multi-option" data-val="Migraine with aura">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Migraine with aura</span></div>
+          </div>
+          <div class="multi-option" data-val="Migraine without aura">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Migraine without aura</span></div>
+          </div>
+          <div class="multi-option" data-val="Chronic migraine (15+ days/month)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Chronic migraine (15+ days/month)</span></div>
+          </div>
+          <div class="multi-option" data-val="Migraine with brainstem aura">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Migraine with brainstem aura</span></div>
+          </div>
+          <div class="multi-option" data-val="Vestibular migraine">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Vestibular migraine</span></div>
+          </div>
+          <div class="multi-option" data-val="Abdominal migraine">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Abdominal migraine</span></div>
+          </div>
+          <div class="multi-option" data-val="Hemiplegic migraine">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Hemiplegic migraine</span></div>
+          </div>
+          <div class="multi-option" data-val="Hormonal or Menstrual migraine">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Hormonal or Menstrual migraine</span></div>
+          </div>
+          <div class="multi-option" data-val="Cyclical Vomiting Syndrome">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cyclical Vomiting Syndrome</span></div>
+          </div>
+          <div class="multi-option" data-val="I do not know" onclick="
+            if(!this.classList.contains('selected')) {
+              document.querySelectorAll('#slide-q3-2 .multi-option').forEach(el => {
+                if(el !== this) { el.classList.remove('selected'); }
+              });
+              surveyData.migraine_subtypes = ['I do not know'];
+              document.getElementById('migraine_subtypes_other-other-wrapper').style.display = 'none';
+            }
+          ">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I do not know</span></div>
+          </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+          </div>
+        </div>
+
+        <div id="migraine_subtypes_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q3-2-other">Specify subtype:</label>
+          <input type="text" id="q3-2-other" placeholder="e.g. Hemiplegic migraine...">
+          <div id="q3-2-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="q3-2-err" class="validation-error">Please select at least one option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.3 Duration -->
+      <div id="slide-q3-3" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How long have you been experiencing headaches?</h2>
+        
+        <div class="input-text-wrapper">
+          <div class="duration-inline-wrapper" style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
+            <div class="inline-input-wrapper" style="width: 160px; max-width: 160px;">
+              <input type="number" id="q3-3-years" min="0" placeholder="e.g. 2">
+              <span class="inline-unit-suffix">years</span>
+            </div>
+            <div class="inline-input-wrapper" style="width: 160px; max-width: 160px;">
+              <input type="number" id="q3-3-months" min="0" max="11" placeholder="e.g. 6">
+              <span class="inline-unit-suffix">months</span>
+            </div>
+          </div>
+          <div id="q3-3-err" class="validation-error">Please enter a valid number of years and/or months.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.4 Frequency -->
+      <div id="slide-q3-4" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How often do you experience headaches?</h2>
+        
+        <div class="input-text-wrapper">
+          <div style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
+            <div class="inline-input-wrapper" style="width: 130px; height: 52px;">
+              <input type="number" id="q3-4-count" min="1" placeholder="e.g. 4" style="height: 100%;">
+            </div>
+            <span style="font-size: 1rem; color: var(--text-secondary); white-space: nowrap;">per</span>
+            <div class="custom-select-wrapper inline-input-wrapper" id="q3-4-period-wrapper" style="width: 130px; max-width: 130px; height: 52px;">
+              <select id="q3-4-period" style="display:none;">
+                <option value="Week">week</option>
+                <option value="Month" selected>month</option>
+                <option value="Year">year</option>
+              </select>
+              <div class="custom-select-trigger" tabindex="0" data-select="q3-4-period">
+                <span>month</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="custom-select-options">
+                <div class="custom-select-option" data-value="Week">week</div>
+                <div class="custom-select-option selected" data-value="Month">month</div>
+                <div class="custom-select-option" data-value="Year">year</div>
+              </div>
+            </div>
+          </div>
+          <div id="q3-4-err" class="validation-error">Please input a positive frequency count.</div>
+          <div id="q3-4-val-err" class="validation-error">Invalid limit: Maximum 7/week, 31/month, 365/year.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.5 Days in Last Month -->
+      <div id="slide-q3-5" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How many days in the last month did you experience a headache?</h2>
+        
+        <div class="input-text-wrapper">
+          <div class="inline-input-wrapper">
+            <input type="number" id="q3-5-count" min="0" max="31" placeholder="e.g. 15">
+            <span class="inline-unit-suffix">days</span>
+          </div>
+          <div id="q3-5-err" class="validation-error">Please enter a number between 0 and 31.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.6 Functional Impact -->
+      <div id="slide-q3-6" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>When you have a headache, how much does it affect your ability to function?</h2>
+        <div class="options-grid" data-type="single" data-field="functional_impact">
+          <button class="option-btn" data-val="I can function normally">I can function normally</button>
+          <button class="option-btn" data-val="I can function, but with difficulty">I can function, but with difficulty</button>
+          <button class="option-btn" data-val="I need to stop and rest">I need to stop and rest</button>
+          <button class="option-btn" data-val="I am unable to function">I am unable to function</button>
+        </div>
+        <div id="q3-6-err" class="validation-error">Please select an option.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              The impact of headaches extends far beyond pain. It shapes our daily lives in meaningful ways that often go unseen.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q3.7 Quality of Life Impact -->
+      <div id="slide-q3-7" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 3: Symptoms</span> -->
+        <h2 class="title-2 question-text">Quality of Life Impact</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-md);">
+          
+          <div class="qol-option-group" data-field="pain">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">a. When you have headaches, how often is the pain severe?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-pain" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-pain" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-pain" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-pain" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-pain" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-pain-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="limit">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">b. How often does it limit your ability to do usual daily activities?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-limit" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-limit" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-limit" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-limit" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-limit" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-limit-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="lie">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">c. How often do you wish you could lie down?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-lie" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-lie" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-lie" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-lie" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-lie" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-lie-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="tired">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">d. In the past 4 weeks, how often have you felt too tired to work?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-tired" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-tired" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-tired" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-tired" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-tired" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-tired-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="irritated">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">e. In the past 4 weeks, how often have you felt fed up or irritated because of your headaches?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-irritated" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-irritated" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-irritated" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-irritated" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-irritated" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-irritated-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="concentrate">
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">f. In the past 4 weeks, how often did it limit your ability to concentrate?</p>
+            <div class="qol-choices-row">
+              <label class="qol-choice"><input type="radio" name="qol-concentrate" value="never"><span>Never</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-concentrate" value="rarely"><span>Rarely</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-concentrate" value="sometimes"><span>Sometimes</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-concentrate" value="very often"><span>Very Often</span></label>
+              <label class="qol-choice"><input type="radio" name="qol-concentrate" value="always"><span>Always</span></label>
+            </div>
+            <div id="q3-7-concentrate-err" class="validation-error">Required.</div>
+          </div>
+
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              The impact of headaches extends far beyond pain. It shapes our daily lives in meaningful ways that often go unseen.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== DIAGNOSIS SECTION ==================== -->
+      <!-- Q4.1 Diagnosis Status -->
+      <div id="slide-q4-1" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>Have you been diagnosed with a type of headache?</h2>
+        <div class="options-grid" data-type="single" data-field="diagnosis_status">
+          <button class="option-btn" data-val="Yes, by a doctor">Yes, by a doctor <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="Yes, self-diagnosed">Yes, self-diagnosed <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="No diagnosis">No, I have no formal diagnosis <span class="option-badge">C</span></button>
+          <button class="option-btn" data-val="Unsure">Unsure <span class="option-badge">D</span></button>
+        </div>
+        <div id="q4-1-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- PATH 1: DOCTOR-DIAGNOSED -->
+      <!-- Q4.2A Diagnostician -->
+      <div id="slide-q4-2a" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text">Who diagnosed you?</h2>
+        <div class="options-grid" data-type="single" data-field="doctor_diagnosed_by">
+          <button class="option-btn" data-val="Primary Care Physician">Primary Care Physician (GP/Family Doctor)</button>
+          <button class="option-btn" data-val="Neurologist">Neurologist</button>
+          <button class="option-btn" data-val="Headache Specialist">Headache Specialist</button>
+          <button class="option-btn" data-val="Nurse Practitioner / Physician Assistant">Nurse Practitioner / Physician Assistant</button>
+          <button class="option-btn" data-val="Emergency Room / Urgent Care">Emergency Room / Urgent Care</button>
+          <button class="option-btn" data-val="OB/GYN">OB/GYN</button>
+          <button class="option-btn" data-val="Pain Management Specialist">Pain Management Specialist</button>
+          <button class="option-btn" data-val="Alternative medicine practitioner">Alternative medicine practitioner</button>
+          <button class="option-btn" data-val="Other">Other</button>
+        </div>
+
+        <div id="doctor_diagnosed_by-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q4-2a-other">Please specify provider type:</label>
+          <input type="text" id="q4-2a-other" placeholder="e.g. Pain specialist, naturopath...">
+          <div id="q4-2a-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="q4-2a-err" class="validation-error">Please select who diagnosed you.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q4.2B Time to Diagnosis -->
+      <div id="slide-q4-2b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How long did it take from first symptoms to getting a diagnosis?</h2>
+        
+        <div style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
+          <div class="inline-input-wrapper" style="width: 130px;">
+            <input type="number" id="q4-2b-time" min="1" placeholder="e.g. 3">
+          </div>
+          <div class="custom-select-wrapper inline-input-wrapper" id="q4-2b-period-wrapper" style="width: 130px; max-width: 130px;">
+            <select id="q4-2b-period" style="display:none;">
+              <option value="Years" selected>Years</option>
+              <option value="Months">Months</option>
+            </select>
+            <div class="custom-select-trigger" tabindex="0" data-select="q4-2b-period">
+              <span>Years</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="custom-select-options">
+              <div class="custom-select-option selected" data-value="Years">Years</div>
+              <div class="custom-select-option" data-value="Months">Months</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="q4-2b-err" class="validation-error">Please enter a valid timeframe.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q4.2C Care Satisfaction -->
+      <div id="slide-q4-2c" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How satisfied are you with your headache care?</h2>
+        
+        <div class="options-grid" data-type="single" data-field="satisfaction_rating" style="margin-bottom: var(--space-md);">
+          <button class="option-btn" data-val="1">1 – Very dissatisfied</button>
+          <button class="option-btn" data-val="2">2 – Dissatisfied</button>
+          <button class="option-btn" data-val="3">3 – Unsure</button>
+          <button class="option-btn" data-val="4">4 – Satisfied</button>
+          <button class="option-btn" data-val="5">5 – Very satisfied</button>
+        </div>
+
+        <div class="input-text-wrapper">
+          <label class="field-label" for="q4-2c-reason">Why did you choose this rating?</label>
+          <input type="text" id="q4-2c-reason" maxlength="400" placeholder="e.g. My doctor took a long time to listen... (optional)">
+        </div>
+
+        <div id="q4-2c-err" class="validation-error">Please select a satisfaction rating.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q4.2D Barriers to Diagnosis (Nested List) -->
+      <div id="slide-q4-2d" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text">What were your barriers to getting a diagnosis?</h2>
+        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="diagnosis_barriers">
+          <!-- Category 1 -->
+          <div class="multi-option" data-val="Didn't think I needed to">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Didn't think I needed to</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="My symptoms didn't seem serious"><span class="sub-checkbox"></span><span class="sub-label">My symptoms didn't seem serious</span></div>
+              <div class="sub-option" data-val="My symptoms weren't impacting my day-to-day life"><span class="sub-checkbox"></span><span class="sub-label">My symptoms weren't impacting my day-to-day life</span></div>
+              <div class="sub-option" data-val="Thought it wasn't a big deal. That it was just a headache"><span class="sub-checkbox"></span><span class="sub-label">Thought it wasn't a big deal. That it was just a headache</span></div>
+              <div class="sub-option" data-val="People around me didn't think it was serious"><span class="sub-checkbox"></span><span class="sub-label">People around me didn't think it was serious</span></div>
+              <div class="sub-option" data-val="I was taught to push through pain"><span class="sub-checkbox"></span><span class="sub-label">I was taught to push through pain</span></div>
+              <div class="sub-option" data-val="Thought it would pass on its own"><span class="sub-checkbox"></span><span class="sub-label">Thought it would pass on its own</span></div>
+              <div class="sub-option" data-val="Didn't realize some headaches needed medical care"><span class="sub-checkbox"></span><span class="sub-label">Didn't realize some headaches needed medical care</span></div>
+            </div>
+          </div>
+          <!-- Category 2 -->
+          <div class="multi-option" data-val="Thought I could manage on my own">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Thought I could manage on my own</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Wanted to handle it myself"><span class="sub-checkbox"></span><span class="sub-label">Wanted to handle it myself</span></div>
+              <div class="sub-option" data-val="Preferred trying home remedies first"><span class="sub-checkbox"></span><span class="sub-label">Preferred trying home remedies first</span></div>
+              <div class="sub-option" data-val="Had found ways to manage my symptoms"><span class="sub-checkbox"></span><span class="sub-label">Had found ways to manage my symptoms</span></div>
+              <div class="sub-option" data-val="Didn't think medical care would help"><span class="sub-checkbox"></span><span class="sub-label">Didn't think medical care would help</span></div>
+              <div class="sub-option" data-val="Don't like seeing doctors unless I really need to"><span class="sub-checkbox"></span><span class="sub-label">Don't like seeing doctors unless I really need to</span></div>
+              <div class="sub-option" data-val="Don't like my doctor"><span class="sub-checkbox"></span><span class="sub-label">Don't like my doctor</span></div>
+            </div>
+          </div>
+          <!-- Category 3 -->
+          <div class="multi-option" data-val="Life and logistical barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Experienced life and logistical barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Was too busy / other priorities"><span class="sub-checkbox"></span><span class="sub-label">Was too busy / other priorities</span></div>
+              <div class="sub-option" data-val="Couldn't take time off work"><span class="sub-checkbox"></span><span class="sub-label">Couldn't take time off work</span></div>
+              <div class="sub-option" data-val="Work schedule made it difficult"><span class="sub-checkbox"></span><span class="sub-label">Work schedule made it difficult</span></div>
+              <div class="sub-option" data-val="Caregiving / family responsibilities took priority"><span class="sub-checkbox"></span><span class="sub-label">Caregiving / family responsibilities took priority</span></div>
+              <div class="sub-option" data-val="Didn't have support to prioritize care"><span class="sub-checkbox"></span><span class="sub-label">Didn't have support to prioritize care</span></div>
+              <div class="sub-option" data-val="Didn't have energy or capacity to deal with it"><span class="sub-checkbox"></span><span class="sub-label">Didn't have energy or capacity to deal with it</span></div>
+              <div class="sub-option" data-val="Overwhelming logistics (travel, scheduling)"><span class="sub-checkbox"></span><span class="sub-label">Overwhelming logistics (travel, scheduling)</span></div>
+            </div>
+          </div>
+          <!-- Category 4 -->
+          <div class="multi-option" data-val="Encountered cost or insurance barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Encountered cost or insurance barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Couldn't afford care or treatment"><span class="sub-checkbox"></span><span class="sub-label">Couldn't afford care or treatment</span></div>
+              <div class="sub-option" data-val="Didn't have medical insurance"><span class="sub-checkbox"></span><span class="sub-label">Didn't have medical insurance</span></div>
+              <div class="sub-option" data-val="Insurance coverage was limited"><span class="sub-checkbox"></span><span class="sub-label">Insurance coverage was limited</span></div>
+              <div class="sub-option" data-val="Didn't want to spend the money"><span class="sub-checkbox"></span><span class="sub-label">Didn't want to spend the money</span></div>
+            </div>
+          </div>
+          <!-- Category 5 -->
+          <div class="multi-option" data-val="Had trouble finding the right care or provider">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Had trouble finding the right care or provider</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Lack of local or covered providers"><span class="sub-checkbox"></span><span class="sub-label">Lack of local or covered providers</span></div>
+              <div class="sub-option" data-val="Hard to get appointments with provider of choice"><span class="sub-checkbox"></span><span class="sub-label">Hard to get appointments with provider of choice</span></div>
+              <div class="sub-option" data-val="Long wait times for appointments"><span class="sub-checkbox"></span><span class="sub-label">Long wait times for appointments</span></div>
+              <div class="sub-option" data-val="Didn't know how to find the right provider"><span class="sub-checkbox"></span><span class="sub-label">Didn't know how to find the right provider</span></div>
+              <div class="sub-option" data-val="Didn't know how to get a diagnosis"><span class="sub-checkbox"></span><span class="sub-label">Didn't know how to get a diagnosis</span></div>
+            </div>
+          </div>
+          <!-- Category 6 -->
+          <div class="multi-option" data-val="Fear/unease about diagnosis or treatment">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Fear/unease about diagnosis or treatment</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Was afraid of being diagnosed with something serious"><span class="sub-checkbox"></span><span class="sub-label">Was afraid of being diagnosed with something serious</span></div>
+              <div class="sub-option" data-val="Didn't want medications/medical treatment"><span class="sub-checkbox"></span><span class="sub-label">Didn't want medications/medical treatment</span></div>
+              <div class="sub-option" data-val="Felt anxious about what diagnosis or treatment might involve"><span class="sub-checkbox"></span><span class="sub-label">Felt anxious about what diagnosis or treatment might involve</span></div>
+              <div class="sub-option" data-val="Had negative experiences before"><span class="sub-checkbox"></span><span class="sub-label">Had negative experiences before</span></div>
+            </div>
+          </div>
+          <!-- Category 7 -->
+          <div class="multi-option" data-val="Was worried about stigma or judgment">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Was worried about stigma or judgment</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Worried others would think I was exaggerating"><span class="sub-checkbox"></span><span class="sub-label">Worried others would think I was exaggerating</span></div>
+              <div class="sub-option" data-val="Didn't want to be seen as weak or complaining"><span class="sub-checkbox"></span><span class="sub-label">Didn't want to be seen as weak or complaining</span></div>
+              <div class="sub-option" data-val="Felt my doctor wouldn't take me seriously"><span class="sub-checkbox"></span><span class="sub-label">Felt my doctor wouldn't take me seriously</span></div>
+              <div class="sub-option" data-val="Felt uncomfortable talking about symptoms"><span class="sub-checkbox"></span><span class="sub-label">Felt uncomfortable talking about symptoms</span></div>
+            </div>
+          </div>
+          <!-- Category 8 -->
+          <div class="multi-option" data-val="Tried before, didn't help">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Tried getting a diagnosis without success</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Had tried to get care but didn't get answers/relief"><span class="sub-checkbox"></span><span class="sub-label">Had tried to get care but didn't get answers/relief</span></div>
+              <div class="sub-option" data-val="Was tired of trying to get an answer/relief"><span class="sub-checkbox"></span><span class="sub-label">Was tired of trying to get an answer/relief</span></div>
+              <div class="sub-option" data-val="Was misdiagnosed"><span class="sub-checkbox"></span><span class="sub-label">Was misdiagnosed</span></div>
+              <div class="sub-option" data-val="Different providers gave conflicting guidance"><span class="sub-checkbox"></span><span class="sub-label">Different providers gave conflicting guidance</span></div>
+              <div class="sub-option" data-val="Felt dismissed and gave up"><span class="sub-checkbox"></span><span class="sub-label">Felt dismissed and gave up</span></div>
+              <div class="sub-option" data-val="Had difficulty communicating with providers"><span class="sub-checkbox"></span><span class="sub-label">Had difficulty communicating with providers</span></div>
+            </div>
+          </div>
+     
+          <!-- No barriers option -->
+          <div class="multi-option" data-val="Didn't experience any major barriers to diagnosis">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Didn't experience any major barriers to diagnosis</span></div>
+          </div>
+                     <!-- Category 9 -->
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+          </div>
+        <div id="diagnosis_barriers_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q4-2d-other">Specify other barrier:</label>
+          <input type="text" id="q4-2d-other" placeholder="e.g. Language barrier, lack of childcare...">
+          <div id="q4-2d-other-err" class="validation-error">Required.</div>
+        </div>
+</div>
+        <div id="q4-2d-err" class="validation-error">Please select at least one barrier.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Diagnosis for headaches is often delayed—sometimes by years. Understanding what barriers you faced and how you overcame them helps us understand what needs to change.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q4.2E Overcoming Barriers -->
+      <div id="slide-q4-2e" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>What helped you overcome these barriers and get diagnosed?</h2>
+        
+        <div class="input-text-wrapper">
+          <input type="text" id="q4-2e-text" maxlength="300" placeholder="e.g. Better communication between specialists...">
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Diagnosis for headaches is often delayed—sometimes by years. Understanding what barriers you faced and how you overcame them helps us understand what needs to change.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- PATH 2: SELF / NO DIAGNOSIS -->
+      <!-- Q4.3A Reasons for No Diagnosis -->
+      <div id="slide-q4-3a" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text">What are the main reasons you haven't sought a formal diagnosis?</h2>
+        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="reasons_no_diagnosis">
+          <!-- Category 1 -->
+          <div class="multi-option" data-val="Don't think I need to">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Don't think I need to</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="My symptoms don't seem serious"><span class="sub-checkbox"></span><span class="sub-label">My symptoms don't seem serious</span></div>
+              <div class="sub-option" data-val="What's the big deal? It's just a headache"><span class="sub-checkbox"></span><span class="sub-label">What's the big deal? It's just a headache</span></div>
+              <div class="sub-option" data-val="People around me don't think it is serious"><span class="sub-checkbox"></span><span class="sub-label">People around me don't think it is serious</span></div>
+              <div class="sub-option" data-val="I was taught to push through pain"><span class="sub-checkbox"></span><span class="sub-label">I was taught to push through pain</span></div>
+              <div class="sub-option" data-val="My symptoms aren't impacting my day-to-day life"><span class="sub-checkbox"></span><span class="sub-label">My symptoms aren't impacting my day-to-day life</span></div>
+              <div class="sub-option" data-val="It will pass on its own"><span class="sub-checkbox"></span><span class="sub-label">It will pass on its own</span></div>
+            </div>
+          </div>
+          <!-- Category 2 -->
+          <div class="multi-option" data-val="Prefer to manage on my own">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Prefer to manage on my own</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Want to handle it myself"><span class="sub-checkbox"></span><span class="sub-label">Want to handle it myself</span></div>
+              <div class="sub-option" data-val="Prefer home remedies"><span class="sub-checkbox"></span><span class="sub-label">Prefer home remedies</span></div>
+              <div class="sub-option" data-val="Have found ways to manage my symptoms"><span class="sub-checkbox"></span><span class="sub-label">Have found ways to manage my symptoms</span></div>
+              <div class="sub-option" data-val="Don't think medical care will help"><span class="sub-checkbox"></span><span class="sub-label">Don't think medical care will help</span></div>
+              <div class="sub-option" data-val="Don't like seeing doctors unless I really need to"><span class="sub-checkbox"></span><span class="sub-label">Don't like seeing doctors unless I really need to</span></div>
+              <div class="sub-option" data-val="Don't like my doctor"><span class="sub-checkbox"></span><span class="sub-label">Don't like my doctor</span></div>
+            </div>
+          </div>
+          <!-- Category 3 -->
+          <div class="multi-option" data-val="Experienced life and logistical barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Experienced life and logistical barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Too busy / other priorities"><span class="sub-checkbox"></span><span class="sub-label">Too busy / other priorities</span></div>
+              <div class="sub-option" data-val="Can't take time off work"><span class="sub-checkbox"></span><span class="sub-label">Can't take time off work</span></div>
+              <div class="sub-option" data-val="Work schedule makes it difficult"><span class="sub-checkbox"></span><span class="sub-label">Work schedule makes it difficult</span></div>
+              <div class="sub-option" data-val="Caregiving / family responsibilities have taken priority"><span class="sub-checkbox"></span><span class="sub-label">Caregiving / family responsibilities have taken priority</span></div>
+              <div class="sub-option" data-val="Overwhelming logistics (travel, scheduling)"><span class="sub-checkbox"></span><span class="sub-label">Overwhelming logistics (travel, scheduling)</span></div>
+              <div class="sub-option" data-val="Don't have support to step away"><span class="sub-checkbox"></span><span class="sub-label">Don't have support to step away</span></div>
+              <div class="sub-option" data-val="Don't have energy or capacity to deal with it"><span class="sub-checkbox"></span><span class="sub-label">Don't have energy or capacity to deal with it</span></div>
+            </div>
+          </div>
+          <!-- Category 4 -->
+          <div class="multi-option" data-val="Encountered cost or insurance barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Encountered cost or insurance barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Can't afford care or treatment"><span class="sub-checkbox"></span><span class="sub-label">Can't afford care or treatment</span></div>
+              <div class="sub-option" data-val="Don't have medical insurance"><span class="sub-checkbox"></span><span class="sub-label">Don't have medical insurance</span></div>
+              <div class="sub-option" data-val="Insurance coverage is limited"><span class="sub-checkbox"></span><span class="sub-label">Insurance coverage is limited</span></div>
+              <div class="sub-option" data-val="Don't want to spend the money"><span class="sub-checkbox"></span><span class="sub-label">Don't want to spend the money</span></div>
+            </div>
+          </div>
+          <!-- Category 5 -->
+          <div class="multi-option" data-val="Have trouble finding the right care or provider">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Have trouble finding the right care or provider</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Lack of local or covered providers"><span class="sub-checkbox"></span><span class="sub-label">Lack of local or covered providers</span></div>
+              <div class="sub-option" data-val="Hard to get appointments with provider of choice"><span class="sub-checkbox"></span><span class="sub-label">Hard to get appointments with provider of choice</span></div>
+              <div class="sub-option" data-val="Long wait times for appointments"><span class="sub-checkbox"></span><span class="sub-label">Long wait times for appointments</span></div>
+              <div class="sub-option" data-val="Don't know how to find the right provider"><span class="sub-checkbox"></span><span class="sub-label">Don't know how to find the right provider</span></div>
+              <div class="sub-option" data-val="Don't know how to get a diagnosis"><span class="sub-checkbox"></span><span class="sub-label">Don't know how to get a diagnosis</span></div>
+            </div>
+          </div>
+          <!-- Category 6 -->
+          <div class="multi-option" data-val="Fear/unease about diagnosis or treatment">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Fear/unease about diagnosis or treatment</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Am afraid of being diagnosed with something serious"><span class="sub-checkbox"></span><span class="sub-label">Am afraid of being diagnosed with something serious</span></div>
+              <div class="sub-option" data-val="Anxious about what diagnosis or treatment might involve"><span class="sub-checkbox"></span><span class="sub-label">Anxious about what diagnosis or treatment might involve</span></div>
+              <div class="sub-option" data-val="Don't want medications/medical treatment"><span class="sub-checkbox"></span><span class="sub-label">Don't want medications/medical treatment</span></div>
+              <div class="sub-option" data-val="Have had negative experiences before"><span class="sub-checkbox"></span><span class="sub-label">Have had negative experiences before</span></div>
+            </div>
+          </div>
+          <!-- Category 7 -->
+          <div class="multi-option" data-val="Am worried about stigma or judgment">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Am worried about stigma or judgment</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Worried others will think I am exaggerating"><span class="sub-checkbox"></span><span class="sub-label">Worried others will think I am exaggerating</span></div>
+              <div class="sub-option" data-val="Don't want to be seen as weak or complaining"><span class="sub-checkbox"></span><span class="sub-label">Don't want to be seen as weak or complaining</span></div>
+              <div class="sub-option" data-val="Feel my doctor won't take me seriously"><span class="sub-checkbox"></span><span class="sub-label">Feel my doctor won't take me seriously</span></div>
+              <div class="sub-option" data-val="Feel uncomfortable talking about my symptoms"><span class="sub-checkbox"></span><span class="sub-label">Feel uncomfortable talking about my symptoms</span></div>
+            </div>
+          </div>
+          <!-- Category 8 -->
+          <div class="multi-option" data-val="Tried before, didn't help">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Tried getting a diagnosis without success</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Have tried to get care but didn't get answers/relief"><span class="sub-checkbox"></span><span class="sub-label">Have tried to get care but didn't get answers/relief</span></div>
+              <div class="sub-option" data-val="Was misdiagnosed"><span class="sub-checkbox"></span><span class="sub-label">Was misdiagnosed</span></div>
+              <div class="sub-option" data-val="Different providers have given conflicting guidance"><span class="sub-checkbox"></span><span class="sub-label">Different providers have given conflicting guidance</span></div>
+              <div class="sub-option" data-val="Had difficulty communicating with providers"><span class="sub-checkbox"></span><span class="sub-label">Had difficulty communicating with providers</span></div>
+              <div class="sub-option" data-val="Felt dismissed and gave up"><span class="sub-checkbox"></span><span class="sub-label">Felt dismissed and gave up</span></div>
+              <div class="sub-option" data-val="Am tired of trying to get an answer/relief"><span class="sub-checkbox"></span><span class="sub-label">Am tired of trying to get an answer/relief</span></div>
+            </div>
+          </div>
+          <!-- Category 9 -->
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+          </div>
+        </div>
+
+        <div id="reasons_no_diagnosis_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q4-3a-other">Specify other reason:</label>
+          <input type="text" id="q4-3a-other" placeholder="e.g. Never considered it necessary...">
+          <div id="q4-3a-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="q4-3a-err" class="validation-error">Please select at least one reason.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Many people never pursue formal diagnosis. Your answers help us understand why—are systemic barriers in the way or is it a deliberate choice—and what, if anything, needs to change.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q4.3B Path to Diagnosis -->
+      <div id="slide-q4-3b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 4: Diagnosis</span> -->
+        <h2 class="title-1 question-text">What would have to change for you to consider getting a formal diagnosis?</h2>
+        
+        <div class="input-text-wrapper">
+          <input type="text" id="q4-3b-text" maxlength="300" placeholder="e.g. Easier access to neurologists...">
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+             Many people never pursue formal diagnosis. Your answers help us understand why—are systemic barriers in the way or is it a deliberate choice—and what, if anything, needs to change.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== SECTION 5: CURRENT TREATMENT ==================== -->
+      <div id="slide-q5" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 5: Current Treatment</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How are you currently treating your headaches?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="treatments">
+          
+          <div class="multi-option" data-val="Medications">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Medications (painkillers, triptans, preventives, Botox...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-medications-specify" placeholder="Specify medications (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Neuromodulation devices">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Neuromodulation devices</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-neuromodulationdevices-specify" placeholder="Specify devices (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Supplements/nutraceuticals">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Supplements / nutraceuticals</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-supplementsnutraceuticals-specify" placeholder="Specify supplements (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="CBT">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cognitive Behavioral Therapy (CBT) or talk therapy</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Complementary approaches">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Complementary approaches (yoga, meditation, acupuncture...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-complementaryapproaches-specify" placeholder="Specify approaches (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Lifestyle changes">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Lifestyle changes (sleep, hydration, triggers...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-lifestylechanges-specify" placeholder="Specify lifestyle changes (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Not currently treating" onclick="
+            if(!this.classList.contains('selected')) {
+              document.querySelectorAll('#slide-q5 .multi-option').forEach(el => {
+                if(el !== this) { 
+                  el.classList.remove('selected');
+                  const subList = el.querySelector('.nested-subcategories');
+                  if (subList) subList.classList.remove('expanded');
+                }
+              });
+              surveyData.treatments = ['Not currently treating'];
+            }
+          ">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Not currently treating</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();">
+            </div>
+          </div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Many clinical treatments exist for headaches. But what matters most is what actually works in practice.
+            </p>
+          </div>
+        </div>
+
+        <div id="q5-err" class="validation-error">Please select at least one treatment option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== SECTION 6: YOUR EXPERIENCE ==================== -->
+      <!-- Q6.1 Confidence in Understanding & Management -->
+      <div id="slide-q6-1" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 6: Experience</span> -->
+        <h2 class="title-2 question-text">Confidence & Management</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-md);">
+          
+          <div class="qol-option-group" data-field="q6-1a">
+            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">a. How confident do you feel in understanding your headaches?</p>
+            <div class="options-grid">
+              <button class="option-btn" data-val="Extremely confident">Extremely confident</button>
+              <button class="option-btn" data-val="Confident">Confident</button>
+              <button class="option-btn" data-val="Somewhat confident">Somewhat confident</button>
+              <button class="option-btn" data-val="Less confident">Less confident</button>
+              <button class="option-btn" data-val="Not at all confident">Not at all confident</button>
+            </div>
+            <div id="q6-1a-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="qol-option-group" data-field="q6-1b">
+            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">b. How confident do you feel about managing your headaches?</p>
+            <div class="options-grid">
+              <button class="option-btn" data-val="Extremely confident">Extremely confident</button>
+              <button class="option-btn" data-val="Confident">Confident</button>
+              <button class="option-btn" data-val="Somewhat confident">Somewhat confident</button>
+              <button class="option-btn" data-val="Less confident">Less confident</button>
+              <button class="option-btn" data-val="Not at all confident">Not at all confident</button>
+            </div>
+            <div id="q6-1b-err" class="validation-error">Required.</div>
+          </div>
+
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.2 Journey Stage -->
+      <div id="slide-q6-2" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 6: Experience</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>How would you describe where you are in your journey with your headaches?</h2>
+        <div class="options-grid" data-type="single" data-field="journey_stage">
+          <button class="option-btn" data-val="Just beginning to seek answers">Just beginning to seek answers</button>
+          <button class="option-btn" data-val="Managing it for a while, still a challenge">Managing it for a while, still a challenge</button>
+          <button class="option-btn" data-val="Have a plan that's working for me">Have a plan that's working for me</button>
+          <button class="option-btn" data-val="I've given up">I've given up</button>
+          <button class="option-btn" data-val="Other">Other (specify)</button>
+        </div>
+
+        <div id="journey_stage-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-2-other">Please specify:</label>
+          <input type="text" id="q6-2-other" placeholder="e.g. Recently diagnosed, in remission...">
+          <div id="q6-2-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Your answer helps us understand if the available support and care structures are effective.
+            </p>
+          </div>
+        </div>
+
+        <div id="q6-2-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.3 Challenges in Care (CONDITIONAL - Doctor Diagnosed only) -->
+      <div id="slide-q6-3" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 6: Experience</span> -->
+        <h2 class="title-1 question-text">What have been the biggest challenges in getting care?</h2>
+        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="challenges_in_care">
+          <!-- Category 1 -->
+          <div class="multi-option" data-val="Finding the right care or provider">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Finding the right care or provider</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Hard to find the right specialist/provider"><span class="sub-checkbox"></span><span class="sub-label">Hard to find the right specialist/provider</span></div>
+              <div class="sub-option" data-val="Lack of local or covered providers"><span class="sub-checkbox"></span><span class="sub-label">Lack of local or covered providers</span></div>
+              <div class="sub-option" data-val="Hard to get appointments with provider of choice"><span class="sub-checkbox"></span><span class="sub-label">Hard to get appointments with provider of choice</span></div>
+              <div class="sub-option" data-val="Long wait times for appointments"><span class="sub-checkbox"></span><span class="sub-label">Long wait times for appointments</span></div>
+              <div class="sub-option" data-val="Had trouble getting follow-up care"><span class="sub-checkbox"></span><span class="sub-label">Had trouble getting follow-up care</span></div>
+              <div class="sub-option" data-val="Had to see multiple providers before finding helpful care"><span class="sub-checkbox"></span><span class="sub-label">Had to see multiple providers before finding helpful care</span></div>
+            </div>
+          </div>
+          <!-- Category 2 -->
+          <div class="multi-option" data-val="Provider interaction challenges">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Provider interaction challenges</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Didn’t feel taken seriously by provider(s)"><span class="sub-checkbox"></span><span class="sub-label">Didn’t feel heard by provider(s)</span></div>
+              <div class="sub-option" data-val="Felt dismissed or misunderstood"><span class="sub-checkbox"></span><span class="sub-label">Felt dismissed by provider(s)</span></div>
+              <div class="sub-option" data-val="Felt provider(s) lacked migraine knowledge"><span class="sub-checkbox"></span><span class="sub-label">Felt provider(s) lacked migraine knowledge</span></div>
+              <div class="sub-option" data-val="Had difficulty communicating with provider(s)"><span class="sub-checkbox"></span><span class="sub-label">Had communication issues with provider(s)</span></div>
+              <div class="sub-option" data-val="Different providers gave conflicting guidance"><span class="sub-checkbox"></span><span class="sub-label">Different providers gave conflicting guidance</span></div>
+              <div class="sub-option" data-val="Appointments were too short or rushed"><span class="sub-checkbox"></span><span class="sub-label">Appointments were too short or rushed</span></div>
+              <div class="sub-option" data-val="Had trouble coordinating care across providers"><span class="sub-checkbox"></span><span class="sub-label">Had trouble coordinating care across providers</span></div>
+            </div>
+          </div>
+          <!-- Category 3 -->
+          <div class="multi-option" data-val="Treatment challenges">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Treatment challenges</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Didn’t think treatment would help"><span class="sub-checkbox"></span><span class="sub-label">Didn’t think treatment would help</span></div>
+              <div class="sub-option" data-val="Didn’t want medications/medical treatment"><span class="sub-checkbox"></span><span class="sub-label">Didn’t want medications/medical treatment</span></div>
+              <div class="sub-option" data-val="Treatment was too trial-and-error"><span class="sub-checkbox"></span><span class="sub-label">Treatment was too trial-and-error</span></div>
+              <div class="sub-option" data-val="Treatments did not provide enough relief"><span class="sub-checkbox"></span><span class="sub-label">Treatments did not provide enough relief</span></div>
+              <div class="sub-option" data-val="Medications had side effects that were hard to manage"><span class="sub-checkbox"></span><span class="sub-label">Medications had side effects that were hard to manage</span></div>
+              <div class="sub-option" data-val="Had difficulty sticking with treatment plans"><span class="sub-checkbox"></span><span class="sub-label">Had difficulty sticking with treatment plans</span></div>
+              <div class="sub-option" data-val="Didn’t know which treatments to trust or prioritize"><span class="sub-checkbox"></span><span class="sub-label">Didn’t know which treatments to trust or prioritize</span></div>
+            </div>
+          </div>
+          <!-- Category 4 -->
+          <div class="multi-option" data-val="Life and logistical barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Life and logistical barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Too busy / other priorities"><span class="sub-checkbox"></span><span class="sub-label">Too busy / other priorities</span></div>
+              <div class="sub-option" data-val="Couldn’t take time off work"><span class="sub-checkbox"></span><span class="sub-label">Couldn’t take time off work</span></div>
+              <div class="sub-option" data-val="Work schedule made it difficult"><span class="sub-checkbox"></span><span class="sub-label">Work schedule made it difficult</span></div>
+              <div class="sub-option" data-val="Caregiving or family responsibilities took priority"><span class="sub-checkbox"></span><span class="sub-label">Caregiving or family responsibilities took priority</span></div>
+              <div class="sub-option" data-val="Overwhelming logistics (travel, scheduling)"><span class="sub-checkbox"></span><span class="sub-label">Overwhelming logistics (travel, scheduling)</span></div>
+              <div class="sub-option" data-val="Didn’t have enough support to prioritize care"><span class="sub-checkbox"></span><span class="sub-label">Didn’t have enough support to prioritize care</span></div>
+              <div class="sub-option" data-val="Didn’t have energy or capacity to deal with it"><span class="sub-checkbox"></span><span class="sub-label">Didn’t have energy or capacity to deal with it</span></div>
+            </div>
+          </div>
+          <!-- Category 5 -->
+          <div class="multi-option" data-val="Cost or insurance barriers">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cost or insurance barriers</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Couldn’t afford care or treatment"><span class="sub-checkbox"></span><span class="sub-label">Couldn’t afford care or treatment</span></div>
+              <div class="sub-option" data-val="Did not have medical insurance"><span class="sub-checkbox"></span><span class="sub-label">Did not have medical insurance</span></div>
+              <div class="sub-option" data-val="Insurance coverage was limited"><span class="sub-checkbox"></span><span class="sub-label">Insurance coverage was limited</span></div>
+              <div class="sub-option" data-val="Had difficulty getting treatment approved"><span class="sub-checkbox"></span><span class="sub-label">Had difficulty getting treatment approved</span></div>
+              <div class="sub-option" data-val="High out-of-pocket costs"><span class="sub-checkbox"></span><span class="sub-label">High out-of-pocket costs</span></div>
+            </div>
+          </div>
+          <!-- Category 6 -->
+          <div class="multi-option" data-val="Emotional burden or burnout">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Emotional burden or burnout</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Worried about stigma or judgment"><span class="sub-checkbox"></span><span class="sub-label">Worried about stigma or judgment</span></div>
+              <div class="sub-option" data-val="People around me didn’t think it was serious"><span class="sub-checkbox"></span><span class="sub-label">People around me didn’t think it was serious</span></div>
+              <div class="sub-option" data-val="Didn’t want to be seen as weak or complaining"><span class="sub-checkbox"></span><span class="sub-label">Didn’t want to be seen as weak or complaining</span></div>
+              <div class="sub-option" data-val="Feel uncomfortable talking about my symptoms"><span class="sub-checkbox"></span><span class="sub-label">Feel uncomfortable talking about my symptoms</span></div>
+              <div class="sub-option" data-val="Felt isolated or unsupported"><span class="sub-checkbox"></span><span class="sub-label">Felt isolated or unsupported</span></div>
+              <div class="sub-option" data-val="Felt discouraged after unsuccessful treatment"><span class="sub-checkbox"></span><span class="sub-label">Felt discouraged after unsuccessful treatment</span></div>
+              <div class="sub-option" data-val="Felt exhausted from trying different approaches"><span class="sub-checkbox"></span><span class="sub-label">Felt exhausted from trying different approaches</span></div>
+              <div class="sub-option" data-val="Managing migraine care was emotionally draining"><span class="sub-checkbox"></span><span class="sub-label">Managing migraine care was emotionally draining</span></div>
+            </div>
+          </div>
+          <!-- Other -->
+          <div class="multi-option" data-val="Not actively seeking care">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Am no longer actively seeking care</span></div>
+          </div>
+          <div class="multi-option" data-val="I haven't faced any major challenges with my care">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Haven't faced any major challenges with my care</span></div>
+          </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+          </div>
+        </div>
+
+        <div id="challenges_in_care_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-3-other">Specify challenge:</label>
+          <input type="text" id="q6-3-other" placeholder="Describe your challenge...">
+          <div id="q6-3-other-err" class="validation-error">Required.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+             After diagnosis comes the real work: finding care that works. Your experience reveals what's effective and what needs to change.
+            </p>
+          </div>
+        </div>
+
+        <div id="q6-3-err" class="validation-error">Please select at least one challenge.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.4 Dismissed by Provider -->
+      <div id="slide-q6-4" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 6: Experience</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>Have you ever felt dismissed or not taken seriously by provider(s) treating your headaches?</h2>
+        <div class="options-grid" data-type="single" data-field="felt_dismissed">
+          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
+        </div>
+
+        <div id="felt_dismissed-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-4-details">Tell us more about your experience:</label>
+          <input type="text" id="q6-4-details" maxlength="300" placeholder="e.g. My GP told me it was just stress...">
+          <div id="q6-4-details-err" class="validation-error">Please describe your experience.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              How a provider interacts with you affects whether you trust healthcare systems, stick with treatment, or seek help in the future. Your experience can reveal how critical this gap is.
+            </p>
+          </div>
+        </div>
+
+        <div id="q6-4-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.5 Unmet Needs -->
+      <div id="slide-q6-5" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <!-- <span class="question-number">Section 6: Experience</span> -->
+        <h2 class="title-1 question-text" data-dynamic-word>What's one thing that would meaningfully improve your headache experience going forward?</h2>
+        
+        <div class="input-text-wrapper">
+          <input type="text" id="q6-5-needs" maxlength="400" placeholder="e.g. More access to specialist care, better medication options...">
+          <div id="q6-5-err" class="validation-error">Required field. Please write a brief sentence.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Your previous answers help us understand what's failing. This helps us helps us understand what would fundamentally transform it.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== SECTION 7: CLOSING & EMAIL ==================== -->
+      <div id="slide-q7" class="survey-slide">
+        <!-- <span class="question-number">Section 7: Closing</span> -->
+        <h2 class="title-1 question-text">Want to stay in the loop? Opt in! </h2>
+        <!--<p class="body-text question-desc" style="margin-bottom: 0.25rem;">
+          Opt in to:
+        </p>-->
+        <ul class="body-text question-desc" style="margin-top: 0; padding-left: 2rem; font-size: 0.85em;">
+          <li>Get a copy of your responses</li>
+          <li>See how your experience compares to others</li>
+          <li>Receive key findings from this research </li>
+          <li>Access evidence-based resources from Kōkūn</li>
+          <li>Shape future headache and migraine research</li>
+        </ul>
+
+        <div class="input-text-wrapper">
+          <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.querySelector('#slide-q7 .option-btn').classList.remove('selected'); document.getElementById('q7-format-err').classList.remove('active'); document.getElementById('q7-err').classList.remove('active');">
+          <p style="margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">Your email will not be associated with your answers.</p>
+          <div id="q7-format-err" class="validation-error">Please enter a valid email address (e.g. name@domain.com).</div>
+        </div>
+
+        <div class="options-grid" data-type="single" data-field="email" style="margin-bottom: var(--space-md);">
+          <button class="option-btn" data-val="Prefer not to share" onclick="document.getElementById('q7-email').value = ''">Prefer not to share <span class="option-badge">A</span></button>
+        </div>
+
+        <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to share" to submit.</div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Submit Survey</button>
+        </div>
+      </div>
+
+      <!-- ==================== SUCCESS / END SCREEN ==================== -->
+      <div id="slide-end" class="survey-slide">
+        <div class="end-screen">
+          <div style="display:flex; justify-content:center; margin-bottom: var(--space-lg);">
+            <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+              <svg style="height:32px; width:auto; display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.363 72.562" aria-label="Kōkūn"><path d="M145.489,46.604l-.093-.194,10.476-9.429c6.475-5.715,1.807-13.143,1.807-13.616v-.473h20.571v.473l-17.811,15.617,18.098,32.001v.473h-20.664l-12.383-24.852Z" fill="#81a487"/><path d="M183.329,56.599v-17.423c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v31.14c0,5.521,2.954,7.234,6.575,7.234,1.9,0,4.001-.473,5.901-1.14-.093-.768-.093-1.621-.093-2.481v-18.47c0-7.242-2.954-15.524-2.954-15.903v-.38h20.858v32.28c0,7.234,2.954,15.524,2.954,15.903v.38h-16.291c-1.326-2.187-3.047-4.761-3.9-8.382-2.76,4.862-7.234,9.336-15.144,9.336-8.948,0-15.803-5.715-15.803-15.81Z" fill="#81a487"/><path d="M263.443,71.456h-23.805v-.38c0-.38,2.954-8.669,2.954-15.903v-15.997c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v8.087c2.481-4.28,7.529-8.661,15.237-8.661,8.863,0,15.81,5.715,15.81,15.81v17.043c0,7.234,2.954,15.524,2.954,15.903v.38h-23.813v-.38c0-.38,2.954-8.669,2.954-15.903v-14.477c0-5.614-3.334-7.428-6.855-7.521-2.194-.093-4.381.574-6.288,1.427v20.571c0,7.234,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><path d="M24.949,71.422H0v-.38c0-.38,2.95-8.665,2.95-15.903V19.141C2.95,11.902,0,3.621,0,3.237v-.38h24.949v.38c0,.384-2.95,8.665-2.95,15.903v35.998c0,7.238,2.95,15.524,2.95,15.903v.38ZM35.905,57.329l-12.767-19.618c-.283-.477-.38-.667.194-1.144l8.192-7.521,8.948-8.285c8.002-7.335,4.575-16.76,4.575-17.334v-.57h22.564v.477c-4.001,2.667-8.281,6.572-13.616,11.426l-15.144,14.097,20.098,28.756c4.094,5.905,10.662,13.05,10.662,13.43v.38h-29.326c0-.38-.481-7.998-4.381-14.093Z" fill="#81a487"/><path d="M67.177,47.044c0-17.524,12.468-24.759,26.371-24.759,13.81,0,26.48,7.331,26.48,24.759,0,17.524-12.67,25.518-26.48,25.518-13.903,0-26.371-7.994-26.371-25.518ZM100.031,47.044c0-9.429-.861-20.474-6.482-20.474-5.707,0-6.374,11.143-6.374,20.474,0,9.429.667,21.137,6.374,21.137,5.622,0,6.482-11.709,6.482-21.137Z" fill="#81a487"/><path d="M147.865,71.422h-23.805v-.38c0-.38,2.947-8.665,2.947-15.903V18.191c0-7.238-3.14-15.144-3.14-15.524l-.093-.38,2.954-.384,18.183-1.904v55.139c0,7.238,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><rect x="192.499" y="9.244" width="28.953" height="4.761" fill="#81a487"/><rect x="78.921" y="9.214" width="28.946" height="4.761" fill="#81a487"/><path d="M291.839,27.633v-4.284h-1.6v-.573h3.85v.573h-1.607v4.284h-.643Z" fill="#81a487"/><path d="M294.728,27.633v-4.857h.967l1.15,3.439c.106.32.183.56.232.719.055-.177.141-.436.258-.779l1.163-3.379h.865v4.857h-.62v-4.065l-1.411,4.065h-.58l-1.405-4.135v4.135h-.62Z" fill="#81a487"/></svg>
+            </a>
+          </div>
+<!--          <h2 class="title-2" style="margin-bottom: var(--space-md); color: var(--color-sage-70);">Grow Your Impact!</h2>-->
+          <p class="body-text" style="color: var(--color-sage-80); margin-bottom: var(--space-md);">
+            Thank you for contributing!<br><br>
+            <strong>You never know who else might be experiencing headaches in silence.</strong><br>Please share this survey with your family, friends and coworkers around the world, so we can improve care for everyone.<br>
+          </p>
+
+          <div class="ineligible-actions">
+            <button class="btn btn-primary" onclick="shareSurvey('copy')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share Survey
+            </button>
+          </div>
+
+          <div class="share-options-container">
+            <div class="social-icons">
+              <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Website">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="mailto:info@kokun.space" class="social-icon-link" title="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- Script files -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
