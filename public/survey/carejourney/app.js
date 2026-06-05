@@ -279,22 +279,19 @@ function createSessionRecord() {
 
 function updateSessionSlide(slideId) {
   if (!isSupabaseConfigured()) return;
-  fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_sessions?session_id=eq.${sessionMeta.sessionId}`, {
-    method: "PATCH",
+  fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/update_session_slide`, {
+    method: "POST",
     headers: getSupabaseHeaders(),
-    body: JSON.stringify({
-      last_slide_seen: slideId,
-      last_slide_at: new Date().toISOString()
-    })
+    body: JSON.stringify({ p_session_id: sessionMeta.sessionId, p_slide_id: slideId })
   }).catch(() => {});
 }
 
 function markSessionComplete() {
   if (!isSupabaseConfigured()) return;
-  fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_sessions?session_id=eq.${sessionMeta.sessionId}`, {
-    method: "PATCH",
+  fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/mark_session_complete`, {
+    method: "POST",
     headers: getSupabaseHeaders(),
-    body: JSON.stringify({ completed: true })
+    body: JSON.stringify({ p_session_id: sessionMeta.sessionId })
   }).catch(() => {});
 }
 
