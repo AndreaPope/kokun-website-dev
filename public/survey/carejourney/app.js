@@ -1424,14 +1424,10 @@ async function submitSurvey() {
       session_id: sessionMeta.sessionId
     };
 
-    const submitHeaders = {
-      ...getSupabaseHeaders(),
-      "Prefer": "resolution=merge-duplicates,return=minimal"
-    };
-    const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?on_conflict=session_id`, {
+    const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/save_survey_progress`, {
       method: "POST",
-      headers: submitHeaders,
-      body: JSON.stringify(payload)
+      headers: getSupabaseHeaders(),
+      body: JSON.stringify({ p_session_id: sessionMeta.sessionId, p_data: payload })
     });
 
     if (response.ok) {
