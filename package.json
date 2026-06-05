@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generate-survey-config.js",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "node scripts/generate-survey-config.js && tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

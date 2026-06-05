@@ -10,3 +10,6 @@ dist/
 
 # Local Netlify folder
 .netlify
+
+# Generated from env vars at build time
+public/survey/carejourney/config.js
