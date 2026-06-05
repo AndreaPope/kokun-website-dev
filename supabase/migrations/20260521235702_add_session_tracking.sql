@@ -131,3 +131,39 @@ BEGIN
       WITH CHECK (true);
   END IF;
 END $$;
+
+
+--below might be duplicated but here just in case
+-- survey_responses: needed for autoSaveProgress and final submit upserts
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'survey_responses'
+    AND policyname = 'Anyone can update a survey response'
+  ) THEN
+    CREATE POLICY "Anyone can update a survey response"
+      ON survey_responses
+      FOR UPDATE
+      TO anon
+      USING (true)
+      WITH CHECK (true);
+  END IF;
+END $$;
+
+-- survey_sessions: needed for updateSessionSlide and markSessionComplete (PATCH calls)
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'survey_sessions'
+    AND policyname = 'Anyone can update their own session'
+  ) THEN
+    CREATE POLICY "Anyone can update their own session"
+      ON survey_sessions
+      FOR UPDATE
+      TO anon
+      USING (true)
+      WITH CHECK (true);
+  END IF;
+END $$;

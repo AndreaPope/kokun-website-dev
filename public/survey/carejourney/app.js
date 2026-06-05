@@ -257,7 +257,7 @@ function isSupabaseConfigured() {
 function createSessionRecord() {
   if (!isSupabaseConfigured()) return;
   const now = new Date().toISOString();
-  const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=merge-duplicates,return=minimal" };
+  const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=ignore-duplicates,return=minimal" };
   fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_sessions`, {
     method: "POST",
     headers,
