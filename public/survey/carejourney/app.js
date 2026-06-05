@@ -272,7 +272,14 @@ function createSessionRecord() {
       os: sessionMeta.os,
       completed: false
     })
-  }).catch(err => console.error("createSessionRecord failed:", err));
+  })
+  .then(async res => {
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("createSessionRecord error", res.status, text);
+    }
+  })
+  .catch(err => console.error("createSessionRecord failed:", err));
 }
 
 function updateSessionSlide(slideId) {
@@ -313,7 +320,14 @@ function autoSaveProgress() {
     method: "POST",
     headers,
     body: JSON.stringify(payload)
-  }).catch(err => console.error("autoSaveProgress failed:", err));
+  })
+  .then(async res => {
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("autoSaveProgress error", res.status, text);
+    }
+  })
+  .catch(err => console.error("autoSaveProgress failed:", err));
 }
 
 const EU_POSTAL_HIDDEN = new Set(["France", "Cyprus"]);
@@ -1395,9 +1409,13 @@ async function submitSurvey() {
       session_id: sessionMeta.sessionId
     };
 
-    const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses`, {
+    const submitHeaders = {
+      ...getSupabaseHeaders(),
+      "Prefer": "resolution=merge-duplicates,return=minimal"
+    };
+    const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?on_conflict=session_id`, {
       method: "POST",
-      headers: getSupabaseHeaders(),
+      headers: submitHeaders,
       body: JSON.stringify(payload)
     });
 
