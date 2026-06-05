@@ -313,7 +313,6 @@ function autoSaveProgress() {
 
   if (!partialRowCreated) {
     // First save: plain INSERT (requires only INSERT policy)
-    console.log("[survey] INSERT session_id:", sessionMeta.sessionId);
     fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses`, {
       method: "POST",
       headers: getSupabaseHeaders(),
@@ -322,7 +321,6 @@ function autoSaveProgress() {
     .then(async res => {
       if (res.ok) {
         partialRowCreated = true;
-        console.log("[survey] INSERT succeeded, partialRowCreated = true");
       } else {
         const text = await res.text();
         console.error("autoSaveProgress INSERT error", res.status, text);
@@ -330,20 +328,16 @@ function autoSaveProgress() {
     })
     .catch(err => console.error("autoSaveProgress failed:", err));
   } else {
-    // Subsequent saves: PATCH the existing row (requires UPDATE policy)
-    const patchHeaders = { ...getSupabaseHeaders(), "Prefer": "count=exact" };
-    console.log("[survey] PATCH session_id:", sessionMeta.sessionId);
-    fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?session_id=eq.${sessionMeta.sessionId}`, {
-      method: "PATCH",
-      headers: patchHeaders,
-      body: JSON.stringify(payload)
+    // Subsequent saves: call SECURITY DEFINER function (bypasses SELECT policy requirement)
+    fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/save_survey_progress`, {
+      method: "POST",
+      headers: getSupabaseHeaders(),
+      body: JSON.stringify({ p_session_id: sessionMeta.sessionId, p_data: payload })
     })
     .then(async res => {
-      const count = res.headers.get("Content-Range");
-      console.log("[survey] PATCH status:", res.status, "Content-Range:", count);
       if (!res.ok) {
         const text = await res.text();
-        console.error("autoSaveProgress PATCH error", res.status, text);
+        console.error("autoSaveProgress error", res.status, text);
       }
     })
     .catch(err => console.error("autoSaveProgress failed:", err));
