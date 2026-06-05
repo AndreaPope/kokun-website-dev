@@ -256,10 +256,11 @@ function isSupabaseConfigured() {
 
 function createSessionRecord() {
   if (!isSupabaseConfigured()) return;
-  const now = sessionMeta.startedAt;
+  const now = new Date().toISOString();
+  const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=merge-duplicates,return=minimal" };
   fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_sessions`, {
     method: "POST",
-    headers: getSupabaseHeaders(),
+    headers,
     body: JSON.stringify({
       session_id: sessionMeta.sessionId,
       started_at: now,
@@ -271,7 +272,7 @@ function createSessionRecord() {
       os: sessionMeta.os,
       completed: false
     })
-  }).catch(() => {});
+  }).catch(err => console.error("createSessionRecord failed:", err));
 }
 
 function updateSessionSlide(slideId) {
@@ -308,11 +309,11 @@ function autoSaveProgress() {
     session_id: sessionMeta.sessionId
   };
   const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=merge-duplicates,return=minimal" };
-  fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses`, {
+  fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?on_conflict=session_id`, {
     method: "POST",
     headers,
     body: JSON.stringify(payload)
-  }).catch(() => {});
+  }).catch(err => console.error("autoSaveProgress failed:", err));
 }
 
 const EU_POSTAL_HIDDEN = new Set(["France", "Cyprus"]);
@@ -539,6 +540,7 @@ function resetSurvey() {
   document.querySelectorAll(".survey-slide").forEach(s => s.classList.remove("active"));
   document.getElementById("slide-intro").classList.add("active");
   updateProgress();
+  createSessionRecord();
 }
 
 // Form validation before proceeding
