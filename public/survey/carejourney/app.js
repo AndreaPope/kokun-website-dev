@@ -95,12 +95,7 @@ const sessionMeta = (() => {
     return "Desktop";
   };
 
-  const STORAGE_KEY = "kokun_session_id";
-  let sessionId = localStorage.getItem(STORAGE_KEY);
-  if (!sessionId) {
-    sessionId = crypto.randomUUID();
-    localStorage.setItem(STORAGE_KEY, sessionId);
-  }
+  const sessionId = crypto.randomUUID();
 
   return {
     sessionId,
@@ -1421,7 +1416,6 @@ async function submitSurvey() {
     if (response.ok) {
       console.log("Survey successfully recorded in Supabase!");
       markSessionComplete();
-      localStorage.removeItem("kokun_session_id");
       navigateTo("slide-end");
     } else {
       const errTxt = await response.text();
