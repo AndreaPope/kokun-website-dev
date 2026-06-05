@@ -257,10 +257,9 @@ function isSupabaseConfigured() {
 function createSessionRecord() {
   if (!isSupabaseConfigured()) return;
   const now = new Date().toISOString();
-  const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=ignore-duplicates,return=minimal" };
   fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_sessions`, {
     method: "POST",
-    headers,
+    headers: getSupabaseHeaders(),
     body: JSON.stringify({
       session_id: sessionMeta.sessionId,
       started_at: now,
@@ -274,7 +273,7 @@ function createSessionRecord() {
     })
   })
   .then(async res => {
-    if (!res.ok) {
+    if (!res.ok && res.status !== 409) {
       const text = await res.text();
       console.error("createSessionRecord error", res.status, text);
     }

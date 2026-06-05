@@ -117,20 +117,15 @@ BEGIN
       TO anon
       WITH CHECK (true);
   END IF;
-
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies
-    WHERE tablename = 'survey_sessions'
-    AND policyname = 'Anyone can update their own session'
-  ) THEN
-    CREATE POLICY "Anyone can update their own session"
-      ON survey_sessions
-      FOR UPDATE
-      TO anon
-      USING (true)
-      WITH CHECK (true);
-  END IF;
 END $$;
+
+DROP POLICY IF EXISTS "Anyone can update their own session" ON survey_sessions;
+CREATE POLICY "Anyone can update their own session"
+  ON survey_sessions
+  FOR UPDATE
+  TO anon
+  USING (true)
+  WITH CHECK (true);
 
 
 --below might be duplicated but here just in case

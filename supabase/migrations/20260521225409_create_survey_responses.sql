@@ -89,20 +89,12 @@ END $$;
 
 
 
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_policies
-    WHERE tablename = 'survey_responses'
-    AND policyname = 'Anyone can update a survey response'
-  ) THEN
-    CREATE POLICY "Anyone can update a survey response"
-      ON survey_responses
-      FOR UPDATE
-      TO anon
-      USING (true)
-      WITH CHECK (true);
-  END IF;
-END $$;
+DROP POLICY IF EXISTS "Anyone can update a survey response" ON survey_responses;
+CREATE POLICY "Anyone can update a survey response"
+  ON survey_responses
+  FOR UPDATE
+  TO anon
+  USING (true)
+  WITH CHECK (true);
 
 
