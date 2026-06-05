@@ -63,6 +63,7 @@ const surveyData = {
 // Navigation History Stack
 let slideHistory = [];
 let currentSlideId = "slide-intro";
+let partialRowCreated = false;
 
 // Session metadata — captured once at page load
 const sessionMeta = (() => {
@@ -309,19 +310,38 @@ function autoSaveProgress() {
     os: sessionMeta.os,
     session_id: sessionMeta.sessionId
   };
-  const headers = { ...getSupabaseHeaders(), "Prefer": "resolution=merge-duplicates,return=minimal" };
-  fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?on_conflict=session_id`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(payload)
-  })
-  .then(async res => {
-    if (!res.ok) {
-      const text = await res.text();
-      console.error("autoSaveProgress error", res.status, text);
-    }
-  })
-  .catch(err => console.error("autoSaveProgress failed:", err));
+
+  if (!partialRowCreated) {
+    // First save: plain INSERT (requires only INSERT policy)
+    fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses`, {
+      method: "POST",
+      headers: getSupabaseHeaders(),
+      body: JSON.stringify(payload)
+    })
+    .then(async res => {
+      if (res.ok) {
+        partialRowCreated = true;
+      } else {
+        const text = await res.text();
+        console.error("autoSaveProgress INSERT error", res.status, text);
+      }
+    })
+    .catch(err => console.error("autoSaveProgress failed:", err));
+  } else {
+    // Subsequent saves: PATCH the existing row (requires UPDATE policy)
+    fetch(`${SUPABASE_CONFIG.url}/rest/v1/survey_responses?session_id=eq.${sessionMeta.sessionId}`, {
+      method: "PATCH",
+      headers: getSupabaseHeaders(),
+      body: JSON.stringify(payload)
+    })
+    .then(async res => {
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("autoSaveProgress PATCH error", res.status, text);
+      }
+    })
+    .catch(err => console.error("autoSaveProgress failed:", err));
+  }
 }
 
 const EU_POSTAL_HIDDEN = new Set(["France", "Cyprus"]);
@@ -519,6 +539,7 @@ function navigateBack() {
 function resetSurvey() {
   slideHistory = [];
   currentSlideId = "slide-intro";
+  partialRowCreated = false;
   
   // Reset all DOM input values
   document.querySelectorAll("input[type='text'], input[type='email']").forEach(i => i.value = "");
