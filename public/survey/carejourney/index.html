@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kōkūn Care Journey Survey</title>
   <meta name="description" content="Help make headache and migraine experiences visible by sharing your care journey. Participate in the Kōkūn Care Journey survey.">
+  <link rel="icon" type="image/png" href="../../images/K.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,6 +40,7 @@
         <option value="slide-q2-5">slide-q2-5</option>
         <option value="slide-q2-6a">slide-q2-6a</option>
         <option value="slide-q2-6b">slide-q2-6b</option>
+        <option value="slide-section-symptoms">slide-section-symptoms</option>
         <option value="slide-q3-1">slide-q3-1</option>
         <option value="slide-q3-2">slide-q3-2</option>
         <option value="slide-q3-3">slide-q3-3</option>
@@ -46,6 +48,7 @@
         <option value="slide-q3-5">slide-q3-5</option>
         <option value="slide-q3-6">slide-q3-6</option>
         <option value="slide-q3-7">slide-q3-7</option>
+        <option value="slide-section-diagnosis">slide-section-diagnosis</option>
         <option value="slide-q4-1">slide-q4-1</option>
         <option value="slide-q4-2a">slide-q4-2a</option>
         <option value="slide-q4-2b">slide-q4-2b</option>
@@ -54,7 +57,10 @@
         <option value="slide-q4-2e">slide-q4-2e</option>
         <option value="slide-q4-3a">slide-q4-3a</option>
         <option value="slide-q4-3b">slide-q4-3b</option>
+        <option value="slide-section-treatment">slide-section-treatment</option>
         <option value="slide-q5">slide-q5</option>
+        <option value="slide-q5b">slide-q5b</option>
+        <option value="slide-section-experience">slide-section-experience</option>
         <option value="slide-q6-1">slide-q6-1</option>
         <option value="slide-q6-2">slide-q6-2</option>
         <option value="slide-q6-3">slide-q6-3</option>
@@ -73,27 +79,21 @@
 
       <!-- ==================== INTRO SLIDE ==================== -->
       <div id="slide-intro" class="survey-slide active">
-        <div class="intro-text-center">
-          <div class="intro-logo-container">
-            <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
-            <svg class="intro-logo-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.363 72.562" aria-label="Kōkūn"><path d="M145.489,46.604l-.093-.194,10.476-9.429c6.475-5.715,1.807-13.143,1.807-13.616v-.473h20.571v.473l-17.811,15.617,18.098,32.001v.473h-20.664l-12.383-24.852Z" fill="#81a487"/><path d="M183.329,56.599v-17.423c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v31.14c0,5.521,2.954,7.234,6.575,7.234,1.9,0,4.001-.473,5.901-1.14-.093-.768-.093-1.621-.093-2.481v-18.47c0-7.242-2.954-15.524-2.954-15.903v-.38h20.858v32.28c0,7.234,2.954,15.524,2.954,15.903v.38h-16.291c-1.326-2.187-3.047-4.761-3.9-8.382-2.76,4.862-7.234,9.336-15.144,9.336-8.948,0-15.803-5.715-15.803-15.81Z" fill="#81a487"/><path d="M263.443,71.456h-23.805v-.38c0-.38,2.954-8.669,2.954-15.903v-15.997c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v8.087c2.481-4.28,7.529-8.661,15.237-8.661,8.863,0,15.81,5.715,15.81,15.81v17.043c0,7.234,2.954,15.524,2.954,15.903v.38h-23.813v-.38c0-.38,2.954-8.669,2.954-15.903v-14.477c0-5.614-3.334-7.428-6.855-7.521-2.194-.093-4.381.574-6.288,1.427v20.571c0,7.234,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><path d="M24.949,71.422H0v-.38c0-.38,2.95-8.665,2.95-15.903V19.141C2.95,11.902,0,3.621,0,3.237v-.38h24.949v.38c0,.384-2.95,8.665-2.95,15.903v35.998c0,7.238,2.95,15.524,2.95,15.903v.38ZM35.905,57.329l-12.767-19.618c-.283-.477-.38-.667.194-1.144l8.192-7.521,8.948-8.285c8.002-7.335,4.575-16.76,4.575-17.334v-.57h22.564v.477c-4.001,2.667-8.281,6.572-13.616,11.426l-15.144,14.097,20.098,28.756c4.094,5.905,10.662,13.05,10.662,13.43v.38h-29.326c0-.38-.481-7.998-4.381-14.093Z" fill="#81a487"/><path d="M67.177,47.044c0-17.524,12.468-24.759,26.371-24.759,13.81,0,26.48,7.331,26.48,24.759,0,17.524-12.67,25.518-26.48,25.518-13.903,0-26.371-7.994-26.371-25.518ZM100.031,47.044c0-9.429-.861-20.474-6.482-20.474-5.707,0-6.374,11.143-6.374,20.474,0,9.429.667,21.137,6.374,21.137,5.622,0,6.482-11.709,6.482-21.137Z" fill="#81a487"/><path d="M147.865,71.422h-23.805v-.38c0-.38,2.947-8.665,2.947-15.903V18.191c0-7.238-3.14-15.144-3.14-15.524l-.093-.38,2.954-.384,18.183-1.904v55.139c0,7.238,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><rect x="192.499" y="9.244" width="28.953" height="4.761" fill="#81a487"/><rect x="78.921" y="9.214" width="28.946" height="4.761" fill="#81a487"/><path d="M291.839,27.633v-4.284h-1.6v-.573h3.85v.573h-1.607v4.284h-.643Z" fill="#81a487"/><path d="M294.728,27.633v-4.857h.967l1.15,3.439c.106.32.183.56.232.719.055-.177.141-.436.258-.779l1.163-3.379h.865v4.857h-.62v-4.065l-1.411,4.065h-.58l-1.405-4.135v4.135h-.62Z" fill="#81a487"/></svg>
-            </a>
-          </div>
-          <h1 class="large-title intro-title">Headache and Migraine Survey</h1>
-          <p class="body-text intro-desc">
-            Headaches disorders like migraine affect billions of people globally, yet the daily reality of living with them often remains invisible.
-          </p>
-          <p class="body-text intro-desc">
-            <strong>Your experiences hold the key to better care. </strong>Take this <strong class="" style="color: var(--color-sage-60);">anonymous</strong> survey and help make the invisible visible.
-          </p>
-          <div class="estimate-inline">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            5–10 minutes
-          </div>
-          <button class="btn btn-primary" onclick="handleNext()">
-            Start Survey
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
+        <div class="intro-v2-nav">
+          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+            <img src="../../images/Kokun-logo_WhiteSage_RGB.svg" class="intro-v2-logo" alt="Kōkūn">
+          </a>
+        </div>
+        <div class="intro-v2-main">
+          <h1 class="intro-v2-h1">The Kōkūn<br>Headache Study</h1>
+          <p class="intro-v2-body">Headache disorders like migraine affect billions of people globally, yet the daily reality of living with them often remains invisible.</p>
+          <h2 class="intro-v2-h2">Your Experience Holds the Key</h2>
+          <p class="intro-v2-body">Take this 5–10 minute <strong>anonymous</strong> survey and help make the invisible visible.</p>
+          <button class="btn intro-v2-btn" onclick="handleNext()">Start</button>
+        </div>
+        <div class="intro-v2-footer">
+          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization</p>
+          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">Learn more.</a>
         </div>
       </div>
 
@@ -103,13 +103,13 @@
         <!-- <span class="question-number">Section 1: Eligibility</span> -->
         <h2 class="title-1 question-text">How old are you?</h2>
         <div class="options-grid" data-type="single" data-field="age_bracket">
-          <button class="option-btn" data-val="Under 18">Under 18 <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="18-24">18-24 <span class="option-badge">B</span></button>
-          <button class="option-btn" data-val="25-34">25-34 <span class="option-badge">C</span></button>
-          <button class="option-btn" data-val="35-44">35-44 <span class="option-badge">D</span></button>
-          <button class="option-btn" data-val="45-54">45-54 <span class="option-badge">E</span></button>
-          <button class="option-btn" data-val="55-64">55-64 <span class="option-badge">F</span></button>
-          <button class="option-btn" data-val="over 64">over 64 <span class="option-badge">G</span></button>
+          <button class="option-btn" data-val="Under 18">Under 18</button>
+          <button class="option-btn" data-val="18-24">18-24</button>
+          <button class="option-btn" data-val="25-34">25-34</button>
+          <button class="option-btn" data-val="35-44">35-44</button>
+          <button class="option-btn" data-val="45-54">45-54</button>
+          <button class="option-btn" data-val="55-64">55-64</button>
+          <button class="option-btn" data-val="over 64">over 64</button>
         </div>
         <div id="q1-1-err" class="validation-error">Please select an option to continue.</div>
         <div class="action-controls">
@@ -124,9 +124,9 @@
         <h2 class="title-1 question-text">Do you experience recurring headaches* or migraine?</h2>
         <p class="subheadline-text question-desc">*specifically a headache disorder or diagnosed condition that causes headaches</p>
         <div class="options-grid" data-type="single" data-field="headache_eligible">
-          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
-          <button class="option-btn" data-val="I used to">I used to <span class="option-badge">C</span></button>
+          <button class="option-btn" data-val="Yes">Yes</button>
+          <button class="option-btn" data-val="No">No</button>
+          <button class="option-btn" data-val="I used to">I used to</button>
         </div>
         <div id="q1-2-err" class="validation-error">Please select an option to continue.</div>
         <div class="action-controls">
@@ -137,41 +137,33 @@
 
       <!-- INELIGIBLE SCREEN -->
       <div id="slide-ineligible" class="survey-slide">
-        <div class="end-screen">
-<!--          <h2 class="title-1" style="margin-bottom: var(--space-sm); color: var(--color-sage-70);">Thank you for your interest!</h2>-->
-          <p class="body-text" style="color: var(--color-sage-80);">
-            Thank you for your interest! <br>
-            This survey is only for adults over 18 living with recurring headaches or migraine.<br><br>
-          </p>
-          <p class="body-text" style="color: var(--color-sage-80);">
-          <strong>You can still help.</strong> <br>Make migraine and other headache disorders more visible by sharing this survey with your friends and family around the world.<br>
-            
-          
-          </p>
-          <div class="ineligible-actions" style="margin-top: var(--space-lg);">
-            <button class="btn btn-secondary" onclick="resetSurvey()">Restart</button>
-            <button class="btn btn-primary" onclick="shareSurvey('copy')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              Share Survey
-            </button>
+        <div class="inelig-v2-nav">
+          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+            <img src="../../images/Kokun-logo_WhiteSage_RGB.svg" class="intro-v2-logo" alt="Kōkūn">
+          </a>
+        </div>
+        <div class="inelig-v2-main">
+          <p class="intro-v2-body">Thank you for your interest! This study is for adults (18+) living with recurring headaches or migraine.</p>
+          <h2 class="intro-v2-h2">You can still help.</h2>
+          <p class="intro-v2-body">Make migraine and other headache disorders more visible by sharing this survey with your friends and family around the world.</p>
+          <div class="inelig-v2-actions">
+            <button class="btn inelig-v2-btn-outline" onclick="resetSurvey()">Restart</button>
+            <button class="btn intro-v2-btn" onclick="shareSurvey('copy')">Share Survey</button>
           </div>
-
-          <div class="share-options-container">
-            <div class="social-icons">
-              <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Website">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-              <a href="mailto:info@kokun.space" class="social-icon-link" title="Email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-              </a>
-            </div>
+        </div>
+        <div class="inelig-v2-footer">
+          <div class="inelig-v2-social">
+            <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" class="inelig-v2-social-link" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" class="inelig-v2-social-link" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="mailto:info@kokun.space" class="inelig-v2-social-link" title="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </a>
           </div>
+          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>
         </div>
       </div>
 
@@ -179,7 +171,7 @@
       <div id="slide-section-profile" class="survey-slide section-intro-slide">
         <div class="section-intro-content">
           <div class="section-intro-text">
-            <span class="section-intro-label">Profile</span>
+            <span class="section-intro-label">Background</span>
             <p class="section-intro-desc">Your background can shape your care journey. Help us see the full picture.</p>
           </div>
           <div class="action-controls">
@@ -193,7 +185,7 @@
       <!-- Q2.1 Sex and Gender -->
       <div id="slide-q2-1" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -202,11 +194,11 @@
         <!-- <span class="question-number">Section 2: Demographics</span> -->
         <h2 class="title-1 question-text">Which of the following best describes you?</h2>
         <div class="options-grid" data-type="single" data-field="gender">
-          <button class="option-btn" data-val="Woman">Woman <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="Man">Man <span class="option-badge">B</span></button>
-          <button class="option-btn" data-val="Non-binary">Non-binary <span class="option-badge">C</span></button>
-          <button class="option-btn" data-val="Prefer to self-describe">Prefer to self-describe <span class="option-badge">D</span></button>
-          <button class="option-btn" data-val="Prefer not to say">Prefer not to say <span class="option-badge">E</span></button>
+          <button class="option-btn" data-val="Woman">Woman</button>
+          <button class="option-btn" data-val="Man">Man</button>
+          <button class="option-btn" data-val="Non-binary">Non-binary</button>
+          <button class="option-btn" data-val="Prefer to self-describe">Prefer to self-describe</button>
+          <button class="option-btn" data-val="Prefer not to say">Prefer not to say</button>
         </div>
         
         <!-- Conditional Input -->
@@ -226,7 +218,7 @@
       <!-- Q2.2 Assigned Sex -->
       <div id="slide-q2-2" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -235,9 +227,9 @@
         <!-- <span class="question-number">Section 2: Demographics</span> -->
         <h2 class="title-1 question-text">Were you assigned female at birth?</h2>
         <div class="options-grid" data-type="single" data-field="assigned_female_at_birth">
-          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
-          <button class="option-btn" data-val="Prefer not to say">Prefer not to say <span class="option-badge">C</span></button>
+          <button class="option-btn" data-val="Yes">Yes</button>
+          <button class="option-btn" data-val="No">No</button>
+          <button class="option-btn" data-val="Prefer not to say">Prefer not to say</button>
         </div>
         
         <!-- Why this matters accordion -->
@@ -263,7 +255,7 @@
       <!-- Q2.3a Ethnic Background (structured) -->
       <div id="slide-q2-3a" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -376,7 +368,7 @@
       <!-- Q2.3b Ethnic Background (free text) -->
       <div id="slide-q2-3b" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -411,7 +403,7 @@
       <!-- Q2.4 Location -->
       <div id="slide-q2-4" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -428,10 +420,13 @@
             </select>
             <div id="q2-4-country-err" class="validation-error">Required.</div>
           </div>
+          <div>
+            <label class="field-label" for="q2-4-city">What city do you live in?</label>
+            <input type="text" id="q2-4-city" placeholder="e.g. Toronto">
+          </div>
           <div id="q2-4-postal-wrapper">
-            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">Postal / Zip Code</label>
+            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">What is your postal or zip code, if any?</label>
             <input type="text" id="q2-4-postal" placeholder="e.g. 90210">
-            <div id="q2-4-postal-err" class="validation-error">Required.</div>
           </div>
         </div>
 
@@ -442,7 +437,9 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text">
-              Your location (urban vs. rural, climate patterns, geographical region, etc.) can impact incidence and access to care.
+              Location (rural vs. urban, climate patterns, geographic region, etc.) can impact incidence of headaches and available care.
+              <br><br>
+              NOTE: To respect EU regulations, GDPR and ensure the data remains anonymous, we will only collect part of the Zip Code in the US, UK, CA, and EU. We will not collect any Zip Code in FR and Cyprus.
             </p>
           </div>
         </div>
@@ -456,7 +453,7 @@
       <!-- Q2.5 Education -->
       <div id="slide-q2-5" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -465,13 +462,12 @@
         <!-- <span class="question-number">Section 2: Demographics</span> -->
         <h2 class="title-1 question-text">What is your highest level of education?</h2>
         <div class="options-grid" data-type="single" data-field="education_level">
-          <button class="option-btn" data-val="Less than high school">Less than high school</button>
-          <button class="option-btn" data-val="High school diploma or GED equivalent">High school diploma or GED equivalent</button>
-          <button class="option-btn" data-val="Occupational Certificate/Vocational Training/Apprenticeship">Vocational / Apprenticeship</button>
-          <button class="option-btn" data-val="Associate degree">Associate degree</button>
-          <button class="option-btn" data-val="Bachelor's degree">Bachelor's degree</button>
-          <button class="option-btn" data-val="Master's degree">Master's degree</button>
-          <button class="option-btn" data-val="Doctorate">Doctorate</button>
+          <button class="option-btn" data-val="Some primary (elementary) or secondary (high school) education">Some primary (elementary) or secondary (high school) education</button>
+          <button class="option-btn" data-val="Secondary education (high school diploma or GED equivalent)">Secondary education (high school diploma or GED equivalent)</button>
+          <button class="option-btn" data-val="Trade/Technical/Vocational Training or Apprenticeship">Trade/Technical/Vocational Training or Apprenticeship</button>
+          <button class="option-btn" data-val="Some undergraduate education (college or university) or Associate’s degree">Some undergraduate education (college or university) or Associate’s degree</button>
+          <button class="option-btn" data-val="Undergraduate (Bachelor's)">Undergraduate (Bachelor's)</button>
+          <button class="option-btn" data-val="Postgraduate (Master's, Doctorate)">Postgraduate (Master's, Doctorate)</button>
           <button class="option-btn" data-val="Other">Other</button>
         </div>
 
@@ -491,7 +487,7 @@
       <!-- Q2.6a Employment Situation -->
       <div id="slide-q2-6a" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -579,7 +575,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text">
-              Type of work help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access) affect your path to diagnosis and care.
+              The type of work you do can help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access, healthcare literacy) affect your path to diagnosis and care. 
             </p>
           </div>
         </div>
@@ -593,7 +589,7 @@
       <!-- Q2.6b Type of Work -->
       <div id="slide-q2-6b" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -639,10 +635,22 @@
               <span class="option-label">Arts, media, design, writing, entertainment, or sports</span>
             </div>
           </div>
-          <div class="multi-option" data-val="Sales, marketing, customer service, retail, or hospitality">
+          <div class="multi-option" data-val="Marketing, communications, advertising, or public relations">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Sales, marketing, customer service, retail, or hospitality</span>
+              <span class="option-label">Marketing, communications, advertising, or public relations</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Sales, business development, or customer service">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Sales, business development, or customer service</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Food service, hospitality, tourism, retail or events">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Food service, hospitality, tourism, retail or events</span>
             </div>
           </div>
           <div class="multi-option" data-val="Personal care, caregiving, wellness, or community services">
@@ -684,7 +692,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text">
-               Type of work help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access) affect your path to diagnosis and care. 
+               The type of work you do can help us understand whether specific circumstances (shift work, schedule flexibility, healthcare access, healthcare literacy) affect your path to diagnosis and care. 
             </p>
           </div>
         </div>
@@ -696,11 +704,25 @@
         </div>
       </div>
 
+      <!-- ==================== SECTION INTRO: SYMPTOMS ==================== -->
+      <div id="slide-section-symptoms" class="survey-slide section-intro-slide">
+        <div class="section-intro-content">
+          <div class="section-intro-text">
+            <span class="section-intro-label">Symptoms</span>
+            <p class="section-intro-desc">Your symptoms and their impact on you tell the real story of living with headaches and migraine. They go beyond what clinical trials measure to what really matters to your life.</p>
+          </div>
+          <div class="action-controls">
+            <button class="btn btn-secondary btn-back">Back</button>
+            <button class="btn btn-primary btn-next">Next</button>
+          </div>
+        </div>
+      </div>
+
       <!-- ==================== SYMPTOMS SECTION ==================== -->
       <!-- Q3.1 Headache Types -->
       <div id="slide-q3-1" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -780,7 +802,7 @@
       <!-- Q3.2 Migraine Subtype (CONDITIONAL) -->
       <div id="slide-q3-2" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -850,7 +872,7 @@
       <!-- Q3.3 Duration -->
       <div id="slide-q3-3" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -880,7 +902,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is significant.
             </p>
           </div>
         </div>
@@ -894,14 +916,14 @@
       <!-- Q3.4 Frequency -->
       <div id="slide-q3-4" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
         <!-- <span class="question-number">Section 3: Symptoms</span> -->
-        <h2 class="title-1 question-text" data-dynamic-word>How often do you experience headaches?</h2>
+        <h2 class="title-1 question-text" data-dynamic-word>On average, how often do you experience headaches?</h2>
         
         <div class="input-text-wrapper">
           <div style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
@@ -937,7 +959,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is significant.
             </p>
           </div>
         </div>
@@ -951,7 +973,7 @@
       <!-- Q3.5 Days in Last Month -->
       <div id="slide-q3-5" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -975,7 +997,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is real.
+              This is a measure of how disruptive headaches can be. From the occasional episode to the constant burden, we recognize that the impact is significant.
             </p>
           </div>
         </div>
@@ -989,14 +1011,14 @@
       <!-- Q3.6 Functional Impact -->
       <div id="slide-q3-6" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
         <!-- <span class="question-number">Section 3: Symptoms</span> -->
-        <h2 class="title-1 question-text" data-dynamic-word>When you have a headache, how much does it affect your ability to function?</h2>
+        <h2 class="title-1 question-text" data-dynamic-word>When you have a headache, how much does it usually affect your ability to function?</h2>
         <div class="options-grid" data-type="single" data-field="functional_impact">
           <button class="option-btn" data-val="I can function normally">I can function normally</button>
           <button class="option-btn" data-val="I can function, but with difficulty">I can function, but with difficulty</button>
@@ -1026,7 +1048,7 @@
       <!-- Q3.7 Quality of Life Impact -->
       <div id="slide-q3-7" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1129,11 +1151,25 @@
         </div>
       </div>
 
+      <!-- ==================== SECTION INTRO: DIAGNOSIS ==================== -->
+      <div id="slide-section-diagnosis" class="survey-slide section-intro-slide">
+        <div class="section-intro-content">
+          <div class="section-intro-text">
+            <span class="section-intro-label">Diagnosis</span>
+            <p class="section-intro-desc">Getting diagnosed is a critical part of the journey. We want to understand what helped and what got in the way.</p>
+          </div>
+          <div class="action-controls">
+            <button class="btn btn-secondary btn-back">Back</button>
+            <button class="btn btn-primary btn-next">Next</button>
+          </div>
+        </div>
+      </div>
+
       <!-- ==================== DIAGNOSIS SECTION ==================== -->
       <!-- Q4.1 Diagnosis Status -->
       <div id="slide-q4-1" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1142,10 +1178,10 @@
         <!-- <span class="question-number">Section 4: Diagnosis</span> -->
         <h2 class="title-1 question-text" data-dynamic-word>Have you been diagnosed with a type of headache?</h2>
         <div class="options-grid" data-type="single" data-field="diagnosis_status">
-          <button class="option-btn" data-val="Yes, by a doctor">Yes, by a doctor <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="Yes, self-diagnosed">Yes, self-diagnosed <span class="option-badge">B</span></button>
-          <button class="option-btn" data-val="No diagnosis">No, I have no formal diagnosis <span class="option-badge">C</span></button>
-          <button class="option-btn" data-val="Unsure">Unsure <span class="option-badge">D</span></button>
+          <button class="option-btn" data-val="Yes, by a doctor">Yes, by a doctor</button>
+          <button class="option-btn" data-val="Self-diagnosed">Self-diagnosed</button>
+          <button class="option-btn" data-val="No diagnosis">No, I have no formal diagnosis</button>
+          <button class="option-btn" data-val="Unsure">Unsure</button>
         </div>
         <div id="q4-1-err" class="validation-error">Please select an option.</div>
         <div class="action-controls">
@@ -1158,7 +1194,7 @@
       <!-- Q4.2A Diagnostician -->
       <div id="slide-q4-2a" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1194,7 +1230,7 @@
       <!-- Q4.2B Time to Diagnosis -->
       <div id="slide-q4-2b" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1233,7 +1269,7 @@
       <!-- Q4.2C Care Satisfaction -->
       <div id="slide-q4-2c" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1245,14 +1281,14 @@
         <div class="options-grid" data-type="single" data-field="satisfaction_rating" style="margin-bottom: var(--space-md);">
           <button class="option-btn" data-val="1">1 – Very dissatisfied</button>
           <button class="option-btn" data-val="2">2 – Dissatisfied</button>
-          <button class="option-btn" data-val="3">3 – Unsure</button>
+          <button class="option-btn" data-val="3">3 – Neutral</button>
           <button class="option-btn" data-val="4">4 – Satisfied</button>
           <button class="option-btn" data-val="5">5 – Very satisfied</button>
         </div>
 
         <div class="input-text-wrapper">
           <label class="field-label" for="q4-2c-reason">Why did you choose this rating?</label>
-          <input type="text" id="q4-2c-reason" maxlength="400" placeholder="e.g. My doctor took a long time to listen... (optional)">
+          <input type="text" id="q4-2c-reason" placeholder="e.g. My doctor took a long time to listen... (optional)">
         </div>
 
         <div id="q4-2c-err" class="validation-error">Please select a satisfaction rating.</div>
@@ -1265,7 +1301,7 @@
       <!-- Q4.2D Barriers to Diagnosis (Nested List) -->
       <div id="slide-q4-2d" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1405,7 +1441,7 @@
       <!-- Q4.2E Overcoming Barriers -->
       <div id="slide-q4-2e" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1415,7 +1451,7 @@
         <h2 class="title-1 question-text" data-dynamic-word>What helped you overcome these barriers and get diagnosed?</h2>
         
         <div class="input-text-wrapper">
-          <input type="text" id="q4-2e-text" maxlength="300" placeholder="e.g. Better communication between specialists...">
+          <input type="text" id="q4-2e-text" placeholder="e.g. Better communication between specialists...">
         </div>
 
         <div class="why-matters-container">
@@ -1440,7 +1476,7 @@
       <!-- Q4.3A Reasons for No Diagnosis -->
       <div id="slide-q4-3a" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1562,7 +1598,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              Many people never pursue formal diagnosis. Your answers help us understand why—are systemic barriers in the way or is it a deliberate choice—and what, if anything, needs to change.
+              Many people never pursue formal diagnosis. Your answers help us understand why—is it systemic barriers, personal preferences or other factors —and what, if anything, needs to change.
             </p>
           </div>
         </div>
@@ -1576,7 +1612,7 @@
       <!-- Q4.3B Path to Diagnosis -->
       <div id="slide-q4-3b" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1586,7 +1622,7 @@
         <h2 class="title-1 question-text">What would have to change for you to consider getting a formal diagnosis?</h2>
         
         <div class="input-text-wrapper">
-          <input type="text" id="q4-3b-text" maxlength="300" placeholder="e.g. Easier access to neurologists...">
+          <input type="text" id="q4-3b-text" placeholder="e.g. Easier access to neurologists...">
         </div>
 
         <div class="why-matters-container">
@@ -1607,17 +1643,31 @@
         </div>
       </div>
 
+      <!-- ==================== SECTION INTRO: TREATMENT ==================== -->
+      <div id="slide-section-treatment" class="survey-slide section-intro-slide">
+        <div class="section-intro-content">
+          <div class="section-intro-text">
+            <span class="section-intro-label">Treatment</span>
+            <p class="section-intro-desc">Treatment looks different for everyone. Let's understand what's working.</p>
+          </div>
+          <div class="action-controls">
+            <button class="btn btn-secondary btn-back">Back</button>
+            <button class="btn btn-primary btn-next">Next</button>
+          </div>
+        </div>
+      </div>
+
       <!-- ==================== SECTION 5: CURRENT TREATMENT ==================== -->
       <div id="slide-q5" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
         <!-- <span class="question-number">Section 5: Current Treatment</span> -->
-        <h2 class="title-1 question-text" data-dynamic-word>How are you currently treating your headaches?</h2>
+        <h2 class="title-1 question-text" data-dynamic-word>What headache treatments are working for you?</h2>
         <p class="subheadline-text question-desc">Select all that apply.</p>
 
         <div class="multiselect-container" data-type="multi" data-field="treatments">
@@ -1703,11 +1753,109 @@
         </div>
       </div>
 
+      <!-- ==================== Q5B: TREATMENTS NOT WORKING ==================== -->
+      <div id="slide-q5b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text" data-dynamic-word>What headache treatments did not work for you?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="treatments_not_working">
+
+          <div class="multi-option" data-val="Medications">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Medications (painkillers, triptans, preventives, Botox...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-medications-specify" placeholder="Specify medications (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Neuromodulation devices">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Neuromodulation devices</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-neuromodulationdevices-specify" placeholder="Specify devices (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Supplements/nutraceuticals">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Supplements / nutraceuticals</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-supplementsnutraceuticals-specify" placeholder="Specify supplements (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="CBT">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cognitive Behavioral Therapy (CBT) or talk therapy</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Complementary approaches">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Complementary approaches (yoga, meditation, acupuncture...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-complementaryapproaches-specify" placeholder="Specify approaches (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Lifestyle changes">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Lifestyle changes (sleep, hydration, triggers...)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-lifestylechanges-specify" placeholder="Specify lifestyle changes (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="None / Not applicable">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">None / Not applicable</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();">
+            </div>
+          </div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Many treatments exist for headaches and migraine. But what matters most is what works in practice.
+            </p>
+          </div>
+        </div>
+
+        <div id="q5b-err" class="validation-error">Please select at least one option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== SECTION INTRO: EXPERIENCE ==================== -->
+      <div id="slide-section-experience" class="survey-slide section-intro-slide">
+        <div class="section-intro-content">
+          <div class="section-intro-text">
+            <span class="section-intro-label">Experience</span>
+            <p class="section-intro-desc">Diagnosis and treatment are just part of the story. We want to understand your full experience, the burden, the barriers, and the opportunities.</p>
+          </div>
+          <div class="action-controls">
+            <button class="btn btn-secondary btn-back">Back</button>
+            <button class="btn btn-primary btn-next">Next</button>
+          </div>
+        </div>
+      </div>
+
       <!-- ==================== SECTION 6: YOUR EXPERIENCE ==================== -->
       <!-- Q6.1 Confidence in Understanding & Management -->
       <div id="slide-q6-1" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1753,7 +1901,7 @@
       <!-- Q6.2 Journey Stage -->
       <div id="slide-q6-2" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1797,7 +1945,7 @@
       <!-- Q6.3 Challenges in Care (CONDITIONAL - Doctor Diagnosed only) -->
       <div id="slide-q6-3" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1924,7 +2072,7 @@
       <!-- Q6.4 Dismissed by Provider -->
       <div id="slide-q6-4" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1933,13 +2081,13 @@
         <!-- <span class="question-number">Section 6: Experience</span> -->
         <h2 class="title-1 question-text" data-dynamic-word>Have you ever felt dismissed or not taken seriously by provider(s) treating your headaches?</h2>
         <div class="options-grid" data-type="single" data-field="felt_dismissed">
-          <button class="option-btn" data-val="Yes">Yes <span class="option-badge">A</span></button>
-          <button class="option-btn" data-val="No">No <span class="option-badge">B</span></button>
+          <button class="option-btn" data-val="Yes">Yes</button>
+          <button class="option-btn" data-val="No">No</button>
         </div>
 
         <div id="felt_dismissed-other-wrapper" class="input-text-wrapper" style="display: none;">
           <label class="field-label" for="q6-4-details">Tell us more about your experience:</label>
-          <input type="text" id="q6-4-details" maxlength="300" placeholder="e.g. My GP told me it was just stress...">
+          <input type="text" id="q6-4-details" placeholder="e.g. My GP told me it was just stress...">
           <div id="q6-4-details-err" class="validation-error">Please describe your experience.</div>
         </div>
 
@@ -1965,7 +2113,7 @@
       <!-- Q6.5 Unmet Needs -->
       <div id="slide-q6-5" class="survey-slide">
         <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Profile</span>
+          <span class="stage-pill" data-stage="profile">Background</span>
           <span class="stage-pill" data-stage="symptoms">Symptoms</span>
           <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
           <span class="stage-pill" data-stage="treatment">Treatment</span>
@@ -1975,7 +2123,7 @@
         <h2 class="title-1 question-text" data-dynamic-word>What's one thing that would meaningfully improve your headache experience going forward?</h2>
         
         <div class="input-text-wrapper">
-          <input type="text" id="q6-5-needs" maxlength="400" placeholder="e.g. More access to specialist care, better medication options...">
+          <input type="text" id="q6-5-needs" placeholder="e.g. More access to specialist care, better medication options...">
           <div id="q6-5-err" class="validation-error">Required field. Please write a brief sentence.</div>
         </div>
 
@@ -1986,8 +2134,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              Your previous answers help us understand what's failing. This helps us helps us understand what would fundamentally transform it.
-
+              Your previous answers help us understand what’s not working with your care, This helps us understand what would fundamentally transform it.
             </p>
           </div>
         </div>
@@ -2001,14 +2148,16 @@
       <!-- ==================== SECTION 7: CLOSING & EMAIL ==================== -->
       <div id="slide-q7" class="survey-slide">
         <!-- <span class="question-number">Section 7: Closing</span> -->
-        <h2 class="title-1 question-text">Want to stay in the loop? Opt in! </h2>
+        <h2 class="title-1 question-text">Stay Connected.
+          <br><span class="subheadline-text" style="margin-top: 0.5rem;">Enter your email below to:</span>
+        </h2>
         <!--<p class="body-text question-desc" style="margin-bottom: 0.25rem;">
           Opt in to:
         </p>-->
         <ul class="body-text question-desc" style="margin-top: 0; padding-left: 2rem; font-size: 0.85em;">
-          <li>Get a copy of your responses</li>
-          <li>See how your experience compares to others</li>
+          <li>See how your experience compares to others worldwide</li>
           <li>Receive key findings from this research </li>
+          <li>Get updates on tools we are building for you</li>
           <li>Access evidence-based resources from Kōkūn</li>
           <li>Shape future headache and migraine research</li>
         </ul>
@@ -2020,7 +2169,7 @@
         </div>
 
         <div class="options-grid" data-type="single" data-field="email" style="margin-bottom: var(--space-md);">
-          <button class="option-btn" data-val="Prefer not to share" onclick="document.getElementById('q7-email').value = ''">Prefer not to share <span class="option-badge">A</span></button>
+          <button class="option-btn" data-val="Prefer not to share" onclick="document.getElementById('q7-email').value = ''">Prefer not to share</button>
         </div>
 
         <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to share" to submit.</div>

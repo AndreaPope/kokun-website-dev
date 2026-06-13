@@ -13,6 +13,7 @@ const surveyData = {
   ethnic_background_selfdesc: "",
   cultural_identity_detail: "",
   country: "",
+  city: "",
   postal_code: "",
   education_level: null,
   education_other: "",
@@ -47,6 +48,8 @@ const surveyData = {
   path_to_diagnosis_changes: "",
   treatments: [],
   treatment_details: {},
+  treatments_not_working: [],
+  treatment_not_working_details: {},
   confidence_understanding: null,
   confidence_management: null,
   journey_stage: null,
@@ -139,6 +142,7 @@ const stageMap = {
   "slide-q4-3a": "diagnosis",
   "slide-q4-3b": "diagnosis",
   "slide-q5": "treatment",
+  "slide-q5b": "treatment",
   "slide-q6-1": "experience",
   "slide-q6-2": "experience",
   "slide-q6-3": "experience",
@@ -624,15 +628,13 @@ function validateCurrentSlide() {
     case "slide-q2-4":
       const countryVal = document.getElementById("q2-4-country").value;
       const postalVal = document.getElementById("q2-4-postal").value.trim();
+      const cityVal = document.getElementById("q2-4-city").value.trim();
       if (!countryVal) {
         showError("q2-4-country-err");
         return false;
       }
-      if (getPostalConfig(countryVal).show && !postalVal) {
-        showError("q2-4-postal-err");
-        return false;
-      }
       surveyData.country = countryVal;
+      surveyData.city = cityVal;
       surveyData.postal_code = getPostalConfig(countryVal).show ? postalVal : "";
       return true;
       
@@ -860,7 +862,21 @@ function validateCurrentSlide() {
         }
       });
       return true;
-      
+
+    case "slide-q5b":
+      if (surveyData.treatments_not_working.length === 0) {
+        showError("q5b-err");
+        return false;
+      }
+      surveyData.treatment_not_working_details = {};
+      surveyData.treatments_not_working.forEach(t => {
+        const inp = document.getElementById(`q5b-${t.toLowerCase().replace(/[^a-z]/g, '')}-specify`);
+        if (inp) {
+          surveyData.treatment_not_working_details[t] = inp.value.trim();
+        }
+      });
+      return true;
+
     // Section 6
     case "slide-q6-1":
       const understandingBtn = document.querySelector("[data-field='q6-1a'] .option-btn.selected");
@@ -971,15 +987,11 @@ function handleNext() {
       break;
       
     case "slide-q1-1":
-      if (surveyData.age_bracket === "Under 18") {
-        navigateTo("slide-ineligible");
-      } else {
-        navigateTo("slide-q1-2");
-      }
+      navigateTo("slide-q1-2");
       break;
-      
+
     case "slide-q1-2":
-      if (surveyData.headache_eligible === "No") {
+      if (surveyData.age_bracket === "Under 18" || surveyData.headache_eligible === "No") {
         navigateTo("slide-ineligible");
       } else {
         navigateTo("slide-section-profile");
@@ -1019,6 +1031,10 @@ function handleNext() {
       break;
 
     case "slide-q2-6b":
+      navigateTo("slide-section-symptoms");
+      break;
+
+    case "slide-section-symptoms":
       navigateTo("slide-q3-1");
       break;
       
@@ -1052,6 +1068,10 @@ function handleNext() {
       break;
       
     case "slide-q3-7":
+      navigateTo("slide-section-diagnosis");
+      break;
+
+    case "slide-section-diagnosis":
       navigateTo("slide-q4-1");
       break;
       
@@ -1059,7 +1079,7 @@ function handleNext() {
       if (surveyData.diagnosis_status === "Yes, by a doctor") {
         navigateTo("slide-q4-2a");
       } else if (surveyData.diagnosis_status === "Unsure") {
-        navigateTo("slide-q5");
+        navigateTo("slide-section-treatment");
       } else {
         navigateTo("slide-q4-3a");
       }
@@ -1077,25 +1097,37 @@ function handleNext() {
       break;
     case "slide-q4-2d":
       if ("Didn't experience any major barriers to diagnosis" in surveyData.diagnosis_barriers) {
-        navigateTo("slide-q5");
+        navigateTo("slide-section-treatment");
       } else {
         navigateTo("slide-q4-2e");
       }
       break;
     case "slide-q4-2e":
-      navigateTo("slide-q5");
+      navigateTo("slide-section-treatment");
       break;
-      
+
     // Path 2 (Self/No Diagnosis)
     case "slide-q4-3a":
       navigateTo("slide-q4-3b");
       break;
     case "slide-q4-3b":
+      navigateTo("slide-section-treatment");
+      break;
+
+    case "slide-section-treatment":
       navigateTo("slide-q5");
       break;
-      
-    // Treatment slide
+
+    // Treatment slides
     case "slide-q5":
+      navigateTo("slide-q5b");
+      break;
+
+    case "slide-q5b":
+      navigateTo("slide-section-experience");
+      break;
+
+    case "slide-section-experience":
       navigateTo("slide-q6-1");
       break;
       
@@ -1143,12 +1175,12 @@ function setupEventListeners() {
     btn.addEventListener("click", handleNext);
   });
   
-  // Enter key press in input controls triggers next slide
+  // Enter key press in numeric/select controls triggers next slide (text inputs excluded)
   document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       const activeElement = document.activeElement;
-      if (activeElement && (activeElement.tagName === "INPUT" || activeElement.tagName === "SELECT")) {
-        // Prevent default submit
+      const isTextInput = activeElement && activeElement.tagName === "INPUT" && activeElement.type === "text";
+      if (!isTextInput && activeElement && (activeElement.tagName === "INPUT" || activeElement.tagName === "SELECT")) {
         e.preventDefault();
         handleNext();
       }
@@ -1183,6 +1215,8 @@ function setupEventListeners() {
       btn.addEventListener("click", () => {
         group.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
+        const slide = group.closest(".survey-slide");
+        if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
       });
     });
   });
@@ -1226,6 +1260,8 @@ function setupEventListeners() {
           // Leaf options (like "Other" or standard multi-select options)
           optionEl.classList.toggle("selected");
           const isSelected = optionEl.classList.contains("selected");
+          const slide = container.closest(".survey-slide");
+          if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
           
           if (isSelected) {
             if (isNestedType) {
@@ -1278,6 +1314,30 @@ function setupEventListeners() {
                 if (noTreatEl && noTreatEl.classList.contains("selected")) {
                   noTreatEl.classList.remove("selected");
                   surveyData.treatments = surveyData.treatments.filter(v => v !== "Not currently treating");
+                }
+              }
+            }
+          }
+
+          // Mutual exclusivity for "None / Not applicable" on Q5b
+          if (fieldName === "treatments_not_working") {
+            if (val === "None / Not applicable") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) {
+                    el.classList.remove("selected");
+                    const sl = el.querySelector(".nested-subcategories");
+                    if (sl) sl.classList.remove("expanded");
+                  }
+                });
+                surveyData.treatments_not_working = ["None / Not applicable"];
+              }
+            } else {
+              if (isSelected) {
+                const noneEl = container.querySelector(".multi-option[data-val='None / Not applicable']");
+                if (noneEl && noneEl.classList.contains("selected")) {
+                  noneEl.classList.remove("selected");
+                  surveyData.treatments_not_working = surveyData.treatments_not_working.filter(v => v !== "None / Not applicable");
                 }
               }
             }
