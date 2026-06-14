@@ -38,18 +38,16 @@ export default function EarlyAccessPage() {
           <PageContentWrapper className="bg-background backdrop-blur-sm p-6 md:p-12 rounded-lg">
             <div className="space-y-8 text-lg md:text-xl">
               <p>
-                We're getting ready to launch Kōkūn&apos;s migraine offering and we&apos;re
-                offering early access to the first 250 individuals ready to shine a light on what
-                medicine has overlooked for too long.
+                Managing migraine is exhausting in ways most people never see. That’s why we’re building the Kōkūn app.
               </p>
               <p>
-                You&apos;ll be among the first to experience our platform, and your insights will
-                help shape what comes next. Early access is a front-row seat to the future of
-                migraine care.
+                Designed to be your guide through it all, the app helps you make sense of your experience, spot patterns, take control of your care and hopefully, feel a little less alone in the process.
               </p>
               <p>
-                If you&apos;ve ever felt invisible, this is your moment to be seen and heard—and
-                help change the story. Sign up now to secure your spot.
+                This Fall, we're launching a part of this experience in private beta. And we’d love for you to be part of it.
+              </p>
+              <p>
+                We're opening only 100 spots. So sign up now.
               </p>
 
               {/* Mailchimp Early Access form with tag "EarlyAccess" */}
