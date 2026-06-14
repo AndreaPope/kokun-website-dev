@@ -104,13 +104,13 @@ function Jun26Blog() {
                 <br />
                 <p>
                   Levi, a young man with migraine, puts it plainly: “I think a lot of people might overlook [migraine] in men. But that could also be men being stubborn and not getting diagnosed.” 
-                  {" "}<a
+                  {/* {" "}<a
                     href="https://kokun.space/blog"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link hover:text-hover transition-colors duration-200"
                   >Read Levi’s story.
-                  </a> 
+                  </a>  */}
                 </p>
                 <br />
 
@@ -140,6 +140,7 @@ function Jun26Blog() {
                 <p>
                   Migraine care also needs better data on how treatments work for men. As Izac Ross of Haven Headache & Migraine Center explains, “Most migraine drug trials enroll mostly women, and studies aren't required to be powered to detect differences between sexes. So we often can't say whether a drug works differently in men. That hurts everyone.” 
                   {" "}
+                  {/*                   
                   <a
                     href="https://kokun.space/blog/"
                     target="_blank"
@@ -147,7 +148,7 @@ function Jun26Blog() {
                     className="text-link hover:text-hover transition-colors duration-200"
                   >Read the full interview with Izac.
                   </a>
-                  
+                   */}
                 </p>
                 <br />
                 <p>
