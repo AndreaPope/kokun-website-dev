@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
@@ -72,6 +72,18 @@ export default function EarlyAccessPage() {
 
   const migraineValue = migraineType === 'Other' ? migraineOther : migraineType;
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
+    script.type = 'text/javascript';
+    document.body.appendChild(script);
+    script.onload = () => {
+      (window as any).fnames = ['EMAIL', 'FNAME', 'LNAME', 'MIGTYPE', 'COUNTRY'];
+      (window as any).ftypes = ['email', 'text', 'text', 'text', 'text'];
+    };
+    return () => { document.body.removeChild(script); };
+  }, []);
+
   return (
     <div className="relative min-h-screen font-sans text-white">
       <div
@@ -121,9 +133,11 @@ export default function EarlyAccessPage() {
               <form
                 action="https://space.us2.list-manage.com/subscribe/post?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&f_id=0073fbe3f0"
                 method="POST"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
                 target="_blank"
                 noValidate
-                className="mt-12 space-y-8"
+                className="validate mt-12 space-y-8"
               >
                 {/* Apply EarlyAccess tag */}
                 <input type="hidden" name="tags" value="1936702" />
@@ -148,7 +162,7 @@ export default function EarlyAccessPage() {
                       id="mce-FNAME"
                       name="FNAME"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="text w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
                   <div className="space-y-2">
@@ -160,7 +174,7 @@ export default function EarlyAccessPage() {
                       id="mce-LNAME"
                       name="LNAME"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="text w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -174,7 +188,7 @@ export default function EarlyAccessPage() {
                     id="mce-EMAIL"
                     name="EMAIL"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="required email w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -186,7 +200,7 @@ export default function EarlyAccessPage() {
                     id="mce-COUNTRY"
                     name="COUNTRY"
                     defaultValue=""
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-white [&>option]:bg-background [&>option]:text-white"
+                    className="text w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-white [&>option]:bg-background [&>option]:text-white"
                   >
                     <option value="" disabled>Select a country...</option>
                     {COUNTRIES.map(country => (
