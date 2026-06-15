@@ -135,7 +135,6 @@ export default function EarlyAccessPage() {
                 method="POST"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
-                target="_blank"
                 noValidate
                 className="validate mt-12 space-y-8"
               >
