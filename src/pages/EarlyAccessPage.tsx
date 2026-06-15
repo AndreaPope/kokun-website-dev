@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
@@ -72,18 +72,6 @@ export default function EarlyAccessPage() {
 
   const migraineValue = migraineType === 'Other' ? migraineOther : migraineType;
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
-    script.type = 'text/javascript';
-    document.body.appendChild(script);
-    script.onload = () => {
-      (window as any).fnames = ['EMAIL', 'FNAME', 'LNAME', 'MIGTYPE', 'COUNTRY'];
-      (window as any).ftypes = ['email', 'text', 'text', 'text', 'text'];
-    };
-    return () => { document.body.removeChild(script); };
-  }, []);
-
   return (
     <div className="relative min-h-screen font-sans text-white">
       <div
@@ -133,10 +121,8 @@ export default function EarlyAccessPage() {
               <form
                 action="https://space.us2.list-manage.com/subscribe/post?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&f_id=0073fbe3f0"
                 method="POST"
-                id="mc-embedded-subscribe-form"
-                name="mc-embedded-subscribe-form"
                 noValidate
-                className="validate mt-12 space-y-8"
+                className="mt-12 space-y-8"
               >
                 {/* Apply EarlyAccess tag */}
                 <input type="hidden" name="tags" value="1936702" />
