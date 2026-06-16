@@ -204,8 +204,8 @@
         <!-- Conditional Input -->
         <div id="gender-other-wrapper" class="input-text-wrapper" style="display: none;">
           <label class="field-label" for="q2-1-self">Please describe your gender identity:</label>
-          <input type="text" id="q2-1-self" placeholder="e.g. Non-binary, genderqueer...">
-          <div id="q2-1-self-err" class="validation-error">Please fill in this description field.</div>
+          <input type="text" id="q2-1-self" placeholder="e.g. Non-binary, genderqueer..." oninput="document.getElementById('q2-1-self-err').classList.remove('active')">
+          <div id="q2-1-self-err" class="validation-error">You have selected “Prefer to self-describe”. Please enter a response to continue</div>
         </div>
 
         <div id="q2-1-err" class="validation-error">Please select an option to continue.</div>
@@ -352,7 +352,7 @@
         <!--<p class="subheadline-text question-desc">Examples: Scottish, Northern Indian, Yoruba, Ashkenazi, Quechua, etc.</p>-->
 
         <div class="input-text-wrapper">
-          <input type="text" id="q2-3-eth" placeholder="e.g. British-Indian, Yoruba, Ashkenazi...">
+          <input type="text" id="q2-3-eth" placeholder="Examples: Scottish, Northern Indian, Yoruba, Ashkenazi, Quechua, etc." oninput="document.getElementById('q2-3b-err').classList.remove('active')">
           <div id="q2-3b-err" class="validation-error">Please describe your background, or go back and select a different option.</div>
         </div>
 
