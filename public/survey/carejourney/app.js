@@ -635,8 +635,10 @@ function validateCurrentSlide() {
 
     case "slide-q2-4": {
       const countryVal = document.getElementById("q2-4-country").value;
-      const postalVal = document.getElementById("q2-4-postal").value.trim();
-      const cityVal = document.getElementById("q2-4-city").value.trim();
+      const postalEl = document.getElementById("q2-4-postal");
+      const cityEl = document.getElementById("q2-4-city");
+      const postalVal = postalEl ? postalEl.value.trim() : "";
+      const cityVal = cityEl ? cityEl.value.trim() : "";
       if (!countryVal) {
         showError("q2-4-country-err");
         return false;
