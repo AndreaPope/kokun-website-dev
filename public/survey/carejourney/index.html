@@ -205,7 +205,7 @@
         <div id="gender-other-wrapper" class="input-text-wrapper" style="display: none;">
           <label class="field-label" for="q2-1-self">Please describe your gender identity:</label>
           <input type="text" id="q2-1-self" placeholder="e.g. Non-binary, genderqueer..." oninput="document.getElementById('q2-1-self-err').classList.remove('active')">
-          <div id="q2-1-self-err" class="validation-error">You have selected “Prefer to self-describe”. Please enter a response to continue</div>
+          <div id="q2-1-self-err" class="validation-error">You have selected “Prefer to self-describe”. Please enter a response to continue.</div>
         </div>
 
         <div id="q2-1-err" class="validation-error">Please select an option to continue.</div>
@@ -394,13 +394,17 @@
             </select>
             <div id="q2-4-country-err" class="validation-error">Required.</div>
           </div>
-          <div>
+          <div id="q2-4-city-wrapper" style="display: none;">
             <label class="field-label" for="q2-4-city">What city do you live in?</label>
             <input type="text" id="q2-4-city" placeholder="e.g. Toronto">
+            <div id="q2-4-city-err" class="validation-error">Required.</div>
           </div>
-          <div id="q2-4-postal-wrapper">
-            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">What is your postal or zip code, if any?</label>
+          <div id="q2-4-postal-wrapper" style="display: none;">
+            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">
+              What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.
+              >
             <input type="text" id="q2-4-postal" placeholder="e.g. 90210">
+            <div id="q2-4-postal-err" class="validation-error">Required.</div>
           </div>
         </div>
 
@@ -412,8 +416,6 @@
           <div class="why-matters-content">
             <p class="footnote-text">
               Location (rural vs. urban, climate patterns, geographic region, etc.) can impact incidence of headaches and available care.
-              <br><br>
-              NOTE: To respect EU regulations, GDPR and ensure the data remains anonymous, we will only collect part of the Zip Code in the US, UK, CA, and EU. We will not collect any Zip Code in FR and Cyprus.
             </p>
           </div>
         </div>
@@ -447,7 +449,7 @@
 
         <div id="education_level-other-wrapper" class="input-text-wrapper" style="display: none;">
           <label class="field-label" for="q2-5-other">Please specify:</label>
-          <input type="text" id="q2-5-other" placeholder="e.g. Trade certification, some college...">
+          <input type="text" id="q2-5-other" placeholder="e.g. Trade certification, some college..." oninput="document.getElementById('q2-5-other-err').classList.remove('active')">
           <div id="q2-5-other-err" class="validation-error">Required.</div>
         </div>
 
@@ -525,14 +527,7 @@
               <span class="option-label">Not currently working for another reason</span>
             </div>
           </div>
-          <div class="multi-option" data-val="Prefer not to answer" onclick="
-            if(!this.classList.contains('selected')) {
-              document.querySelectorAll('#slide-q2-6a .multi-option').forEach(el => {
-                if(el !== this) { el.classList.remove('selected'); }
-              });
-              surveyData.work_situation = ['Prefer not to answer'];
-            }
-          ">
+          <div class="multi-option" data-val="Prefer not to answer">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
               <span class="option-label">Prefer not to answer</span>

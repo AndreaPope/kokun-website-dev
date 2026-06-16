@@ -383,19 +383,26 @@ function getPostalConfig(country) {
 }
 
 function updatePostalField(country) {
+  const cityWrapper = document.getElementById("q2-4-city-wrapper");
   const wrapper = document.getElementById("q2-4-postal-wrapper");
   const label = document.getElementById("q2-4-postal-label");
   const input = document.getElementById("q2-4-postal");
+  const cityInput = document.getElementById("q2-4-city");
   if (!wrapper) return;
   const config = getPostalConfig(country);
-  if (config.show) {
+  const showCityAndPostal = !!country && !EU_POSTAL_HIDDEN.has(country);
+  if (cityWrapper) {
+    cityWrapper.style.display = showCityAndPostal ? "" : "none";
+    if (!showCityAndPostal && cityInput) cityInput.value = "";
+  }
+  if (config.show && showCityAndPostal) {
     wrapper.style.display = "";
     label.textContent = config.label;
     input.placeholder = config.placeholder;
     input.value = "";
   } else {
     wrapper.style.display = "none";
-    input.value = "";
+    if (input) input.value = "";
   }
 }
 
@@ -626,7 +633,7 @@ function validateCurrentSlide() {
       return true;
     }
 
-    case "slide-q2-4":
+    case "slide-q2-4": {
       const countryVal = document.getElementById("q2-4-country").value;
       const postalVal = document.getElementById("q2-4-postal").value.trim();
       const cityVal = document.getElementById("q2-4-city").value.trim();
@@ -634,10 +641,20 @@ function validateCurrentSlide() {
         showError("q2-4-country-err");
         return false;
       }
+      const needsCityAndPostal = !EU_POSTAL_HIDDEN.has(countryVal);
+      if (needsCityAndPostal && !cityVal) {
+        showError("q2-4-city-err");
+        return false;
+      }
+      if (needsCityAndPostal && getPostalConfig(countryVal).show && !postalVal) {
+        showError("q2-4-postal-err");
+        return false;
+      }
       surveyData.country = countryVal;
-      surveyData.city = cityVal;
-      surveyData.postal_code = getPostalConfig(countryVal).show ? postalVal : "";
+      surveyData.city = needsCityAndPostal ? cityVal : "";
+      surveyData.postal_code = needsCityAndPostal && getPostalConfig(countryVal).show ? postalVal : "";
       return true;
+    }
       
     case "slide-q2-5":
       if (!surveyData.education_level) {
@@ -1202,8 +1219,10 @@ function setupEventListeners() {
         // Dynamic visibility overrides for text fields (like "Other" or "Prefer to self-describe")
         toggleConditionalTextFields(fieldName, val);
         
-        // Auto-advance for single select slides, but not when a text input is needed
-        if (val !== 'Prefer to self-describe') {
+        // Auto-advance for single select slides, but not when a conditional text input is revealed
+        const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`);
+        const showingTextInput = conditionalWrapper && conditionalWrapper.style.display !== 'none';
+        if (!showingTextInput) {
           setTimeout(() => {
             handleNext();
           }, 300);
@@ -1373,6 +1392,28 @@ function setupEventListeners() {
             }
           }
           
+          // Mutual exclusivity for "Prefer not to answer" on Q2.6a
+          if (fieldName === "work_situation") {
+            if (val === "Prefer not to answer") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) {
+                    el.classList.remove("selected");
+                  }
+                });
+                surveyData.work_situation = ["Prefer not to answer"];
+              }
+            } else {
+              if (isSelected) {
+                const pntaEl = container.querySelector(".multi-option[data-val='Prefer not to answer']");
+                if (pntaEl && pntaEl.classList.contains("selected")) {
+                  pntaEl.classList.remove("selected");
+                  surveyData.work_situation = surveyData.work_situation.filter(v => v !== "Prefer not to answer");
+                }
+              }
+            }
+          }
+
           // Show conditional inputs for options like "Other"
           toggleConditionalTextFields(`${fieldName}_${val.toLowerCase().replace(/[^a-z]/g, '')}`, isSelected ? "active" : "");
         }
