@@ -1202,10 +1202,12 @@ function setupEventListeners() {
         // Dynamic visibility overrides for text fields (like "Other" or "Prefer to self-describe")
         toggleConditionalTextFields(fieldName, val);
         
-        // Auto-advance for single select slides
-        setTimeout(() => {
-          handleNext();
-        }, 300);
+        // Auto-advance for single select slides, but not when a text input is needed
+        if (val !== 'Prefer to self-describe') {
+          setTimeout(() => {
+            handleNext();
+          }, 300);
+        }
       });
     });
   });
