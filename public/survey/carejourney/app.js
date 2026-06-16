@@ -1475,9 +1475,6 @@ function populateQ7Fields() {
       countrySelect.appendChild(opt);
     });
   }
-  if (surveyData.country && countrySelect) {
-    countrySelect.value = surveyData.country;
-  }
 
   const migraineSelect = document.getElementById('q7-migtype');
   if (migraineSelect && migraineSelect.options.length <= 1) {
@@ -1487,18 +1484,6 @@ function populateQ7Fields() {
       opt.textContent = t;
       migraineSelect.appendChild(opt);
     });
-  }
-  if (surveyData.migraine_subtypes && surveyData.migraine_subtypes.length > 0 && migraineSelect) {
-    for (const subtype of surveyData.migraine_subtypes) {
-      const normalized = subtype.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
-      for (const opt of migraineSelect.options) {
-        if (opt.value && opt.value.toLowerCase() === normalized) {
-          migraineSelect.value = opt.value;
-          break;
-        }
-      }
-      if (migraineSelect.value) break;
-    }
   }
 }
 
