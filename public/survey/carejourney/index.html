@@ -2168,8 +2168,33 @@
           <div id="q7-format-err" class="validation-error">Please enter a valid email address (e.g. name@domain.com).</div>
         </div>
 
+        <div class="fields-stack" id="q7-contact-fields">
+          <div style="display: flex; gap: var(--space-md);">
+            <div style="flex: 1;">
+              <label class="field-label" for="q7-fname">First Name</label>
+              <input type="text" id="q7-fname" placeholder="e.g. Jane">
+            </div>
+            <div style="flex: 1;">
+              <label class="field-label" for="q7-lname">Last Name</label>
+              <input type="text" id="q7-lname" placeholder="e.g. Smith">
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="q7-country">Country</label>
+            <select id="q7-country">
+              <option value="" disabled selected>Select a country...</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="q7-migtype">What type of migraine do you experience?</label>
+            <select id="q7-migtype">
+              <option value="" disabled selected>Select an option...</option>
+            </select>
+          </div>
+        </div>
+
         <div class="options-grid" data-type="single" data-field="email" style="margin-bottom: var(--space-md);">
-          <button class="option-btn" data-val="Prefer not to share" onclick="document.getElementById('q7-email').value = ''">Prefer not to share</button>
+          <button class="option-btn" data-val="Prefer not to share" onclick="clearQ7Fields()">Prefer not to share</button>
         </div>
 
         <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to share" to submit.</div>

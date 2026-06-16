@@ -154,6 +154,22 @@ const stageMap = {
 
 const stageOrder = ["profile", "symptoms", "diagnosis", "treatment", "experience"];
 
+const Q7_MIGRAINE_TYPES = [
+  'Migraine without aura',
+  'Migraine with aura',
+  'Migraine with brainstem aura',
+  'Hemiplegic migraine',
+  'Vestibular migraine',
+  'Chronic migraine',
+  'Hormonal or Menstrual migraine',
+  'Abdominal migraine',
+  'Cyclical Vomiting Syndrome',
+  'I do not experience migraine',
+  'I do not know the type',
+  'Other',
+  'Prefer not to share',
+];
+
 // Map of country list
 const countries = [
   "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
@@ -508,6 +524,8 @@ function navigateTo(targetId) {
   slideHistory.push(currentSlideId);
   currentSlideId = targetId;
   targetSlide.classList.add("active");
+
+  if (targetId === "slide-q7") populateQ7Fields();
 
   updateSessionSlide(targetId);
   autoSaveProgress();
@@ -1447,6 +1465,79 @@ function toggleConditionalTextFields(fieldName, val) {
 }
 
 // Supabase POST Submission
+function populateQ7Fields() {
+  const countrySelect = document.getElementById('q7-country');
+  if (countrySelect && countrySelect.options.length <= 1) {
+    countries.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c;
+      opt.textContent = c;
+      countrySelect.appendChild(opt);
+    });
+  }
+  if (surveyData.country && countrySelect) {
+    countrySelect.value = surveyData.country;
+  }
+
+  const migraineSelect = document.getElementById('q7-migtype');
+  if (migraineSelect && migraineSelect.options.length <= 1) {
+    Q7_MIGRAINE_TYPES.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t;
+      migraineSelect.appendChild(opt);
+    });
+  }
+  if (surveyData.migraine_subtypes && surveyData.migraine_subtypes.length > 0 && migraineSelect) {
+    for (const subtype of surveyData.migraine_subtypes) {
+      const normalized = subtype.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+      for (const opt of migraineSelect.options) {
+        if (opt.value && opt.value.toLowerCase() === normalized) {
+          migraineSelect.value = opt.value;
+          break;
+        }
+      }
+      if (migraineSelect.value) break;
+    }
+  }
+}
+
+function clearQ7Fields() {
+  ['q7-email', 'q7-fname', 'q7-lname'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  ['q7-country', 'q7-migtype'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.selectedIndex = 0;
+  });
+}
+
+function submitToMailchimp(email, fname, lname, country, migtype) {
+  const callbackName = '__mcCallback_' + Date.now();
+  const params = new URLSearchParams({
+    u: '21828ca842c8b79b81f1b21d2',
+    id: '8d32120fc0',
+    f_id: '0073fbe3f0',
+    EMAIL: email,
+    FNAME: fname || '',
+    LNAME: lname || '',
+    COUNTRY: country || '',
+    MIGTYPE: migtype || '',
+    tags: '1790300',
+    c: callbackName
+  });
+
+  const script = document.createElement('script');
+  window[callbackName] = function(data) {
+    console.log('Mailchimp:', data.result, data.msg);
+    delete window[callbackName];
+    script.remove();
+  };
+  script.src = 'https://space.us2.list-manage.com/subscribe/post-json?' + params.toString();
+  document.body.appendChild(script);
+}
+
 async function submitSurvey() {
   const submitBtn = document.querySelector("#slide-q7 .btn-primary");
   if (submitBtn) {
@@ -1454,11 +1545,20 @@ async function submitSurvey() {
     submitBtn.textContent = "Submitting...";
   }
 
+  // Capture Mailchimp contact fields before any navigation changes the DOM
+  const mcFname = (document.getElementById('q7-fname') || {}).value?.trim() || '';
+  const mcLname = (document.getElementById('q7-lname') || {}).value?.trim() || '';
+  const mcCountry = (document.getElementById('q7-country') || {}).value || '';
+  const mcMigtype = (document.getElementById('q7-migtype') || {}).value || '';
+
   if (!isSupabaseConfigured()) {
     console.warn("Supabase credentials not configured. Running in Mock Demo Mode.");
     console.log("Constructed survey payload:", surveyData);
     setTimeout(() => {
       navigateTo("slide-end");
+      if (surveyData.subscribed_to_updates && surveyData.email) {
+        submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
+      }
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Complete Survey";
@@ -1491,6 +1591,9 @@ async function submitSurvey() {
       console.log("Survey successfully recorded in Supabase!");
       markSessionComplete();
       navigateTo("slide-end");
+      if (surveyData.subscribed_to_updates && surveyData.email) {
+        submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
+      }
     } else {
       const errTxt = await response.text();
       throw new Error(errTxt || "Failed to save response");
