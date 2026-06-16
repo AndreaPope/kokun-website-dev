@@ -1514,28 +1514,44 @@ function clearQ7Fields() {
 }
 
 function submitToMailchimp(email, fname, lname, country, migtype) {
-  const callbackName = '__mcCallback_' + Date.now();
-  const params = new URLSearchParams({
-    u: '21828ca842c8b79b81f1b21d2',
-    id: '8d32120fc0',
-    f_id: '0073fbe3f0',
+  // Tags only apply via a real form POST (not JSONP). Submit silently via a
+  // hidden iframe so the user stays on the end screen.
+  let iframe = document.getElementById('mc-hidden-iframe');
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.name = 'mc-hidden-iframe';
+    iframe.id = 'mc-hidden-iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+  }
+
+  const form = document.createElement('form');
+  form.action = 'https://space.us2.list-manage.com/subscribe/post?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&f_id=0073fbe3f0';
+  form.method = 'POST';
+  form.target = 'mc-hidden-iframe';
+  form.style.display = 'none';
+
+  const fields = {
     EMAIL: email,
     FNAME: fname || '',
     LNAME: lname || '',
     COUNTRY: country || '',
     MIGTYPE: migtype || '',
     tags: '1790300',
-    c: callbackName
+    b_21828ca842c8b79b81f1b21d2_8d32120fc0: '' // honeypot
+  };
+
+  Object.entries(fields).forEach(([name, value]) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
   });
 
-  const script = document.createElement('script');
-  window[callbackName] = function(data) {
-    console.log('Mailchimp:', data.result, data.msg);
-    delete window[callbackName];
-    script.remove();
-  };
-  script.src = 'https://space.us2.list-manage.com/subscribe/post-json?' + params.toString();
-  document.body.appendChild(script);
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(() => form.remove(), 5000);
 }
 
 async function submitSurvey() {
