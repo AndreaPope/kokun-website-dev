@@ -222,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCountryDropdown();
   setupEventListeners();
   setupEthnicBackgroundOptions();
+  populateQ7Fields();
   updateProgress();
   setupDynamicWordingEngine();
   createSessionRecord();
@@ -524,8 +525,6 @@ function navigateTo(targetId) {
   slideHistory.push(currentSlideId);
   currentSlideId = targetId;
   targetSlide.classList.add("active");
-
-  if (targetId === "slide-q7") populateQ7Fields();
 
   updateSessionSlide(targetId);
   autoSaveProgress();
