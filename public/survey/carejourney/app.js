@@ -403,41 +403,21 @@ function setupEthnicBackgroundOptions() {
   const container = document.getElementById("q2-3a-options");
   if (!container) return;
 
-  const anotherOpt = document.getElementById("q2-3a-another-opt");
-  const anotherRow = document.getElementById("q2-3a-another-row");
-  const selfDescOpt = document.getElementById("q2-3a-selfdesc-opt");
-  const selfDescRow = document.getElementById("q2-3a-selfdesc-row");
   const pntaOpt = document.getElementById("q2-3a-pnta");
-
-  function isSelected(el) { return el.classList.contains("selected"); }
-
-  anotherOpt.querySelector(".multi-option-header").addEventListener("click", () => {
-    const nowSelected = isSelected(anotherOpt);
-    anotherRow.style.display = nowSelected ? "" : "none";
-  });
-
-  selfDescOpt.querySelector(".multi-option-header").addEventListener("click", () => {
-    const nowSelected = isSelected(selfDescOpt);
-    selfDescRow.style.display = nowSelected ? "" : "none";
-  });
+  if (!pntaOpt) return;
 
   pntaOpt.querySelector(".multi-option-header").addEventListener("click", () => {
-    const nowSelected = isSelected(pntaOpt);
-    if (nowSelected) {
+    if (pntaOpt.classList.contains("selected")) {
       container.querySelectorAll(".multi-option").forEach(el => {
-        if (el !== pntaOpt) {
-          el.classList.remove("selected");
-        }
+        if (el !== pntaOpt) el.classList.remove("selected");
       });
-      anotherRow.style.display = "none";
-      selfDescRow.style.display = "none";
       surveyData.ethnic_background_categories = ["Prefer not to answer"];
     }
   });
 
   container.querySelectorAll(".multi-option:not(#q2-3a-pnta)").forEach(opt => {
     opt.querySelector(".multi-option-header").addEventListener("click", () => {
-      if (isSelected(pntaOpt)) {
+      if (pntaOpt.classList.contains("selected")) {
         pntaOpt.classList.remove("selected");
         surveyData.ethnic_background_categories = surveyData.ethnic_background_categories.filter(v => v !== "Prefer not to answer");
       }
@@ -634,13 +614,17 @@ function validateCurrentSlide() {
         showError("q2-3a-err");
         return false;
       }
-      surveyData.ethnic_background_another = document.getElementById("q2-3a-another-text")?.value.trim() || "";
-      surveyData.ethnic_background_selfdesc = document.getElementById("q2-3a-selfdesc-text")?.value.trim() || "";
       return true;
 
-    case "slide-q2-3b":
-      surveyData.cultural_identity_detail = document.getElementById("q2-3-eth").value.trim();
+    case "slide-q2-3b": {
+      const detail = document.getElementById("q2-3-eth").value.trim();
+      if (surveyData.ethnic_background_categories.includes("Prefer to self-describe") && !detail) {
+        showError("q2-3b-err");
+        return false;
+      }
+      surveyData.cultural_identity_detail = detail;
       return true;
+    }
 
     case "slide-q2-4":
       const countryVal = document.getElementById("q2-4-country").value;
