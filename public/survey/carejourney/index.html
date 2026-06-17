@@ -839,15 +839,7 @@
           <div class="multi-option" data-val="Cyclical Vomiting Syndrome">
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cyclical Vomiting Syndrome</span></div>
           </div>
-          <div class="multi-option" data-val="I do not know" onclick="
-            if(!this.classList.contains('selected')) {
-              document.querySelectorAll('#slide-q3-2 .multi-option').forEach(el => {
-                if(el !== this) { el.classList.remove('selected'); }
-              });
-              surveyData.migraine_subtypes = ['I do not know'];
-              document.getElementById('migraine_subtypes_other-other-wrapper').style.display = 'none';
-            }
-          ">
+          <div class="multi-option" data-val="I do not know">
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I do not know</span></div>
           </div>
           <div class="multi-option" data-val="Other">
@@ -1175,11 +1167,12 @@
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
         <!-- <span class="question-number">Section 4: Diagnosis</span> -->
-        <h2 class="title-1 question-text" data-dynamic-word>Have you been diagnosed with a type of headache?</h2>
+        <h2 class="title-1 question-text" data-dynamic-word>
+          Do you have a formal diagnosis for your headache?</h2>
         <div class="options-grid" data-type="single" data-field="diagnosis_status">
           <button class="option-btn" data-val="Yes, by a doctor">Yes, by a doctor</button>
           <button class="option-btn" data-val="Self-diagnosed">Self-diagnosed</button>
-          <button class="option-btn" data-val="No diagnosis">No, I have no formal diagnosis</button>
+          <button class="option-btn" data-val="No diagnosis">No, I don't have a formal diagnosis</button>
           <button class="option-btn" data-val="Unsure">Unsure</button>
         </div>
         <div id="q4-1-err" class="validation-error">Please select an option.</div>
