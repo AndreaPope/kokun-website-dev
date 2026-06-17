@@ -1280,7 +1280,8 @@
 
         <div class="input-text-wrapper">
           <label class="field-label" for="q4-2c-reason">Why did you choose this rating?</label>
-          <input type="text" id="q4-2c-reason" placeholder="e.g. My doctor took a long time to listen... (optional)">
+          <input type="text" id="q4-2c-reason" placeholder="e.g. My doctor took a long time to listen..." oninput="document.getElementById('q4-2c-reason-err').classList.remove('active')">
+          <div id="q4-2c-reason-err" class="validation-error">Please enter a response to continue.</div>
         </div>
 
         <div id="q4-2c-err" class="validation-error">Please select a satisfaction rating.</div>
@@ -1300,7 +1301,7 @@
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
         <!-- <span class="question-number">Section 4: Diagnosis</span> -->
-        <h2 class="title-1 question-text">What were your barriers to getting a diagnosis?</h2>
+        <h2 class="title-1 question-text">What were your barriers to getting a diagnosis, <b>if any</b>?</h2>
         <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
 
         <div class="multiselect-container" data-type="multi" data-field="diagnosis_barriers">
@@ -1614,7 +1615,8 @@
         <h2 class="title-1 question-text">What would have to change for you to consider getting a formal diagnosis?</h2>
         
         <div class="input-text-wrapper">
-          <input type="text" id="q4-3b-text" placeholder="e.g. Easier access to neurologists...">
+          <input type="text" id="q4-3b-text" placeholder="e.g. Easier access to neurologists..." oninput="document.getElementById('q4-3b-err').classList.remove('active')">
+          <div id="q4-3b-err" class="validation-error">Please enter a response to continue.</div>
         </div>
 
         <div class="why-matters-container">
@@ -1624,7 +1626,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-             Many people never pursue formal diagnosis. Your answers help us understand why—are systemic barriers in the way or is it a deliberate choice—and what, if anything, needs to change.
+            Many people never pursue formal diagnosis. Your answers help us understand why—is it systemic barriers, personal preferences or other factors —and what, if anything, needs to change.
             </p>
           </div>
         </div>

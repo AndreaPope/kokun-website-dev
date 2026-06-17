@@ -819,13 +819,19 @@ function validateCurrentSlide() {
       surveyData.time_to_diagnosis = `${dxTimeVal} ${dxTimePeriod}`;
       return true;
       
-    case "slide-q4-2c":
+    case "slide-q4-2c": {
       if (!surveyData.satisfaction_rating) {
         showError("q4-2c-err");
         return false;
       }
-      surveyData.satisfaction_reason = document.getElementById("q4-2c-reason").value.trim();
+      const reasonVal = document.getElementById("q4-2c-reason").value.trim();
+      if (!reasonVal) {
+        showError("q4-2c-reason-err");
+        return false;
+      }
+      surveyData.satisfaction_reason = reasonVal;
       return true;
+    }
       
     case "slide-q4-2d":
       const hasBarriers = Object.keys(surveyData.diagnosis_barriers).length > 0;
@@ -858,9 +864,15 @@ function validateCurrentSlide() {
       surveyData.reasons_no_diagnosis_other = document.getElementById("q4-3a-other").value.trim();
       return true;
       
-    case "slide-q4-3b":
-      surveyData.path_to_diagnosis_changes = document.getElementById("q4-3b-text").value.trim();
+    case "slide-q4-3b": {
+      const q43bVal = document.getElementById("q4-3b-text").value.trim();
+      if (!q43bVal) {
+        showError("q4-3b-err");
+        return false;
+      }
+      surveyData.path_to_diagnosis_changes = q43bVal;
       return true;
+    }
       
     // Section 5
     case "slide-q5":
@@ -1486,6 +1498,15 @@ function setupEventListeners() {
           if (isSelected) {
             if (!surveyData[fieldName][mainCat].includes(subVal)) {
               surveyData[fieldName][mainCat].push(subVal);
+            }
+            // Deselect "Didn't experience any major barriers" when any sub-option is checked
+            if (fieldName === "diagnosis_barriers") {
+              const NO_BARRIERS_VAL = "Didn't experience any major barriers to diagnosis";
+              const noBarriersEl = container.querySelector(`.multi-option[data-val="${NO_BARRIERS_VAL}"]`);
+              if (noBarriersEl && noBarriersEl.classList.contains("selected")) {
+                noBarriersEl.classList.remove("selected");
+                delete surveyData.diagnosis_barriers[NO_BARRIERS_VAL];
+              }
             }
           } else {
             surveyData[fieldName][mainCat] = surveyData[fieldName][mainCat].filter(v => v !== subVal);
