@@ -962,14 +962,22 @@ body:has(#slide-ineligible.active) .background-blobs {
   display: none;
 }
 
+body:has(#slide-ineligible.active) main {
+  padding: 0;
+  align-items: stretch;
+}
+
 body:has(#slide-ineligible.active) .survey-wrapper {
   max-width: 480px;
+  min-height: unset;
+  flex: 1;
+  margin: 0 auto;
 }
 
 #slide-ineligible {
+  flex: 1;
   justify-content: space-between;
   padding: 4dvh 24px;
-  min-height: 100svh;
 }
 
 #slide-ineligible .inelig-v2-nav {
@@ -997,7 +1005,7 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(16px, 3dvh, 28px);
+  gap: clamp(20px, 4dvh, 48px);
 }
 
 .inelig-v2-section-block {
@@ -1042,7 +1050,7 @@ body:has(#slide-ineligible.active) .survey-wrapper {
 
 .inelig-v2-social {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   gap: 12px;
   margin-bottom: var(--space-md);
 }
