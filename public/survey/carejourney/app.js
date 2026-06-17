@@ -1394,11 +1394,11 @@ function setupEventListeners() {
             if (val === "Prefer not to answer") {
               if (isSelected) {
                 container.querySelectorAll(".multi-option").forEach(el => {
-                  if (el !== optionEl) {
-                    el.classList.remove("selected");
-                  }
+                  if (el !== optionEl) el.classList.remove("selected");
                 });
                 surveyData.work_situation = ["Prefer not to answer"];
+                const otherWrapper = document.getElementById("work_situation_other-other-wrapper");
+                if (otherWrapper) otherWrapper.style.display = "none";
               }
             } else {
               if (isSelected) {
@@ -1419,6 +1419,8 @@ function setupEventListeners() {
                   if (el !== optionEl) el.classList.remove("selected");
                 });
                 surveyData.work_type_multi = ["Prefer not to answer"];
+                const otherWrapper = document.getElementById("work_type_multi_other-other-wrapper");
+                if (otherWrapper) otherWrapper.style.display = "none";
               }
             } else {
               if (isSelected) {
