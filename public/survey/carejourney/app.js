@@ -880,6 +880,10 @@ function validateCurrentSlide() {
         showError("q5-err");
         return false;
       }
+      if (surveyData.treatments.includes("Other") && !document.getElementById("q5-other-specify").value.trim()) {
+        showError("q5-other-err");
+        return false;
+      }
       // Populate treatment details from text values
       surveyData.treatment_details = {};
       surveyData.treatments.forEach(t => {
@@ -893,6 +897,10 @@ function validateCurrentSlide() {
     case "slide-q5b":
       if (surveyData.treatments_not_working.length === 0) {
         showError("q5b-err");
+        return false;
+      }
+      if (surveyData.treatments_not_working.includes("Other") && !document.getElementById("q5b-other-specify").value.trim()) {
+        showError("q5b-other-err");
         return false;
       }
       surveyData.treatment_not_working_details = {};

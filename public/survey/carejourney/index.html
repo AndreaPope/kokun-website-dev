@@ -1723,7 +1723,8 @@
           <div class="multi-option" data-val="Other">
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
             <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
-              <input type="text" id="q5-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();">
+              <input type="text" id="q5-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();" oninput="document.getElementById('q5-other-err').classList.remove('active')">
+              <div id="q5-other-err" class="validation-error">Required.</div>
             </div>
           </div>
         </div>
@@ -1756,7 +1757,7 @@
           <span class="stage-pill" data-stage="treatment">Treatment</span>
           <span class="stage-pill" data-stage="experience">Experience</span>
         </div>
-        <h2 class="title-1 question-text" data-dynamic-word>What headache treatments did not work for you?</h2>
+        <h2 class="title-1 question-text" data-dynamic-word>What headache treatments did <i>not</i> work for you?</h2>
         <p class="subheadline-text question-desc">Select all that apply.</p>
 
         <div class="multiselect-container" data-type="multi" data-field="treatments_not_working">
@@ -1807,7 +1808,8 @@
           <div class="multi-option" data-val="Other">
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
             <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
-              <input type="text" id="q5b-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();">
+              <input type="text" id="q5b-other-specify" placeholder="Specify other treatments" onclick="event.stopPropagation();" oninput="document.getElementById('q5b-other-err').classList.remove('active')">
+              <div id="q5b-other-err" class="validation-error">Required.</div>
             </div>
           </div>
         </div>
@@ -1861,7 +1863,7 @@
         <div style="display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-md);">
           
           <div class="qol-option-group" data-field="q6-1a">
-            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">a. How confident do you feel in understanding your headaches?</p>
+            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">a. How confident do you feel in <i>understanding</i> your headaches?</p>
             <div class="options-grid">
               <button class="option-btn" data-val="Extremely confident">Extremely confident</button>
               <button class="option-btn" data-val="Confident">Confident</button>
@@ -1873,7 +1875,7 @@
           </div>
 
           <div class="qol-option-group" data-field="q6-1b">
-            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">b. How confident do you feel about managing your headaches?</p>
+            <p class="callout-text" data-dynamic-word style="margin-bottom: var(--space-sm);">b. How confident do you feel about <i>managing</i> your headaches?</p>
             <div class="options-grid">
               <button class="option-btn" data-val="Extremely confident">Extremely confident</button>
               <button class="option-btn" data-val="Confident">Confident</button>
@@ -1904,11 +1906,24 @@
         <!-- <span class="question-number">Section 6: Experience</span> -->
         <h2 class="title-1 question-text" data-dynamic-word>How would you describe where you are in your journey with your headaches?</h2>
         <div class="options-grid" data-type="single" data-field="journey_stage">
-          <button class="option-btn" data-val="Just beginning to seek answers">Just beginning to seek answers</button>
-          <button class="option-btn" data-val="Managing it for a while, still a challenge">Managing it for a while, still a challenge</button>
-          <button class="option-btn" data-val="Have a plan that's working for me">Have a plan that's working for me</button>
-          <button class="option-btn" data-val="I've given up">I've given up</button>
-          <button class="option-btn" data-val="Other">Other (specify)</button>
+          <button class="option-btn" data-val="Have a plan that's working for me">
+            Have a plan that's working for me
+          </button>
+          <button class="option-btn" data-val="Managing it for a while, still a challenge">
+            Managing it for a while, still a challenge
+          </button>
+          <button class="option-btn" data-val=" Just beginning to seek answers">
+            Just beginning to seek answers
+          </button>
+          <button class="option-btn" data-val="I am not doing anything about it">
+            I am not doing anything about it
+          </button>
+          <button class="option-btn" data-val="I tried and have given up">
+            I tried and have given up
+          </button>
+          <button class="option-btn" data-val="Other">
+            Other (specify)
+          </button>
         </div>
 
         <div id="journey_stage-other-wrapper" class="input-text-wrapper" style="display: none;">
