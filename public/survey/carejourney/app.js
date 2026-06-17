@@ -427,7 +427,11 @@ function setupCountryDropdown() {
     opt.textContent = c;
     select.appendChild(opt);
   });
-  select.addEventListener("change", () => updatePostalField(select.value));
+  select.addEventListener("change", () => {
+    updatePostalField(select.value);
+    const slide = select.closest(".survey-slide");
+    if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+  });
 }
 
 // Global Wording Engine to substitute headache with migraine if Q3.1 has migraine selected
@@ -1229,17 +1233,21 @@ function setupEventListeners() {
       btn.addEventListener("click", () => {
         grid.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
-        
+
         const val = btn.getAttribute("data-val");
         surveyData[fieldName] = val;
-        
+
+        // Clear any validation errors on this slide immediately
+        const slide = grid.closest(".survey-slide");
+        if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+
         // Dynamic visibility overrides for text fields (like "Other" or "Prefer to self-describe")
         toggleConditionalTextFields(fieldName, val);
         
         // Auto-advance for single select slides, but not when a conditional text input is revealed
         const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`);
         const showingTextInput = conditionalWrapper && conditionalWrapper.style.display !== 'none';
-        const hasAlwaysVisibleInput = fieldName === 'satisfaction_rating';
+        const hasAlwaysVisibleInput = fieldName === 'satisfaction_rating' || fieldName === 'email';
         if (!showingTextInput && !hasAlwaysVisibleInput) {
           setTimeout(() => {
             handleNext();
@@ -1251,12 +1259,18 @@ function setupEventListeners() {
 
   // Matrix-style single choice selector (e.g. Q3.7 a-f)
   document.querySelectorAll(".qol-option-group").forEach(group => {
+    const clearGroupErrors = () => {
+      const slide = group.closest(".survey-slide");
+      if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+    };
+    group.querySelectorAll("input[type='radio']").forEach(radio => {
+      radio.addEventListener("change", clearGroupErrors);
+    });
     group.querySelectorAll(".option-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         group.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
-        const slide = group.closest(".survey-slide");
-        if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+        clearGroupErrors();
       });
     });
   });
@@ -1476,6 +1490,34 @@ function setupEventListeners() {
             }
           }
 
+          // Mutual exclusivity for "Haven't faced any major challenges" on Q6.3
+          const NO_CHALLENGES_VAL = "I haven't faced any major challenges with my care";
+          if (fieldName === "challenges_in_care") {
+            if (val === NO_CHALLENGES_VAL) {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) {
+                    el.classList.remove("selected", "expanded-group");
+                    const sl = el.querySelector(".nested-subcategories");
+                    if (sl) sl.classList.remove("expanded");
+                    el.querySelectorAll(".sub-option.selected").forEach(s => s.classList.remove("selected"));
+                  }
+                });
+                surveyData.challenges_in_care = { [NO_CHALLENGES_VAL]: [] };
+                const otherWrapper = document.getElementById("challenges_in_care_other-other-wrapper");
+                if (otherWrapper) otherWrapper.style.display = "none";
+              }
+            } else {
+              if (isSelected) {
+                const noChalEl = container.querySelector(`.multi-option[data-val="${NO_CHALLENGES_VAL}"]`);
+                if (noChalEl && noChalEl.classList.contains("selected")) {
+                  noChalEl.classList.remove("selected");
+                  delete surveyData.challenges_in_care[NO_CHALLENGES_VAL];
+                }
+              }
+            }
+          }
+
           // Show conditional inputs for options like "Other"
           toggleConditionalTextFields(`${fieldName}_${val.toLowerCase().replace(/[^a-z]/g, '')}`, isSelected ? "active" : "");
         }
@@ -1492,7 +1534,10 @@ function setupEventListeners() {
         
         sub.classList.toggle("selected");
         const isSelected = sub.classList.contains("selected");
-        
+
+        const slide = container.closest(".survey-slide");
+        if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+
         // Initialize map if needed
         if (!surveyData[fieldName]) {
           surveyData[fieldName] = {};
@@ -1515,6 +1560,15 @@ function setupEventListeners() {
               if (noBarriersEl && noBarriersEl.classList.contains("selected")) {
                 noBarriersEl.classList.remove("selected");
                 delete surveyData.diagnosis_barriers[NO_BARRIERS_VAL];
+              }
+            }
+            // Deselect "Haven't faced any major challenges" when any sub-option is checked
+            if (fieldName === "challenges_in_care") {
+              const NO_CHALLENGES_VAL = "I haven't faced any major challenges with my care";
+              const noChalEl = container.querySelector(`.multi-option[data-val="${NO_CHALLENGES_VAL}"]`);
+              if (noChalEl && noChalEl.classList.contains("selected")) {
+                noChalEl.classList.remove("selected");
+                delete surveyData.challenges_in_care[NO_CHALLENGES_VAL];
               }
             }
           } else {
@@ -1774,6 +1828,8 @@ document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
       trigger.querySelector('span').textContent = opt.textContent;
       optionsList.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
       opt.classList.add('selected');
+      const slide = wrapper.closest(".survey-slide");
+      if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
       close();
     });
   });

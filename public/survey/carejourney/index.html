@@ -875,11 +875,11 @@
         <div class="input-text-wrapper">
           <div class="duration-inline-wrapper" style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
             <div class="inline-input-wrapper" style="width: 160px; max-width: 160px;">
-              <input type="number" id="q3-3-years" min="0" placeholder="e.g. 2">
+              <input type="number" id="q3-3-years" min="0" placeholder="e.g. 2" oninput="document.getElementById('q3-3-err').classList.remove('active')">
               <span class="inline-unit-suffix">years</span>
             </div>
             <div class="inline-input-wrapper" style="width: 160px; max-width: 160px;">
-              <input type="number" id="q3-3-months" min="0" max="11" placeholder="e.g. 6">
+              <input type="number" id="q3-3-months" min="0" max="11" placeholder="e.g. 6" oninput="document.getElementById('q3-3-err').classList.remove('active')">
               <span class="inline-unit-suffix">months</span>
             </div>
           </div>
@@ -1233,7 +1233,7 @@
         
         <div style="display: flex; gap: var(--space-md); align-items: center; margin-top: var(--space-md); flex-wrap: wrap;">
           <div class="inline-input-wrapper" style="width: 130px;">
-            <input type="number" id="q4-2b-time" min="1" placeholder="e.g. 3">
+            <input type="number" id="q4-2b-time" min="1" placeholder="e.g. 3" oninput="document.getElementById('q4-2b-err').classList.remove('active')">
           </div>
           <div class="custom-select-wrapper inline-input-wrapper" id="q4-2b-period-wrapper" style="width: 130px; max-width: 130px;">
             <select id="q4-2b-period" style="display:none;">
@@ -1939,7 +1939,8 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              Your answer helps us understand if the available support and care structures are effective.
+              Your answers help us understand if the available care and support options are effective and working for people.
+
             </p>
           </div>
         </div>
@@ -2066,7 +2067,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-             After diagnosis comes the real work: finding care that works. Your experience reveals what's effective and what needs to change.
+             After diagnosis comes the real work: finding care that actually helps. Your experience reveals what's effective and what needs to change.
             </p>
           </div>
         </div>
@@ -2132,8 +2133,8 @@
         <h2 class="title-1 question-text" data-dynamic-word>What's one thing that would meaningfully improve your headache experience going forward?</h2>
         
         <div class="input-text-wrapper">
-          <input type="text" id="q6-5-needs" placeholder="e.g. More access to specialist care, better medication options...">
-          <div id="q6-5-err" class="validation-error">Required field. Please write a brief sentence.</div>
+          <input type="text" id="q6-5-needs" placeholder="e.g. More access to specialist care, better medication options..." oninput="document.getElementById('q6-5-err').classList.remove('active')">
+          <div id="q6-5-err" class="validation-error">Required field.</div>
         </div>
 
         <div class="why-matters-container">
@@ -2143,7 +2144,7 @@
           </div>
           <div class="why-matters-content">
             <p class="footnote-text" data-dynamic-word>
-              Your previous answers help us understand what’s not working with your care, This helps us understand what would fundamentally transform it.
+              Your previous answers help us understand what’s not working with your care. This helps us understand what would fundamentally transform it. 
             </p>
           </div>
         </div>
@@ -2158,7 +2159,7 @@
       <div id="slide-q7" class="survey-slide">
         <!-- <span class="question-number">Section 7: Closing</span> -->
         <h2 class="title-1 question-text">Stay Connected.
-          <br><span class="subheadline-text" style="margin-top: 0.5rem;">Enter your email below to:</span>
+          <br><span class="subheadline-text" style="margin-top: 0.5rem;">This survey is anonymous. Enter your email below to:</span>
         </h2>
         <!--<p class="body-text question-desc" style="margin-bottom: 0.25rem;">
           Opt in to:
@@ -2203,10 +2204,10 @@
         </div>
 
         <div class="options-grid" data-type="single" data-field="email" style="margin-bottom: var(--space-md);">
-          <button class="option-btn" data-val="Prefer not to share" onclick="clearQ7Fields()">Prefer not to share</button>
+          <button class="option-btn" data-val="Prefer not to receive findings and resources" onclick="clearQ7Fields()">Prefer not to receive findings and resources</button>
         </div>
 
-        <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to share" to submit.</div>
+        <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to receive findings and resources" to submit.</div>
 
         <div class="action-controls">
           <button class="btn btn-secondary btn-back">Back</button>
@@ -2259,7 +2260,7 @@
 
 
   <!-- Script files -->
-  <script src="config.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="config.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
