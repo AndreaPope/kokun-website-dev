@@ -968,8 +968,15 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   flex: 1;
   margin: 0 auto;
 }
+/* ==================== END INELIGIBLE SLIDE ==================== */
 
-#slide-ineligible {
+/* ==================== SPECIAL SLIDE LAYOUT ====================
+   Reusable scoped layout for full-screen branded slides
+   (green background, logo top, content middle, social + footer bottom).
+   Apply class="special-slide" to any survey-slide that uses this pattern.
+   ============================================================= */
+
+.special-slide {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -979,9 +986,13 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   -webkit-font-smoothing: antialiased;
 }
 
-.inelig-logo { height: clamp(15px, 4vw, 24px); width: auto; }
+.special-slide .logo {
+  height: clamp(15px, 4vw, 24px);
+  width: auto;
+}
 
-.inelig-content {
+/* Main content area — grows to fill space and centers children vertically */
+.special-slide .content {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -989,13 +1000,14 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   gap: 4dvh;
 }
 
-.inelig-block {
+/* Individual section block (heading + paragraph pair) */
+.special-slide .block {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.inelig-title {
+.special-slide h2 {
   font-family: 'Libre Baskerville', Georgia, serif;
   font-size: clamp(20px, 2.5vw, 24px);
   font-weight: 400;
@@ -1004,7 +1016,7 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   margin: 0;
 }
 
-.inelig-body {
+.special-slide p {
   font-size: clamp(16px, 1.5vw, 17px);
   font-weight: 300;
   line-height: 1.6;
@@ -1013,13 +1025,14 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   margin: 0;
 }
 
-.inelig-btns {
+/* Button row */
+.special-slide .buttons {
   display: flex;
   gap: 16px;
   justify-content: space-between;
 }
 
-.inelig-btn {
+.special-slide .btn {
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 600;
@@ -1030,26 +1043,27 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   max-width: 180px;
   transition: all 0.2s ease;
   text-align: center;
-}
-
-.inelig-btn-primary {
-  background-color: #3D4D3F;
-  color: #F0F3F1;
   border: none;
 }
-.inelig-btn-primary:hover { background-color: #253027; }
 
-.inelig-btn-outline {
+.special-slide .btn-primary {
+  background-color: #3D4D3F;
+  color: #F0F3F1;
+}
+.special-slide .btn-primary:hover { background-color: #253027; }
+
+.special-slide .btn-outline {
   background-color: rgba(255, 255, 255, 0.1);
   color: #F0F3F1;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.inelig-btn-outline:hover {
+.special-slide .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.inelig-social {
+/* Social icon row */
+.special-slide .social {
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -1057,7 +1071,7 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   margin-bottom: 24px;
 }
 
-.inelig-social-link {
+.special-slide .social a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1069,26 +1083,27 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
-.inelig-social-link:hover { opacity: 0.7; transform: translateY(-2px); }
+.special-slide .social a:hover { opacity: 0.7; transform: translateY(-2px); }
 
-.inelig-social-icon { width: 18px; height: 18px; display: block; }
+.special-slide .social svg { width: 18px; height: 18px; display: block; }
 
-.inelig-footer { text-align: left; }
+/* Footer */
+.special-slide footer { text-align: left; }
 
-.inelig-footer-text {
+.special-slide footer p {
   font-size: 12px;
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: rgba(240, 243, 241, 0.85);
 }
-.inelig-footer-text a { color: #F0F3F1; text-decoration: none; }
+.special-slide footer a { color: #F0F3F1; text-decoration: none; }
 
 @media (max-width: 480px) {
-  #slide-ineligible { padding: 3dvh 20px; }
-  .inelig-content { gap: 2.5dvh; }
+  .special-slide { padding: 3dvh 20px; }
+  .special-slide .content { gap: 2.5dvh; }
 }
-/* ==================== END INELIGIBLE SLIDE ==================== */
+/* ==================== END SPECIAL SLIDE LAYOUT ==================== */
 
 .end-screen {
   text-align: center;
