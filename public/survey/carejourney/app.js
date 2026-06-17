@@ -1231,7 +1231,8 @@ function setupEventListeners() {
         // Auto-advance for single select slides, but not when a conditional text input is revealed
         const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`);
         const showingTextInput = conditionalWrapper && conditionalWrapper.style.display !== 'none';
-        if (!showingTextInput) {
+        const hasAlwaysVisibleInput = fieldName === 'satisfaction_rating';
+        if (!showingTextInput && !hasAlwaysVisibleInput) {
           setTimeout(() => {
             handleNext();
           }, 300);
