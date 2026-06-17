@@ -871,6 +871,10 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   gap: 6px;
 }
 
+.special-slide .block + .block {
+  margin-top: 1rem;
+}
+
 .special-slide h2 {
   font-family: 'Libre Baskerville', Georgia, serif;
   font-size: clamp(20px, 2.5vw, 24px);
