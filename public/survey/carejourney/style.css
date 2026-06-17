@@ -963,7 +963,7 @@ body:has(#slide-ineligible.active) main {
   align-items: stretch;
 }
 body:has(#slide-ineligible.active) .survey-wrapper {
-  max-width: 480px;
+  max-width: 560px;
   min-height: unset;
   flex: 1;
   margin: 0 auto;
