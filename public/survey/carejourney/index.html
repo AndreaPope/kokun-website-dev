@@ -78,23 +78,32 @@
     <div class="survey-wrapper">
 
       <!-- ==================== INTRO SLIDE ==================== -->
-      <div id="slide-intro" class="survey-slide active">
-        <div class="intro-v2-nav">
-          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
-            <img src="../../images/Kokun-logo_WhiteSage_RGB.svg" class="intro-v2-logo" alt="Kōkūn">
-          </a>
+      <div id="slide-intro" class="survey-slide special-slide active">
+        <!-- Logo -->
+        <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+          <img src="../../images/Kokun-logo_WhiteSage_RGB.svg" class="logo" alt="Kōkūn">
+        </a>
+
+        <!-- Main content -->
+        <div class="content">
+          <div class="header-group">
+            <h1>Understanding<br>Headaches</h1>
+            <div class="subtitle">A Global Initiative by Kōkūn</div>
+          </div>
+          <p>Headache disorders like migraine affect billions of people globally, yet the daily reality of living with them often remains invisible.</p>
+          <div class="block">
+            <h2>Your Experience Holds the Key</h2>
+            <p>Take this 5–10 minute <span class="highlight">anonymous</span> survey and help make the invisible visible.</p>
+          </div>
+          <div class="button-container">
+            <button class="btn-start" onclick="handleNext()">Start</button>
+          </div>
         </div>
-        <div class="intro-v2-main">
-          <h1 class="intro-v2-h1">The Kōkūn<br>Headache Study</h1>
-          <p class="intro-v2-body">Headache disorders like migraine affect billions of people globally, yet the daily reality of living with them often remains invisible.</p>
-          <h2 class="intro-v2-h2">Your Experience Holds the Key</h2>
-          <p class="intro-v2-body">Take this 5–10 minute <strong>anonymous</strong> survey and help make the invisible visible.</p>
-          <button class="btn intro-v2-btn" onclick="handleNext()">Start</button>
-        </div>
-        <div class="intro-v2-footer">
-          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization</p>
-          <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">Learn more.</a>
-        </div>
+
+        <!-- Footer -->
+        <footer>
+          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization. Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a></p>
+        </footer>
       </div>
 
       <!-- ==================== ELIGIBILITY SECTION ==================== -->
