@@ -2173,7 +2173,7 @@
         </ul>
 
         <div class="input-text-wrapper">
-          <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.querySelector('#slide-q7 .option-btn').classList.remove('selected'); document.getElementById('q7-format-err').classList.remove('active'); document.getElementById('q7-err').classList.remove('active');">
+          <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.getElementById('q7-optout').classList.remove('selected'); document.getElementById('q7-format-err').classList.remove('active'); document.getElementById('q7-err').classList.remove('active');">
           <p style="margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">Your email will not be associated with your answers.</p>
           <div id="q7-format-err" class="validation-error">Please enter a valid email address (e.g. name@domain.com).</div>
         </div>
@@ -2203,8 +2203,13 @@
           </div>
         </div>
 
-        <div class="options-grid" data-type="single" data-field="email" style="margin-bottom: var(--space-md);">
-          <button class="option-btn" data-val="Prefer not to receive findings and resources" onclick="clearQ7Fields()">Prefer not to receive findings and resources</button>
+        <div class="multiselect-container" style="margin-bottom: var(--space-md);">
+          <div class="multi-option" id="q7-optout">
+            <div class="multi-option-header">
+              <div class="checkbox-custom"></div>
+              <span class="option-label">Prefer not to receive findings and resources</span>
+            </div>
+          </div>
         </div>
 
         <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to receive findings and resources" to submit.</div>

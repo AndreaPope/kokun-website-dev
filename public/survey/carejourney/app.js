@@ -980,9 +980,9 @@ function validateCurrentSlide() {
       
     case "slide-q7":
       const emailVal = document.getElementById("q7-email").value.trim();
-      const optedOutBtn = document.querySelector("#slide-q7 .option-btn.selected");
-      
-      if (!emailVal && !optedOutBtn) {
+      const optedOut = document.getElementById("q7-optout")?.classList.contains("selected");
+
+      if (!emailVal && !optedOut) {
         showError("q7-err");
         return false;
       }
@@ -1592,6 +1592,18 @@ function setupEventListeners() {
       }
     });
   });
+
+  // Q7 opt-out checkbox
+  const q7Optout = document.getElementById("q7-optout");
+  if (q7Optout) {
+    q7Optout.addEventListener("click", () => {
+      const isSelected = q7Optout.classList.toggle("selected");
+      if (isSelected) {
+        clearQ7Fields();
+        document.getElementById("q7-err")?.classList.remove("active");
+      }
+    });
+  }
 }
 
 // Toggle sub-options check state
