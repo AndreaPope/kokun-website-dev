@@ -371,7 +371,7 @@ const EU_MEMBER_STATES = new Set([
 ]);
 
 function getPostalConfig(country) {
-  if (!country) return { show: true, label: "Postal / Zip Code", placeholder: "e.g. 90210" };
+  if (!country) return { show: true, label: "What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.", placeholder: "e.g. 90210" };
   if (EU_POSTAL_HIDDEN.has(country)) return { show: false };
   if (country === "United States") return { show: true, label: "First 3 digits of your ZIP code", placeholder: "e.g. 902" };
   if (country === "Canada") return { show: true, label: "First 3 digits of your postal code", placeholder: "e.g. M5H" };
@@ -379,7 +379,7 @@ function getPostalConfig(country) {
   if (country === "Ireland") return { show: true, label: "First 3 characters of your Eircode", placeholder: "e.g. D02" };
   if (country === "Malta") return { show: true, label: "First 3 letters of your postal code", placeholder: "e.g. BKR" };
   if (EU_MEMBER_STATES.has(country)) return { show: true, label: "First 2 digits of your postal code", placeholder: "e.g. 10" };
-  return { show: true, label: "Postal / Zip Code", placeholder: "e.g. 90210" };
+  return { show: true, label: "What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.", placeholder: "e.g. 90210" };
 }
 
 function updatePostalField(country) {
