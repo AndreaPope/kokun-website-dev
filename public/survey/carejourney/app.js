@@ -18,6 +18,7 @@ const surveyData = {
   education_level: null,
   education_other: "",
   work_situation: [],
+  work_situation_other: "",
   work_type_multi: [],
   headache_types: [],
   headache_type_other: "",
@@ -363,43 +364,26 @@ function autoSaveProgress() {
 }
 
 const EU_POSTAL_HIDDEN = new Set(["France", "Cyprus"]);
-const EU_MEMBER_STATES = new Set([
-  "Austria", "Belgium", "Bulgaria", "Croatia", "Czechia", "Denmark",
-  "Estonia", "Finland", "Germany", "Greece", "Hungary", "Italy",
-  "Latvia", "Lithuania", "Luxembourg", "Netherlands", "Poland",
-  "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden"
-]);
 
 function getPostalConfig(country) {
-  if (!country) return { show: true, label: "What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.", placeholder: "e.g. 90210" };
   if (EU_POSTAL_HIDDEN.has(country)) return { show: false };
-  if (country === "United States") return { show: true, label: "First 3 digits of your ZIP code", placeholder: "e.g. 902" };
-  if (country === "Canada") return { show: true, label: "First 3 digits of your postal code", placeholder: "e.g. M5H" };
-  if (country === "United Kingdom") return { show: true, label: "First part (outward code) of your postcode", placeholder: "e.g. SW1A" };
-  if (country === "Ireland") return { show: true, label: "First 3 characters of your Eircode", placeholder: "e.g. D02" };
-  if (country === "Malta") return { show: true, label: "First 3 letters of your postal code", placeholder: "e.g. BKR" };
-  if (EU_MEMBER_STATES.has(country)) return { show: true, label: "First 2 digits of your postal code", placeholder: "e.g. 10" };
-  return { show: true, label: "What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.", placeholder: "e.g. 90210" };
+  return { show: true };
 }
 
 function updatePostalField(country) {
   const cityWrapper = document.getElementById("q2-4-city-wrapper");
   const wrapper = document.getElementById("q2-4-postal-wrapper");
-  const label = document.getElementById("q2-4-postal-label");
   const input = document.getElementById("q2-4-postal");
   const cityInput = document.getElementById("q2-4-city");
   if (!wrapper) return;
-  const config = getPostalConfig(country);
   const showCityAndPostal = !!country && !EU_POSTAL_HIDDEN.has(country);
   if (cityWrapper) {
     cityWrapper.style.display = showCityAndPostal ? "" : "none";
     if (!showCityAndPostal && cityInput) cityInput.value = "";
   }
-  if (config.show && showCityAndPostal) {
+  if (showCityAndPostal) {
     wrapper.style.display = "";
-    label.textContent = config.label;
-    input.placeholder = config.placeholder;
-    input.value = "";
+    if (input) input.value = "";
   } else {
     wrapper.style.display = "none";
     if (input) input.value = "";
@@ -675,6 +659,11 @@ function validateCurrentSlide() {
         showError("q2-6a-err");
         return false;
       }
+      if (surveyData.work_situation.includes("Other") && !document.getElementById("q2-6a-other").value.trim()) {
+        showError("q2-6a-other-err");
+        return false;
+      }
+      surveyData.work_situation_other = document.getElementById("q2-6a-other").value.trim();
       return true;
 
     case "slide-q2-6b":

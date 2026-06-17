@@ -400,8 +400,9 @@
             <div id="q2-4-city-err" class="validation-error">Required.</div>
           </div>
           <div id="q2-4-postal-wrapper" style="display: none;">
-            <label class="field-label" id="q2-4-postal-label" for="q2-4-postal">What are the first 3 characters of your zip or postal code? Write in n/a if your country doesn't use a zip or postal code.</label>
-            <input type="text" id="q2-4-postal" placeholder="e.g. 90210">
+            <label class="field-label" for="q2-4-postal">What are the first 3 characters of your zip or postal code?</label>
+            <p class="footnote-text" style="margin-top: 2px; margin-bottom: 6px;">Write in n/a if your country doesn't use a zip or postal code.</p>
+            <input type="text" id="q2-4-postal" placeholder="e.g. 902">
             <div id="q2-4-postal-err" class="validation-error">Required.</div>
           </div>
         </div>
@@ -525,12 +526,24 @@
               <span class="option-label">Not currently working for another reason</span>
             </div>
           </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Other</span>
+            </div>
+          </div>
           <div class="multi-option" data-val="Prefer not to answer">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
               <span class="option-label">Prefer not to answer</span>
             </div>
           </div>
+        </div>
+
+        <div id="work_situation_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q2-6a-other">Please describe your work situation:</label>
+          <input type="text" id="q2-6a-other" placeholder="e.g. Volunteer work, sabbatical..." oninput="document.getElementById('q2-6a-other-err').classList.remove('active')">
+          <div id="q2-6a-other-err" class="validation-error">Required.</div>
         </div>
 
         <div id="q2-6a-err" class="validation-error">Please select at least one option.</div>
