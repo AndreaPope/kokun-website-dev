@@ -963,28 +963,46 @@ body:has(#slide-ineligible.active) .background-blobs {
 }
 
 body:has(#slide-ineligible.active) .survey-wrapper {
-  max-width: 360px;
+  max-width: 480px;
 }
 
 #slide-ineligible {
-  justify-content: flex-start;
-  padding: var(--space-lg);
+  justify-content: space-between;
+  padding: 4dvh 24px;
+  min-height: 100svh;
 }
 
-.inelig-v2-nav {
-  margin-bottom: var(--space-xl);
+#slide-ineligible .inelig-v2-nav {
+  margin-bottom: clamp(16px, 3dvh, 32px);
+}
+
+#slide-ineligible .intro-v2-h2 {
+  font-size: clamp(20px, 2.5vw, 24px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+#slide-ineligible .intro-v2-body {
+  font-size: clamp(16px, 1.5vw, 17px);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: rgba(240, 243, 241, 0.85);
+  margin-bottom: 0;
 }
 
 .inelig-v2-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(16px, 3dvh, 28px);
 }
 
 .inelig-v2-section-block {
-  margin-top: var(--space-lg);
-}
-
-.inelig-v2-section-block .intro-v2-h2 {
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .inelig-v2-actions {
@@ -992,8 +1010,13 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
-  margin-top: var(--space-lg);
   flex-wrap: wrap;
+}
+
+.inelig-v2-actions .btn {
+  flex: 1;
+  max-width: 180px;
+  justify-content: center;
 }
 
 .inelig-v2-actions .intro-v2-btn {
@@ -1002,23 +1025,24 @@ body:has(#slide-ineligible.active) .survey-wrapper {
 }
 
 .inelig-v2-btn-outline {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-sage-10);
-  border: 1.5px solid var(--color-sage-10);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .inelig-v2-btn-outline:hover {
-  background-color: rgba(240, 243, 241, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .inelig-v2-footer {
-  margin-top: var(--space-xl);
-  text-align: center;
+  margin-top: clamp(16px, 3dvh, 32px);
+  text-align: left;
 }
 
 .inelig-v2-social {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 12px;
   margin-bottom: var(--space-md);
 }
@@ -1053,7 +1077,7 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   color: var(--color-sage-10);
   opacity: 0.8;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
 }
 
 .inelig-v2-footer-text a {
