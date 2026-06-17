@@ -20,6 +20,7 @@ const surveyData = {
   work_situation: [],
   work_situation_other: "",
   work_type_multi: [],
+  work_type_multi_other: "",
   headache_types: [],
   headache_type_other: "",
   migraine_subtypes: [],
@@ -671,6 +672,11 @@ function validateCurrentSlide() {
         showError("q2-6b-err");
         return false;
       }
+      if (surveyData.work_type_multi.includes("Other") && !document.getElementById("q2-6b-other").value.trim()) {
+        showError("q2-6b-other-err");
+        return false;
+      }
+      surveyData.work_type_multi_other = document.getElementById("q2-6b-other").value.trim();
       return true;
       
     case "slide-q3-1":
@@ -1400,6 +1406,26 @@ function setupEventListeners() {
                 if (pntaEl && pntaEl.classList.contains("selected")) {
                   pntaEl.classList.remove("selected");
                   surveyData.work_situation = surveyData.work_situation.filter(v => v !== "Prefer not to answer");
+                }
+              }
+            }
+          }
+
+          // Mutual exclusivity for "Prefer not to answer" on Q2.6b
+          if (fieldName === "work_type_multi") {
+            if (val === "Prefer not to answer") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) el.classList.remove("selected");
+                });
+                surveyData.work_type_multi = ["Prefer not to answer"];
+              }
+            } else {
+              if (isSelected) {
+                const pntaEl = container.querySelector(".multi-option[data-val='Prefer not to answer']");
+                if (pntaEl && pntaEl.classList.contains("selected")) {
+                  pntaEl.classList.remove("selected");
+                  surveyData.work_type_multi = surveyData.work_type_multi.filter(v => v !== "Prefer not to answer");
                 }
               }
             }

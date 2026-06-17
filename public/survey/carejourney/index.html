@@ -526,18 +526,19 @@
               <span class="option-label">Not currently working for another reason</span>
             </div>
           </div>
-          <div class="multi-option" data-val="Other">
-            <div class="multi-option-header">
-              <span class="checkbox-custom"></span>
-              <span class="option-label">Other</span>
-            </div>
-          </div>
           <div class="multi-option" data-val="Prefer not to answer">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
               <span class="option-label">Prefer not to answer</span>
             </div>
           </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Other</span>
+            </div>
+          </div>
+
         </div>
 
         <div id="work_situation_other-other-wrapper" class="input-text-wrapper" style="display: none;">
@@ -663,6 +664,24 @@
               <span class="option-label">Military, protective services, or emergency response</span>
             </div>
           </div>
+          <div class="multi-option" data-val="Other">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Other</span>
+            </div>
+          </div>
+          <div class="multi-option" data-val="Prefer not to answer">
+            <div class="multi-option-header">
+              <span class="checkbox-custom"></span>
+              <span class="option-label">Prefer not to answer</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="work_type_multi_other-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q2-6b-other">Please describe your occupation:</label>
+          <input type="text" id="q2-6b-other" placeholder="e.g. Artist, clergy, domestic work..." oninput="document.getElementById('q2-6b-other-err').classList.remove('active')">
+          <div id="q2-6b-other-err" class="validation-error">Required.</div>
         </div>
 
         <div class="why-matters-container">
