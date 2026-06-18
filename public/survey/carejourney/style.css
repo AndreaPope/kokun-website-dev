@@ -636,6 +636,7 @@ input[type="number"]::placeholder {
 .btn-primary {
   background-color: var(--btn-primary-bg);
   color: var(--btn-primary-fg);
+  border: 1px solid var(--btn-primary-bg);
   box-shadow: 0 4px 12px rgba(105, 135, 111, 0.2);
 }
 

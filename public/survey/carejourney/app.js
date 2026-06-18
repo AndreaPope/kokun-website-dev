@@ -1033,13 +1033,11 @@ function handleNext() {
       if (surveyData.age_bracket === "Under 18" || surveyData.headache_eligible === "No") {
         navigateTo("slide-ineligible");
       } else {
-        navigateTo("slide-section-profile");
+        navigateTo("slide-q2-1"); // skip slide-section-profile (commented out)
       }
       break;
 
-    case "slide-section-profile":
-      navigateTo("slide-q2-1");
-      break;
+    // case "slide-section-profile": navigateTo("slide-q2-1"); break; // restore with section divider
       
     case "slide-q2-1":
       navigateTo("slide-q2-2");
@@ -1070,12 +1068,10 @@ function handleNext() {
       break;
 
     case "slide-q2-6b":
-      navigateTo("slide-section-symptoms");
+      navigateTo("slide-q3-1"); // skip slide-section-symptoms (commented out)
       break;
 
-    case "slide-section-symptoms":
-      navigateTo("slide-q3-1");
-      break;
+    // case "slide-section-symptoms": navigateTo("slide-q3-1"); break; // restore with section divider
       
     case "slide-q3-1":
       updateDynamicWording();
@@ -1107,18 +1103,16 @@ function handleNext() {
       break;
       
     case "slide-q3-7":
-      navigateTo("slide-section-diagnosis");
+      navigateTo("slide-q4-1"); // skip slide-section-diagnosis (commented out)
       break;
 
-    case "slide-section-diagnosis":
-      navigateTo("slide-q4-1");
-      break;
+    // case "slide-section-diagnosis": navigateTo("slide-q4-1"); break; // restore with section divider
       
     case "slide-q4-1":
       if (surveyData.diagnosis_status === "Yes, by a doctor") {
         navigateTo("slide-q4-2a");
       } else if (surveyData.diagnosis_status === "Unsure") {
-        navigateTo("slide-section-treatment");
+        navigateTo("slide-q5"); // skip slide-section-treatment (commented out)
       } else {
         navigateTo("slide-q4-3a");
       }
@@ -1136,13 +1130,13 @@ function handleNext() {
       break;
     case "slide-q4-2d":
       if ("Didn't experience any major barriers to diagnosis" in surveyData.diagnosis_barriers) {
-        navigateTo("slide-section-treatment");
+        navigateTo("slide-q5"); // skip slide-section-treatment (commented out)
       } else {
         navigateTo("slide-q4-2e");
       }
       break;
     case "slide-q4-2e":
-      navigateTo("slide-section-treatment");
+      navigateTo("slide-q5"); // skip slide-section-treatment (commented out)
       break;
 
     // Path 2 (Self/No Diagnosis)
@@ -1150,12 +1144,10 @@ function handleNext() {
       navigateTo("slide-q4-3b");
       break;
     case "slide-q4-3b":
-      navigateTo("slide-section-treatment");
+      navigateTo("slide-q5"); // skip slide-section-treatment (commented out)
       break;
 
-    case "slide-section-treatment":
-      navigateTo("slide-q5");
-      break;
+    // case "slide-section-treatment": navigateTo("slide-q5"); break; // restore with section divider
 
     // Treatment slides
     case "slide-q5":
@@ -1163,12 +1155,10 @@ function handleNext() {
       break;
 
     case "slide-q5b":
-      navigateTo("slide-section-experience");
+      navigateTo("slide-q6-1"); // skip slide-section-experience (commented out)
       break;
 
-    case "slide-section-experience":
-      navigateTo("slide-q6-1");
-      break;
+    // case "slide-section-experience": navigateTo("slide-q6-1"); break; // restore with section divider
       
     // Section 6
     case "slide-q6-1":
