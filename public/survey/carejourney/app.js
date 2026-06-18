@@ -47,6 +47,7 @@ const surveyData = {
   overcoming_barriers_text: "",
   reasons_no_diagnosis: {},
   reasons_no_diagnosis_other: "",
+  comorbidities: {},
   path_to_diagnosis_changes: "",
   treatments: [],
   treatment_details: {},
@@ -135,6 +136,7 @@ const stageMap = {
   "slide-q3-5": "symptoms",
   "slide-q3-6": "symptoms",
   "slide-q3-7": "symptoms",
+  "slide-q3-8": "symptoms",
   "slide-q4-1": "diagnosis",
   "slide-q4-2a": "diagnosis",
   "slide-q4-2b": "diagnosis",
@@ -501,6 +503,7 @@ function navigateTo(targetId) {
   slideHistory.push(currentSlideId);
   currentSlideId = targetId;
   targetSlide.classList.add("active");
+  if (targetId === "slide-end") targetSlide.classList.remove("show-confirmation");
 
   updateSessionSlide(targetId);
   autoSaveProgress();
@@ -792,7 +795,30 @@ function validateCurrentSlide() {
       surveyData.qol_irritated_from_headaches = document.querySelector(`input[name="qol-irritated"]:checked`).value;
       surveyData.qol_limit_concentration = document.querySelector(`input[name="qol-concentrate"]:checked`).value;
       return true;
-      
+
+    case "slide-q3-8": {
+      if (Object.keys(surveyData.comorbidities).length === 0) {
+        showError("q3-8-err");
+        return false;
+      }
+      if ("Autoimmune Disorders - (please specify)" in surveyData.comorbidities) {
+        const v = document.getElementById("q3-8-autoimmune-other")?.value.trim();
+        if (!v) { showError("q3-8-autoimmune-other-err"); return false; }
+        surveyData.comorbidities["Autoimmune Disorders - (please specify)"] = [v];
+      }
+      if ("Cancer - (please specify)" in surveyData.comorbidities) {
+        const v = document.getElementById("q3-8-cancer-other")?.value.trim();
+        if (!v) { showError("q3-8-cancer-other-err"); return false; }
+        surveyData.comorbidities["Cancer - (please specify)"] = [v];
+      }
+      if ("Other (please specify)" in surveyData.comorbidities) {
+        const v = document.getElementById("q3-8-other-other")?.value.trim();
+        if (!v) { showError("q3-8-other-other-err"); return false; }
+        surveyData.comorbidities["Other (please specify)"] = [v];
+      }
+      return true;
+    }
+
     case "slide-q4-1":
       if (!surveyData.diagnosis_status) {
         showError("q4-1-err");
@@ -1103,6 +1129,10 @@ function handleNext() {
       break;
       
     case "slide-q3-7":
+      navigateTo("slide-q3-8");
+      break;
+
+    case "slide-q3-8":
       navigateTo("slide-q4-1"); // skip slide-section-diagnosis (commented out)
       break;
 
@@ -1268,7 +1298,7 @@ function setupEventListeners() {
   // Dynamic conversion: convert checkbox-custom to chevron-icon for expandable uncheckable options
   document.querySelectorAll(".multiselect-container[data-type='multi']").forEach(container => {
     const fieldName = container.getAttribute("data-field");
-    const isNestedType = (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care");
+    const isNestedType = (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care" || fieldName === "comorbidities");
     if (isNestedType) {
       container.querySelectorAll(".multi-option").forEach(option => {
         if (option.querySelector(".nested-subcategories")) {
@@ -1289,7 +1319,7 @@ function setupEventListeners() {
         const optionEl = header.closest(".multi-option");
         const val = optionEl.getAttribute("data-val");
         const subList = optionEl.querySelector(".nested-subcategories");
-        const isNestedType = (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care");
+        const isNestedType = (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care" || fieldName === "comorbidities");
 
         if (isNestedType && subList) {
           // Top level category is uncheckable and just expandable
@@ -1508,6 +1538,38 @@ function setupEventListeners() {
             }
           }
 
+          // Mutual exclusivity for comorbidities Q3.8
+          const NO_COMORBIDITIES_VAL = "I have not been diagnosed with any other conditions";
+          if (fieldName === "comorbidities") {
+            if (val === NO_COMORBIDITIES_VAL || val === "Prefer not to answer") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) {
+                    el.classList.remove("selected", "expanded-group");
+                    const sl = el.querySelector(".nested-subcategories");
+                    if (sl) sl.classList.remove("expanded");
+                    el.querySelectorAll(".sub-option.selected").forEach(s => s.classList.remove("selected"));
+                  }
+                });
+                surveyData.comorbidities = { [val]: [] };
+                container.closest(".survey-slide").querySelectorAll(".input-text-wrapper").forEach(w => w.style.display = "none");
+              }
+            } else {
+              if (isSelected) {
+                const noComorbEl = container.querySelector(`.multi-option[data-val="${NO_COMORBIDITIES_VAL}"]`);
+                if (noComorbEl && noComorbEl.classList.contains("selected")) {
+                  noComorbEl.classList.remove("selected");
+                  delete surveyData.comorbidities[NO_COMORBIDITIES_VAL];
+                }
+                const pntaEl = container.querySelector(".multi-option[data-val='Prefer not to answer']");
+                if (pntaEl && pntaEl.classList.contains("selected")) {
+                  pntaEl.classList.remove("selected");
+                  delete surveyData.comorbidities["Prefer not to answer"];
+                }
+              }
+            }
+          }
+
           // Show conditional inputs for options like "Other"
           toggleConditionalTextFields(`${fieldName}_${val.toLowerCase().replace(/[^a-z]/g, '')}`, isSelected ? "active" : "");
         }
@@ -1535,7 +1597,7 @@ function setupEventListeners() {
         
         // For nested check questions, surveyData[fieldName] is converted to JSON map structure
         // during save if it has subcategories.
-        if (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care") {
+        if (fieldName === "diagnosis_barriers" || fieldName === "reasons_no_diagnosis" || fieldName === "challenges_in_care" || fieldName === "comorbidities") {
           if (!surveyData[fieldName][mainCat]) {
             surveyData[fieldName][mainCat] = [];
           }
@@ -1566,6 +1628,30 @@ function setupEventListeners() {
             if (surveyData[fieldName][mainCat].length === 0) {
               delete surveyData[fieldName][mainCat];
             }
+          }
+        }
+
+        // Show/hide text input for sub-options with data-other-wrapper
+        const otherWrapperId = sub.getAttribute("data-other-wrapper");
+        if (otherWrapperId) {
+          const otherWrapper = document.getElementById(otherWrapperId);
+          if (otherWrapper) {
+            otherWrapper.style.display = isSelected ? "block" : "none";
+            if (isSelected) { const inp = otherWrapper.querySelector("input"); if (inp) inp.focus(); }
+          }
+        }
+
+        // Deselect mutually exclusive options on comorbidities when any sub-option is selected
+        if (fieldName === "comorbidities" && isSelected) {
+          const noComorbEl = container.querySelector(".multi-option[data-val='I have not been diagnosed with any other conditions']");
+          if (noComorbEl && noComorbEl.classList.contains("selected")) {
+            noComorbEl.classList.remove("selected");
+            delete surveyData.comorbidities["I have not been diagnosed with any other conditions"];
+          }
+          const pntaEl = container.querySelector(".multi-option[data-val='Prefer not to answer']");
+          if (pntaEl && pntaEl.classList.contains("selected")) {
+            pntaEl.classList.remove("selected");
+            delete surveyData.comorbidities["Prefer not to answer"];
           }
         }
       });
@@ -1710,6 +1796,7 @@ async function submitSurvey() {
     console.log("Constructed survey payload:", surveyData);
     setTimeout(() => {
       navigateTo("slide-end");
+      document.getElementById("slide-end")?.classList.add("show-confirmation");
       if (surveyData.subscribed_to_updates && surveyData.email) {
         submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
       }
@@ -1745,6 +1832,7 @@ async function submitSurvey() {
       console.log("Survey successfully recorded in Supabase!");
       markSessionComplete();
       navigateTo("slide-end");
+      document.getElementById("slide-end")?.classList.add("show-confirmation");
       if (surveyData.subscribed_to_updates && surveyData.email) {
         submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
       }

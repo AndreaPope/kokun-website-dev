@@ -307,12 +307,6 @@ main {
   transition: opacity 0.4s ease, transform 0.4s ease, pointer-events 0s linear 0.25s;
 }
 
-/* Center end screen */
-#slide-end {
-  justify-content: center;
-  padding-top: 0;
-}
-
 #slide-ineligible {
   justify-content: flex-start;
   padding-top: var(--space-lg);
@@ -513,6 +507,15 @@ input[type="number"]::placeholder {
   flex-grow: 1;
 }
 
+.option-label .eg-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-sage-70);
+  display: block;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
 /* Expandable Subcategories Styling */
 .nested-subcategories {
   max-height: 0;
@@ -616,6 +619,14 @@ input[type="number"]::placeholder {
   padding-top: var(--space-lg);
   border-top: none;
   background-color: transparent;
+}
+
+.q6-5-submit-note {
+  font-size: 12px;
+  color: var(--color-sage-60);
+  text-align: center;
+  margin-top: var(--space-sm);
+  line-height: 1.5;
 }
 
 .btn {
@@ -820,6 +831,24 @@ body:has(#slide-ineligible.active) .survey-wrapper {
   margin: 0 auto;
 }
 /* ==================== END INELIGIBLE SLIDE ==================== */
+
+/* ==================== END SLIDE ==================== */
+body:has(#slide-end.active) {
+  background-color: var(--color-sage-60);
+}
+body:has(#slide-end.active) #header-nav { display: none; }
+body:has(#slide-end.active) .background-blobs { display: none; }
+body:has(#slide-end.active) main {
+  padding: 0;
+  align-items: stretch;
+}
+body:has(#slide-end.active) .survey-wrapper {
+  max-width: 560px;
+  min-height: unset;
+  flex: 1;
+  margin: 0 auto;
+}
+/* ==================== END END SLIDE ==================== */
 
 /* ==================== SPECIAL SLIDE LAYOUT ====================
    Reusable scoped layout for full-screen branded slides
@@ -1028,6 +1057,31 @@ body:has(#slide-ineligible.active) .survey-wrapper {
 }
 .special-slide .btn-start:hover { background-color: #253027; }
 .special-slide .btn-start:active { transform: scale(0.97); }
+
+/* Full-width button variant (end slide Share Survey) */
+.special-slide .btn-full {
+  width: 100%;
+  padding: 14px 24px;
+}
+
+/* Confirmation box — hidden by default, shown after Sign Up */
+.special-slide .confirmation-box {
+  display: none;
+  background: rgba(240, 243, 241, 0.15);
+  border-radius: 8px;
+  padding: 16px 20px;
+  text-align: center;
+}
+.special-slide .confirmation-box p {
+  font-size: clamp(13px, 1.3vw, 15px);
+  color: rgba(240, 243, 241, 0.9);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+#slide-end.show-confirmation .confirmation-box {
+  display: block;
+}
 
 @media (max-width: 480px) {
   .special-slide { padding: 3dvh 20px; }

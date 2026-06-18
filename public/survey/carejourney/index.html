@@ -48,6 +48,7 @@
         <option value="slide-q3-5">slide-q3-5</option>
         <option value="slide-q3-6">slide-q3-6</option>
         <option value="slide-q3-7">slide-q3-7</option>
+        <option value="slide-q3-8">slide-q3-8</option>
         <option value="slide-section-diagnosis">slide-section-diagnosis</option>
         <option value="slide-q4-1">slide-q4-1</option>
         <option value="slide-q4-2a">slide-q4-2a</option>
@@ -102,7 +103,7 @@
 
         <!-- Footer -->
         <footer>
-          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization. Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a></p>
+          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization. Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>.</p>
         </footer>
       </div>
 
@@ -290,37 +291,37 @@
           <div class="multi-option" data-val="European (e.g. British, Irish, Central & Eastern European, Greek, Balkan, Italian, Maltese, Nordic, Spanish, Portuguese, Western European, Ashkenazi Jewish, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">European (e.g. British, Irish, Central & Eastern European, Greek, Balkan, Italian, Maltese, Nordic, Spanish, Portuguese, Western European, Ashkenazi Jewish, etc.)</span>
+              <span class="option-label">European <span class="eg-text">(e.g. British, Irish, Central & Eastern European, Greek, Balkan, Italian, Maltese, Nordic, Spanish, Portuguese, Western European, Ashkenazi Jewish, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Central & South Asian (e.g. Afghan, Kazakh, Indian, Pakistani, Bengali, Sri Lankan, Maldivian, Nepali, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Central & South Asian (e.g. Afghan, Kazakh, Indian, Pakistani, Bengali, Sri Lankan, Maldivian, Nepali, etc.)</span>
+              <span class="option-label">Central & South Asian <span class="eg-text">(e.g. Afghan, Kazakh, Indian, Pakistani, Bengali, Sri Lankan, Maldivian, Nepali, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Indigenous Peoples of the Americas (e.g. American Indian and Alaska Native, First Nations, Inuit, Métis, Maya, Quechua, Aymara, Mapuche, Nahua, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Indigenous Peoples of the Americas (e.g. American Indian and Alaska Native, First Nations, Inuit, Métis, Maya, Quechua, Aymara, Mapuche, Nahua, etc.)</span>
+              <span class="option-label">Indigenous Peoples of the Americas <span class="eg-text">(e.g. American Indian and Alaska Native, First Nations, Inuit, Métis, Maya, Quechua, Aymara, Mapuche, Nahua, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="East Asian (e.g. Chinese, Vietnamese, Japanese, Korean, Filipino & Austronesian, Indonesian, Thai, Khmer, Myanma, Chinese Dai, Manchurian, Mongolian, Siberian, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">East Asian (e.g. Chinese, Vietnamese, Japanese, Korean, Filipino & Austronesian, Indonesian, Thai, Khmer, Myanma, Chinese Dai, Manchurian, Mongolian, Siberian, etc.)</span>
+              <span class="option-label">East Asian <span class="eg-text">(e.g. Chinese, Vietnamese, Japanese, Korean, Filipino & Austronesian, Indonesian, Thai, Khmer, Myanma, Chinese Dai, Manchurian, Mongolian, Siberian, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Sub-Saharan African (e.g. Ghanaian, Nigerian, Sudanese, Ethiopian, Kenyan, Rwanda, Mbuti, Congolese, Angolan, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Sub-Saharan African (e.g. Ghanaian, Nigerian, Sudanese, Ethiopian, Kenyan, Rwanda, Mbuti, Congolese, Angolan, etc.)</span>
+              <span class="option-label">Sub-Saharan African <span class="eg-text">(e.g. Ghanaian, Nigerian, Sudanese, Ethiopian, Kenyan, Rwanda, Mbuti, Congolese, Angolan, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Western Asian & North African (e.g. Arab, Egyptian, Levantine, Moroccan, Libyan, Turkic, Iranian, Armenian, etc.)">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Western Asian & North African (e.g. Arab, Egyptian, Levantine, Moroccan, Libyan, Turkic, Iranian, Armenian, etc.)</span>
+              <span class="option-label">Western Asian & North African <span class="eg-text">(e.g. Arab, Egyptian, Levantine, Moroccan, Libyan, Turkic, Iranian, Armenian, etc.)</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Prefer to self-describe" id="q2-3a-another-opt">
@@ -1165,6 +1166,185 @@
         </div>
       </div>
 
+      <!-- Q3.8 Other Health Conditions -->
+      <div id="slide-q3-8" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text">Have you been diagnosed with any other health conditions?</h2>
+        <p class="subheadline-text question-desc">
+          Check all that apply. Selecting main categories will show sub-options.
+          </p>
+
+        <div class="multiselect-container" data-type="multi" data-field="comorbidities">
+
+          <!-- Pain/Injury -->
+          <div class="multi-option" data-val="Pain/Injury">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Pain/Injury</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Fibromyalgia"><span class="sub-checkbox"></span><span class="sub-label">Fibromyalgia</span></div>
+              <div class="sub-option" data-val="Chronic Back Pain/Neck Pain"><span class="sub-checkbox"></span><span class="sub-label">Chronic Back Pain/Neck Pain</span></div>
+              <div class="sub-option" data-val="Other Chronic Musculoskeletal Pain"><span class="sub-checkbox"></span><span class="sub-label">Other Chronic Musculoskeletal Pain</span></div>
+              <div class="sub-option" data-val="Ehlers-Danlos Syndrome/hypermobility"><span class="sub-checkbox"></span><span class="sub-label">Ehlers-Danlos Syndrome/hypermobility</span></div>
+              <div class="sub-option" data-val="Chronic Pelvic Pain"><span class="sub-checkbox"></span><span class="sub-label">Chronic Pelvic Pain</span></div>
+              <div class="sub-option" data-val="TMJ"><span class="sub-checkbox"></span><span class="sub-label">TMJ</span></div>
+              <div class="sub-option" data-val="Concussion, TBI, or other significant head injury"><span class="sub-checkbox"></span><span class="sub-label">Concussion, traumatic brain injury (TBI), or other significant head injury</span></div>
+              <div class="sub-option" data-val="Other pain (please specify)" data-other-wrapper="q3-8-pain-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other pain (please specify)</span></div>
+              <div id="q3-8-pain-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-pain-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Gut -->
+          <div class="multi-option" data-val="Gut">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Gut</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Irritable Bowel Syndrome (IBS)"><span class="sub-checkbox"></span><span class="sub-label">Irritable Bowel Syndrome (IBS)</span></div>
+              <div class="sub-option" data-val="Inflammatory Bowel Disease (IBD) e.g. Crohn's, Ulcerative Colitis"><span class="sub-checkbox"></span><span class="sub-label">Inflammatory Bowel Disease (IBD) e.g. Crohn's, Ulcerative Colitis</span></div>
+              <div class="sub-option" data-val="GERD"><span class="sub-checkbox"></span><span class="sub-label">GERD</span></div>
+              <div class="sub-option" data-val="Celiac disease"><span class="sub-checkbox"></span><span class="sub-label">Celiac disease</span></div>
+              <div class="sub-option" data-val="Other Gut issues (please specify)" data-other-wrapper="q3-8-gut-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other Gut issues (please specify)</span></div>
+              <div id="q3-8-gut-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-gut-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Hormonal -->
+          <div class="multi-option" data-val="Hormonal">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Hormonal</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Endometriosis"><span class="sub-checkbox"></span><span class="sub-label">Endometriosis</span></div>
+              <div class="sub-option" data-val="Menopause"><span class="sub-checkbox"></span><span class="sub-label">Menopause</span></div>
+              <div class="sub-option" data-val="Pre-menopause/peri-menopause"><span class="sub-checkbox"></span><span class="sub-label">Pre-menopause/peri-menopause</span></div>
+              <div class="sub-option" data-val="Infertility/Difficulties with conception"><span class="sub-checkbox"></span><span class="sub-label">Infertility/Difficulties with conception</span></div>
+              <div class="sub-option" data-val="PCOS/PMOS"><span class="sub-checkbox"></span><span class="sub-label">PCOS/PMOS</span></div>
+              <div class="sub-option" data-val="PMDD"><span class="sub-checkbox"></span><span class="sub-label">PMDD</span></div>
+              <div class="sub-option" data-val="Low testosterone"><span class="sub-checkbox"></span><span class="sub-label">Low testosterone</span></div>
+              <div class="sub-option" data-val="Other hormonal issues (please specify)" data-other-wrapper="q3-8-hormonal-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other hormonal issues (please specify)</span></div>
+              <div id="q3-8-hormonal-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-hormonal-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Allergic -->
+          <div class="multi-option" data-val="Allergic">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Allergic</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Asthma"><span class="sub-checkbox"></span><span class="sub-label">Asthma</span></div>
+              <div class="sub-option" data-val="Allergies"><span class="sub-checkbox"></span><span class="sub-label">Allergies</span></div>
+              <div class="sub-option" data-val="MCAS"><span class="sub-checkbox"></span><span class="sub-label">MCAS</span></div>
+              <div class="sub-option" data-val="Other allergic issues (please specify)" data-other-wrapper="q3-8-allergic-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other allergic issues (please specify)</span></div>
+              <div id="q3-8-allergic-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-allergic-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Mental health -->
+          <div class="multi-option" data-val="Mental health">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Mental health</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Anxiety"><span class="sub-checkbox"></span><span class="sub-label">Anxiety</span></div>
+              <div class="sub-option" data-val="Depression"><span class="sub-checkbox"></span><span class="sub-label">Depression</span></div>
+              <div class="sub-option" data-val="ADHD"><span class="sub-checkbox"></span><span class="sub-label">ADHD</span></div>
+              <div class="sub-option" data-val="Autism Spectrum Disorder"><span class="sub-checkbox"></span><span class="sub-label">Autism Spectrum Disorder</span></div>
+              <div class="sub-option" data-val="Stress/Burnout"><span class="sub-checkbox"></span><span class="sub-label">Stress/Burnout</span></div>
+              <div class="sub-option" data-val="Other mental health issues (please specify)" data-other-wrapper="q3-8-mental-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other mental health issues (please specify)</span></div>
+              <div id="q3-8-mental-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-mental-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Neurologic -->
+          <div class="multi-option" data-val="Neurologic">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Neurologic</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="Stroke/Transient Ischemic Attacks (TIA, mini-stroke)"><span class="sub-checkbox"></span><span class="sub-label">Stroke/Transient Ischemic Attacks (TIA, "mini-stroke")</span></div>
+              <div class="sub-option" data-val="Epilepsy/Seizure disorder"><span class="sub-checkbox"></span><span class="sub-label">Epilepsy/Seizure disorder</span></div>
+              <div class="sub-option" data-val="Multiple Sclerosis or Other Demyelinating Disease"><span class="sub-checkbox"></span><span class="sub-label">Multiple Sclerosis or Other Demyelinating Disease</span></div>
+              <div class="sub-option" data-val="Vestibular disorder/Ménière's disease"><span class="sub-checkbox"></span><span class="sub-label">Vestibular disorder/Ménière's disease</span></div>
+              <div class="sub-option" data-val="Sleep Disturbance: Difficulty falling or staying asleep or Insomnia"><span class="sub-checkbox"></span><span class="sub-label">Sleep Disturbance: Difficulty falling or staying asleep or Insomnia</span></div>
+              <div class="sub-option" data-val="Hypersensitivity to sights, sounds, smells, and/or chemicals, etc."><span class="sub-checkbox"></span><span class="sub-label">Hypersensitivity to sights, sounds, smells, and/or chemicals, etc.</span></div>
+              <div class="sub-option" data-val="Other neurologic issues (please specify)" data-other-wrapper="q3-8-neuro-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other neurologic issues (please specify)</span></div>
+              <div id="q3-8-neuro-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-neuro-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Cardiovascular-Metabolic -->
+          <div class="multi-option" data-val="Cardiovascular-Metabolic">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cardiovascular-Metabolic</span></div>
+            <div class="nested-subcategories">
+              <div class="sub-option" data-val="High blood pressure (hypertension)"><span class="sub-checkbox"></span><span class="sub-label">High blood pressure (hypertension)</span></div>
+              <div class="sub-option" data-val="Heart disease"><span class="sub-checkbox"></span><span class="sub-label">Heart disease</span></div>
+              <div class="sub-option" data-val="Heart Attack"><span class="sub-checkbox"></span><span class="sub-label">Heart Attack</span></div>
+              <div class="sub-option" data-val="High cholesterol or high triglycerides"><span class="sub-checkbox"></span><span class="sub-label">High cholesterol or high triglycerides</span></div>
+              <div class="sub-option" data-val="Patent foramen ovale (PFO)"><span class="sub-checkbox"></span><span class="sub-label">Patent foramen ovale (PFO)</span></div>
+              <div class="sub-option" data-val="Dysautonomia"><span class="sub-checkbox"></span><span class="sub-label">Dysautonomia</span></div>
+              <div class="sub-option" data-val="POTS"><span class="sub-checkbox"></span><span class="sub-label">POTS</span></div>
+              <div class="sub-option" data-val="Diabetes or Pre-Diabetes"><span class="sub-checkbox"></span><span class="sub-label">Diabetes or Pre-Diabetes</span></div>
+              <div class="sub-option" data-val="Hyperthyroidism (e.g. Graves disease)"><span class="sub-checkbox"></span><span class="sub-label">Hyperthyroidism (e.g. Graves disease)</span></div>
+              <div class="sub-option" data-val="Hypothyroidism (e.g. Hashimoto's)"><span class="sub-checkbox"></span><span class="sub-label">Hypothyroidism (e.g. Hashimoto's)</span></div>
+              <div class="sub-option" data-val="Other cardiovascular/metabolic issues (please specify)" data-other-wrapper="q3-8-cardio-other-wrapper"><span class="sub-checkbox"></span><span class="sub-label">Other cardiovascular/metabolic issues (please specify)</span></div>
+              <div id="q3-8-cardio-other-wrapper" class="input-text-wrapper" style="display:none;"><input type="text" id="q3-8-cardio-other" placeholder="Please specify..."></div>
+            </div>
+          </div>
+
+          <!-- Flat leaf options -->
+          <div class="multi-option" data-val="Autoimmune Disorders - (please specify)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Autoimmune Disorders (please specify)</span></div>
+          </div>
+          <div id="comorbidities_autoimmunedisorderspleasespecify-other-wrapper" class="input-text-wrapper" style="display: none;">
+            <label class="field-label" for="q3-8-autoimmune-other">Specify autoimmune disorder:</label>
+            <input type="text" id="q3-8-autoimmune-other" placeholder="e.g. Lupus, Rheumatoid Arthritis...">
+            <div id="q3-8-autoimmune-other-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="multi-option" data-val="Cancer - (please specify)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cancer (please specify)</span></div>
+          </div>
+          <div id="comorbidities_cancerpleasespecify-other-wrapper" class="input-text-wrapper" style="display: none;">
+            <label class="field-label" for="q3-8-cancer-other">Specify cancer type:</label>
+            <input type="text" id="q3-8-cancer-other" placeholder="e.g. Breast cancer, Lymphoma...">
+            <div id="q3-8-cancer-other-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="multi-option" data-val="I have not been diagnosed with any other conditions">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I have not been diagnosed with any other conditions</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Other (please specify)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (please specify)</span></div>
+          </div>
+          <div id="comorbidities_otherpleasespecify-other-wrapper" class="input-text-wrapper" style="display: none;">
+            <label class="field-label" for="q3-8-other-other">Specify other condition:</label>
+            <input type="text" id="q3-8-other-other" placeholder="Please specify...">
+            <div id="q3-8-other-other-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="multi-option" data-val="Prefer not to answer">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Prefer not to answer</span></div>
+          </div>
+
+        </div>
+
+        <div id="q3-8-err" class="validation-error">Please select at least one option to continue.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Migraine and headache disorders rarely occur in isolation. Understanding which conditions co-occur helps researchers identify patterns, shared biological mechanisms, and more effective, holistic treatments.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
       <!-- ==================== SECTION INTRO: DIAGNOSIS ==================== -->
       <!-- SECTION DIVIDER: Diagnosis (commented out, restore to re-enable)
       <div id="slide-section-diagnosis" class="survey-slide section-intro-slide">
@@ -1327,7 +1507,9 @@
         </div>
         <!-- <span class="question-number">Section 4: Diagnosis</span> -->
         <h2 class="title-1 question-text">What were your barriers to getting a diagnosis, <i>if any</i>?</h2>
-        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+        <p class="subheadline-text question-desc">
+          Check all that apply. Selecting main categories will show sub-options.
+        </p>
 
         <div class="multiselect-container" data-type="multi" data-field="diagnosis_barriers">
           <!-- Category 1 -->
@@ -1502,7 +1684,8 @@
         </div>
         <!-- <span class="question-number">Section 4: Diagnosis</span> -->
         <h2 class="title-1 question-text">What are the main reasons you haven't sought a formal diagnosis?</h2>
-        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+        <p class="subheadline-text question-desc">
+          Check all that apply. Selecting main categories will show sub-options.</p>
 
         <div class="multiselect-container" data-type="multi" data-field="reasons_no_diagnosis">
           <!-- Category 1 -->
@@ -1992,7 +2175,9 @@
         </div>
         <!-- <span class="question-number">Section 6: Experience</span> -->
         <h2 class="title-1 question-text">What have been the biggest challenges in getting care?</h2>
-        <p class="subheadline-text question-desc">Select all that apply. Checking main categories will show sub-options.</p>
+        <p class="subheadline-text question-desc">
+          Check all that apply. Selecting main categories will show sub-options.
+        </p>
 
         <div class="multiselect-container" data-type="multi" data-field="challenges_in_care">
           <!-- Category 1 -->
@@ -2180,15 +2365,18 @@
 
         <div class="action-controls">
           <button class="btn btn-secondary btn-back">Back</button>
-          <button class="btn btn-primary btn-next">Next</button>
+          <button class="btn btn-primary btn-next">Submit</button>
         </div>
+        <p class="q6-5-submit-note">Once you submit the survey, you will not be able to access or edit your responses.</p>
       </div>
 
       <!-- ==================== SECTION 7: CLOSING & EMAIL ==================== -->
       <div id="slide-q7" class="survey-slide">
         <!-- <span class="question-number">Section 7: Closing</span> -->
         <h2 class="title-1 question-text">Stay Connected.
-          <br><span class="subheadline-text" style="margin-top: 0.5rem;">This survey is anonymous. Enter your email below to:</span>
+          <br><span class="subheadline-text" style="margin-top: 0.5rem;">
+            Thank you for contributing to this research. Enter your details below to:
+          </span>
         </h2>
         <!--<p class="body-text question-desc" style="margin-bottom: 0.25rem;">
           Opt in to:
@@ -2200,6 +2388,16 @@
           <li>Access evidence-based resources from Kōkūn</li>
           <li>Shape future headache and migraine research</li>
         </ul>
+
+        <div class="input-text-wrapper">
+          <p style="margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">
+            The details you enter below will not be connected to your survey responses. 
+            The survey you just submitted is completely anonymous. This information helps 
+            us tailor insights, updates, and future research opportunities to your local 
+            context and condition. You can unsubscribe at any time at 
+            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer">unsubscribe</a>
+          </p>
+        </div>
 
         <div class="input-text-wrapper">
           <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.getElementById('q7-optout').classList.remove('selected'); document.getElementById('q7-format-err').classList.remove('active'); document.getElementById('q7-err').classList.remove('active');">
@@ -2232,61 +2430,54 @@
           </div>
         </div>
 
-        <div class="multiselect-container" style="margin-bottom: var(--space-md);">
-          <div class="multi-option" id="q7-optout">
-            <div class="multi-option-header">
-              <div class="checkbox-custom"></div>
-              <span class="option-label">Prefer not to receive findings and resources</span>
-            </div>
-          </div>
-        </div>
-
         <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to receive findings and resources" to submit.</div>
 
         <div class="action-controls">
-          <button class="btn btn-secondary btn-back">Back</button>
-          <button class="btn btn-primary btn-next">Submit Survey</button>
+          <button class="btn btn-primary btn-next">Sign Up</button>
+        </div>
+        <div style="text-align: center; margin-top: 12px;">
+          <a href="#" onclick="navigateTo('slide-end'); return false;" style="font-size: 13px; color: var(--color-text-muted, #888); text-decoration: none;">skip →</a>
         </div>
       </div>
 
       <!-- ==================== SUCCESS / END SCREEN ==================== -->
-      <div id="slide-end" class="survey-slide">
-        <div class="end-screen">
-          <div style="display:flex; justify-content:center; margin-bottom: var(--space-lg);">
-            <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
-              <svg style="height:32px; width:auto; display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.363 72.562" aria-label="Kōkūn"><path d="M145.489,46.604l-.093-.194,10.476-9.429c6.475-5.715,1.807-13.143,1.807-13.616v-.473h20.571v.473l-17.811,15.617,18.098,32.001v.473h-20.664l-12.383-24.852Z" fill="#81a487"/><path d="M183.329,56.599v-17.423c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v31.14c0,5.521,2.954,7.234,6.575,7.234,1.9,0,4.001-.473,5.901-1.14-.093-.768-.093-1.621-.093-2.481v-18.47c0-7.242-2.954-15.524-2.954-15.903v-.38h20.858v32.28c0,7.234,2.954,15.524,2.954,15.903v.38h-16.291c-1.326-2.187-3.047-4.761-3.9-8.382-2.76,4.862-7.234,9.336-15.144,9.336-8.948,0-15.803-5.715-15.803-15.81Z" fill="#81a487"/><path d="M263.443,71.456h-23.805v-.38c0-.38,2.954-8.669,2.954-15.903v-15.997c0-7.242-2.954-15.524-2.954-15.903v-.38h20.851v8.087c2.481-4.28,7.529-8.661,15.237-8.661,8.863,0,15.81,5.715,15.81,15.81v17.043c0,7.234,2.954,15.524,2.954,15.903v.38h-23.813v-.38c0-.38,2.954-8.669,2.954-15.903v-14.477c0-5.614-3.334-7.428-6.855-7.521-2.194-.093-4.381.574-6.288,1.427v20.571c0,7.234,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><path d="M24.949,71.422H0v-.38c0-.38,2.95-8.665,2.95-15.903V19.141C2.95,11.902,0,3.621,0,3.237v-.38h24.949v.38c0,.384-2.95,8.665-2.95,15.903v35.998c0,7.238,2.95,15.524,2.95,15.903v.38ZM35.905,57.329l-12.767-19.618c-.283-.477-.38-.667.194-1.144l8.192-7.521,8.948-8.285c8.002-7.335,4.575-16.76,4.575-17.334v-.57h22.564v.477c-4.001,2.667-8.281,6.572-13.616,11.426l-15.144,14.097,20.098,28.756c4.094,5.905,10.662,13.05,10.662,13.43v.38h-29.326c0-.38-.481-7.998-4.381-14.093Z" fill="#81a487"/><path d="M67.177,47.044c0-17.524,12.468-24.759,26.371-24.759,13.81,0,26.48,7.331,26.48,24.759,0,17.524-12.67,25.518-26.48,25.518-13.903,0-26.371-7.994-26.371-25.518ZM100.031,47.044c0-9.429-.861-20.474-6.482-20.474-5.707,0-6.374,11.143-6.374,20.474,0,9.429.667,21.137,6.374,21.137,5.622,0,6.482-11.709,6.482-21.137Z" fill="#81a487"/><path d="M147.865,71.422h-23.805v-.38c0-.38,2.947-8.665,2.947-15.903V18.191c0-7.238-3.14-15.144-3.14-15.524l-.093-.38,2.954-.384,18.183-1.904v55.139c0,7.238,2.954,15.524,2.954,15.903v.38Z" fill="#81a487"/><rect x="192.499" y="9.244" width="28.953" height="4.761" fill="#81a487"/><rect x="78.921" y="9.214" width="28.946" height="4.761" fill="#81a487"/><path d="M291.839,27.633v-4.284h-1.6v-.573h3.85v.573h-1.607v4.284h-.643Z" fill="#81a487"/><path d="M294.728,27.633v-4.857h.967l1.15,3.439c.106.32.183.56.232.719.055-.177.141-.436.258-.779l1.163-3.379h.865v4.857h-.62v-4.065l-1.411,4.065h-.58l-1.405-4.135v4.135h-.62Z" fill="#81a487"/></svg>
-            </a>
-          </div>
-<!--          <h2 class="title-2" style="margin-bottom: var(--space-md); color: var(--color-sage-70);">Grow Your Impact!</h2>-->
-          <p class="body-text" style="color: var(--color-sage-80); margin-bottom: var(--space-md);">
-            Thank you for contributing!<br><br>
-            <strong>You never know who else might be experiencing headaches in silence.</strong><br>Please share this survey with your family, friends and coworkers around the world, so we can improve care for everyone.<br>
-          </p>
+      <div id="slide-end" class="survey-slide special-slide">
+        <!-- Logo -->
+        <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" aria-label="Kōkūn website">
+          <img src="../../images/Kokun-logo_WhiteSage_RGB.svg" class="logo" alt="Kōkūn">
+        </a>
 
-          <div class="ineligible-actions">
-            <button class="btn btn-primary" onclick="shareSurvey('copy')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              Share Survey
-            </button>
+        <!-- Main content -->
+        <div class="content">
+          <!-- Only visible after Sign Up (not skip) -->
+          <div class="confirmation-box">
+            <p>We look forward to staying connected. We have just sent you a welcome email. If it is not in your inbox, your spam folder may have intercepted it.</p>
           </div>
-
-          <div class="share-options-container">
-            <div class="social-icons">
-              <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Website">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-              <a href="mailto:info@kokun.space" class="social-icon-link" title="Email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-              </a>
-            </div>
+          <div class="block">
+            <h1>You never know who else might be experiencing headaches in silence.</h1>
+            <p><br></p>
+            <p>Please share this survey with your family, friends, and coworkers, so we can improve care for everyone.</p>
           </div>
+          <button class="btn-start" style="align-self: flex-start;" onclick="shareSurvey('copy')">Share Survey</button>
         </div>
+
+        <!-- Social icons -->
+        <div class="social">
+          <a href="https://www.linkedin.com/company/kokunorg/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/kokunorg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="mailto:info@kokun.space" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a4.25 4.25 0 01-4.644 0L1.5 8.67z"/><path fill="currentColor" d="M22.336 6.113a3 3 0 00-2.836-2.113H4.5a3 3 0 00-2.836 2.113l9.539 5.87a1.25 1.25 0 001.394 0l9.539-5.87z"/></svg>
+          </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <p>©Kōkūn, a fiscally sponsored project of the Social Good Fund, a 501(c)(3) organization. Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>.</p>
+        </footer>
       </div>
 
     </div>
