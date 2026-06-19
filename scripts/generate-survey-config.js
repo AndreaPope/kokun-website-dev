@@ -24,8 +24,8 @@ if (!url || !anonKey) {
 }
 
 writeFileSync(
-  'public/survey/carejourney/config.js',
+  'public/research/headaches/config.js',
   `const SUPABASE_CONFIG = {\n  url: "${url}",\n  anonKey: "${anonKey}"\n};\n`
 );
 
-console.log('Generated public/survey/carejourney/config.js');
+console.log('Generated public/research/headaches/config.js');
