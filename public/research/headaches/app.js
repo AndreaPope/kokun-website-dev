@@ -1889,13 +1889,21 @@ function shareSurvey(platform, btn) {
       shareUrl = `mailto:?subject=Kōkūn Care Journey Research&body=${text}%20${url}`;
       break;
     case 'copy':
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        if (btn) {
-          const orig = btn.innerHTML;
-          btn.textContent = 'Link Copied!';
-          setTimeout(() => { btn.innerHTML = orig; }, 2000);
-        }
-      });
+      if (navigator.share) {
+        navigator.share({
+          title: 'Kōkūn Care Journey Survey',
+          text: 'Help make headache and migraine experiences visible by completing the Kōkūn Care Journey Survey.',
+          url: window.location.href
+        });
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          if (btn) {
+            const orig = btn.innerHTML;
+            btn.textContent = 'Link Copied!';
+            setTimeout(() => { btn.innerHTML = orig; }, 2000);
+          }
+        });
+      }
       return;
   }
 
