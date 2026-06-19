@@ -446,7 +446,7 @@ function updateDynamicWording() {
   const targetWordPlural = hasMigraine() ? "migraine" : "headache"; // Survey text uses singular/plural accordingly
   
   document.querySelectorAll("[data-dynamic-word]").forEach(el => {
-    const originalText = el.getAttribute("data-dynamic-word-orig") || el.textContent;
+    const originalText = el.getAttribute("data-dynamic-word-orig") || el.innerHTML;
     if (!el.getAttribute("data-dynamic-word-orig")) {
       el.setAttribute("data-dynamic-word-orig", originalText);
     }
@@ -465,7 +465,7 @@ function updateDynamicWording() {
 function setupDynamicWordingEngine() {
   // Save initial texts
   document.querySelectorAll("[data-dynamic-word]").forEach(el => {
-    el.setAttribute("data-dynamic-word-orig", el.textContent);
+    el.setAttribute("data-dynamic-word-orig", el.innerHTML);
   });
 }
 
