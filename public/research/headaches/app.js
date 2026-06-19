@@ -1212,11 +1212,11 @@ function handleNext() {
       break;
       
     case "slide-q6-5":
-      navigateTo("slide-q7");
-      break;
-      
-    case "slide-q7":
       submitSurvey();
+      break;
+
+    case "slide-q7":
+      finalizeSignup();
       break;
   }
 }
@@ -1801,30 +1801,20 @@ function submitToMailchimp(email, fname, lname, country, migtype) {
 }
 
 async function submitSurvey() {
-  const submitBtn = document.querySelector("#slide-q7 .btn-primary");
+  const submitBtn = document.querySelector("#slide-q6-5 .btn-primary");
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
   }
 
-  // Capture Mailchimp contact fields before any navigation changes the DOM
-  const mcFname = (document.getElementById('q7-fname') || {}).value?.trim() || '';
-  const mcLname = (document.getElementById('q7-lname') || {}).value?.trim() || '';
-  const mcCountry = (document.getElementById('q7-country') || {}).value || '';
-  const mcMigtype = (document.getElementById('q7-migtype') || {}).value || '';
-
   if (!isSupabaseConfigured()) {
     console.warn("Supabase credentials not configured. Running in Mock Demo Mode.");
     console.log("Constructed survey payload:", surveyData);
     setTimeout(() => {
-      navigateTo("slide-end");
-      document.getElementById("slide-end")?.classList.add("show-confirmation");
-      if (surveyData.subscribed_to_updates && surveyData.email) {
-        submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
-      }
+      navigateTo("slide-q7");
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Complete Survey";
+        submitBtn.textContent = "Submit";
       }
     }, 1500);
     return;
@@ -1853,11 +1843,7 @@ async function submitSurvey() {
     if (response.ok) {
       console.log("Survey successfully recorded in Supabase!");
       markSessionComplete();
-      navigateTo("slide-end");
-      document.getElementById("slide-end")?.classList.add("show-confirmation");
-      if (surveyData.subscribed_to_updates && surveyData.email) {
-        submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
-      }
+      navigateTo("slide-q7");
     } else {
       const errTxt = await response.text();
       throw new Error(errTxt || "Failed to save response");
@@ -1868,9 +1854,22 @@ async function submitSurvey() {
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Complete Survey";
+      submitBtn.textContent = "Submit";
     }
   }
+}
+
+function finalizeSignup() {
+  const mcFname = (document.getElementById('q7-fname') || {}).value?.trim() || '';
+  const mcLname = (document.getElementById('q7-lname') || {}).value?.trim() || '';
+  const mcCountry = (document.getElementById('q7-country') || {}).value || '';
+  const mcMigtype = (document.getElementById('q7-migtype') || {}).value || '';
+
+  if (surveyData.subscribed_to_updates && surveyData.email) {
+    submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
+  }
+  navigateTo("slide-end");
+  document.getElementById("slide-end")?.classList.add("show-confirmation");
 }
 
 // Share functions
