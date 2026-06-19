@@ -790,16 +790,7 @@
               <span class="option-label">Sinus headache</span>
             </div>
           </div>
-          <div class="multi-option" data-val="I do not know" onclick="
-            // Toggle mutually exclusive option
-            if(!this.classList.contains('selected')) {
-              document.querySelectorAll('#slide-q3-1 .multi-option').forEach(el => {
-                if(el !== this) { el.classList.remove('selected'); }
-              });
-              surveyData.headache_types = ['I do not know'];
-              document.getElementById('headache_types_other-other-wrapper').style.display = 'none';
-            }
-          ">
+          <div class="multi-option" data-val="I do not know">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
               <span class="option-label">I do not know</span>

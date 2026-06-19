@@ -1488,6 +1488,28 @@ function setupEventListeners() {
             }
           }
 
+          // Mutual exclusivity for "I do not know" on Q3.1
+          if (fieldName === "headache_types") {
+            if (val === "I do not know") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) el.classList.remove("selected");
+                });
+                surveyData.headache_types = ["I do not know"];
+                const otherWrapper = document.getElementById("headache_types_other-other-wrapper");
+                if (otherWrapper) otherWrapper.style.display = "none";
+              }
+            } else {
+              if (isSelected) {
+                const idkEl = container.querySelector(".multi-option[data-val='I do not know']");
+                if (idkEl && idkEl.classList.contains("selected")) {
+                  idkEl.classList.remove("selected");
+                  surveyData.headache_types = surveyData.headache_types.filter(v => v !== "I do not know");
+                }
+              }
+            }
+          }
+
           // Mutual exclusivity for "I do not know" on Q3.2
           if (fieldName === "migraine_subtypes") {
             if (val === "I do not know") {
