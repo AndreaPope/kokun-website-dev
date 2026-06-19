@@ -1875,7 +1875,7 @@ function finalizeSignup() {
 // Share functions
 function shareSurvey(platform, btn) {
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent("Help make headache and migraine experiences visible by completing the Kōkūn Care Journey Survey.");
+  const text = encodeURIComponent("Help make headache and migraine experiences visible by completing the Kōkūn Understanding Headaches and Migraine survey.");
 
   let shareUrl = "";
   switch(platform) {
@@ -1886,13 +1886,13 @@ function shareSurvey(platform, btn) {
       shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
       break;
     case 'email':
-      shareUrl = `mailto:?subject=Kōkūn Care Journey Research&body=${text}%20${url}`;
+      shareUrl = `mailto:?subject=Kōkūn Understanding Headaches and Migraine Survey&body=${text}%20${url}`;
       break;
     case 'copy':
       if (navigator.share) {
         navigator.share({
-          title: 'Kōkūn Care Journey Survey',
-          text: 'Help make headache and migraine experiences visible by completing the Kōkūn Care Journey Survey.',
+          title: 'Kōkūn Understanding Headaches and Migraine Survey',
+          text: 'Help make headache and migraine experiences visible by completing the Kōkūn Understanding Headaches and Migraine survey.',
           url: window.location.href
         });
       } else {
