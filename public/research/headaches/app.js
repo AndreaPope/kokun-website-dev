@@ -1873,10 +1873,10 @@ function finalizeSignup() {
 }
 
 // Share functions
-function shareSurvey(platform) {
+function shareSurvey(platform, btn) {
   const url = encodeURIComponent(window.location.href);
   const text = encodeURIComponent("Help make headache and migraine experiences visible by completing the Kōkūn Care Journey Survey.");
-  
+
   let shareUrl = "";
   switch(platform) {
     case 'twitter':
@@ -1890,7 +1890,6 @@ function shareSurvey(platform) {
       break;
     case 'copy':
       navigator.clipboard.writeText(window.location.href).then(() => {
-        const btn = document.querySelector('.ineligible-actions .btn-primary');
         if (btn) {
           const orig = btn.innerHTML;
           btn.textContent = 'Link Copied!';

@@ -166,7 +166,7 @@
           </div>
           <div class="buttons">
             <button class="btn btn-outline" onclick="resetSurvey()">Restart</button>
-            <button class="btn btn-primary" onclick="shareSurvey('copy')">Share Survey</button>
+            <button class="btn btn-primary" onclick="shareSurvey('copy', this)">Share Survey</button>
           </div>
         </div>
 
@@ -2455,7 +2455,7 @@
             <p><br></p>
             <p>Please share this survey with your family, friends, and coworkers, so we can improve care for everyone.</p>
           </div>
-          <button class="btn-start" style="align-self: flex-start;" onclick="shareSurvey('copy')">Share Survey</button>
+          <button id="last-slide-share-btn" class="btn-start" style="align-self: flex-start;" onclick="shareSurvey('copy', this)">Share Survey</button>
         </div>
 
         <!-- Social icons -->
