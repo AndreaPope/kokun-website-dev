@@ -13,3 +13,4 @@ dist/
 
 # Generated from env vars at build time
 public/research/headaches/config.js
+public/research/headaches/understanding_headaches.html
