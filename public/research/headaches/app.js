@@ -1785,7 +1785,7 @@ function submitToMailchimp(email, fname, lname, country, migtype, other) {
     LNAME: lname || '',
     COUNTRY: country || '',
     MIGTYPE: migtype || '',
-    other: other || '',
+    MERGE5: other || '',
     tags: '1937329',
     b_21828ca842c8b79b81f1b21d2_8d32120fc0: '' // honeypot
   };
