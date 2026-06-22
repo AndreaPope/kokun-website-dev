@@ -339,7 +339,8 @@ main {
 input[type="text"],
 input[type="email"],
 input[type="number"],
-select {
+select,
+textarea {
   width: 100%;
   padding: var(--space-md);
   font-size: 17px;
@@ -352,10 +353,16 @@ select {
   transition: border-color 0.3s ease;
 }
 
+textarea {
+  resize: vertical;
+  border-radius: 0;
+}
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
-select:focus {
+select:focus,
+textarea:focus {
   border-bottom-color: var(--color-sage-60);
 }
 
@@ -516,6 +523,15 @@ input[type="number"]::placeholder {
   line-height: 1.4;
 }
 
+.option-btn .eg-text {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-sage-70);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
 /* Expandable Subcategories Styling */
 .nested-subcategories {
   max-height: 0;
@@ -623,7 +639,7 @@ input[type="number"]::placeholder {
 
 .q6-5-submit-note {
   font-size: 12px;
-  color: var(--color-sage-60);
+  color: #c0392b;
   text-align: center;
   margin-top: var(--space-sm);
   line-height: 1.5;
@@ -688,6 +704,20 @@ input[type="number"]::placeholder {
 }
 
 /* Tooltip / Why This Matters expansion block */
+.context-reminder-box {
+  background-color: var(--color-sage-20);
+  border: 1px solid var(--color-sage-40);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  margin: auto 0;
+}
+
+.context-reminder-box .callout-text {
+  color: var(--color-sage-80);
+  line-height: 1.6;
+}
+
 .why-matters-container {
   margin-top: var(--space-md);
   border-radius: var(--radius-md);

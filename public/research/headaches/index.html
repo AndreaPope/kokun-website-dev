@@ -30,6 +30,7 @@
         <option value="slide-intro">slide-intro</option>
         <option value="slide-q1-1">slide-q1-1</option>
         <option value="slide-q1-2">slide-q1-2</option>
+        <option value="slide-q1-context">slide-q1-context</option>
         <option value="slide-ineligible">slide-ineligible</option>
         <option value="slide-section-profile">slide-section-profile</option>
         <option value="slide-q2-1">slide-q2-1</option>
@@ -104,7 +105,7 @@
         <!-- Footer -->
         <footer>
           <p>
-            Kōkūn is fiscally sponsored by Social Good Fund, a <u>non-profit organization </u> registered in the United States.
+            Kōkūn is fiscally sponsored by Social Good Fund, a non-profit organization registered in the United States.
             Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>.</p>
         </footer>
       </div>
@@ -141,6 +142,24 @@
           <button class="option-btn" data-val="I used to">I used to</button>
         </div>
         <div id="q1-2-err" class="validation-error">Please select an option to continue.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q1 Context (shown only when "I used to" is selected) -->
+      <div id="slide-q1-context" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <div class="context-reminder-box">
+          <p class="callout-text">Please think back to when your headaches or migraine were at their peak and answer the following questions as you would have during that time.</p>
+        </div>
         <div class="action-controls">
           <button class="btn btn-secondary btn-back">Back</button>
           <button class="btn btn-primary btn-next">Next</button>
@@ -186,7 +205,7 @@
         <!-- Footer -->
         <footer>
           <p>
-            Kōkūn is fiscally sponsored by Social Good Fund, a <u>non-profit organization </u> registered in the United States.
+            Kōkūn is fiscally sponsored by Social Good Fund, a non-profit organization registered in the United States.
             Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>.</p>
         </footer>
       </div>
@@ -224,7 +243,8 @@
           <button class="option-btn" data-val="Man">Man</button>
           <button class="option-btn" data-val="Non-binary">Non-binary</button>
           <button class="option-btn" data-val="Prefer to self-describe">Prefer to self-describe</button>
-          <button class="option-btn" data-val="Prefer not to say">Prefer not to say</button>
+          <button class="option-btn" data-val="Prefer not to say">
+            <span>Prefer not to say</span></button>
         </div>
         
         <!-- Conditional Input -->
@@ -255,7 +275,8 @@
         <div class="options-grid" data-type="single" data-field="assigned_female_at_birth">
           <button class="option-btn" data-val="Yes">Yes</button>
           <button class="option-btn" data-val="No">No</button>
-          <button class="option-btn" data-val="Prefer not to say">Prefer not to say</button>
+          <button class="option-btn" data-val="Prefer not to say">
+            <span>Prefer not to say</span></button>
         </div>
         
         <!-- Why this matters accordion -->
@@ -337,7 +358,8 @@
           <div class="multi-option" data-val="Prefer not to answer" id="q2-3a-pnta">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Prefer not to answer</span>
+              <span class="option-label">
+                Prefer not to answer<span class="eg-text">Selecting this will clear previous selections.</span></span>
             </div>
           </div>
         </div>
@@ -555,7 +577,8 @@
           <div class="multi-option" data-val="Prefer not to answer">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Prefer not to answer</span>
+              <span class="option-label">
+                Prefer not to answer<span class="eg-text">Selecting this will clear previous selections.</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Other">
@@ -693,7 +716,8 @@
           <div class="multi-option" data-val="Prefer not to answer">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">Prefer not to answer</span>
+              <span class="option-label">
+                Prefer not to answer<span class="eg-text">Selecting this will clear previous selections.</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Other">
@@ -793,7 +817,8 @@
           <div class="multi-option" data-val="I do not know">
             <div class="multi-option-header">
               <span class="checkbox-custom"></span>
-              <span class="option-label">I do not know</span>
+              <span class="option-label">
+                I do not know<span class="eg-text">Selecting this will clear previous selections.</span></span>
             </div>
           </div>
           <div class="multi-option" data-val="Other">
@@ -859,7 +884,8 @@
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cyclical Vomiting Syndrome</span></div>
           </div>
           <div class="multi-option" data-val="I do not know">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I do not know</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              I do not know<span class="eg-text">Selecting this will clear previous selections.</span></span></div>
           </div>
           <div class="multi-option" data-val="Other">
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Other (specify)</span></div>
@@ -1066,11 +1092,14 @@
         </div>
         <!-- <span class="question-number">Section 3: Symptoms</span> -->
         <h2 class="title-2 question-text">Quality of Life Impact</h2>
-        
+        <p class="subheadline-text question-desc">For each statement below, please select how frequently you experience these situations.</p>
+
         <div style="display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-md);">
-          
+
           <div class="qol-option-group" data-field="pain">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">a. When you have headaches, how often is the pain severe?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              a. In the past 4 weeks, when you have headaches, how often is the pain severe?
+            </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-pain" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-pain" value="rarely"><span>Rarely</span></label>
@@ -1082,7 +1111,8 @@
           </div>
 
           <div class="qol-option-group" data-field="limit">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">b. How often does it limit your ability to do usual daily activities?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              b. In the past 4 weeks, when you have headaches, how often does it limit your ability to do usual daily activities including household work, work, school or social activities?</p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-limit" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-limit" value="rarely"><span>Rarely</span></label>
@@ -1094,7 +1124,9 @@
           </div>
 
           <div class="qol-option-group" data-field="lie">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">c. How often do you wish you could lie down?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              c. In the past 4 weeks, when you have headaches, how often do you wish you could lie down?
+            </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-lie" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-lie" value="rarely"><span>Rarely</span></label>
@@ -1106,7 +1138,9 @@
           </div>
 
           <div class="qol-option-group" data-field="tired">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">d. In the past 4 weeks, how often have you felt too tired to work?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              d. In the past 4 weeks, how often have you felt too tired to do work or daily activities because of your headaches? 
+            </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-tired" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-tired" value="rarely"><span>Rarely</span></label>
@@ -1118,7 +1152,9 @@
           </div>
 
           <div class="qol-option-group" data-field="irritated">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">e. In the past 4 weeks, how often have you felt fed up or irritated because of your headaches?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              e. In the past 4 weeks, how often have you felt fed up or irritated because of your headaches? 
+            </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-irritated" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-irritated" value="rarely"><span>Rarely</span></label>
@@ -1130,7 +1166,9 @@
           </div>
 
           <div class="qol-option-group" data-field="concentrate">
-            <p class="callout-text" style="margin-bottom: var(--space-xs);">f. In the past 4 weeks, how often did it limit your ability to concentrate?</p>
+            <p class="callout-text" style="margin-bottom: var(--space-xs);">
+              f. In the past 4 weeks, how often did headaches limit your ability to concentrate on work or daily activities? 
+            </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-concentrate" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-concentrate" value="rarely"><span>Rarely</span></label>
@@ -1302,7 +1340,10 @@
           </div>
 
           <div class="multi-option" data-val="I have not been diagnosed with any other conditions">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I have not been diagnosed with any other conditions</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              I have not been diagnosed with any other conditions
+            <span class="eg-text">Selecting this will clear previous selections.</span>  
+            </span></div>
           </div>
 
           <div class="multi-option" data-val="Other (please specify)">
@@ -1315,7 +1356,8 @@
           </div>
 
           <div class="multi-option" data-val="Prefer not to answer">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Prefer not to answer</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              Prefer not to answer<span class="eg-text">Selecting this will clear previous selections.</span></span></div>
           </div>
 
         </div>
@@ -1508,8 +1550,8 @@
 
         <div class="multiselect-container" data-type="multi" data-field="diagnosis_barriers">
           <!-- Category 1 -->
-          <div class="multi-option" data-val="Didn't think I needed to">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Didn't think I needed to</span></div>
+          <div class="multi-option" data-val="Didn't think I needed to get a diagnosis">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Didn't think I needed to get a diagnosis</span></div>
             <div class="nested-subcategories">
               <div class="sub-option" data-val="My symptoms didn't seem serious"><span class="sub-checkbox"></span><span class="sub-label">My symptoms didn't seem serious</span></div>
               <div class="sub-option" data-val="My symptoms weren't impacting my day-to-day life"><span class="sub-checkbox"></span><span class="sub-label">My symptoms weren't impacting my day-to-day life</span></div>
@@ -1601,7 +1643,10 @@
      
           <!-- No barriers option -->
           <div class="multi-option" data-val="Didn't experience any major barriers to diagnosis">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Didn't experience any major barriers to diagnosis</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              Didn't experience any major barriers to diagnosis
+            <span class="eg-text">Selecting this will clear previous selections.</span>
+            </span></div>
           </div>
                      <!-- Category 9 -->
           <div class="multi-option" data-val="Other">
@@ -1922,7 +1967,9 @@
               surveyData.treatments = ['Not currently treating'];
             }
           ">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Not currently treating</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              Not currently treating
+            <span class="eg-text">Selecting this will clear previous selections.</span></span></div>
           </div>
 
           <div class="multi-option" data-val="Other">
@@ -2009,7 +2056,10 @@
           </div>
 
           <div class="multi-option" data-val="None / Not applicable">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">None / Not applicable</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              None / Not applicable
+              <span class="eg-text">Selecting this will clear previous selections.</span>
+            </span></div>
           </div>
 
           <div class="multi-option" data-val="Other">
@@ -2095,6 +2145,19 @@
             <div id="q6-1b-err" class="validation-error">Required.</div>
           </div>
 
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Your answers help us understand if the available care and support options are effective and working for people.
+
+            </p>
+          </div>
         </div>
 
         <div class="action-controls">
@@ -2379,7 +2442,7 @@
           Opt in to:
         </p>-->
         <ul class="body-text question-desc" style="margin-top: 0; padding-left: 2rem; font-size: 0.85em;">
-          <li>See how your experience compares to others worldwide</li>
+          <li>See how your experience compares to others</li>
           <li>Receive key findings from this research </li>
           <li>Get updates on tools we are building for you</li>
           <li>Access evidence-based resources from Kōkūn</li>
@@ -2391,8 +2454,9 @@
             The details you enter below will not be connected to your survey responses. 
             The survey you just submitted is completely anonymous. This information helps 
             us tailor insights, updates, and future research opportunities to your local 
-            context and condition. You can unsubscribe at any time at 
-            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer">unsubscribe</a>
+            context and condition. 
+            You can unsubscribe anytime  
+            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">here</a>.
           </p>
         </div>
 
@@ -2419,21 +2483,23 @@
               <option value="" disabled selected>Select a country...</option>
             </select>
           </div>
-          <div>
+          <div style="padding-bottom: var(--space-md); border-bottom: 2px solid var(--border-color);">
             <label class="field-label" for="q7-migtype">What type of migraine do you experience?</label>
-            <select id="q7-migtype">
+            <select id="q7-migtype" style="border-bottom: none;">
               <option value="" disabled selected>Select an option...</option>
             </select>
+          </div>
+          <div>
+            <label class="field-label" for="q7-other">Are there any health conditions or symptoms you're navigating that you'd like to understand better? <span style="font-weight: 400; color: var(--color-text-muted, #888);">(optional)</span></label>
+            <textarea id="q7-other" rows="3" placeholder="e.g. Fatigue, anxiety, digestive issues..."></textarea>
           </div>
         </div>
 
         <div id="q7-err" class="validation-error">Please enter your email or select "Prefer not to receive findings and resources" to submit.</div>
 
         <div class="action-controls">
+          <button class="btn btn-secondary" onclick="navigateTo('slide-end')">Skip and Share</button>
           <button class="btn btn-primary btn-next">Sign Up</button>
-        </div>
-        <div style="text-align: center; margin-top: 12px;">
-          <a href="#" onclick="navigateTo('slide-end'); return false;" style="font-size: 13px; color: var(--color-text-muted, #888); text-decoration: none;">skip →</a>
         </div>
       </div>
 
@@ -2455,7 +2521,7 @@
             <p><br></p>
             <p>Please share this survey with your family, friends, and coworkers, so we can improve care for everyone.</p>
           </div>
-          <button id="last-slide-share-btn" class="btn-start" style="align-self: flex-start;" onclick="shareSurvey('copy', this)">Share Survey</button>
+          <button id="last-slide-share-btn" class="btn-start" style="align-self: center;" onclick="shareSurvey('copy', this)">Share Survey</button>
         </div>
 
         <!-- Social icons -->
@@ -2474,7 +2540,7 @@
         <!-- Footer -->
         <footer>
           <p>
-            Kōkūn is fiscally sponsored by Social Good Fund, a <u>non-profit organization </u> registered in the United States.
+            Kōkūn is fiscally sponsored by Social Good Fund, a non-profit organization registered in the United States.
             Learn more at <a href="https://www.kokun.space" target="_blank" rel="noopener noreferrer">www.kokun.space</a>.</p>
         </footer>
       </div>

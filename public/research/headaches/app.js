@@ -119,6 +119,7 @@ const stageMap = {
   "slide-intro": null,
   "slide-q1-1": null,
   "slide-q1-2": null,
+  "slide-q1-context": null,
   "slide-ineligible": null,
   "slide-section-profile": null,
   "slide-q2-1": "profile",
@@ -159,19 +160,14 @@ const stageMap = {
 const stageOrder = ["profile", "symptoms", "diagnosis", "treatment", "experience"];
 
 const Q7_MIGRAINE_TYPES = [
-  'Migraine without aura',
-  'Migraine with aura',
-  'Migraine with brainstem aura',
-  'Hemiplegic migraine',
-  'Vestibular migraine',
-  'Chronic migraine',
-  'Hormonal or Menstrual migraine',
-  'Abdominal migraine',
-  'Cyclical Vomiting Syndrome',
-  'I do not experience migraine',
-  'I do not know the type',
+  'Migraine',
+  'Tension-type headache',
+  'Cluster headache',
+  'Medication-overuse headache',
+  'Sinus headache',
+  'I do not know',
+  'Prefer not to answer',
   'Other',
-  'Prefer not to share',
 ];
 
 // Map of country list
@@ -1058,9 +1054,15 @@ function handleNext() {
     case "slide-q1-2":
       if (surveyData.age_bracket === "Under 18" || surveyData.headache_eligible === "No") {
         navigateTo("slide-ineligible");
+      } else if (surveyData.headache_eligible === "I used to") {
+        navigateTo("slide-q1-context");
       } else {
         navigateTo("slide-q2-1"); // skip slide-section-profile (commented out)
       }
+      break;
+
+    case "slide-q1-context":
+      navigateTo("slide-q2-1");
       break;
 
     // case "slide-section-profile": navigateTo("slide-q2-1"); break; // restore with section divider
@@ -1749,7 +1751,7 @@ function populateQ7Fields() {
 }
 
 function clearQ7Fields() {
-  ['q7-email', 'q7-fname', 'q7-lname'].forEach(id => {
+  ['q7-email', 'q7-fname', 'q7-lname', 'q7-other'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
@@ -1759,7 +1761,7 @@ function clearQ7Fields() {
   });
 }
 
-function submitToMailchimp(email, fname, lname, country, migtype) {
+function submitToMailchimp(email, fname, lname, country, migtype, other) {
   // Tags only apply via a real form POST (not JSONP). Submit silently via a
   // hidden iframe so the user stays on the end screen.
   let iframe = document.getElementById('mc-hidden-iframe');
@@ -1783,6 +1785,7 @@ function submitToMailchimp(email, fname, lname, country, migtype) {
     LNAME: lname || '',
     COUNTRY: country || '',
     MIGTYPE: migtype || '',
+    OTHER: other || '',
     tags: '1937329',
     b_21828ca842c8b79b81f1b21d2_8d32120fc0: '' // honeypot
   };
@@ -1864,9 +1867,10 @@ function finalizeSignup() {
   const mcLname = (document.getElementById('q7-lname') || {}).value?.trim() || '';
   const mcCountry = (document.getElementById('q7-country') || {}).value || '';
   const mcMigtype = (document.getElementById('q7-migtype') || {}).value || '';
+  const mcOther = (document.getElementById('q7-other') || {}).value?.trim() || '';
 
   if (surveyData.subscribed_to_updates && surveyData.email) {
-    submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype);
+    submitToMailchimp(surveyData.email, mcFname, mcLname, mcCountry, mcMigtype, mcOther);
   }
   navigateTo("slide-end");
   document.getElementById("slide-end")?.classList.add("show-confirmation");

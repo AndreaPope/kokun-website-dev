@@ -1,0 +1,799 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.k-root {
+  font-family: 'Inter', sans-serif;
+  background: #E8ECE9;
+  color: #00110B;
+  min-height: 100vh;
+  padding: 0 0 48px;
+}
+
+.k-hero {
+  background: #253027;
+  color: #F0F3F1;
+  padding: 40px 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.k-hero::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(129,164,135,0.12);
+  pointer-events: none;
+}
+
+.k-brand {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #81A487;
+  margin-bottom: 14px;
+}
+
+.k-hero h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.59px;
+  line-height: 1.2;
+  color: #F0F3F1;
+  margin-bottom: 8px;
+  max-width: 480px;
+}
+
+.k-hero p {
+  font-size: 15px;
+  color: rgba(240,243,241,0.65);
+  line-height: 1.5;
+  max-width: 460px;
+}
+
+.k-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #81A487;
+  font-weight: 500;
+}
+
+.k-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #81A487;
+}
+
+.k-nav {
+  display: flex;
+  gap: 0;
+  padding: 0 32px;
+  background: #253027;
+  border-bottom: 1px solid rgba(240,243,241,0.1);
+  overflow-x: auto;
+}
+
+.k-nav-btn {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(240,243,241,0.5);
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.k-nav-btn:hover { color: rgba(240,243,241,0.85); }
+.k-nav-btn.active { color: #F0F3F1; border-bottom-color: #81A487; }
+
+.k-body { padding: 28px 32px; }
+
+.k-section { display: none; }
+.k-section.active { display: block; }
+
+.k-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.k-stat {
+  background: #F0F3F1;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #D6DAD7;
+}
+
+.k-stat-label {
+  font-size: 12px;
+  color: #69876F;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.k-stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  color: #253027;
+  letter-spacing: -0.59px;
+  line-height: 1;
+}
+
+.k-stat-sub {
+  font-size: 12px;
+  color: #81A487;
+  margin-top: 4px;
+}
+
+.k-card {
+  background: #F0F3F1;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #D6DAD7;
+  margin-bottom: 16px;
+}
+
+.k-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #253027;
+  margin-bottom: 4px;
+  letter-spacing: -0.18px;
+}
+
+.k-card-sub {
+  font-size: 12px;
+  color: #69876F;
+  margin-bottom: 16px;
+}
+
+.k-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 560px) { .k-two-col { grid-template-columns: 1fr; } }
+
+.k-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.k-bar-label {
+  font-size: 12px;
+  color: #3D4D3F;
+  width: 130px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.k-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #D6DAD7;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.k-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: #69876F;
+  transition: width 0.6s ease;
+}
+
+.k-bar-fill.accent { background: #81A487; }
+.k-bar-fill.light { background: #C1D1C6; }
+
+.k-bar-pct {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3D4D3F;
+  width: 36px;
+  text-align: right;
+}
+
+.k-journey-stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.k-stage-card {
+  background: #F0F3F1;
+  border: 1px solid #D6DAD7;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.k-stage-card:hover { border-color: #81A487; }
+.k-stage-card.selected { background: #253027; border-color: #253027; }
+
+.k-stage-pct {
+  font-size: 22px;
+  font-weight: 600;
+  color: #253027;
+  letter-spacing: -0.47px;
+}
+
+.k-stage-card.selected .k-stage-pct { color: #F0F3F1; }
+
+.k-stage-name {
+  font-size: 11px;
+  color: #69876F;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.k-stage-card.selected .k-stage-name { color: #81A487; }
+
+.k-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.k-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #D6DAD7;
+  color: #3D4D3F;
+}
+
+.k-pill.green { background: #C1D1C6; color: #253027; }
+.k-pill.dark { background: #3D4D3F; color: #F0F3F1; }
+
+.k-divider {
+  height: 1px;
+  background: #D6DAD7;
+  margin: 20px 0;
+}
+
+.k-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: #69876F;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.k-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #C1D1C6;
+  border-top-color: #69876F;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.k-qol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 500px) { .k-qol-grid { grid-template-columns: 1fr; } }
+
+.k-qol-item {
+  background: #E8ECE9;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.k-qol-label { font-size: 11px; color: #69876F; margin-bottom: 6px; }
+.k-qol-bar-track { height: 6px; background: #D6DAD7; border-radius: 99px; overflow: hidden; }
+.k-qol-bar-fill { height: 100%; border-radius: 99px; background: #3D4D3F; }
+.k-qol-val { font-size: 13px; font-weight: 600; color: #253027; margin-top: 5px; }
+
+.k-dismissed-banner {
+  background: #253027;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.k-dismissed-pct {
+  font-size: 40px;
+  font-weight: 600;
+  color: #F0F3F1;
+  letter-spacing: -0.77px;
+  flex-shrink: 0;
+}
+
+.k-dismissed-text {
+  font-size: 14px;
+  color: rgba(240,243,241,0.75);
+  line-height: 1.5;
+}
+
+.k-error {
+  background: #FFDBDC;
+  border: 1px solid #EB8E90;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #641723;
+  margin-bottom: 16px;
+}
+
+.k-canvas-wrap { position: relative; width: 100%; }
+</style>
+
+<div class="k-root" id="app">
+  <div class="k-loading" id="initial-loader">
+    <div class="k-spinner"></div>
+    Loading survey data…
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const SUPABASE_URL = 'https://yjngyftaaenftmksjxbn.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlqbmd5ZnRhYWVuZnRta3NqeGJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3ODc2MTQsImV4cCI6MjA3ODM2MzYxNH0.o0VJjivwm4ylfZv3tBpHaSC6tg0Rzhw4vBDoRhxmSII';
+
+const RESPONSE_COLS = [
+  'id','age_bracket','age_eligible','headache_eligible','completed_at','started_at',
+  'gender','country','education_level','work_situation',
+  'headache_types','migraine_subtypes','functional_impact',
+  'qol_severe_pain','qol_limit_activities','qol_wish_lie_down',
+  'qol_tired_from_headaches','qol_irritated_from_headaches','qol_limit_concentration',
+  'diagnosis_status','doctor_diagnosed_by','time_to_diagnosis',
+  'satisfaction_rating','diagnosis_barriers','reasons_no_diagnosis',
+  'treatments','treatments_not_working','treatment_details',
+  'confidence_understanding','confidence_management',
+  'journey_stage','challenges_in_care','felt_dismissed','unmet_needs',
+  'comorbidities','ethnic_background_categories','device_type'
+].join(',');
+
+async function fetchTable(table, select) {
+  const cols = select || (table === 'survey_responses' ? RESPONSE_COLS : 'session_id,completed,started_at');
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${table}?select=${cols}&limit=2000`, {
+    headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+  });
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+function pct(n, total) { return total ? Math.round(n / total * 100) : 0; }
+
+function parseArr(v) {
+  if (!v) return [];
+  // Supabase returns text[] as JS arrays and jsonb as JS objects directly
+  if (Array.isArray(v)) return v.filter(Boolean);
+  if (typeof v === 'object') return Object.keys(v).filter(k => v[k]);
+  if (v === '[]' || v === '{}') return [];
+  try {
+    const p = JSON.parse(v);
+    if (Array.isArray(p)) return p.filter(Boolean);
+    if (typeof p === 'object') return Object.keys(p).filter(k => p[k]);
+  } catch(e) {}
+  return [];
+}
+
+function countField(rows, field) {
+  const counts = {};
+  rows.forEach(r => {
+    const val = r[field];
+    if (!val) return;
+    const items = parseArr(val);
+    if (items.length) {
+      items.forEach(i => { counts[i] = (counts[i]||0)+1; });
+    } else if (typeof val === 'string') {
+      counts[val] = (counts[val]||0)+1;
+    }
+  });
+  return Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+}
+
+function barRows(entries, total, maxItems=8) {
+  return entries.slice(0, maxItems).map(([label, count]) => {
+    const p = pct(count, total);
+    const short = label.length > 42 ? label.slice(0,42)+'…' : label;
+    return `<div class="k-bar-row">
+      <div class="k-bar-label">${short}</div>
+      <div class="k-bar-track"><div class="k-bar-fill accent" style="width:${p}%"></div></div>
+      <div class="k-bar-pct">${p}%</div>
+    </div>`;
+  }).join('');
+}
+
+function qolScore(rows, field) {
+  const map = { 'never':0, 'rarely':1, 'sometimes':2, 'often':3, 'very often':4, 'always':5 };
+  const vals = rows.map(r => map[r[field]?.toLowerCase()]).filter(v => v !== undefined);
+  if (!vals.length) return 0;
+  return Math.round(vals.reduce((a,b)=>a+b,0)/vals.length/5*100);
+}
+
+function renderBarChart(canvasId, labels, data, color='#69876F') {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ data, backgroundColor: color, borderRadius: 4, borderSkipped: false }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#69876F', font: { family: 'Inter', size: 11 } } },
+        y: { grid: { color: '#D6DAD7', lineWidth: 0.5 }, ticks: { color: '#69876F', font: { family: 'Inter', size: 11 } }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function renderDoughnut(canvasId, labels, data, colors) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderWidth: 0 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      cutout: '65%'
+    }
+  });
+}
+
+async function init() {
+  try {
+    const [sessions, responses] = await Promise.all([
+      fetchTable('survey_sessions'),
+      fetchTable('survey_responses')
+    ]);
+
+    const eligible = responses.filter(r => r.age_eligible === true && r.headache_eligible === 'Yes');
+    const completed = eligible.filter(r => r.completed_at);
+    const N = completed.length;
+    const totalSessions = sessions.length;
+
+    const journeyStageRaw = countField(completed, 'journey_stage');
+    const journeyStages = journeyStageRaw.map(([label, count]) => ({
+      label: label.trim(),
+      count,
+      pct: pct(count, N)
+    }));
+
+    const diagCounts = countField(completed, 'diagnosis_status');
+    const doctorDx = completed.filter(r => r.diagnosis_status?.includes('doctor'));
+    const noDx = completed.filter(r => r.diagnosis_status === 'No diagnosis');
+    const selfDx = completed.filter(r => r.diagnosis_status?.toLowerCase().includes('self'));
+
+    const dismissed = completed.filter(r => r.felt_dismissed === 'Yes').length;
+    const dismissedPct = pct(dismissed, N);
+
+    const avgRating = completed.filter(r=>r.satisfaction_rating).reduce((s,r,i,a)=>{
+      return s + parseFloat(r.satisfaction_rating)/(a.length);
+    }, 0);
+
+    const confUnderstanding = countField(completed, 'confidence_understanding');
+    const confManagement = countField(completed, 'confidence_management');
+
+    const treatmentCounts = countField(completed, 'treatments');
+    const headacheTypes = countField(completed, 'headache_types');
+    const barriers = countField(completed, 'diagnosis_barriers');
+    const challenges = countField(completed, 'challenges_in_care');
+
+    const qolFields = [
+      { key: 'qol_severe_pain', label: 'Severe pain' },
+      { key: 'qol_limit_activities', label: 'Activity limits' },
+      { key: 'qol_wish_lie_down', label: 'Needing to rest' },
+      { key: 'qol_tired_from_headaches', label: 'Fatigue' },
+      { key: 'qol_irritated_from_headaches', label: 'Irritability' },
+      { key: 'qol_limit_concentration', label: 'Concentration' },
+    ];
+    const qolScores = qolFields.map(f => ({ ...f, score: qolScore(completed, f.key) }));
+
+    const ageCounts = countField(eligible, 'age_bracket');
+    const genderCounts = countField(completed, 'gender');
+
+    const app = document.getElementById('app');
+    app.innerHTML = `
+      <div class="k-hero">
+        <div class="k-brand">Kokun — Migraine Care Survey</div>
+        <h1>The migraine care journey, in your own words</h1>
+        <p>Anonymous survey findings from ${eligible.length} eligible participants. Explore how people experience, seek care for, and live with migraine and headache conditions.</p>
+        <div class="k-status"><div class="k-dot"></div> Live data · ${completed.length} completed responses</div>
+      </div>
+
+      <nav class="k-nav">
+        <button class="k-nav-btn active" onclick="showSection('overview', this)">Overview</button>
+        <button class="k-nav-btn" onclick="showSection('condition', this)">The condition</button>
+        <button class="k-nav-btn" onclick="showSection('diagnosis', this)">Diagnosis</button>
+        <button class="k-nav-btn" onclick="showSection('treatment', this)">Treatment</button>
+        <button class="k-nav-btn" onclick="showSection('living', this)">Living with it</button>
+        <button class="k-nav-btn" onclick="showSection('who', this)">Who responded</button>
+      </nav>
+
+      <div class="k-body">
+
+        <div id="sec-overview" class="k-section active">
+          <div class="k-stat-grid">
+            <div class="k-stat">
+              <div class="k-stat-label">Completed</div>
+              <div class="k-stat-value">${N}</div>
+              <div class="k-stat-sub">of ${totalSessions} sessions started</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Felt dismissed</div>
+              <div class="k-stat-value">${dismissedPct}%</div>
+              <div class="k-stat-sub">by a provider</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Have a diagnosis</div>
+              <div class="k-stat-value">${pct(doctorDx.length + selfDx.length, N)}%</div>
+              <div class="k-stat-sub">doctor or self-diagnosed</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Dx satisfaction</div>
+              <div class="k-stat-value">${avgRating.toFixed(1)}<span style="font-size:16px;font-weight:400;color:#81A487">/5</span></div>
+              <div class="k-stat-sub">avg rating</div>
+            </div>
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Where people are in their care journey</div>
+            <div class="k-card-sub">Click a stage to explore</div>
+            <div class="k-journey-stages" id="journey-stage-cards">
+              ${journeyStages.map((s,i) => `
+                <div class="k-stage-card" onclick="highlightStage(${i})" data-stage="${i}">
+                  <div class="k-stage-pct">${s.pct}%</div>
+                  <div class="k-stage-name">${s.label}</div>
+                </div>`).join('')}
+            </div>
+            <div id="stage-detail" style="display:none;" class="k-card" style="margin-bottom:0;">
+              <div id="stage-detail-inner"></div>
+            </div>
+          </div>
+
+          <div class="k-two-col">
+            <div class="k-card">
+              <div class="k-card-title">Diagnosis status</div>
+              <div class="k-card-sub">How participants arrived at (or without) a diagnosis</div>
+              ${barRows(diagCounts, N)}
+            </div>
+            <div class="k-card">
+              <div class="k-card-title">Felt dismissed by a provider</div>
+              <div class="k-card-sub">${dismissed} of ${N} completed respondents</div>
+              <div class="k-dismissed-banner">
+                <div class="k-dismissed-pct">${dismissedPct}%</div>
+                <div class="k-dismissed-text">said they felt dismissed or not taken seriously by a healthcare provider during their migraine care journey.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-condition" class="k-section">
+          <div class="k-card">
+            <div class="k-card-title">Headache & migraine types</div>
+            <div class="k-card-sub">Among completed respondents</div>
+            ${barRows(headacheTypes, N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Functional impact</div>
+            <div class="k-card-sub">How headaches affect day-to-day ability to function</div>
+            ${barRows(countField(completed, 'functional_impact'), N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Quality of life impact</div>
+            <div class="k-card-sub">Frequency of impact across six dimensions (higher = more frequent impact)</div>
+            <div class="k-qol-grid">
+              ${qolScores.map(q => `
+                <div class="k-qol-item">
+                  <div class="k-qol-label">${q.label}</div>
+                  <div class="k-qol-bar-track"><div class="k-qol-bar-fill" style="width:${q.score}%"></div></div>
+                  <div class="k-qol-val">${q.score}%</div>
+                </div>`).join('')}
+            </div>
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Comorbidities</div>
+            <div class="k-card-sub">Other conditions reported alongside migraine</div>
+            ${barRows(countField(completed, 'comorbidities'), N)}
+          </div>
+        </div>
+
+        <div id="sec-diagnosis" class="k-section">
+          <div class="k-stat-grid">
+            <div class="k-stat">
+              <div class="k-stat-label">Doctor diagnosed</div>
+              <div class="k-stat-value">${pct(doctorDx.length, N)}%</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Self-diagnosed</div>
+              <div class="k-stat-value">${pct(selfDx.length, N)}%</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">No diagnosis</div>
+              <div class="k-stat-value">${pct(noDx.length, N)}%</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Avg satisfaction</div>
+              <div class="k-stat-value">${avgRating.toFixed(1)}<span style="font-size:14px;color:#81A487">/5</span></div>
+            </div>
+          </div>
+
+          <div class="k-two-col">
+            <div class="k-card">
+              <div class="k-card-title">Who diagnosed them</div>
+              <div class="k-card-sub">Among those with a doctor diagnosis</div>
+              ${barRows(countField(doctorDx, 'doctor_diagnosed_by'), doctorDx.length)}
+            </div>
+            <div class="k-card">
+              <div class="k-card-title">Time to diagnosis</div>
+              <div class="k-card-sub">How long it took to receive a diagnosis</div>
+              ${barRows(countField(doctorDx, 'time_to_diagnosis'), doctorDx.length)}
+            </div>
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Barriers to diagnosis</div>
+            <div class="k-card-sub">What got in the way — select all that apply</div>
+            ${barRows(barriers, N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Reasons for not seeking a diagnosis</div>
+            <div class="k-card-sub">Among those without a formal diagnosis</div>
+            ${barRows(countField(noDx, 'reasons_no_diagnosis'), noDx.length)}
+          </div>
+        </div>
+
+        <div id="sec-treatment" class="k-section">
+          <div class="k-card">
+            <div class="k-card-title">Treatments being used</div>
+            <div class="k-card-sub">Select all that apply</div>
+            ${barRows(treatmentCounts, N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Treatments not working</div>
+            <div class="k-card-sub">What respondents have tried without success</div>
+            ${barRows(countField(completed, 'treatments_not_working'), N)}
+          </div>
+
+          <div class="k-two-col">
+            <div class="k-card">
+              <div class="k-card-title">Confidence understanding condition</div>
+              ${barRows(confUnderstanding, N)}
+            </div>
+            <div class="k-card">
+              <div class="k-card-title">Confidence managing condition</div>
+              ${barRows(confManagement, N)}
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-living" class="k-section">
+          <div class="k-dismissed-banner" style="background:#3D4D3F; border-radius:12px; padding:20px; margin-bottom:16px; display:flex; align-items:center; gap:16px;">
+            <div class="k-dismissed-pct" style="font-size:40px;font-weight:600;color:#F0F3F1;flex-shrink:0;">${dismissedPct}%</div>
+            <div class="k-dismissed-text" style="font-size:14px;color:rgba(240,243,241,0.75);line-height:1.5;">of respondents felt dismissed or not taken seriously by a provider. This was the most common care challenge reported.</div>
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Challenges in care</div>
+            <div class="k-card-sub">What respondents continue to face — select all that apply</div>
+            ${barRows(challenges, N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Journey stage</div>
+            <div class="k-card-sub">Where people describe themselves being right now</div>
+            ${barRows(journeyStageRaw.map(([l,c])=>[l.trim(),c]), N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Unmet needs</div>
+            <div class="k-card-sub">What respondents say they still need</div>
+            ${barRows(countField(completed, 'unmet_needs'), N)}
+          </div>
+        </div>
+
+        <div id="sec-who" class="k-section">
+          <div class="k-card">
+            <div class="k-card-title">Age brackets</div>
+            <div class="k-card-sub">Among all eligible respondents (n=${eligible.length})</div>
+            ${barRows(ageCounts, eligible.length)}
+          </div>
+
+          <div class="k-two-col">
+            <div class="k-card">
+              <div class="k-card-title">Gender</div>
+              ${barRows(genderCounts, N)}
+            </div>
+            <div class="k-card">
+              <div class="k-card-title">Education</div>
+              ${barRows(countField(completed, 'education_level'), N)}
+            </div>
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Work situation</div>
+            ${barRows(countField(completed, 'work_situation'), N)}
+          </div>
+
+          <div class="k-card">
+            <div class="k-card-title">Country</div>
+            <div class="k-card-sub">Top countries represented</div>
+            ${barRows(countField(completed, 'country'), N, 10)}
+          </div>
+        </div>
+
+      </div>
+    `;
+
+  } catch(e) {
+    document.getElementById('app').innerHTML = `
+      <div style="padding:32px;">
+        <div class="k-error">Could not load survey data: ${e.message}</div>
+      </div>`;
+  }
+}
+
+function showSection(id, btn) {
+  document.querySelectorAll('.k-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.k-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function highlightStage(i) {
+  document.querySelectorAll('.k-stage-card').forEach((c,j) => {
+    c.classList.toggle('selected', i === j);
+  });
+  const detail = document.getElementById('stage-detail');
+  const inner = document.getElementById('stage-detail-inner');
+  const card = document.querySelectorAll('.k-stage-card')[i];
+  if (card) {
+    const name = card.querySelector('.k-stage-name').textContent;
+    const p = card.querySelector('.k-stage-pct').textContent;
+    inner.innerHTML = `<p style="font-size:14px;color:#3D4D3F;line-height:1.6;"><strong style="color:#253027">${p} of respondents</strong> describe themselves as: <em>"${name}"</em>. Use the <strong>Diagnosis</strong>, <strong>Treatment</strong>, and <strong>Living with it</strong> tabs to explore patterns for this group.</p>`;
+    detail.style.display = 'block';
+  }
+}
+
+init();
+</script>
