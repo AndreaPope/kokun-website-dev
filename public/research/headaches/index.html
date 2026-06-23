@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kōkūn Understanding Headaches & Migraine</title>
-  <meta name="description" content="Help make headache and migraine experiences visible by sharing your care journey. Participate in the Kōkūn Care Journey survey.">
+  <meta name="description" content="Help make headache and migraine experiences visible 
+  by contributing to the Understanding Headaches and Migraine research,
+  a global initiative by Kōkūn.">
   <link rel="icon" type="image/png" href="../../images/K.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -150,13 +152,6 @@
 
       <!-- Q1 Context (shown only when "I used to" is selected) -->
       <div id="slide-q1-context" class="survey-slide">
-        <div class="stage-stepper" aria-label="Survey progress">
-          <span class="stage-pill" data-stage="profile">Background</span>
-          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
-          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
-          <span class="stage-pill" data-stage="treatment">Treatment</span>
-          <span class="stage-pill" data-stage="experience">Experience</span>
-        </div>
         <div class="context-reminder-box">
           <p class="callout-text">Please think back to when your headaches or migraine were at their peak and answer the following questions as you would have during that time.</p>
         </div>
@@ -1092,13 +1087,14 @@
         </div>
         <!-- <span class="question-number">Section 3: Symptoms</span> -->
         <h2 class="title-2 question-text">Quality of Life Impact</h2>
-        <p class="subheadline-text question-desc">For each statement below, please select how frequently you experience these situations.</p>
+        <p class="subheadline-text question-desc">For each statement below, please select the response that best describes your experience. 
+        </p>
 
         <div style="display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-md);">
 
           <div class="qol-option-group" data-field="pain">
             <p class="callout-text" style="margin-bottom: var(--space-xs);">
-              a. In the past 4 weeks, when you have headaches, how often is the pain severe?
+              a. In the past 4 weeks, when you have headaches, how often was the pain severe?
             </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-pain" value="never"><span>Never</span></label>
@@ -1112,7 +1108,7 @@
 
           <div class="qol-option-group" data-field="limit">
             <p class="callout-text" style="margin-bottom: var(--space-xs);">
-              b. In the past 4 weeks, when you have headaches, how often does it limit your ability to do usual daily activities including household work, work, school or social activities?</p>
+              b. In the past 4 weeks, when you have headaches, how often did it limit your ability to do usual daily activities including household work, work, school or social activities?</p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-limit" value="never"><span>Never</span></label>
               <label class="qol-choice"><input type="radio" name="qol-limit" value="rarely"><span>Rarely</span></label>
@@ -1125,7 +1121,7 @@
 
           <div class="qol-option-group" data-field="lie">
             <p class="callout-text" style="margin-bottom: var(--space-xs);">
-              c. In the past 4 weeks, when you have headaches, how often do you wish you could lie down?
+              c. In the past 4 weeks, when you have headaches, how often did you wish you could lie down?
             </p>
             <div class="qol-choices-row">
               <label class="qol-choice"><input type="radio" name="qol-lie" value="never"><span>Never</span></label>
@@ -1729,8 +1725,8 @@
 
         <div class="multiselect-container" data-type="multi" data-field="reasons_no_diagnosis">
           <!-- Category 1 -->
-          <div class="multi-option" data-val="Don't think I need to">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Don't think I need to</span></div>
+          <div class="multi-option" data-val="Don't think I need to et a diagnosis">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Don't think I need to get a diagnosis</span></div>
             <div class="nested-subcategories">
               <div class="sub-option" data-val="My symptoms don't seem serious"><span class="sub-checkbox"></span><span class="sub-label">My symptoms don't seem serious</span></div>
               <div class="sub-option" data-val="What's the big deal? It's just a headache"><span class="sub-checkbox"></span><span class="sub-label">What's the big deal? It's just a headache</span></div>
@@ -2456,7 +2452,7 @@
             us tailor insights, updates, and future research opportunities to your local 
             context and condition. 
             You can unsubscribe anytime  
-            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">here</a>.
+            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><ul>here</ul></a>.
           </p>
         </div>
 
@@ -2484,14 +2480,14 @@
             </select>
           </div>
           <div style="padding-bottom: var(--space-md); border-bottom: 2px solid var(--border-color);">
-            <label class="field-label" for="q7-migtype">What type of migraine do you experience?</label>
+            <label class="field-label" for="q7-migtype">What type of headache do you experience?</label>
             <select id="q7-migtype" style="border-bottom: none;">
               <option value="" disabled selected>Select an option...</option>
             </select>
           </div>
           <div>
             <label class="field-label" for="q7-other">Are there any health conditions or symptoms you're navigating that you'd like to understand better? <span style="font-weight: 400; color: var(--color-text-muted, #888);">(optional)</span></label>
-            <textarea id="q7-other" rows="3" placeholder="e.g. Fatigue, anxiety, digestive issues..."></textarea>
+            <textarea id="q7-other" rows="3" placeholder="e.g. endometriosis, anxiety, IBS..."></textarea>
           </div>
         </div>
 
