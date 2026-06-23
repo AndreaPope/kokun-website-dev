@@ -1825,8 +1825,9 @@ async function submitSurvey() {
 
   try {
     const completedAt = new Date().toISOString();
+    const { email: _email, subscribed_to_updates: _sub, ...surveyDataCore } = surveyData;
     const payload = {
-      ...surveyData,
+      ...surveyDataCore,
       age_eligible: (surveyData.age_bracket !== "Under 18" && surveyData.age_bracket !== null),
       started_at: sessionMeta.startedAt,
       completed_at: completedAt,
