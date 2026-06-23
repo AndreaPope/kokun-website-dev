@@ -2478,12 +2478,34 @@
             <select id="q7-country">
               <option value="" disabled selected>Select a country...</option>
             </select>
+            <div id="q7-country-err" class="validation-error">Please select your country.</div>
           </div>
           <div style="padding-bottom: var(--space-md); border-bottom: 2px solid var(--border-color);">
             <label class="field-label" for="q7-migtype">What type of headache do you experience?</label>
             <select id="q7-migtype" style="border-bottom: none;">
               <option value="" disabled selected>Select an option...</option>
+              <optgroup label="Migraine">
+                <option value="Migraine with aura">Migraine with aura</option>
+                <option value="Migraine without aura">Migraine without aura</option>
+                <option value="Chronic migraine (15+ days/month)">Chronic migraine (15+ days/month)</option>
+                <option value="Migraine with brainstem aura">Migraine with brainstem aura</option>
+                <option value="Vestibular migraine">Vestibular migraine</option>
+                <option value="Abdominal migraine">Abdominal migraine</option>
+                <option value="Hemiplegic migraine">Hemiplegic migraine</option>
+                <option value="Hormonal or Menstrual migraine">Hormonal or Menstrual migraine</option>
+                <option value="Cyclical Vomiting Syndrome">Cyclical Vomiting Syndrome</option>
+                <option value="Other type of migraine">Other type of migraine</option>
+                <option value="Don't know migraine type">Don't know migraine type</option>
+              </optgroup>
+              <option value="Tension-type headache">Tension-type headache</option>
+              <option value="Cluster headache">Cluster headache</option>
+              <option value="Medication-overuse headache">Medication-overuse headache</option>
+              <option value="Sinus headache">Sinus headache</option>
+              <option value="Other headache">Other headache</option>
+              <option value="Don't know headache type">Don't know headache type</option>
+              <option value="Prefer not to answer">Prefer not to answer</option>
             </select>
+            <div id="q7-migtype-err" class="validation-error">Please select your headache type.</div>
           </div>
           <div>
             <label class="field-label" for="q7-other">Are there any health conditions or symptoms you're navigating that you'd like to understand better? <span style="font-weight: 400; color: var(--color-text-muted, #888);">(optional)</span></label>

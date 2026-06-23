@@ -159,16 +159,6 @@ const stageMap = {
 
 const stageOrder = ["profile", "symptoms", "diagnosis", "treatment", "experience"];
 
-const Q7_MIGRAINE_TYPES = [
-  'Migraine',
-  'Tension-type headache',
-  'Cluster headache',
-  'Medication-overuse headache',
-  'Sinus headache',
-  'I do not know',
-  'Prefer not to answer',
-  'Other',
-];
 
 // Map of country list
 const countries = [
@@ -1009,14 +999,26 @@ function validateCurrentSlide() {
         showError("q7-err");
         return false;
       }
-      
+
       if (emailVal) {
-        // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailVal)) {
           showError("q7-format-err");
           return false;
         }
+
+        const countryVal = document.getElementById("q7-country").value;
+        if (!countryVal) {
+          showError("q7-country-err");
+          return false;
+        }
+
+        const migtypeVal = document.getElementById("q7-migtype").value;
+        if (!migtypeVal) {
+          showError("q7-migtype-err");
+          return false;
+        }
+
         surveyData.email = emailVal;
         surveyData.subscribed_to_updates = true;
       } else {
@@ -1740,15 +1742,6 @@ function populateQ7Fields() {
     });
   }
 
-  const migraineSelect = document.getElementById('q7-migtype');
-  if (migraineSelect && migraineSelect.options.length <= 1) {
-    Q7_MIGRAINE_TYPES.forEach(t => {
-      const opt = document.createElement('option');
-      opt.value = t;
-      opt.textContent = t;
-      migraineSelect.appendChild(opt);
-    });
-  }
 }
 
 function clearQ7Fields() {

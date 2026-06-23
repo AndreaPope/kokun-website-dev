@@ -50,27 +50,13 @@ const COUNTRIES = [
   "Other",
 ];
 
-const MIGRAINE_TYPES = [
-  'Migraine without aura',
-  'Migraine with aura',
-  'Migraine with brainstem aura',
-  'Hemiplegic migraine',
-  'Vestibular migraine',
-  'Chronic migraine',
-  'Hormonal or Menstrual migraine',
-  'Abdominal migraine',
-  'Cyclical Vomiting Syndrome',
-  'I do not experience migraine',
-  'I do not know the type',
-  'Other',
-  'Prefer not to share',
-];
+const MIGRAINE_OTHER_OPTIONS = new Set(['Other type of migraine', 'Other headache']);
 
 export default function EarlyAccessPage() {
   const [migraineType, setMigraineType] = useState('');
   const [migraineOther, setMigraineOther] = useState('');
 
-  const migraineValue = migraineType === 'Other' ? migraineOther : migraineType;
+  const migraineValue = MIGRAINE_OTHER_OPTIONS.has(migraineType) ? migraineOther : migraineType;
 
   return (
     <div className="relative min-h-screen font-sans text-white">
@@ -206,11 +192,28 @@ export default function EarlyAccessPage() {
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-white [&>option]:bg-background [&>option]:text-white"
                   >
                     <option value="" disabled>Select an option...</option>
-                    {MIGRAINE_TYPES.map(type => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
+                    <optgroup label="Migraine">
+                      <option value="Migraine with aura">Migraine with aura</option>
+                      <option value="Migraine without aura">Migraine without aura</option>
+                      <option value="Chronic migraine (15+ days/month)">Chronic migraine (15+ days/month)</option>
+                      <option value="Migraine with brainstem aura">Migraine with brainstem aura</option>
+                      <option value="Vestibular migraine">Vestibular migraine</option>
+                      <option value="Abdominal migraine">Abdominal migraine</option>
+                      <option value="Hemiplegic migraine">Hemiplegic migraine</option>
+                      <option value="Hormonal or Menstrual migraine">Hormonal or Menstrual migraine</option>
+                      <option value="Cyclical Vomiting Syndrome">Cyclical Vomiting Syndrome</option>
+                      <option value="Other type of migraine">Other type of migraine</option>
+                      <option value="Don't know migraine type">Don't know migraine type</option>
+                    </optgroup>
+                    <option value="Tension-type headache">Tension-type headache</option>
+                    <option value="Cluster headache">Cluster headache</option>
+                    <option value="Medication-overuse headache">Medication-overuse headache</option>
+                    <option value="Sinus headache">Sinus headache</option>
+                    <option value="Other headache">Other headache</option>
+                    <option value="Don't know headache type">Don't know headache type</option>
+                    <option value="Prefer not to answer">Prefer not to answer</option>
                   </select>
-                  {migraineType === 'Other' && (
+                  {MIGRAINE_OTHER_OPTIONS.has(migraineType) && (
                     <input
                       type="text"
                       value={migraineOther}
