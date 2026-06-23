@@ -2437,7 +2437,7 @@
         <!--<p class="body-text question-desc" style="margin-bottom: 0.25rem;">
           Opt in to:
         </p>-->
-        <ul class="body-text question-desc" style="margin-top: 0; padding-left: 2rem; font-size: 0.85em;">
+        <ul class="body-text question-desc" style="margin-top: 0; margin-bottom: var(--space-sm); padding-left: 2rem; font-size: 0.85em;">
           <li>See how your experience compares to others</li>
           <li>Receive key findings from this research </li>
           <li>Get updates on tools we are building for you</li>
@@ -2445,18 +2445,16 @@
           <li>Shape future headache and migraine research</li>
         </ul>
 
-        <div class="input-text-wrapper">
-          <p style="margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">
-            The details you enter below will not be connected to your survey responses. 
-            The survey you just submitted is completely anonymous. This information helps 
-            us tailor insights, updates, and future research opportunities to your local 
-            context and condition. 
-            You can unsubscribe anytime  
-            <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">here</a>.
-          </p>
-        </div>
+        <p style="margin: 0 0 var(--space-md); font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">
+          The details you enter below will not be connected to your survey responses.
+          The survey you just submitted is completely anonymous. This information helps
+          us tailor insights, updates, and future research opportunities to your local
+          context and condition.
+          You can unsubscribe anytime
+          <a href="https://space.us2.list-manage.com/unsubscribe?u=21828ca842c8b79b81f1b21d2&id=8d32120fc0&t=b&e=__test_email__&c=6edd8b3fab" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">here</a>.
+        </p>
 
-        <div class="fields-stack" id="q7-contact-fields">
+        <div class="fields-stack" id="q7-contact-fields" style="gap: var(--space-sm);">
           <div>
             <label class="field-label" for="q7-email">Email</label>
             <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.getElementById('q7-optout')?.classList.remove('selected'); document.getElementById('q7-format-err')?.classList.remove('active'); document.getElementById('q7-err')?.classList.remove('active');">
@@ -2480,7 +2478,7 @@
             </select>
             <div id="q7-country-err" class="validation-error">Please select your country.</div>
           </div>
-          <div style="padding-bottom: var(--space-md); border-bottom: 2px solid var(--border-color);">
+          <div>
             <label class="field-label" for="q7-migtype">What type of headache do you experience?</label>
             <select id="q7-migtype" style="border-bottom: none;">
               <option value="" disabled selected>Select an option...</option>
