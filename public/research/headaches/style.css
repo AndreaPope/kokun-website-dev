@@ -1191,6 +1191,14 @@ body:has(#slide-end.active) .survey-wrapper {
   border-color: var(--color-sage-100, #21835a);
 }
 
+/* Q7 signup form — tighter label-to-input spacing */
+#q7-contact-fields input,
+#q7-contact-fields select,
+#q7-contact-fields textarea {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
 /* Validation warning styles */
 .validation-error {
   color: var(--color-red-40);
