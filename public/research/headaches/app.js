@@ -318,8 +318,9 @@ function markSessionComplete() {
 
 function autoSaveProgress() {
   if (!isSupabaseConfigured()) return;
+  const { email: _email, subscribed_to_updates: _sub, ...surveyDataCore } = surveyData;
   const payload = {
-    ...surveyData,
+    ...surveyDataCore,
     age_eligible: (surveyData.age_bracket !== "Under 18" && surveyData.age_bracket !== null),
     started_at: sessionMeta.startedAt,
     timezone: sessionMeta.timezone,
