@@ -1879,7 +1879,7 @@ function finalizeSignup() {
 // Share functions
 function shareSurvey(platform, btn) {
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent("Help make headache and migraine experiences visible by completing the Kōkūn Understanding Headaches and Migraine survey.");
+  const text = encodeURIComponent("Help make headache and migraine experiences visible by contributing to the Understanding Headaches and Migraine research, a global initiative by Kōkūn.");
 
   let shareUrl = "";
   switch(platform) {
@@ -1896,7 +1896,7 @@ function shareSurvey(platform, btn) {
       if (navigator.share) {
         navigator.share({
           title: 'Kōkūn Understanding Headaches and Migraine Survey',
-          text: 'Help make headache and migraine experiences visible by completing the Kōkūn Understanding Headaches and Migraine survey.',
+          text: 'Help make headache and migraine experiences visible by contributing to the Understanding Headaches and Migraine research, a global initiative by Kōkūn.',
           url: window.location.href
         });
       } else {
