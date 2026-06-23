@@ -2456,13 +2456,13 @@
           </p>
         </div>
 
-        <div class="input-text-wrapper">
-          <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.getElementById('q7-optout')?.classList.remove('selected'); document.getElementById('q7-format-err')?.classList.remove('active'); document.getElementById('q7-err')?.classList.remove('active');">
-          <p style="margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--color-text-muted, #888); line-height: 1.4;">Your email will not be associated with your answers.</p>
-          <div id="q7-format-err" class="validation-error">Please enter a valid email address (e.g. name@domain.com).</div>
-        </div>
-
         <div class="fields-stack" id="q7-contact-fields">
+          <div>
+            <label class="field-label" for="q7-email">Email</label>
+            <input type="email" id="q7-email" placeholder="e.g. name@email.com" oninput="document.getElementById('q7-optout')?.classList.remove('selected'); document.getElementById('q7-format-err')?.classList.remove('active'); document.getElementById('q7-err')?.classList.remove('active');">
+            <div id="q7-err" class="validation-error">Please enter your email.</div>
+            <div id="q7-format-err" class="validation-error">Please enter a valid email address (e.g. name@domain.com).</div>
+          </div>
           <div style="display: flex; gap: var(--space-md);">
             <div style="flex: 1;">
               <label class="field-label" for="q7-fname">First Name</label>
@@ -2512,8 +2512,6 @@
             <textarea id="q7-other" rows="3" placeholder="e.g. endometriosis, anxiety, IBS..."></textarea>
           </div>
         </div>
-
-        <div id="q7-err" class="validation-error">Please enter your email.</div>
 
         <div class="action-controls">
           <button class="btn btn-secondary" onclick="navigateTo('slide-end')">Skip and Share</button>
