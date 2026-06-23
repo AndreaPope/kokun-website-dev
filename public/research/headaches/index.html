@@ -2505,9 +2505,9 @@
             </select>
             <div id="q7-migtype-err" class="validation-error">Please select your headache type.</div>
           </div>
-          <div style="margin-top: var(--space-md);">
+          <div style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 2px solid var(--border-color);">
             <label class="field-label" for="q7-other">Are there any health conditions or symptoms you're navigating that you'd like to understand better? <span style="font-weight: 400; color: var(--color-text-muted, #888);">(optional)</span></label>
-            <textarea id="q7-other" rows="3" placeholder="e.g. endometriosis, anxiety, IBS..."></textarea>
+            <textarea id="q7-other" rows="2" placeholder="e.g. endometriosis, anxiety, IBS..."></textarea>
           </div>
         </div>
 
@@ -2536,6 +2536,7 @@
             <p>Please share this survey with your family, friends, and coworkers, so we can improve care for everyone.</p>
           </div>
           <button id="last-slide-share-btn" class="btn-start" style="align-self: center;" onclick="shareSurvey('copy', this)">Share Survey</button>
+          <button class="btn-back-to-signup" onclick="navigateTo('slide-q7')">← Back to sign up</button>
         </div>
 
         <!-- Social icons -->
