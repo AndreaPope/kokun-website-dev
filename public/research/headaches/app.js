@@ -817,7 +817,7 @@ function validateCurrentSlide() {
           const arr = surveyData.comorbidities[mainCat];
           if (arr) {
             const idx = arr.indexOf(subVal);
-            if (idx !== -1) arr[idx] = v;
+            if (idx !== -1) arr[idx] = `Other: ${v}`;
           }
         }
       }
