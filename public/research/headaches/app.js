@@ -800,6 +800,22 @@ function validateCurrentSlide() {
         showError("q3-8-err");
         return false;
       }
+      const nestedOthers = [
+        { wrapperId: "q3-8-pain-other-wrapper",     inputId: "q3-8-pain-other",     errId: "q3-8-pain-other-err" },
+        { wrapperId: "q3-8-gut-other-wrapper",      inputId: "q3-8-gut-other",      errId: "q3-8-gut-other-err" },
+        { wrapperId: "q3-8-hormonal-other-wrapper", inputId: "q3-8-hormonal-other", errId: "q3-8-hormonal-other-err" },
+        { wrapperId: "q3-8-allergic-other-wrapper", inputId: "q3-8-allergic-other", errId: "q3-8-allergic-other-err" },
+        { wrapperId: "q3-8-mental-other-wrapper",   inputId: "q3-8-mental-other",   errId: "q3-8-mental-other-err" },
+        { wrapperId: "q3-8-neuro-other-wrapper",    inputId: "q3-8-neuro-other",    errId: "q3-8-neuro-other-err" },
+        { wrapperId: "q3-8-cardio-other-wrapper",   inputId: "q3-8-cardio-other",   errId: "q3-8-cardio-other-err" },
+      ];
+      for (const { wrapperId, inputId, errId } of nestedOthers) {
+        const wrapper = document.getElementById(wrapperId);
+        if (wrapper && wrapper.style.display !== 'none') {
+          const v = document.getElementById(inputId)?.value.trim();
+          if (!v) { showError(errId); return false; }
+        }
+      }
       if ("Autoimmune Disorders - (please specify)" in surveyData.comorbidities) {
         const v = document.getElementById("q3-8-autoimmune-other")?.value.trim();
         if (!v) { showError("q3-8-autoimmune-other-err"); return false; }
