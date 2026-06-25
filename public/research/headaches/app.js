@@ -801,19 +801,24 @@ function validateCurrentSlide() {
         return false;
       }
       const nestedOthers = [
-        { wrapperId: "q3-8-pain-other-wrapper",     inputId: "q3-8-pain-other",     errId: "q3-8-pain-other-err" },
-        { wrapperId: "q3-8-gut-other-wrapper",      inputId: "q3-8-gut-other",      errId: "q3-8-gut-other-err" },
-        { wrapperId: "q3-8-hormonal-other-wrapper", inputId: "q3-8-hormonal-other", errId: "q3-8-hormonal-other-err" },
-        { wrapperId: "q3-8-allergic-other-wrapper", inputId: "q3-8-allergic-other", errId: "q3-8-allergic-other-err" },
-        { wrapperId: "q3-8-mental-other-wrapper",   inputId: "q3-8-mental-other",   errId: "q3-8-mental-other-err" },
-        { wrapperId: "q3-8-neuro-other-wrapper",    inputId: "q3-8-neuro-other",    errId: "q3-8-neuro-other-err" },
-        { wrapperId: "q3-8-cardio-other-wrapper",   inputId: "q3-8-cardio-other",   errId: "q3-8-cardio-other-err" },
+        { wrapperId: "q3-8-pain-other-wrapper",     inputId: "q3-8-pain-other",     errId: "q3-8-pain-other-err",     mainCat: "Pain/Injury",              subVal: "Other pain (please specify)" },
+        { wrapperId: "q3-8-gut-other-wrapper",      inputId: "q3-8-gut-other",      errId: "q3-8-gut-other-err",      mainCat: "Gut",                      subVal: "Other Gut issues (please specify)" },
+        { wrapperId: "q3-8-hormonal-other-wrapper", inputId: "q3-8-hormonal-other", errId: "q3-8-hormonal-other-err", mainCat: "Hormonal",                  subVal: "Other hormonal issues (please specify)" },
+        { wrapperId: "q3-8-allergic-other-wrapper", inputId: "q3-8-allergic-other", errId: "q3-8-allergic-other-err", mainCat: "Allergic",                  subVal: "Other allergic issues (please specify)" },
+        { wrapperId: "q3-8-mental-other-wrapper",   inputId: "q3-8-mental-other",   errId: "q3-8-mental-other-err",   mainCat: "Mental health",             subVal: "Other mental health issues (please specify)" },
+        { wrapperId: "q3-8-neuro-other-wrapper",    inputId: "q3-8-neuro-other",    errId: "q3-8-neuro-other-err",    mainCat: "Neurologic",                subVal: "Other neurologic issues (please specify)" },
+        { wrapperId: "q3-8-cardio-other-wrapper",   inputId: "q3-8-cardio-other",   errId: "q3-8-cardio-other-err",   mainCat: "Cardiovascular-Metabolic",  subVal: "Other cardiovascular/metabolic issues (please specify)" },
       ];
-      for (const { wrapperId, inputId, errId } of nestedOthers) {
+      for (const { wrapperId, inputId, errId, mainCat, subVal } of nestedOthers) {
         const wrapper = document.getElementById(wrapperId);
         if (wrapper && wrapper.style.display !== 'none') {
           const v = document.getElementById(inputId)?.value.trim();
           if (!v) { showError(errId); return false; }
+          const arr = surveyData.comorbidities[mainCat];
+          if (arr) {
+            const idx = arr.indexOf(subVal);
+            if (idx !== -1) arr[idx] = v;
+          }
         }
       }
       if ("Autoimmune Disorders - (please specify)" in surveyData.comorbidities) {
