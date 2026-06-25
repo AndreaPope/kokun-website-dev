@@ -215,8 +215,19 @@ document.addEventListener("DOMContentLoaded", () => {
   populateQ7Fields();
   updateProgress();
   setupDynamicWordingEngine();
-  createSessionRecord();
   setupDevJump();
+
+  if (sessionStorage.getItem('survey_submitted') === 'true') {
+    document.querySelectorAll('.survey-slide').forEach(s => s.classList.remove('active'));
+    const endSlide = document.getElementById('slide-end');
+    if (endSlide) {
+      endSlide.classList.add('active');
+      endSlide.classList.add('show-confirmation');
+    }
+    currentSlideId = 'slide-end';
+  } else {
+    createSessionRecord();
+  }
 });
 
 function setupDevJump() {
@@ -500,6 +511,7 @@ function navigateTo(targetId) {
 
 // Navigate Back
 function navigateBack() {
+  if (sessionStorage.getItem('survey_submitted') === 'true') return;
   if (slideHistory.length === 0) return;
   
   const currentSlide = document.getElementById(currentSlideId);
@@ -1840,6 +1852,7 @@ async function submitSurvey() {
 
     if (response.ok) {
       console.log("Survey successfully recorded in Supabase!");
+      sessionStorage.setItem('survey_submitted', 'true');
       markSessionComplete();
       navigateTo("slide-q7");
     } else {
