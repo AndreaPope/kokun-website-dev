@@ -36,7 +36,7 @@ function barRows(entries, total, maxItems=8) {
     return `<div class="k-bar-row">
       <div class="k-bar-label">${short}</div>
       <div class="k-bar-track"><div class="k-bar-fill accent" style="width:${p}%"></div></div>
-      <div class="k-bar-pct">${p}%</div>
+      <div class="k-bar-pct"><span class="k-bar-pct-val">${p}%</span><span class="k-bar-count">${count}</span></div>
     </div>`;
   }).join('');
 }

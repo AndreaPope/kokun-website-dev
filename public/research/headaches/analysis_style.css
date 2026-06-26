@@ -217,6 +217,9 @@
   width: 36px;
   text-align: right;
 }
+.k-bar-count { display: none; }
+.k-bar-row:hover .k-bar-pct-val { display: none; }
+.k-bar-row:hover .k-bar-count { display: inline; }
 
 .k-journey-stages {
   display: grid;
