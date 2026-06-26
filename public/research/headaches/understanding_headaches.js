@@ -75,6 +75,7 @@ async function init() {
 
     const ageCounts = countField(eligible, 'age_bracket');
     const genderCounts = countField(completed, 'gender');
+    const countryCounts = countField(completed, 'country');
 
     const app = document.getElementById('app');
     app.innerHTML = `
@@ -305,14 +306,20 @@ async function init() {
           </div>
 
           <div class="k-card">
-            <div class="k-card-title">Country</div>
-            <div class="k-card-sub">Top countries represented</div>
-            ${barRows(countField(completed, 'country'), N, 10)}
+            <div class="k-card-title">Geographic distribution</div>
+            <div class="k-card-sub">Bubble size = respondent count &middot; Color intensity = % of total sample</div>
+            <div id="country-map" style="position:relative;margin:12px 0 16px;"></div>
+            <div style="border-top:1px solid #D6DAD7;padding-top:12px;">
+              <div class="k-card-sub" style="margin-bottom:8px;">Top countries</div>
+              ${barRows(countryCounts, N, 10)}
+            </div>
           </div>
         </div>
 
       </div>
     `;
+
+    renderBubbleMap('country-map', countryCounts, N);
 
   } catch(e) {
     document.getElementById('app').innerHTML = `
