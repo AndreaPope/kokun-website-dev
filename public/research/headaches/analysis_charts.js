@@ -19,6 +19,85 @@ function renderBarChart(canvasId, labels, data, color='#69876F') {
   });
 }
 
+function renderDensityChart(canvasId, values) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx || !values.length) return;
+
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const std = Math.sqrt(values.reduce((s, v) => s + (v - mean) ** 2, 0) / values.length);
+  const bw = Math.max(1.5, 1.06 * std * Math.pow(values.length, -0.2));
+
+  const xs = Array.from({length: 32}, (_, i) => i); // 0–31 days
+  const ys = xs.map(x =>
+    values.reduce((sum, xi) => {
+      const u = (x - xi) / bw;
+      return sum + Math.exp(-0.5 * u * u) / Math.sqrt(2 * Math.PI);
+    }, 0) / (values.length * bw)
+  );
+
+  const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, ctx.parentElement.clientHeight || 180);
+  gradient.addColorStop(0, 'rgba(129,164,135,0.45)');
+  gradient.addColorStop(1, 'rgba(129,164,135,0.02)');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: xs,
+      datasets: [{
+        data: ys,
+        borderColor: '#69876F',
+        backgroundColor: gradient,
+        fill: true,
+        tension: 0.4,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 0,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+          callbacks: {
+            title: items => `${items[0].label} days/month`,
+            label: item => {
+              const x = parseInt(item.label);
+              const near = values.filter(v => Math.abs(v - x) < bw).length;
+              return `~${Math.round(near / values.length * 100)}% of respondents`;
+            }
+          },
+          backgroundColor: 'rgba(37,48,39,0.92)',
+          titleColor: '#B8D4BC',
+          bodyColor: '#F0F3F1',
+          padding: 10,
+          cornerRadius: 8,
+          titleFont: { family: 'Inter', size: 12, weight: '600' },
+          bodyFont: { family: 'Inter', size: 11 },
+          displayColors: false,
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#69876F',
+            font: { family: 'Inter', size: 11 },
+            callback: (_, i) => (i % 5 === 0 ? xs[i] : ''),
+            maxRotation: 0,
+          },
+          grid: { display: false },
+          title: { display: true, text: 'Days per month', color: '#69876F', font: { family: 'Inter', size: 11 } }
+        },
+        y: { display: false }
+      },
+      interaction: { mode: 'index', intersect: false }
+    }
+  });
+}
+
 async function renderBubbleMap(containerId, countryCounts, N) {
   const container = document.getElementById(containerId);
   if (!container || !window.d3 || !window.topojson) return;

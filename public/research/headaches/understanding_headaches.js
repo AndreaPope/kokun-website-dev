@@ -12,7 +12,8 @@ const RESPONSE_COLS = [
   'treatments','treatments_not_working','treatment_details',
   'confidence_understanding','confidence_management',
   'journey_stage','challenges_in_care','felt_dismissed','unmet_needs',
-  'comorbidities','ethnic_background_categories','device_type'
+  'comorbidities','ethnic_background_categories','device_type',
+  'duration_onset','frequency_count','frequency_period','days_in_last_month'
 ].join(',');
 
 async function fetchTable(table, select) {
@@ -76,6 +77,50 @@ async function init() {
     const ageCounts = countField(eligible, 'age_bracket');
     const genderCounts = countField(completed, 'gender');
     const countryCounts = countField(completed, 'country');
+
+    // Duration onset: parse "n years" / "n months" → months
+    function parseDurationMonths(v) {
+      if (!v) return null;
+      const s = String(v).toLowerCase().trim();
+      const m = s.match(/(\d+(?:\.\d+)?)/);
+      if (!m) return null;
+      const num = parseFloat(m[1]);
+      if (!isFinite(num) || num <= 0) return null;
+      return s.includes('month') ? num : num * 12;
+    }
+    const durationMonths = completed.map(r => parseDurationMonths(r.duration_onset)).filter(v => v !== null);
+    const durationBucketCounts = [
+      ['Less than 1 year',  durationMonths.filter(m => m < 12).length],
+      ['1–5 years',         durationMonths.filter(m => m >= 12  && m < 60).length],
+      ['5–10 years',        durationMonths.filter(m => m >= 60  && m < 120).length],
+      ['10–20 years',       durationMonths.filter(m => m >= 120 && m < 240).length],
+      ['20+ years',         durationMonths.filter(m => m >= 240).length],
+    ].filter(([, c]) => c > 0);
+    const sortedDurYears = [...durationMonths].sort((a,b)=>a-b).map(m => m/12);
+    const medianDurYears = sortedDurYears.length ? +sortedDurYears[Math.floor(sortedDurYears.length/2)].toFixed(1) : 0;
+
+    // Frequency: normalize to per-month
+    const freqData = completed.map(r => {
+      const n = parseFloat(r.frequency_count);
+      if (!isFinite(n) || n <= 0) return null;
+      const p = (r.frequency_period || '').toLowerCase();
+      return p.includes('year') ? n / 12 : n;
+    }).filter(v => v !== null);
+    const freqBucketCounts = [
+      ['Less than 1/month',     freqData.filter(f => f < 1).length],
+      ['1–4 days/month',        freqData.filter(f => f >= 1  && f < 5).length],
+      ['5–14 days/month',       freqData.filter(f => f >= 5  && f < 15).length],
+      ['15–24 days/month',      freqData.filter(f => f >= 15 && f < 25).length],
+      ['25+ days/month (daily)',freqData.filter(f => f >= 25).length],
+    ].filter(([, c]) => c > 0);
+    const sortedFreq = [...freqData].sort((a,b)=>a-b);
+    const medianFreq = sortedFreq.length ? +sortedFreq[Math.floor(sortedFreq.length/2)].toFixed(1) : 0;
+
+    // Days in last month
+    const daysData = completed.map(r => parseFloat(r.days_in_last_month)).filter(v => isFinite(v) && v >= 0);
+    const sortedDays = [...daysData].sort((a,b)=>a-b);
+    const medianDays = sortedDays.length ? sortedDays[Math.floor(sortedDays.length/2)] : 0;
+    const chronicCount = daysData.filter(d => d >= 15).length;
 
     const app = document.getElementById('app');
     app.innerHTML = `
@@ -280,6 +325,58 @@ async function init() {
             <div class="k-card-sub">What respondents say they still need</div>
             ${barRows(countField(completed, 'unmet_needs'), N)}
           </div>
+
+          ${daysData.length || durationMonths.length ? `
+          <div class="k-stat-grid">
+            ${durationMonths.length ? `
+            <div class="k-stat">
+              <div class="k-stat-label">Median duration</div>
+              <div class="k-stat-value">${medianDurYears}<span style="font-size:16px;font-weight:400;color:#81A487">yr</span></div>
+              <div class="k-stat-sub">living with headaches</div>
+            </div>` : ''}
+            ${freqData.length ? `
+            <div class="k-stat">
+              <div class="k-stat-label">Median frequency</div>
+              <div class="k-stat-value">${medianFreq}<span style="font-size:16px;font-weight:400;color:#81A487">/mo</span></div>
+              <div class="k-stat-sub">headache days per month</div>
+            </div>` : ''}
+            ${daysData.length ? `
+            <div class="k-stat">
+              <div class="k-stat-label">Median last month</div>
+              <div class="k-stat-value">${medianDays}<span style="font-size:16px;font-weight:400;color:#81A487">d</span></div>
+              <div class="k-stat-sub">headache days reported</div>
+            </div>
+            <div class="k-stat">
+              <div class="k-stat-label">Chronic (≥15 days)</div>
+              <div class="k-stat-value">${pct(chronicCount, daysData.length)}%</div>
+              <div class="k-stat-sub">of respondents with data</div>
+            </div>` : ''}
+          </div>
+
+          <div class="k-two-col">
+            ${durationMonths.length ? `
+            <div class="k-card">
+              <div class="k-card-title">How long they've had headaches</div>
+              <div class="k-card-sub">Parsed from free-text entry · n=${durationMonths.length}</div>
+              ${barRows(durationBucketCounts, durationMonths.length)}
+            </div>` : ''}
+            ${freqData.length ? `
+            <div class="k-card">
+              <div class="k-card-title">Headache frequency</div>
+              <div class="k-card-sub">Normalized to days/month · n=${freqData.length}</div>
+              ${barRows(freqBucketCounts, freqData.length)}
+            </div>` : ''}
+          </div>
+
+          ${daysData.length ? `
+          <div class="k-card">
+            <div class="k-card-title">Days with headache last month</div>
+            <div class="k-card-sub">Distribution across ${daysData.length} respondents · median ${medianDays} days · ${pct(chronicCount, daysData.length)}% at chronic threshold (≥15)</div>
+            <div style="height:180px;position:relative;margin-top:16px;">
+              <canvas id="chart-days-density"></canvas>
+            </div>
+          </div>` : ''}
+          ` : ''}
         </div>
 
         <div id="sec-who" class="k-section">
@@ -320,6 +417,7 @@ async function init() {
     `;
 
     renderBubbleMap('country-map', countryCounts, N);
+    if (daysData.length) renderDensityChart('chart-days-density', daysData);
 
   } catch(e) {
     document.getElementById('app').innerHTML = `
