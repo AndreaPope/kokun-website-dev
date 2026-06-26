@@ -122,6 +122,16 @@ async function init() {
     const medianDays = sortedDays.length ? sortedDays[Math.floor(sortedDays.length/2)] : 0;
     const chronicCount = daysData.filter(d => d >= 15).length;
 
+    // Violin groups: days in last month by diagnosis status
+    function getDays(rows) {
+      return rows.map(r => parseFloat(r.days_in_last_month)).filter(v => isFinite(v) && v >= 0);
+    }
+    const violinGroups = [
+      { label: 'Doctor diagnosed', values: getDays(doctorDx), color: '#4A7C59' },
+      { label: 'Self-diagnosed',   values: getDays(selfDx),   color: '#81A487' },
+      { label: 'Undiagnosed',      values: getDays(noDx),     color: '#8B9E90' },
+    ].filter(g => g.values.length >= 5);
+
     const app = document.getElementById('app');
     app.innerHTML = `
       <div class="k-hero">
@@ -376,6 +386,13 @@ async function init() {
               <canvas id="chart-days-density"></canvas>
             </div>
           </div>` : ''}
+
+          ${violinGroups.length >= 2 ? `
+          <div class="k-card">
+            <div class="k-card-title">Days in last month by diagnosis status</div>
+            <div class="k-card-sub">White dot = median · box = interquartile range · dashed line = chronic threshold (15 days)</div>
+            <div id="chart-violin" style="margin-top:12px;"></div>
+          </div>` : ''}
           ` : ''}
         </div>
 
@@ -418,6 +435,7 @@ async function init() {
 
     renderBubbleMap('country-map', countryCounts, N);
     if (daysData.length) renderDensityChart('chart-days-density', daysData);
+    if (violinGroups.length >= 2) renderViolinChart('chart-violin', violinGroups);
 
   } catch(e) {
     document.getElementById('app').innerHTML = `

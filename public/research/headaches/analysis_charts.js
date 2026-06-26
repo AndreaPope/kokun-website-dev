@@ -98,6 +98,116 @@ function renderDensityChart(canvasId, values) {
   });
 }
 
+function renderViolinChart(containerId, groups) {
+  const container = document.getElementById(containerId);
+  if (!container || !window.d3) return;
+
+  groups = groups.filter(g => g.values.length >= 5);
+  if (groups.length < 2) return;
+
+  const W = 700, H = 290;
+  const m = { top: 24, right: 32, bottom: 52, left: 44 };
+  const iW = W - m.left - m.right, iH = H - m.top - m.bottom;
+
+  const yScale = d3.scaleLinear().domain([0, 31]).range([iH, 0]).nice();
+  const xScale = d3.scaleBand().domain(groups.map(g => g.label)).range([0, iW]).padding(0.3);
+
+  const thresholds = d3.range(0, 31.5, 0.5);
+
+  function kdeGroup(values) {
+    const std = d3.deviation(values) || 1;
+    const bw = Math.max(1.5, 1.06 * std * Math.pow(values.length, -0.2));
+    return thresholds.map(x => [x, values.reduce((sum, xi) => {
+      const u = (x - xi) / bw;
+      return sum + Math.exp(-0.5 * u * u) / Math.sqrt(2 * Math.PI);
+    }, 0) / (values.length * bw)]);
+  }
+
+  const computed = groups.map(g => ({
+    ...g,
+    density: kdeGroup(g.values),
+    sorted: [...g.values].sort((a, b) => a - b),
+  }));
+
+  const maxDensity = d3.max(computed, g => d3.max(g.density, d => d[1]));
+
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox', `0 0 ${W} ${H}`)
+    .style('width', '100%').style('height', 'auto').style('display', 'block');
+
+  const cv = svg.append('g').attr('transform', `translate(${m.left},${m.top})`);
+
+  // Grid + Y axis
+  cv.append('g').selectAll('line').data(yScale.ticks(7)).join('line')
+    .attr('x1', 0).attr('x2', iW).attr('y1', d => yScale(d)).attr('y2', d => yScale(d))
+    .attr('stroke', '#D6DAD7').attr('stroke-width', 0.5);
+
+  cv.append('g').call(d3.axisLeft(yScale).ticks(7).tickSize(0))
+    .call(ax => ax.select('.domain').remove())
+    .call(ax => ax.selectAll('text')
+      .attr('fill', '#69876F').attr('font-family', 'Inter, sans-serif').attr('font-size', 11).attr('dx', -4));
+
+  // Y label
+  svg.append('text')
+    .attr('transform', 'rotate(-90)').attr('x', -(H / 2)).attr('y', 13)
+    .attr('text-anchor', 'middle')
+    .attr('fill', '#69876F').attr('font-family', 'Inter, sans-serif').attr('font-size', 11)
+    .text('Days per month');
+
+  // Chronic threshold line
+  cv.append('line')
+    .attr('x1', 0).attr('x2', iW).attr('y1', yScale(15)).attr('y2', yScale(15))
+    .attr('stroke', '#C1553A').attr('stroke-width', 1).attr('stroke-dasharray', '4,3').attr('opacity', 0.6);
+  cv.append('text')
+    .attr('x', iW - 2).attr('y', yScale(15) - 4).attr('text-anchor', 'end')
+    .attr('fill', '#C1553A').attr('font-family', 'Inter, sans-serif').attr('font-size', 9).attr('opacity', 0.75)
+    .text('chronic threshold');
+
+  // Draw each violin
+  computed.forEach(g => {
+    const cx = xScale(g.label) + xScale.bandwidth() / 2;
+    const halfBand = xScale.bandwidth() / 2;
+    const wScale = d3.scaleLinear().domain([0, maxDensity]).range([0, halfBand]);
+
+    const area = d3.area()
+      .x0(d => cx - wScale(d[1]))
+      .x1(d => cx + wScale(d[1]))
+      .y(d => yScale(d[0]))
+      .curve(d3.curveCatmullRom);
+
+    const vg = cv.append('g');
+
+    vg.append('path').datum(g.density)
+      .attr('d', area)
+      .attr('fill', g.color).attr('fill-opacity', 0.55)
+      .attr('stroke', g.color).attr('stroke-width', 1.5);
+
+    const q1 = d3.quantile(g.sorted, 0.25);
+    const q3 = d3.quantile(g.sorted, 0.75);
+    const med = d3.quantile(g.sorted, 0.5);
+
+    vg.append('rect')
+      .attr('x', cx - 5).attr('y', yScale(q3))
+      .attr('width', 10).attr('height', Math.max(1, yScale(q1) - yScale(q3)))
+      .attr('fill', 'white').attr('fill-opacity', 0.85).attr('rx', 2);
+
+    vg.append('circle')
+      .attr('cx', cx).attr('cy', yScale(med)).attr('r', 3.5)
+      .attr('fill', 'white').attr('stroke', g.color).attr('stroke-width', 2);
+
+    // Group label + stats
+    cv.append('text')
+      .attr('x', cx).attr('y', iH + 20).attr('text-anchor', 'middle')
+      .attr('fill', '#3D4D3F').attr('font-family', 'Inter, sans-serif').attr('font-size', 12).attr('font-weight', 500)
+      .text(g.label);
+
+    cv.append('text')
+      .attr('x', cx).attr('y', iH + 36).attr('text-anchor', 'middle')
+      .attr('fill', '#81A487').attr('font-family', 'Inter, sans-serif').attr('font-size', 10)
+      .text(`n=${g.values.length} · median ${Math.round(med)} days`);
+  });
+}
+
 async function renderBubbleMap(containerId, countryCounts, N) {
   const container = document.getElementById(containerId);
   if (!container || !window.d3 || !window.topojson) return;
