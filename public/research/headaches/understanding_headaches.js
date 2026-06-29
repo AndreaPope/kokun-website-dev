@@ -78,16 +78,8 @@ async function init() {
     const genderCounts = countField(completed, 'gender');
     const countryCounts = countField(completed, 'country');
 
-    const ANCESTRY_SKIP = new Set(['Prefer not to answer', 'Prefer to self-describe']);
     const ancestryCounts = countField(completed, 'ethnic_background_categories')
-      .filter(([l]) => !ANCESTRY_SKIP.has(l))
       .map(([l, c]) => [l.replace(/ \(e\.g\..+\)$/, '').trim(), c]);
-    const ancestryN = completed.filter(r =>
-      parseArr(r.ethnic_background_categories).some(v => !ANCESTRY_SKIP.has(v))
-    ).length;
-    const selfDescribed = completed
-      .map(r => (r.cultural_identity_detail || '').trim())
-      .filter(Boolean);
 
     // Duration onset: parse "n years" / "n months" → months
     function parseDurationMonths(v) {
@@ -432,15 +424,8 @@ async function init() {
 
           <div class="k-card">
             <div class="k-card-title">Ancestry</div>
-            <div class="k-card-sub">Select all that apply · ${ancestryN} of ${N} respondents with data</div>
+            <div class="k-card-sub">Select all that apply</div>
             ${barRows(ancestryCounts, N, 10)}
-            ${selfDescribed.length ? `
-              <div class="k-divider"></div>
-              <div class="k-card-sub" style="margin-bottom:8px;">${selfDescribed.length} respondent${selfDescribed.length === 1 ? '' : 's'} self-described their ancestry or cultural identity</div>
-              <div class="k-quote-list">
-                ${selfDescribed.map(q => `<div class="k-quote-item">${q}</div>`).join('')}
-              </div>
-            ` : ''}
           </div>
 
           <div class="k-card">

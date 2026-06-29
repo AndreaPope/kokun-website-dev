@@ -361,20 +361,3 @@
 }
 
 .k-canvas-wrap { position: relative; width: 100%; }
-
-.k-quote-list {
-  max-height: 200px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.k-quote-item {
-  font-size: 13px;
-  color: #3D4D3F;
-  padding: 8px 12px;
-  background: #E8ECE9;
-  border-radius: 8px;
-  line-height: 1.5;
-}
