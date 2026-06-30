@@ -104,6 +104,8 @@ const sessionMeta = (() => {
   };
 
   const sessionId = crypto.randomUUID();
+  const utmSource = new URLSearchParams(window.location.search).get("utm_source") || "";
+  const referrer = document.referrer || "";
 
   return {
     sessionId,
@@ -112,6 +114,8 @@ const sessionMeta = (() => {
     browser: getBrowser(),
     deviceType: getDeviceType(),
     os: getOS(),
+    utmSource,
+    referrer,
   };
 })();
 
@@ -289,6 +293,8 @@ function createSessionRecord() {
       browser: sessionMeta.browser,
       device_type: sessionMeta.deviceType,
       os: sessionMeta.os,
+      utm_source: sessionMeta.utmSource,
+      referrer: sessionMeta.referrer,
       completed: false
     })
   })
