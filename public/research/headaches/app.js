@@ -21,6 +21,7 @@ const surveyData = {
   work_situation_other: "",
   work_type_multi: [],
   work_type_multi_other: "",
+  identity_other_text: "",
   headache_types: [],
   headache_type_other: "",
   migraine_subtypes: [],
@@ -130,6 +131,7 @@ const stageMap = {
   "slide-q2-5": "profile",
   "slide-q2-6a": "profile",
   "slide-q2-6b": "profile",
+  "slide-q2-6c": "profile",
   "slide-q3-1": "symptoms",
   "slide-q3-2": "symptoms",
   "slide-q3-3": "symptoms",
@@ -684,7 +686,11 @@ function validateCurrentSlide() {
       }
       surveyData.work_type_multi_other = document.getElementById("q2-6b-other").value.trim();
       return true;
-      
+
+    case "slide-q2-6c":
+      surveyData.identity_other_text = document.getElementById("q2-6c-identity").value.trim();
+      return true;
+
     case "slide-q3-1":
       if (surveyData.headache_types.length === 0) {
         showError("q3-1-err");
@@ -1132,6 +1138,10 @@ function handleNext() {
       break;
 
     case "slide-q2-6b":
+      navigateTo("slide-q2-6c");
+      break;
+
+    case "slide-q2-6c":
       navigateTo("slide-q3-1"); // skip slide-section-symptoms (commented out)
       break;
 
