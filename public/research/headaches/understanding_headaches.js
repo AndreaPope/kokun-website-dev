@@ -32,7 +32,8 @@ async function init() {
       fetchTable('survey_responses')
     ]);
 
-    const eligible = responses.filter(r => r.age_eligible === true && r.headache_eligible === 'Yes');
+    const eligible = responses.filter(r => r.age_eligible === true &&
+      (r.headache_eligible === 'Yes' || r.headache_eligible === 'I used to'));
     const completed = eligible.filter(r => r.completed_at);
     const N = completed.length;
     const totalSessions = sessions.length;
