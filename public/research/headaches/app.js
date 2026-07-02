@@ -327,6 +327,11 @@ function markSessionComplete() {
 
 function autoSaveProgress() {
   if (!isSupabaseConfigured()) return;
+  // Once submitSurvey() has written completed_at, don't let a later
+  // navigateTo() (e.g. to the thank-you slide) autosave over it — the
+  // RPC's NULLIF(p_data->>'completed_at', '') clobbers it back to null
+  // since this payload never includes completed_at.
+  if (sessionStorage.getItem('survey_submitted') === 'true') return;
   const { email: _email, subscribed_to_updates: _sub, ...surveyDataCore } = surveyData;
   const payload = {
     ...surveyDataCore,
