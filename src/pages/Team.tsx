@@ -147,7 +147,7 @@ function AboutPage() {
     },
     {
       name: 'SUDARSHAN RANGANATHAN',
-      image:'/images/people/Sudarshan.jpeg',
+      image:'/images/people/sudarshan.jpeg',
       linkedin: 'https://www.linkedin.com/in/sudarshan-ranganathan/',
     },
     {
@@ -157,7 +157,7 @@ function AboutPage() {
     },
     {
       name: 'SNIGDHA SAHAI',
-      image:'/images/people/Snighda.jfif',
+      image:'/images/people/Snighda.jpeg',
       linkedin: 'https://www.linkedin.com/in/dr-snigdha-sahai/',
     },
     {
@@ -246,7 +246,7 @@ function AboutPage() {
     },
     {
       name: 'SID LAHERI',
-      image:'/images/people/did.jpeg',
+      image:'/images/people/sid.jpeg',
       linkedin: 'https://www.linkedin.com/in/siddharth-laheri/',
     },
 
