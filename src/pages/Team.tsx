@@ -157,7 +157,7 @@ function AboutPage() {
     },
     {
       name: 'SNIGDHA SAHAI',
-      image:'/images/people/Snighda.jpeg',
+      image:'/images/people/Snigdha.jpeg',
       linkedin: 'https://www.linkedin.com/in/dr-snigdha-sahai/',
     },
     {
