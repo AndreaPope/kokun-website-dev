@@ -208,7 +208,7 @@ function AboutPage() {
       name: 'NAZISH DHOLAKIA',
       image:'/images/people/Nazish.jpeg',
       linkedin: 'https://www.linkedin.com/in/nazish-dholakia-9b63631a/',
-    }
+    },
     {
       name: 'MOMINA DIN',
       image:'/images/people/Momina_Din.jpeg',
