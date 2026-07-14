@@ -59,6 +59,11 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/rama-durairajan-2a50ba4/',
     },
     {
+      name: 'KAY HOFMEESTER',
+      image:'/images/people/kay.jpeg',
+      linkedin: 'https://www.linkedin.com/in/kayhofmeester/',
+    },
+    {
       name: 'CAROLYN MOORE',
       image:'/images/people/carolyn.jpeg',
       linkedin: 'https://www.linkedin.com/in/carolynfmoore/',
@@ -92,23 +97,103 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/tharika-chandrasekhar/',
     },
     {
+      name: 'CHLOE GUNSILLIUS, PH.D.',
+      image: '/images/people/Chloe.jpeg',
+      linkedin: 'https://www.linkedin.com/in/chloe-gunsilius-ph-d-401978305/',
+    },
+    
+    {
       name: 'RACHEL HEUSSENSTAMM',
       image:'/images/people/rachel.jpeg',
       linkedin: 'https://www.linkedin.com/in/rachel-heussenstamm/',
     },
-    {
-      name: 'KAY HOFMEESTER',
-      image:'/images/people/kay.jpeg',
-      linkedin: 'https://www.linkedin.com/in/kayhofmeester/',
-    },
-    {
-      name: 'ERIC LEBLANC',
-      image:'/images/people/Eric.jfif',
-      linkedin: 'https://www.linkedin.com/in/eric--leblanc/',
-    },
   ];
 
   const volunteerMembers: Person[] = [
+    {
+      name: 'DISHITA BAJAJ',
+      image:'/images/people/Dishita.jfif',
+      linkedin: 'https://www.linkedin.com/in/dishita-bajaj-00bb88313/',
+    },
+    {
+      name: 'JEFFREY BRICE',
+      image:'/images/people/jeffrey.jpeg',
+      linkedin: 'https://www.linkedin.com/in/jeffreybrice/',
+    },
+    {
+      name: 'PIA CHAKRA',
+      image:'/images/people/Pia.jpeg',
+      linkedin: 'https://www.linkedin.com/in/piachakra/',
+    },
+    {
+      name: 'ABHIVYAKTI DUBEY',
+      image:'/images/people/Abhivyakti.jfif',
+      linkedin: 'https://www.linkedin.com/in/abhivyaktidubey/',
+    },
+    {
+      name: 'SAI SREEJA REDDY GODULA',
+      image:'/images/people/Sai.jpeg',
+      linkedin: 'https://www.linkedin.com/in/sreejagodula/',
+    },
+    {
+      name: 'SUHANI HARISH',
+      image:'/images/people/Suhani.jpeg',
+      linkedin: 'https://www.linkedin.com/in/suhani-h/',
+    },
+    {
+      name: ' LAURA SOFIA NASIFF, MD',
+      image:'/images/people/Laura.jpeg',
+      linkedin: 'https://www.linkedin.com/in/laura-sofia-nasiff/',
+    },
+    {
+      name: 'SUDARSHAN RANGANATHAN',
+      image:'/images/people/Sudarshan.jpeg',
+      linkedin: 'https://www.linkedin.com/in/sudarshan-ranganathan/',
+    },
+    {
+      name: 'YOSHNEE RAVEENDRAN',
+      image:'/images/people/Yoshnee.jpeg',
+      linkedin: 'https://www.linkedin.com/in/yoshneer/',
+    },
+    {
+      name: 'SNIGDHA SAHAI',
+      image:'/images/people/Snighda.jfif',
+      linkedin: 'https://www.linkedin.com/in/dr-snigdha-sahai/',
+    },
+    {
+      name: 'VIGNESH SANATHKUMAR',
+      image:'/images/people/Vignesh.jpeg',
+      linkedin: 'https://www.linkedin.com/in/vignesh-sanathkumar/',
+    },
+    {
+      name: 'KATE WHARMBY SELDMAN',
+      image:'/images/people/Kate.jpeg',
+      linkedin: 'https://www.linkedin.com/in/kwseldman/',
+    },
+    {
+      name: 'BIBAS SHARMA',
+      image:'/images/people/Bibas.jpeg',
+      linkedin: 'https://www.linkedin.com/in/bibas-sharma-087b8032/',
+    },
+    {
+      name: 'SAVANI SHROTRI',
+      image:'/images/people/Savani.jfif',
+      linkedin: 'https://www.linkedin.com/in/savanishrotri/',
+    },
+    {
+      name: 'ALAN (HAO) WANG',
+      image:'/images/people/alan.png',
+      linkedin: 'https://www.linkedin.com/in/alanwang166/',
+    }
+
+  ];
+
+  const volunteerPastMembers: Person[] = [
+    // {
+    //   name: 'NILA KATHIRAVAN',
+    //   image:'/images/people/Nila.jfif',
+    //   linkedin: 'https://www.linkedin.com/in/nila-kathiravan-33b62b359/',
+    // }
     {
       name: 'EDMOND ABRAHAM',
       image:'/images/people/edmond.jpg',
@@ -120,70 +205,39 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/company/106445611',
     },
     {
-      name: 'DISHITA BAJAJ',
-      image:'/images/people/Dishita.jfif',
-      linkedin: 'https://www.linkedin.com/in/dishita-bajaj-00bb88313/',
-    },
+      name: 'NAZISH DHOLAKIA',
+      image:'/images/people/Nazish.jpeg',
+      linkedin: 'https://www.linkedin.com/in/nazish-dholakia-9b63631a/',
+    }
     {
       name: 'MOMINA DIN',
       image:'/images/people/Momina_Din.jpeg',
       linkedin: 'https://www.linkedin.com/in/momina-din/',
     },
     {
-      name: 'ABHIVYAKTI DUBEY',
-      image:'/images/people/Abhivyakti.jfif',
-      linkedin: 'https://www.linkedin.com/in/abhivyaktidubey/',
+      name: 'PRAYAS DURAIRAJAN',
+      image:'/images/people/prayas.jpeg',
+      linkedin: 'https://www.linkedin.com/in/murari-durairajan-b14409359/',
     },
-    // {
-    //   name: 'SRIVYSHNAVI GADDE',
-    //   image:'/images/people/Abhivyakti.jfif',
-    //   linkedin: 'https://www.linkedin.com/in/srivyshnavigadde/',
-    // },
     {
       name: 'MIRNA HADDAD',
       image:'/images/people/Mirna.jfif',
       linkedin: 'https://www.linkedin.com/in/mirna-haddad-67898396/',
-    },
-    
-    {
-      name: 'KEETHANSHAN MARKANDU',
-      image:'/images/people/Keeth.jfif',
-      linkedin: 'https://www.linkedin.com/in/keethanshan-markandu-a79877248/',
-    },
-    // {
-    //   name: 'ZARANA NAKRANI',
-    //   image:
-    //     'https://media.licdn.com/dms/image/v2/D5635AQFONyCc26O20Q/profile-framedphoto-shrink_400_400/B56ZbM_._tH4Ac-/0/1747196047712?e=1764738000&v=beta&t=g8f-CcCXPmC6cKwe77nyCjq4SdRYfXwpV4rtqsz8tD8',
-    //   linkedin: 'https://www.linkedin.com/in/zarana-nakrani/',
-    // },
-    {
-      name: 'ROBERT ROJO',
-      image:'/images/people/robert.jpeg',
-      linkedin: 'https://www.linkedin.com/in/robertrojodev/',
-    },
-    {
-      name: 'SAVANI SHROTRI',
-      image:'/images/people/Savani.jfif',
-      linkedin: 'https://www.linkedin.com/in/savanishrotri/',
-    },
-    
-  ];
-
-  const volunteerPastMembers: Person[] = [
-    // {
-    //   name: 'NILA KATHIRAVAN',
-    //   image:'/images/people/Nila.jfif',
-    //   linkedin: 'https://www.linkedin.com/in/nila-kathiravan-33b62b359/',
-    // }
-    {
-      name: 'PRAYAS DURAIRAJAN',
-      image:'/images/people/prayas.jpeg',
-      linkedin: 'https://www.linkedin.com/in/murari-durairajan-b14409359/',
     },  
+    {
+      name: 'MEGHANA HULSURE',
+      image:'/images/people/meghana.png',
+      linkedin: 'https://www.linkedin.com/in/meghanahulsure/',
+    },
     {
       name: 'JENNY JONES',
       image:'/images/people/Jenny.jfif',
       linkedin: 'https://www.linkedin.com/in/jenny-jones-1740a79/',
+    },
+    {
+      name: 'NINA KHOURY',
+      image:'/images/people/Nina.jpeg',
+      linkedin: 'https://www.linkedin.com/in/nina-k-910941b4/',
     },
     {
       name: 'DHRUV KURPAD',
@@ -191,9 +245,40 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/dhruv-kurpad-212b60276/',
     },
     {
+      name: 'SID LAHERI',
+      image:'/images/people/did.jpeg',
+      linkedin: 'https://www.linkedin.com/in/siddharth-laheri/',
+    },
+
+    {
+      name: 'ERIC LEBLANC',
+      image:'/images/people/Eric.jfif',
+      linkedin: 'https://www.linkedin.com/in/eric--leblanc/',
+    },
+    {
+      name: 'KEETHANSHAN MARKANDU',
+      image:'/images/people/Keeth.jfif',
+      linkedin: 'https://www.linkedin.com/in/keethanshan-markandu-a79877248/',
+    },
+    {
       name: 'BISHARAT MINHAS',
       image:'/images/people/Bisharat.jfif',
       linkedin: 'https://www.linkedin.com/in/bisharat-minhas/',
+    },
+    {
+      name: 'ZARANA NAKRANI',
+      image:'/images/people/Zarana.png',
+    linkedin: 'https://www.linkedin.com/in/zarana-nakrani/',
+    },
+    {
+      name: 'SUNITHA RAMACHANDRAN',
+      image:'/images/people/sunitha.jpeg',
+      linkedin: 'https://www.linkedin.com/in/sunitharamachandran/',
+    },
+    {
+      name: 'ROBERT ROJO',
+      image:'/images/people/robert.jpeg',
+      linkedin: 'https://www.linkedin.com/in/robertrojodev/',
     },
     
 
@@ -300,7 +385,7 @@ function AboutPage() {
               </div>
 
               <div>
-                <p className="font-bold text-primary text-lg tracking-wide">EXPERT CONTRIBUTORS</p>
+                <p className="font-bold text-primary text-lg tracking-wide">LEADERSHIP TEAM</p>
                 {renderPeopleGrid(expertContributors)}
               </div>
 
