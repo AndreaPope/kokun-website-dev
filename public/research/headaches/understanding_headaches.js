@@ -3,7 +3,7 @@ const SUPABASE_KEY = SUPABASE_CONFIG.anonKey;
 
 const RESPONSE_COLS = [
   'id','age_bracket','age_eligible','headache_eligible','completed_at','started_at',
-  'gender','country','education_level','work_situation',
+  'gender','country','postal_code','education_level','work_situation',
   'headache_types','migraine_subtypes','functional_impact',
   'qol_severe_pain','qol_limit_activities','qol_wish_lie_down',
   'qol_tired_from_headaches','qol_irritated_from_headaches','qol_limit_concentration',
@@ -78,6 +78,19 @@ async function init() {
     const ageCounts = countField(eligible, 'age_bracket');
     const genderCounts = countField(completed, 'gender');
     const countryCounts = countField(completed, 'country');
+
+    // US deep dive: derive state from the first 3 digits of postal_code
+    const usRespondents = completed.filter(r =>
+      r.country === 'United States' && r.postal_code && String(r.postal_code).trim().toLowerCase() !== 'n/a');
+    const usStateCountsMap = {};
+    usRespondents.forEach(r => {
+      const st = zip3ToState(r.postal_code);
+      if (st) usStateCountsMap[st] = (usStateCountsMap[st] || 0) + 1;
+    });
+    const usMappedCount = Object.values(usStateCountsMap).reduce((a, b) => a + b, 0);
+    const usStateEntries = Object.entries(usStateCountsMap)
+      .map(([abbr, count]) => [US_STATE_NAMES[abbr] || abbr, count])
+      .sort((a, b) => b[1] - a[1]);
 
     const ancestryCounts = countField(completed, 'ethnic_background_categories')
       .map(([l, c]) => [l.replace(/ \(e\.g\..+\)$/, '').trim(), c]);
@@ -438,12 +451,24 @@ async function init() {
               ${barRows(countryCounts, N, 10)}
             </div>
           </div>
+
+          ${usMappedCount ? `
+          <div class="k-card">
+            <div class="k-card-title">United States deep dive</div>
+            <div class="k-card-sub">State inferred from the first 3 digits of respondents' zip codes &middot; n=${usMappedCount} of ${usRespondents.length} US respondents mapped</div>
+            <div id="us-state-map" style="position:relative;margin:12px 0 16px;"></div>
+            <div style="border-top:1px solid #D6DAD7;padding-top:12px;">
+              <div class="k-card-sub" style="margin-bottom:8px;">Top states</div>
+              ${barRows(usStateEntries, usMappedCount, 10)}
+            </div>
+          </div>` : ''}
         </div>
 
       </div>
     `;
 
     renderBubbleMap('country-map', countryCounts, N);
+    if (usMappedCount) renderUSMap('us-state-map', usStateCountsMap, usMappedCount);
     if (daysData.length) renderDensityChart('chart-days-density', daysData);
     if (violinGroups.length >= 2) renderViolinChart('chart-violin', violinGroups);
 

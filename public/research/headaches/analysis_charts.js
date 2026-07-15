@@ -347,6 +347,138 @@ async function renderBubbleMap(containerId, countryCounts, N) {
   }
 }
 
+// Approximate ZIP3 (first 3 digits of zip) -> state, based on USPS prefix
+// allocation blocks. Ranges are simplified to their primary contiguous block,
+// so a small number of edge-case prefixes may resolve to a neighboring state.
+const ZIP3_RANGES = [
+  [6,9,'PR'],[10,27,'MA'],[28,29,'RI'],[30,38,'NH'],[39,49,'ME'],
+  [50,59,'VT'],[60,69,'CT'],[70,89,'NJ'],[100,149,'NY'],[150,196,'PA'],
+  [197,199,'DE'],[200,205,'DC'],[206,219,'MD'],[220,246,'VA'],[247,268,'WV'],
+  [270,289,'NC'],[290,299,'SC'],[300,319,'GA'],[320,349,'FL'],[350,369,'AL'],
+  [370,385,'TN'],[386,397,'MS'],[398,399,'GA'],[400,427,'KY'],[430,459,'OH'],
+  [460,479,'IN'],[480,499,'MI'],[500,528,'IA'],[530,549,'WI'],[550,567,'MN'],
+  [570,577,'SD'],[580,588,'ND'],[590,599,'MT'],[600,629,'IL'],[630,658,'MO'],
+  [660,679,'KS'],[680,693,'NE'],[700,714,'LA'],[716,729,'AR'],[730,749,'OK'],
+  [750,799,'TX'],[800,816,'CO'],[820,831,'WY'],[832,838,'ID'],[840,847,'UT'],
+  [850,865,'AZ'],[870,884,'NM'],[885,885,'TX'],[889,898,'NV'],[900,961,'CA'],
+  [967,968,'HI'],[969,969,'GU'],[970,979,'OR'],[980,994,'WA'],[995,999,'AK'],
+];
+
+function zip3ToState(postal) {
+  if (!postal) return null;
+  const digits = String(postal).replace(/\D/g, '').slice(0, 3);
+  if (digits.length < 3) return null;
+  const n = parseInt(digits, 10);
+  const hit = ZIP3_RANGES.find(([lo, hi]) => n >= lo && n <= hi);
+  return hit ? hit[2] : null;
+}
+
+const US_FIPS_TO_ABBR = {
+  1:'AL',2:'AK',4:'AZ',5:'AR',6:'CA',8:'CO',9:'CT',10:'DE',11:'DC',12:'FL',
+  13:'GA',15:'HI',16:'ID',17:'IL',18:'IN',19:'IA',20:'KS',21:'KY',22:'LA',
+  23:'ME',24:'MD',25:'MA',26:'MI',27:'MN',28:'MS',29:'MO',30:'MT',31:'NE',
+  32:'NV',33:'NH',34:'NJ',35:'NM',36:'NY',37:'NC',38:'ND',39:'OH',40:'OK',
+  41:'OR',42:'PA',44:'RI',45:'SC',46:'SD',47:'TN',48:'TX',49:'UT',50:'VT',
+  51:'VA',53:'WA',54:'WV',55:'WI',56:'WY',72:'PR',
+};
+
+const US_STATE_NAMES = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',
+  CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',
+  HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',
+  LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',
+  MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',
+  NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',
+  OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',
+  SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',
+  WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico',
+};
+
+async function renderUSMap(containerId, stateCounts, N) {
+  const container = document.getElementById(containerId);
+  if (!container || !window.d3 || !window.topojson) return;
+
+  try {
+    const us = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(r => r.json());
+    const statesGeo = topojson.feature(us, us.objects.states);
+    const bordersGeo = topojson.mesh(us, us.objects.states, (a, b) => a !== b);
+
+    const W = 800, H = 500;
+    const projection = d3.geoAlbersUsa().scale(950).translate([W / 2, H / 2]);
+    const path = d3.geoPath().projection(projection);
+
+    const svg = d3.select(container).append('svg')
+      .attr('viewBox', `0 0 ${W} ${H}`)
+      .attr('preserveAspectRatio', 'xMidYMid meet')
+      .style('width', '100%').style('height', 'auto')
+      .style('display', 'block').style('border-radius', '8px');
+
+    svg.append('rect').attr('width', W).attr('height', H).attr('fill', '#E8ECE9');
+
+    const maxCount = Math.max(1, ...Object.values(stateCounts));
+
+    function lerpColor(t) {
+      return `rgb(${Math.round(142 - t * 112)},${Math.round(196 - t * 122)},${Math.round(154 - t * 112)})`;
+    }
+
+    const tip = d3.select(container).append('div')
+      .style('position', 'absolute').style('background', 'rgba(37,48,39,0.95)')
+      .style('color', '#F0F3F1').style('padding', '8px 12px').style('border-radius', '8px')
+      .style('font-family', 'Inter, sans-serif').style('font-size', '12px').style('line-height', '1.5')
+      .style('pointer-events', 'none').style('opacity', '0').style('transition', 'opacity 0.12s')
+      .style('white-space', 'nowrap').style('z-index', '10').style('top', '0').style('left', '0');
+
+    function moveTip(event) {
+      const rect = container.getBoundingClientRect();
+      tip.style('left', Math.min(event.clientX - rect.left + 14, rect.width - 180) + 'px')
+         .style('top', Math.max(event.clientY - rect.top - 52, 4) + 'px');
+    }
+
+    svg.append('g').selectAll('path').data(statesGeo.features).join('path')
+      .attr('d', path)
+      .attr('fill', d => {
+        const abbr = US_FIPS_TO_ABBR[+d.id];
+        const count = abbr ? (stateCounts[abbr] || 0) : 0;
+        return count ? lerpColor(count / maxCount) : '#DCE2DE';
+      })
+      .attr('stroke', '#fff').attr('stroke-width', 0.5)
+      .on('mouseenter', function(event, d) {
+        const abbr = US_FIPS_TO_ABBR[+d.id];
+        const count = abbr ? (stateCounts[abbr] || 0) : 0;
+        if (!count) return;
+        d3.select(this).attr('stroke-width', 1.5).attr('stroke', '#253027');
+        tip.style('opacity', '1').html(`<strong style="color:#B8D4BC">${US_STATE_NAMES[abbr] || abbr}</strong><br>${count} respondent${count !== 1 ? 's' : ''} &middot; ${Math.round(count / N * 100)}% of US sample`);
+        moveTip(event);
+      })
+      .on('mousemove', (event) => moveTip(event))
+      .on('mouseleave', function() {
+        d3.select(this).attr('stroke-width', 0.5).attr('stroke', '#fff');
+        tip.style('opacity', '0');
+      });
+
+    svg.append('path').datum(bordersGeo).attr('d', path)
+      .attr('fill', 'none').attr('stroke', '#fff').attr('stroke-width', 0.5);
+
+    // Legend
+    const defs = svg.append('defs');
+    const grad = defs.append('linearGradient').attr('id', 'usMapGrad').attr('x1', '0').attr('x2', '1');
+    grad.append('stop').attr('offset', '0%').attr('stop-color', lerpColor(0));
+    grad.append('stop').attr('offset', '100%').attr('stop-color', lerpColor(1));
+
+    const lg = svg.append('g').attr('transform', `translate(${W - 152}, ${H - 62})`);
+    lg.append('rect').attr('width', 140).attr('height', 50).attr('rx', 6).attr('fill', 'rgba(37,48,39,0.6)');
+    const lt = lg.append('text').attr('fill', '#C8DCC9').attr('font-family', 'Inter, sans-serif').attr('font-size', '9').attr('font-weight', '500').attr('letter-spacing', '0.05em');
+    lt.append('tspan').attr('x', 10).attr('y', 16).text('RESPONDENTS BY STATE');
+    lg.append('rect').attr('x', 10).attr('y', 24).attr('width', 120).attr('height', 8).attr('rx', 4).attr('fill', 'url(#usMapGrad)');
+    const ls = lg.append('text').attr('fill', '#8EB89A').attr('font-family', 'Inter, sans-serif').attr('font-size', '8');
+    ls.append('tspan').attr('x', 10).attr('y', 43).text('low');
+    ls.append('tspan').attr('x', 130).attr('y', 43).attr('text-anchor', 'end').text('high');
+
+  } catch(e) {
+    container.innerHTML = '<p style="color:#69876F;font-size:13px;padding:16px 0;">Map unavailable.</p>';
+  }
+}
+
 function renderDoughnut(canvasId, labels, data, colors) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) return;
