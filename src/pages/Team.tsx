@@ -121,7 +121,7 @@ function AboutPage() {
       linkedin: 'https://www.linkedin.com/in/jeffreybrice/',
     },
     {
-      name: 'PIA CHAKRA',
+      name: 'PIA CHAKRABARTI',
       image:'/images/people/Pia.jpeg',
       linkedin: 'https://www.linkedin.com/in/piachakra/',
     },
