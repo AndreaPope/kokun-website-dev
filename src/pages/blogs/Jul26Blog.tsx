@@ -32,6 +32,7 @@ function Jun26Blog() {
               <div>
                 <p>
                   You know it in your body. The sky shifts before a storm, the air thickens with smoke, a heat wave settles in, and something changes. You brace for it. You rearrange your plans. You hope you're wrong.</p> 
+                <br />
                 <p>
                   For a long time, the connection between weather and migraine was treated as a quirk, something individual people reported but that science hadn't fully confirmed. That's changing. A growing body of research is showing that weather-related factors, including barometric pressure, temperature, air quality, and the more extreme conditions tied to a warming climate, can affect how often and how severely migraine attacks occur. The picture is becoming clearer, even if it's still incomplete.                
                 </p>
@@ -51,7 +52,7 @@ function Jun26Blog() {
                 <br />
                 <p>
                   Why does this happen? Researchers are still studying the exact mechanism. 
-                  <a
+                   {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4684554/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -59,7 +60,7 @@ function Jun26Blog() {
                   >One possibility is
                   </a>
                   {" "}that changes in pressure may affect the sinus cavities and inner ear, or may influence blood vessel activity in the brain. 
-                  <a
+                   {" "}<a
                     href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8088284/"
                     target="_blank"
                     rel="noopener noreferrer"
