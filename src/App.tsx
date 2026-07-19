@@ -19,7 +19,7 @@ import Mar26Blog from "./pages/blogs/Mar26Blog";
 import Apr26Blog from "./pages/blogs/Apr26Blog";
 import May26Blog from "./pages/blogs/May26Blog";
 import Jun26Blog from "./pages/blogs/Jun26Blog";
-import Jun26Blog from "./pages/blogs/Jul26Blog";
+import Jul26Blog from "./pages/blogs/Jul26Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import { testConnection } from "./lib/supabase";
 import AllBlogs from "../src/pages/blogs/allBlogs";
