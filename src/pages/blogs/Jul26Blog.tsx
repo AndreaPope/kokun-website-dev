@@ -120,7 +120,7 @@ function Jun26Blog() {
                 </h2>
                 <p>
                   Heat, pressure shifts, humidity, air pollution, and wildfires are becoming more common and more intense as the climate changes. 
-                  <a
+                  {" "}<a
                     href="https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(24)00087-5/abstract"
                     target="_blank"
                     rel="noopener noreferrer"
