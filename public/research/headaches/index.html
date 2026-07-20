@@ -68,6 +68,8 @@
         <option value="slide-section-treatment">slide-section-treatment</option>
         <option value="slide-q5">slide-q5</option>
         <option value="slide-q5b">slide-q5b</option>
+        <option value="slide-q5c">slide-q5c</option>
+        <option value="slide-q5d">slide-q5d</option>
         <option value="slide-section-experience">slide-section-experience</option>
         <option value="slide-q6-1">slide-q6-1</option>
         <option value="slide-q6-2">slide-q6-2</option>
@@ -1962,7 +1964,7 @@
           </div>
 
           <div class="multi-option" data-val="CBT">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cognitive Behavioral Therapy (CBT) or talk therapy</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Talk Therapy (Cognitive Behavioral Therapy (CBT), ACT, Mindfulness-based, Psychoanalysis)</span></div>
           </div>
 
           <div class="multi-option" data-val="Complementary approaches">
@@ -1976,6 +1978,13 @@
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Lifestyle changes (sleep, hydration, triggers...)</span></div>
             <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
               <input type="text" id="q5-lifestylechanges-specify" placeholder="Specify lifestyle changes (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Digital apps/therapeutics">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Digital apps/therapeutics</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5-digitalappstherapeutics-specify" placeholder="Specify apps/therapeutics (optional)" onclick="event.stopPropagation();">
             </div>
           </div>
 
@@ -2062,7 +2071,7 @@
           </div>
 
           <div class="multi-option" data-val="CBT">
-            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Cognitive Behavioral Therapy (CBT) or talk therapy</span></div>
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Talk Therapy (Cognitive Behavioral Therapy (CBT), ACT, Mindfulness-based, Psychoanalysis)</span></div>
           </div>
 
           <div class="multi-option" data-val="Complementary approaches">
@@ -2076,6 +2085,13 @@
             <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Lifestyle changes (sleep, hydration, triggers...)</span></div>
             <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
               <input type="text" id="q5b-lifestylechanges-specify" placeholder="Specify lifestyle changes (optional)" onclick="event.stopPropagation();">
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Digital apps/therapeutics">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Digital apps/therapeutics</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q5b-digitalappstherapeutics-specify" placeholder="Specify apps/therapeutics (optional)" onclick="event.stopPropagation();">
             </div>
           </div>
 
@@ -2108,6 +2124,107 @@
         </div>
 
         <div id="q5b-err" class="validation-error">Please select at least one option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== Q5C: GLP-1 MEDICATION USE ==================== -->
+      <div id="slide-q5c" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text" data-dynamic-word>Are you currently using a GLP-1&ndash;based medication for any reason?</h2>
+        <p class="subheadline-text question-desc">Examples include semaglutide (Ozempic, Wegovy, or Rybelsus), tirzepatide (Mounjaro or Zepbound), liraglutide (Victoza or Saxenda), and dulaglutide (Trulicity).</p>
+
+        <div class="options-grid" data-type="single" data-field="glp1_usage">
+          <button class="option-btn" data-val="Yes">Yes</button>
+          <button class="option-btn" data-val="No">No</button>
+          <button class="option-btn" data-val="I'm not sure">I&rsquo;m not sure</button>
+          <button class="option-btn" data-val="Prefer not to answer">Prefer not to answer</button>
+        </div>
+        <div id="q5c-err" class="validation-error">Please select an option.</div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this data matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              GLP-1&ndash;based medications are increasingly used for several health reasons, and emerging research is exploring whether they may influence headache and migraine symptoms; knowing whether and why people use them helps us understand the full treatment picture.
+            </p>
+          </div>
+        </div>
+
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- ==================== Q5D: GLP-1 REASONS FOR USE ==================== -->
+      <div id="slide-q5d" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text" data-dynamic-word>What are the main reasons you are using this medication?</h2>
+        <p class="subheadline-text question-desc">Select all that apply.</p>
+
+        <div class="multiselect-container" data-type="multi" data-field="glp1_reasons">
+
+          <div class="multi-option" data-val="To lose weight or manage my weight">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">To lose weight or manage my weight</span></div>
+          </div>
+
+          <div class="multi-option" data-val="To manage diabetes, prediabetes, or blood sugar">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">To manage diabetes, prediabetes, or blood sugar</span></div>
+          </div>
+
+          <div class="multi-option" data-val="To help prevent or reduce headaches or migraine">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">To help prevent or reduce headaches or migraine</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Manage another health condition (please specify)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">To manage another health condition, as prescribed or recommended by a healthcare professional (please specify)</span></div>
+          </div>
+          <div id="glp1_reasons_manageanotherhealthconditionpleasespecify-other-wrapper" class="input-text-wrapper" style="display: none;">
+            <label class="field-label" for="q5d-condition-other">Please specify:</label>
+            <input type="text" id="q5d-condition-other" placeholder="Please specify..." oninput="document.getElementById('q5d-condition-other-err').classList.remove('active')">
+            <div id="q5d-condition-other-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="multi-option" data-val="Another personal health or wellness goal (please specify)">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">For another personal health or wellness goal (please specify)</span></div>
+          </div>
+          <div id="glp1_reasons_anotherpersonalhealthorwellnessgoalpleasespecify-other-wrapper" class="input-text-wrapper" style="display: none;">
+            <label class="field-label" for="q5d-goal-other">Please specify:</label>
+            <input type="text" id="q5d-goal-other" placeholder="Please specify..." oninput="document.getElementById('q5d-goal-other-err').classList.remove('active')">
+            <div id="q5d-goal-other-err" class="validation-error">Required.</div>
+          </div>
+
+          <div class="multi-option" data-val="I'm not sure why it was prescribed or recommended">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I&rsquo;m not sure why it was prescribed or recommended</span></div>
+          </div>
+
+          <div class="multi-option" data-val="Prefer not to answer">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">
+              Prefer not to answer<span class="eg-text">Selecting this will clear previous selections.</span></span></div>
+          </div>
+
+        </div>
+
+        <div id="q5d-err" class="validation-error">Please select at least one option.</div>
+
         <div class="action-controls">
           <button class="btn btn-secondary btn-back">Back</button>
           <button class="btn btn-primary btn-next">Next</button>

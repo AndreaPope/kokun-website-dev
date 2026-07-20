@@ -54,6 +54,10 @@ const surveyData = {
   treatment_details: {},
   treatments_not_working: [],
   treatment_not_working_details: {},
+  glp1_usage: null,
+  glp1_reasons: [],
+  glp1_reasons_other_condition: "",
+  glp1_reasons_other_goal: "",
   confidence_understanding: null,
   confidence_management: null,
   journey_stage: null,
@@ -154,6 +158,8 @@ const stageMap = {
   "slide-q4-3b": "diagnosis",
   "slide-q5": "treatment",
   "slide-q5b": "treatment",
+  "slide-q5c": "treatment",
+  "slide-q5d": "treatment",
   "slide-q6-1": "experience",
   "slide-q6-2": "experience",
   "slide-q6-3": "experience",
@@ -979,6 +985,31 @@ function validateCurrentSlide() {
       });
       return true;
 
+    case "slide-q5c":
+      if (!surveyData.glp1_usage) {
+        showError("q5c-err");
+        return false;
+      }
+      return true;
+
+    case "slide-q5d": {
+      if (surveyData.glp1_reasons.length === 0) {
+        showError("q5d-err");
+        return false;
+      }
+      if (surveyData.glp1_reasons.includes("Manage another health condition (please specify)")) {
+        const v = document.getElementById("q5d-condition-other")?.value.trim();
+        if (!v) { showError("q5d-condition-other-err"); return false; }
+        surveyData.glp1_reasons_other_condition = v;
+      }
+      if (surveyData.glp1_reasons.includes("Another personal health or wellness goal (please specify)")) {
+        const v = document.getElementById("q5d-goal-other")?.value.trim();
+        if (!v) { showError("q5d-goal-other-err"); return false; }
+        surveyData.glp1_reasons_other_goal = v;
+      }
+      return true;
+    }
+
     // Section 6
     case "slide-q6-1":
       const understandingBtn = document.querySelector("[data-field='q6-1a'] .option-btn.selected");
@@ -1244,6 +1275,18 @@ function handleNext() {
       break;
 
     case "slide-q5b":
+      navigateTo("slide-q5c");
+      break;
+
+    case "slide-q5c":
+      if (surveyData.glp1_usage === "Yes") {
+        navigateTo("slide-q5d");
+      } else {
+        navigateTo("slide-q6-1"); // skip slide-section-experience (commented out)
+      }
+      break;
+
+    case "slide-q5d":
       navigateTo("slide-q6-1"); // skip slide-section-experience (commented out)
       break;
 
@@ -1646,6 +1689,27 @@ function setupEventListeners() {
                 if (pntaEl && pntaEl.classList.contains("selected")) {
                   pntaEl.classList.remove("selected");
                   delete surveyData.comorbidities["Prefer not to answer"];
+                }
+              }
+            }
+          }
+
+          // Mutual exclusivity for "Prefer not to answer" on Q5d (GLP-1 reasons)
+          if (fieldName === "glp1_reasons") {
+            if (val === "Prefer not to answer") {
+              if (isSelected) {
+                container.querySelectorAll(".multi-option").forEach(el => {
+                  if (el !== optionEl) el.classList.remove("selected");
+                });
+                surveyData.glp1_reasons = ["Prefer not to answer"];
+                container.closest(".survey-slide").querySelectorAll(".input-text-wrapper").forEach(w => w.style.display = "none");
+              }
+            } else {
+              if (isSelected) {
+                const pntaEl = container.querySelector(".multi-option[data-val='Prefer not to answer']");
+                if (pntaEl && pntaEl.classList.contains("selected")) {
+                  pntaEl.classList.remove("selected");
+                  surveyData.glp1_reasons = surveyData.glp1_reasons.filter(v => v !== "Prefer not to answer");
                 }
               }
             }
