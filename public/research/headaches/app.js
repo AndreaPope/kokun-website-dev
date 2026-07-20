@@ -1699,10 +1699,13 @@ function setupEventListeners() {
             if (val === "Prefer not to answer") {
               if (isSelected) {
                 container.querySelectorAll(".multi-option").forEach(el => {
-                  if (el !== optionEl) el.classList.remove("selected");
+                  if (el !== optionEl) {
+                    el.classList.remove("selected");
+                    const sl = el.querySelector(".nested-subcategories");
+                    if (sl) sl.classList.remove("expanded");
+                  }
                 });
                 surveyData.glp1_reasons = ["Prefer not to answer"];
-                container.closest(".survey-slide").querySelectorAll(".input-text-wrapper").forEach(w => w.style.display = "none");
               }
             } else {
               if (isSelected) {
