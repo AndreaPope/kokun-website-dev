@@ -62,6 +62,9 @@ const surveyData = {
   confidence_management: null,
   journey_stage: null,
   journey_stage_other: "",
+  tracking_history: null,
+  tracking_history_detail: "",
+  tracking_experience: "",
   challenges_in_care: {},
   challenges_in_care_other: "",
   felt_dismissed: null,
@@ -162,6 +165,8 @@ const stageMap = {
   "slide-q5d": "treatment",
   "slide-q6-1": "experience",
   "slide-q6-2": "experience",
+  "slide-q6-25a": "experience",
+  "slide-q6-25b": "experience",
   "slide-q6-3": "experience",
   "slide-q6-4": "experience",
   "slide-q6-5": "experience",
@@ -1037,7 +1042,38 @@ function validateCurrentSlide() {
       }
       surveyData.journey_stage_other = document.getElementById("q6-2-other").value.trim();
       return true;
-      
+
+    case "slide-q6-25a": {
+      if (!surveyData.tracking_history) {
+        showError("q6-25a-err");
+        return false;
+      }
+      const specifyByVal = {
+        "Currently tracking": "q6-25a-current-specify",
+        "Previously tracked": "q6-25a-past-specify",
+        "Never tracked": "q6-25a-notracked-specify",
+      };
+      const specifyId = specifyByVal[surveyData.tracking_history];
+      if (specifyId) {
+        const v = document.getElementById(specifyId).value.trim();
+        if (!v) { showError(`${specifyId}-err`); return false; }
+        surveyData.tracking_history_detail = v;
+      } else {
+        surveyData.tracking_history_detail = "";
+      }
+      return true;
+    }
+
+    case "slide-q6-25b": {
+      const trackingExperienceVal = document.getElementById("q6-25b-text").value.trim();
+      if (!trackingExperienceVal) {
+        showError("q6-25b-err");
+        return false;
+      }
+      surveyData.tracking_experience = trackingExperienceVal;
+      return true;
+    }
+
     case "slide-q6-3":
       const hasChallenges = Object.keys(surveyData.challenges_in_care).length > 0 || surveyData.challenges_in_care_other;
       if (!hasChallenges) {
@@ -1298,13 +1334,27 @@ function handleNext() {
       break;
       
     case "slide-q6-2":
+      navigateTo("slide-q6-25a");
+      break;
+
+    case "slide-q6-25a":
+      if (surveyData.tracking_history === "Currently tracking" || surveyData.tracking_history === "Previously tracked") {
+        navigateTo("slide-q6-25b");
+      } else if (surveyData.diagnosis_status === "Yes, by a doctor") {
+        navigateTo("slide-q6-3");
+      } else {
+        navigateTo("slide-q6-4");
+      }
+      break;
+
+    case "slide-q6-25b":
       if (surveyData.diagnosis_status === "Yes, by a doctor") {
         navigateTo("slide-q6-3");
       } else {
         navigateTo("slide-q6-4");
       }
       break;
-      
+
     case "slide-q6-3":
       navigateTo("slide-q6-4");
       break;
@@ -1363,11 +1413,23 @@ function setupEventListeners() {
         const slide = grid.closest(".survey-slide");
         if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
 
+        const valSlug = val.toLowerCase().replace(/[^a-z]/g, '');
+
+        // Hide any other per-value conditional wrappers for this field before showing the matching one
+        // (supports fields with a distinct specify box per option, e.g. tracking_history)
+        if (slide) {
+          slide.querySelectorAll(`[id^="${fieldName}_"][id$="-other-wrapper"]`).forEach(w => {
+            if (w.id !== `${fieldName}_${valSlug}-other-wrapper`) w.style.display = "none";
+          });
+        }
+
         // Dynamic visibility overrides for text fields (like "Other" or "Prefer to self-describe")
         toggleConditionalTextFields(fieldName, val);
-        
+        toggleConditionalTextFields(`${fieldName}_${valSlug}`, "active");
+
         // Auto-advance for single select slides, but not when a conditional text input is revealed
-        const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`);
+        const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`)
+          || document.getElementById(`${fieldName}_${valSlug}-other-wrapper`);
         const showingTextInput = conditionalWrapper && conditionalWrapper.style.display !== 'none';
         const hasAlwaysVisibleInput = fieldName === 'satisfaction_rating' || fieldName === 'email';
         if (!showingTextInput && !hasAlwaysVisibleInput) {

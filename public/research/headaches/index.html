@@ -73,6 +73,8 @@
         <option value="slide-section-experience">slide-section-experience</option>
         <option value="slide-q6-1">slide-q6-1</option>
         <option value="slide-q6-2">slide-q6-2</option>
+        <option value="slide-q6-25a">slide-q6-25a</option>
+        <option value="slide-q6-25b">slide-q6-25b</option>
         <option value="slide-q6-3">slide-q6-3</option>
         <option value="slide-q6-4">slide-q6-4</option>
         <option value="slide-q6-5">slide-q6-5</option>
@@ -2363,6 +2365,97 @@
         </div>
 
         <div id="q6-2-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.25A Tracking History -->
+      <div id="slide-q6-25a" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text" data-dynamic-word>Have you ever kept a record of your headaches or related symptoms over time?</h2>
+        <p class="subheadline-text question-desc">For example, using a diary, calendar, app, or another tool.</p>
+
+        <div class="options-grid" data-type="single" data-field="tracking_history">
+          <button class="option-btn" data-val="Currently tracking">Yes, I currently track them (please describe how you track them)</button>
+          <button class="option-btn" data-val="Previously tracked">Yes, I have tracked them in the past (please describe how you tracked them)</button>
+          <button class="option-btn" data-val="Never tracked">No (please tell us why you've never tracked them)</button>
+          <button class="option-btn" data-val="Not sure">I'm not sure</button>
+        </div>
+
+        <div id="tracking_history_currentlytracking-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-25a-current-specify">Please describe how you track them:</label>
+          <input type="text" id="q6-25a-current-specify" placeholder="e.g. an app, a paper diary, a calendar..." oninput="document.getElementById('q6-25a-current-specify-err').classList.remove('active')">
+          <div id="q6-25a-current-specify-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="tracking_history_previouslytracked-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-25a-past-specify">Please describe how you tracked them:</label>
+          <input type="text" id="q6-25a-past-specify" placeholder="e.g. an app, a paper diary, a calendar..." oninput="document.getElementById('q6-25a-past-specify-err').classList.remove('active')">
+          <div id="q6-25a-past-specify-err" class="validation-error">Required.</div>
+        </div>
+
+        <div id="tracking_history_nevertracked-other-wrapper" class="input-text-wrapper" style="display: none;">
+          <label class="field-label" for="q6-25a-notracked-specify">Please tell us why you&rsquo;ve never tracked them:</label>
+          <input type="text" id="q6-25a-notracked-specify" placeholder="e.g. didn't think it would help, too much effort..." oninput="document.getElementById('q6-25a-notracked-specify-err').classList.remove('active')">
+          <div id="q6-25a-notracked-specify-err" class="validation-error">Required.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Tracking can help people understand patterns and communicate their experience, but it can also feel burdensome or unhelpful; understanding both sides can guide better, more patient-centered tools and support.
+            </p>
+          </div>
+        </div>
+
+        <div id="q6-25a-err" class="validation-error">Please select an option.</div>
+        <div class="action-controls">
+          <button class="btn btn-secondary btn-back">Back</button>
+          <button class="btn btn-primary btn-next">Next</button>
+        </div>
+      </div>
+
+      <!-- Q6.25B Tracking Experience (CONDITIONAL - shown if Q6.25A is "Yes") -->
+      <div id="slide-q6-25b" class="survey-slide">
+        <div class="stage-stepper" aria-label="Survey progress">
+          <span class="stage-pill" data-stage="profile">Background</span>
+          <span class="stage-pill" data-stage="symptoms">Symptoms</span>
+          <span class="stage-pill" data-stage="diagnosis">Diagnosis</span>
+          <span class="stage-pill" data-stage="treatment">Treatment</span>
+          <span class="stage-pill" data-stage="experience">Experience</span>
+        </div>
+        <h2 class="title-1 question-text" data-dynamic-word>What was your experience with tracking your headaches?</h2>
+        <p class="subheadline-text question-desc">We&rsquo;d love to understand what helped, what did not, and if there was anything surprising you learnt from the experience.</p>
+
+        <div class="input-text-wrapper">
+          <input type="text" id="q6-25b-text" placeholder="Share your experience..." oninput="document.getElementById('q6-25b-err').classList.remove('active')">
+          <div id="q6-25b-err" class="validation-error">Required field.</div>
+        </div>
+
+        <div class="why-matters-container">
+          <div class="why-matters-toggle">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            Why this matters
+          </div>
+          <div class="why-matters-content">
+            <p class="footnote-text" data-dynamic-word>
+              Tracking can help people understand patterns and communicate their experience, but it can also feel burdensome or unhelpful; understanding both sides can guide better, more patient-centered tools and support.
+            </p>
+          </div>
+        </div>
+
         <div class="action-controls">
           <button class="btn btn-secondary btn-back">Back</button>
           <button class="btn btn-primary btn-next">Next</button>
