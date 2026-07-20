@@ -859,6 +859,11 @@ function validateCurrentSlide() {
         if (!v) { showError("q3-8-cancer-other-err"); return false; }
         surveyData.comorbidities["Cancer - (please specify)"] = [v];
       }
+      if ("Tick-borne illness - (please specify)" in surveyData.comorbidities) {
+        const v = document.getElementById("q3-8-tickborne-illness-other")?.value.trim();
+        if (!v) { showError("q3-8-tickborne-illness-other-err"); return false; }
+        surveyData.comorbidities["Tick-borne illness - (please specify)"] = [v];
+      }
       if ("Other (please specify)" in surveyData.comorbidities) {
         const v = document.getElementById("q3-8-other-other")?.value.trim();
         if (!v) { showError("q3-8-other-other-err"); return false; }
