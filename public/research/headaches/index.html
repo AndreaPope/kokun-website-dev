@@ -2383,29 +2383,36 @@
         <h2 class="title-1 question-text" data-dynamic-word>Have you ever kept a record of your headaches or related symptoms over time?</h2>
         <p class="subheadline-text question-desc">For example, using a diary, calendar, app, or another tool.</p>
 
-        <div class="options-grid" data-type="single" data-field="tracking_history">
-          <button class="option-btn" data-val="Currently tracking">Yes, I currently track them (please describe how you track them)</button>
-          <button class="option-btn" data-val="Previously tracked">Yes, I have tracked them in the past (please describe how you tracked them)</button>
-          <button class="option-btn" data-val="Never tracked">No (please tell us why you've never tracked them)</button>
-          <button class="option-btn" data-val="Not sure">I'm not sure</button>
-        </div>
+        <div class="multiselect-container" data-type="single" data-field="tracking_history">
 
-        <div id="tracking_history_currentlytracking-other-wrapper" class="input-text-wrapper" style="display: none;">
-          <label class="field-label" for="q6-25a-current-specify">Please describe how you track them:</label>
-          <input type="text" id="q6-25a-current-specify" placeholder="e.g. an app, a paper diary, a calendar..." oninput="document.getElementById('q6-25a-current-specify-err').classList.remove('active')">
-          <div id="q6-25a-current-specify-err" class="validation-error">Required.</div>
-        </div>
+          <div class="multi-option" data-val="Currently tracking">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Yes, I currently track them (please describe how you track them)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q6-25a-current-specify" placeholder="Please describe how you track them" onclick="event.stopPropagation();" oninput="document.getElementById('q6-25a-current-specify-err').classList.remove('active')">
+              <div id="q6-25a-current-specify-err" class="validation-error">Required.</div>
+            </div>
+          </div>
 
-        <div id="tracking_history_previouslytracked-other-wrapper" class="input-text-wrapper" style="display: none;">
-          <label class="field-label" for="q6-25a-past-specify">Please describe how you tracked them:</label>
-          <input type="text" id="q6-25a-past-specify" placeholder="e.g. an app, a paper diary, a calendar..." oninput="document.getElementById('q6-25a-past-specify-err').classList.remove('active')">
-          <div id="q6-25a-past-specify-err" class="validation-error">Required.</div>
-        </div>
+          <div class="multi-option" data-val="Previously tracked">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">Yes, I have tracked them in the past (please describe how you tracked them)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q6-25a-past-specify" placeholder="Please describe how you tracked them" onclick="event.stopPropagation();" oninput="document.getElementById('q6-25a-past-specify-err').classList.remove('active')">
+              <div id="q6-25a-past-specify-err" class="validation-error">Required.</div>
+            </div>
+          </div>
 
-        <div id="tracking_history_nevertracked-other-wrapper" class="input-text-wrapper" style="display: none;">
-          <label class="field-label" for="q6-25a-notracked-specify">Please tell us why you&rsquo;ve never tracked them:</label>
-          <input type="text" id="q6-25a-notracked-specify" placeholder="e.g. didn't think it would help, too much effort..." oninput="document.getElementById('q6-25a-notracked-specify-err').classList.remove('active')">
-          <div id="q6-25a-notracked-specify-err" class="validation-error">Required.</div>
+          <div class="multi-option" data-val="Never tracked">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">No (please tell us why you&rsquo;ve never tracked them)</span></div>
+            <div class="nested-subcategories" style="padding-bottom: var(--space-md); padding-left: calc(var(--space-md) + 38px); border-top: none;">
+              <input type="text" id="q6-25a-notracked-specify" placeholder="Please tell us why you've never tracked them" onclick="event.stopPropagation();" oninput="document.getElementById('q6-25a-notracked-specify-err').classList.remove('active')">
+              <div id="q6-25a-notracked-specify-err" class="validation-error">Required.</div>
+            </div>
+          </div>
+
+          <div class="multi-option" data-val="Not sure">
+            <div class="multi-option-header"><span class="checkbox-custom"></span><span class="option-label">I&rsquo;m not sure</span></div>
+          </div>
+
         </div>
 
         <div class="why-matters-container">

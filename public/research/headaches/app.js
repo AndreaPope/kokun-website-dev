@@ -1413,26 +1413,46 @@ function setupEventListeners() {
         const slide = grid.closest(".survey-slide");
         if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
 
-        const valSlug = val.toLowerCase().replace(/[^a-z]/g, '');
-
-        // Hide any other per-value conditional wrappers for this field before showing the matching one
-        // (supports fields with a distinct specify box per option, e.g. tracking_history)
-        if (slide) {
-          slide.querySelectorAll(`[id^="${fieldName}_"][id$="-other-wrapper"]`).forEach(w => {
-            if (w.id !== `${fieldName}_${valSlug}-other-wrapper`) w.style.display = "none";
-          });
-        }
-
         // Dynamic visibility overrides for text fields (like "Other" or "Prefer to self-describe")
         toggleConditionalTextFields(fieldName, val);
-        toggleConditionalTextFields(`${fieldName}_${valSlug}`, "active");
 
         // Auto-advance for single select slides, but not when a conditional text input is revealed
-        const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`)
-          || document.getElementById(`${fieldName}_${valSlug}-other-wrapper`);
+        const conditionalWrapper = document.getElementById(`${fieldName}-other-wrapper`);
         const showingTextInput = conditionalWrapper && conditionalWrapper.style.display !== 'none';
         const hasAlwaysVisibleInput = fieldName === 'satisfaction_rating' || fieldName === 'email';
         if (!showingTextInput && !hasAlwaysVisibleInput) {
+          setTimeout(() => {
+            handleNext();
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Single choice selector using multi-option-style divs, for questions where an
+  // option needs its own inline specify box (e.g. Q6.25a tracking_history)
+  document.querySelectorAll(".multiselect-container[data-type='single']").forEach(container => {
+    const fieldName = container.getAttribute("data-field");
+    container.querySelectorAll(".multi-option").forEach(optionEl => {
+      optionEl.querySelector(".multi-option-header").addEventListener("click", () => {
+        const val = optionEl.getAttribute("data-val");
+
+        container.querySelectorAll(".multi-option").forEach(el => {
+          el.classList.remove("selected");
+          const sl = el.querySelector(".nested-subcategories");
+          if (sl) sl.classList.remove("expanded");
+        });
+        optionEl.classList.add("selected");
+        const subList = optionEl.querySelector(".nested-subcategories");
+        if (subList) subList.classList.add("expanded");
+
+        surveyData[fieldName] = val;
+
+        const slide = container.closest(".survey-slide");
+        if (slide) slide.querySelectorAll(".validation-error.active").forEach(el => el.classList.remove("active"));
+
+        // Auto-advance unless this option reveals a specify box requiring input
+        if (!subList) {
           setTimeout(() => {
             handleNext();
           }, 300);
